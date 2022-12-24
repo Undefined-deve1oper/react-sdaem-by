@@ -5,6 +5,7 @@ import {NavLink} from "react-router-dom";
 const FooterBody: React.FC = () => {
     return (
         <div className={"footer__body"}>
+
             <div className="footer__main">
                 <Logo className={"footer__logo logo"} />
                 <h3 className="footer__subtitle">СДАЁМ БАЙ</h3>
@@ -16,6 +17,7 @@ const FooterBody: React.FC = () => {
                     </p>
                 </div>
             </div>
+
             <div className="footer__menu menu-footer">
                 <div className="menu-footer__column">
                     <NavLink

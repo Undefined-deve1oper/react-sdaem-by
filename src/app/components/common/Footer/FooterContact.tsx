@@ -5,6 +5,7 @@ import {Facebook, Instagram, YouTube} from "@mui/icons-material";
 const FooterContact: React.FC = () => {
     return (
         <div className="footer__contact">
+
             <div className="footer__social social-footer">
                 <p>Мы в соцсетях:</p>
                 <div className="social-footer__links">
@@ -31,12 +32,13 @@ const FooterContact: React.FC = () => {
                     </a>
                 </div>
             </div>
+
             <div className="footer__payment-methods payment-methods">
                 {config.map((item) => (
                     <a key={item.id} href={item.link} target="_blank">
                         <img
                             className={"payment-methods__image"}
-                            src={require(`../../../../assets/img/payment-methods/${item.src}.png`)}
+                            src={require(`../../../assets/img/payment-methods/${item.src}.png`)}
                             alt={item.title}
                         />
                     </a>
