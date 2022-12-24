@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto&display=swap");
+
+@font-face {
+    font-family: "Muller";
+    src: local("Muller Medium"), local("Muller-Medium"),
+        url("../../fonts/MullerMedium.woff2") format("woff2"),
+        url("../../fonts/MullerMedium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+
+//@font-face {
+//	font-family: icons;
+//	font-display: swap;
+//	src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
+//	font-weight: 400;
+//	font-style: normal;
+//}
