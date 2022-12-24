@@ -2,9 +2,7 @@ import React from 'react';
 
 const FooterCopyrights: React.FC = () => {
     return (
-        <div>
-
-        </div>
+        <h1>ddfs</h1>
     );
 };
 
