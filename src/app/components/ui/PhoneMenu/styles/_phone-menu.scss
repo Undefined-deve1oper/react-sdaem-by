@@ -3,19 +3,22 @@
         display: none;
     }
     width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     position: fixed;
     top: 0;
     left: -100%;
-    overflow-y: auto;
-    overflow-x: hidden;
     background-color: $lightGrayColor;
     transition: left 0.4s ease-out;
     padding: 120px 15px 30px 15px;
     z-index: -2;
+    overflow-y: auto;
+    overflow-x: hidden;
 
     &._active {
+        top: 0;
         left: 0;
+        right: 0;
+        bottom: 0;
     }
 
     // .mobile-menu__list
@@ -48,5 +51,8 @@
             width: 100%;
             &:not(:last-child) {margin: 0px 0px 5px 0px;}
         };
+        & svg {
+            display: none;
+        }
     }
 }
