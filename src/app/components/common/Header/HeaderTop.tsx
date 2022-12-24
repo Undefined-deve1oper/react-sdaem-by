@@ -4,6 +4,7 @@ import { Icon, Typography } from "@mui/material";
 import { FavoriteBorder } from "@mui/icons-material";
 import {RoutesNavType} from "../../../router/routes";
 import NavList from "../NavList";
+import Bookmark from "../Bookmark";
 
 type HeaderTopProps = {
     links: RoutesNavType[];
@@ -18,17 +19,7 @@ const HeaderTop: React.FC<HeaderTopProps> = ({ links }) => {
                     className={"top-header__menu menu"}
                 />
                 <div className="top-header__actions actions-header">
-                    <div className="actions-header__item favorites-header">
-                        <NavLink
-                            className="favorites-header__item"
-                            to="/bookmarks"
-                        >
-                            <Typography component="span" variant="inherit">
-                                Закладки
-                            </Typography>
-                            <Icon component={FavoriteBorder} />
-                        </NavLink>
-                    </div>
+                    <Bookmark label="Закладки"/>
                 </div>
                 <div className="header-buttons">
                     <NavLink to="/login" className="header-buttons-button">
