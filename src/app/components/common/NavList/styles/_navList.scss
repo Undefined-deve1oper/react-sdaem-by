@@ -16,11 +16,11 @@
 		align-items: center;
 		justify-content: space-between;
 
-		@media (max-width: $md2 + px) {
-			& .dropdown {
-				display: none;
-			}
-		}
+		//@media (max-width: $md2 + px) {
+		//	& .dropdown {
+		//		display: none;
+		//	}
+		//}
 
 		@media (min-width: $md2 + px) {
 			@media (any-hover: hover) {

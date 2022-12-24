@@ -1,12 +1,11 @@
 import React from "react";
 import {RoutesNavType} from "../../../router/routes";
 import NavItem from "../NavItem";
-// import NavItem from "../NavItem";
 
 type NavListProps = {
     routes: RoutesNavType[];
-    closeMenu?: () => void;
     label?: string;
+    closeMenu?: () => void;
     direction?: "row" | "column";
     className?: string;
 }
@@ -16,7 +15,7 @@ const NavList: React.FC<NavListProps> = ({
      closeMenu,
      direction = "row",
      label,
-     className
+     className,
 }) => {
     return (
         <nav className={className || "menu"}>

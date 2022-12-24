@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {NavLink, useHistory} from "react-router-dom";
 import {RoutesNavType} from "../../../router/routes";
 import {Menu, MenuItem} from "@mui/material";
-import {KeyboardArrowDown} from "@mui/icons-material";
+import {ExpandMore} from "@mui/icons-material";
 
 type DropdownProps = {
     defaultOption: RoutesNavType;
@@ -31,7 +31,7 @@ const Dropdown: React.FC<DropdownProps> = ({options, defaultOption}) => {
             <div className="dropdown__header">
                 <NavLink to={path}>{name}</NavLink>
                 <button className="dropdown__icon" onClick={handleClick}>
-                    <KeyboardArrowDown/>
+                    <ExpandMore/>
                 </button>
             </div>
             <Menu

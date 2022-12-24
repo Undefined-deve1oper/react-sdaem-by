@@ -29,10 +29,10 @@ const PhoneMenu: React.FC<PhoneMenuProps> = ({open, closeMenu}) => {
                         label="Наше предложение"
                     >
                         <NavList
-                            className="mobile-menu__sub-list"
                             direction="column"
-                            routes={productsNavigationRoutes}
                             closeMenu={closeMenu}
+                            className="mobile-menu__sub-list"
+                            routes={productsNavigationRoutes}
                         />
                     </Accordion>
                 </li>

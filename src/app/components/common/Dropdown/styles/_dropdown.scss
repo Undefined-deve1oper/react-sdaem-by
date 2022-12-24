@@ -10,10 +10,15 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		@include adaptiv-value("gap", 15, 5, 1);
+		gap: 15px;
 
 		& > * {
 			color: inherit;
+		}
+
+		@media (max-width: $md2 + px){
+			font-weight: 500;
+			@include adaptiv-value("font-size", 24, 18, 1);
 		}
 	}
 
@@ -22,6 +27,9 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		@media (max-width: $md2 + px){
+			display: none;
+		}
 	}
 
 	// .dropdown-menu
