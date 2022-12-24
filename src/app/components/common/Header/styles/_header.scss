@@ -46,6 +46,10 @@
 		color: $darkColor;
 		font-weight: 600;
 
+		& svg {
+			color: $infoColor;
+		}
+
 		@media (max-width: $md2 + px) {
 			flex: 1 1 auto;
 		}
