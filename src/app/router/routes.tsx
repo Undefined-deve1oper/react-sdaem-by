@@ -1,13 +1,26 @@
 import React from "react";
-import { LocationOn } from "@mui/icons-material";
-import { Icon } from "@mui/material";
-import Main from "../layouts/Main";
-import Login from "../layouts/Login";
-import News from "../layouts/News";
+import {LocationOn} from "@mui/icons-material";
+import {SvgIconTypeMap} from "@mui/material";
+import {OverridableComponent} from "@mui/material/OverridableComponent";
+
+const Login = React.lazy(() => import('../layouts/login'));
+const Main = React.lazy(() => import('../layouts/main'));
+const News = React.lazy(() => import('../layouts/news'));
+
+
+export type RoutesNavType = {
+    path: string;
+    name: string;
+    exact?: boolean;
+    submenu?: RoutesNavType[];
+    icon?: OverridableComponent<SvgIconTypeMap<{}, 'svg'>> & {
+        muiName: string;
+    };
+};
 
 export const navigationRoutes = [
-    { path: "/", name: "Главная", exact: true },
-    { path: "/news", name: "Новости", exact: false },
+    {path: "/", name: "Главная", exact: true},
+    {path: "/news", name: "Новости", exact: false},
     {
         path: "/accommodation-and-rates",
         name: "Размещение и тарифы",
@@ -16,15 +29,10 @@ export const navigationRoutes = [
     {
         path: "/ads-on-the-map",
         name: "Объявления на карте",
-        element: (product) => (
-            <>
-                <Icon fontSize="inherit" component={LocationOn} />
-                {product.name}
-            </>
-        ),
-        exact: false
+        exact: false,
+        icon: LocationOn
     },
-    { path: "/contacts", name: "Контакты", exact: false }
+    {path: "/contacts", name: "Контакты", exact: false}
 ];
 
 export const productsNavigationRoutes = [
@@ -57,17 +65,6 @@ export const productsNavigationRoutes = [
                 path: "/apartments-for-a-day/voronezh"
             }
         ],
-        iconColor: "secondary.main",
-        component: (product) => (
-            <>
-                {product.name}
-                <Icon
-                    fontSize="inherit"
-                    component={LocationOn}
-                    sx={{ color: product.iconColor }}
-                />
-            </>
-        )
     },
     {
         path: "/cottages-and-manor/",
@@ -84,7 +81,7 @@ export const productsNavigationRoutes = [
 ];
 
 export const routes = [
-    { path: "/", component: Main, exact: true },
-    { path: "/login/:type?", component: Login, exact: true },
-    { path: "/news/:newsId?/", component: News, exact: true }
+    {path: "/", component: Main, exact: true},
+    {path: "/login/:type?", component: Login, exact: true},
+    {path: "/news/:newsId?", component: News, exact: true}
 ];

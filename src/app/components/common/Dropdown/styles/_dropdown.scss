@@ -1,0 +1,65 @@
+.dropdown {
+	position: relative;
+	// .dropdown__header
+	&__header {
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 17px;
+		color: $darkColor;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 15px;
+
+		& > * {
+			color: inherit;
+		}
+
+		@media (max-width: $md2 + px){
+			font-weight: 500;
+			@include adaptiv-value("font-size", 24, 18, 1);
+		}
+	}
+
+	// .dropdown__icon
+	&__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		@media (max-width: $md2 + px){
+			display: none;
+		}
+	}
+
+	// .dropdown-menu
+	&-menu {
+		width: calc(100% + 100px);
+		margin: 40px 0px 0px 0px;
+
+		& .MuiList-root {
+			border-radius: 10px;
+			padding: 0;
+			box-shadow: 0px 0px 40px rgba(135, 124, 202, 0.3);
+		}
+
+		&__item {
+			&.MuiMenuItem-root {
+				font-size: 14px;
+				font-weight: 500;
+				line-height: 17px;
+				color: $darkColor;
+				padding: 10px 15px;
+
+				& a {
+					color: inherit;
+					text-decoration: none;
+				}
+			}
+		}
+
+		@media (any-hover: hover) {
+			transition: all 0.2s ease-out .3s;
+		}
+	}
+}
