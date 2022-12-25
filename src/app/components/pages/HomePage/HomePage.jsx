@@ -11,7 +11,7 @@ const HomePage = () => {
         <main className="page">
             <section className="page__main-search main-search">
                 <MouseParallaxContainer
-                    className="main-search__container _container parallax"
+                    className="main-search__container _container"
                     globalFactorX={ 0.3 }
                     globalFactorY={ 0.3 }
                     resetOnLeave
@@ -26,7 +26,7 @@ const HomePage = () => {
                     <MouseParallaxChild
                         factorX={0.2}
                         factorY={0.2}
-                        className={"parallax__item"}
+                        className={"main-search__background parallax__item"}
                     />
                 </MouseParallaxContainer>
             </section>

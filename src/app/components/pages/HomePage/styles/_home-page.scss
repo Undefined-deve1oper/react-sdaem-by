@@ -41,18 +41,22 @@
 			color: $infoColor;
 		}
 	}
+
+	// .main-search__background
+	&__background {
+		width: 130%;
+		height: 110%;
+		background: url("../../../../assets/img/city-bg.png") center / cover no-repeat;
+		transform: scale(1.2);
+	}
+
 }
 
 .parallax {
 	width: 100%;
 	// .parallax__item
 	&__item {
-		width: 130%;
-		height: 110%;
-		background: url("../../../../assets/img/city-bg.png") center / cover no-repeat;
-
 		position: absolute;
-		transform: scale(1.2);
 		pointer-events: none;
 		backface-visibility: hidden;
 	}
