@@ -80,8 +80,9 @@ export const productsNavigationRoutes = [
     }
 ];
 
-export const routes = [
+export const publicRoutes = [
     {path: "/", component: Main, exact: true},
     {path: "/login/:type?", component: Login, exact: true},
-    {path: "/news/:newsId?", component: News, exact: true}
+    {path: "/news/:newsId?", component: News, exact: true},
+    {path: "/cars/:carsId?", component: News, exact: true},
 ];

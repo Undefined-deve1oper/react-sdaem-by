@@ -13,7 +13,7 @@
 		width: 100%;
 		min-height: 430px;
 		max-width: 1287px !important;
-		background: url("../../../../assets/img/city-bg.png") center / cover no-repeat, linear-gradient(360deg, #7E6AF3 15.95%, #6540CD 63.1%);
+		background: linear-gradient(360deg, #7E6AF3 15.95%, #6540CD 63.1%);
 		filter: drop-shadow(0px 20px 40px rgba(135, 124, 202, 0.15));
 		border-radius: 0px 0px 40px 40px;
 
@@ -43,14 +43,17 @@
 	}
 }
 
-.css-rt5uuz-MuiInputBase-root-MuiOutlinedInput-root {
-	width: 80px;
-	height: 37px;
-	background: $lightGrayColor;
-	border-radius: 20px;
+.parallax {
+	width: 100%;
+	// .parallax__item
+	&__item {
+		width: 130%;
+		height: 110%;
+		background: url("../../../../assets/img/city-bg.png") center / cover no-repeat;
 
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border: none;
+		position: absolute;
+		transform: scale(1.2);
+		pointer-events: none;
+		backface-visibility: hidden;
+	}
 }

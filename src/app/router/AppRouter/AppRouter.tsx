@@ -1,12 +1,12 @@
 import React, {Suspense} from "react";
 import {Route, Switch} from "react-router-dom";
-import {routes} from "../routes";
+import {publicRoutes} from "../routes";
 
 const AppRouter = () => {
     return (
         <Suspense fallback={<h1>Loading...</h1>}>
             <Switch>
-                {routes.map((route) =>
+                {publicRoutes.map((route) =>
                     route.path ? (
                         <Route
                             path={route.path}
