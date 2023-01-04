@@ -1,18 +1,18 @@
-import React, {useState} from 'react';
-import {NavLink, useHistory} from "react-router-dom";
-import {RoutesNavType} from "../../../router/routes";
-import {Menu, MenuItem} from "@mui/material";
-import {ExpandMore} from "@mui/icons-material";
+import React, { useState } from "react";
+import { useNavigate, NavLink } from "react-router-dom";
+import { RoutesLinksType } from "../../../router/routes";
+import { Menu, MenuItem } from "@mui/material";
+import { ExpandMore } from "@mui/icons-material";
 
 type DropdownProps = {
-    defaultOption: RoutesNavType;
-    options: RoutesNavType[];
-}
+    defaultOption: RoutesLinksType;
+    options: RoutesLinksType[];
+};
 
-const Dropdown: React.FC<DropdownProps> = ({options, defaultOption}) => {
-    const history = useHistory();
+const Dropdown: React.FC<DropdownProps> = ({ options, defaultOption }) => {
+    const navigate = useNavigate();
     const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
-    const {path, name} = defaultOption;
+    const { path, title } = defaultOption;
     const open = Boolean(anchorEl);
 
     const handleClick = (event: React.MouseEvent<HTMLElement>) => {
@@ -22,16 +22,16 @@ const Dropdown: React.FC<DropdownProps> = ({options, defaultOption}) => {
         setAnchorEl(null);
     };
     const handleClickSettingsItem = (path: string) => {
-        history.push(path);
+        navigate(path);
         handleClose();
     };
 
     return (
         <div className="dropdown">
             <div className="dropdown__header">
-                <NavLink to={path}>{name}</NavLink>
+                <NavLink to={path}>{title}</NavLink>
                 <button className="dropdown__icon" onClick={handleClick}>
-                    <ExpandMore/>
+                    <ExpandMore />
                 </button>
             </div>
             <Menu
@@ -39,9 +39,9 @@ const Dropdown: React.FC<DropdownProps> = ({options, defaultOption}) => {
                 open={open}
                 onClose={handleClose}
                 onClick={handleClose}
-                transformOrigin={{ horizontal: 'center', vertical: 'top' }}
-                anchorOrigin={{ horizontal: 'left', vertical: 'bottom' }}
-                className='dropdown-menu'
+                transformOrigin={{ horizontal: "center", vertical: "top" }}
+                anchorOrigin={{ horizontal: "left", vertical: "bottom" }}
+                className="dropdown-menu"
             >
                 {options.map((option) => (
                     <MenuItem
@@ -49,7 +49,7 @@ const Dropdown: React.FC<DropdownProps> = ({options, defaultOption}) => {
                         className="dropdown-menu__item"
                         onClick={() => handleClickSettingsItem(option.path)}
                     >
-                        {option.name}
+                        {option.title}
                     </MenuItem>
                 ))}
             </Menu>

@@ -1,109 +1,108 @@
 .search-estate {
-	// .search-estate__body
-	&__body {
-	}
+    // .search-estate__body
+    &__body {
+    }
 
-	// .search-estate__search
-	&__search {
-		background: #fff;
-		border-radius: 0 10px 10px 10px;
-		padding: 15px 21px;
-	}
+    // .search-estate__search
+    &__search {
+        background: #fff;
+        border-radius: 0 10px 10px 10px;
+        padding: 15px 21px;
+    }
 
-	// .search-estate__elements
-	&__elements {
-
-	}
+    // .search-estate__elements
+    &__elements {
+    }
 }
 
 .estate-elements {
-	// .estate-elements__button
-	&__button {
-		padding: 13px 20px;
-		font-weight: 600;
-		font-size: 14px;
-		line-height: 17px;
-		color: $lightColor;
-		background: rgba(45, 57, 136, 0.5);
-		transition: all 0.3s ease-out 0s;
+    // .estate-elements__button
+    &__button {
+        padding: 13px 20px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color: $lightColor;
+        background: rgba(45, 57, 136, 0.5);
+        transition: all 0.3s ease-out 0s;
 
-		&._active {
-			border-radius: 10px 10px 0 0;
-			background: $lightColor;
-			color: $violetColor;
-		}
+        &._active {
+            border-radius: 10px 10px 0 0;
+            background: $lightColor;
+            color: $violetColor;
+        }
 
-		@media (any-hover: hover) {
-			&:hover {
-				border-radius: 10px 10px 0 0;
-				background: $lightColor;
-				color: $violetColor;
-			}
-		}
-	}
+        @media (any-hover: hover) {
+            &:hover {
+                border-radius: 10px 10px 0 0;
+                background: $lightColor;
+                color: $violetColor;
+            }
+        }
+    }
 }
 
 .search-panel {
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
 
-	// .search-panel__item
-	&__item {
-		flex: 0 1 16.6%;
-		height: 100%;
+    // .search-panel__item
+    &__item {
+        flex: 0 1 16.6%;
+        height: 100%;
 
-		font-weight: 500;
-		font-size: 14px;
-		line-height: 17px;
-		color: $lightGrayColor2;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: $lightGrayColor2;
 
-		display: flex;
-		align-items: flex-start;
-		justify-content: center;
-		flex-direction: column;
-		padding: 0px 20px 0px 0px;
-		gap: 11px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0px 20px 0px 0px;
+        gap: 11px;
 
-		&:not(:last-child) {
-			border-right: 1px solid rgba(102, 78, 249, 0.1);
-		}
-	}
+        &:not(:last-child) {
+            border-right: 1px solid rgba(102, 78, 249, 0.1);
+        }
+    }
 
-	// .search-panel__button
-	&__button {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		column-gap: 5px;
+    // .search-panel__button
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 5px;
 
-		& svg {
-			color: $violetColor;
-		}
-	}
+        & svg {
+            color: $violetColor;
+        }
+    }
 
-	// .search-panel__submit
-	&__submit {
-		font-weight: 700;
-		font-size: 14px;
-		line-height: 17px;
-		color: #242424;
-		background: $infoColor;
-		padding: 10px 15px;
-		border-radius: 22px;
+    // .search-panel__submit
+    &__submit {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: #242424;
+        background: $infoColor;
+        padding: 10px 15px;
+        border-radius: 22px;
 
-		display: flex;
-		align-items: center;
-		justify-content: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-		transition: all 0.3s ease-out 0s;
+        transition: all 0.3s ease-out 0s;
 
-		@media (any-hover: hover) {
-			&:hover {
-				background: $violetColor;
-				color: $lightColor;
-			}
-		}
-	}
+        @media (any-hover: hover) {
+            &:hover {
+                background: $violetColor;
+                color: $lightColor;
+            }
+        }
+    }
 }

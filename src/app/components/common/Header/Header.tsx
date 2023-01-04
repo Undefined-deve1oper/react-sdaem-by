@@ -1,12 +1,12 @@
-import React, {useState} from 'react';
-import {navigationRoutes, productsNavigationRoutes} from "../../../router/routes";
+import React, { useState } from "react";
 import HeaderTop from "./HeaderTop";
 import HeaderBody from "./HeaderBody";
 import PhoneMenu from "../../ui/PhoneMenu";
-import Burger from "../Burger";
+import { headerLinks } from "../../../router/routes";
 
 const Header: React.FC = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);
+    const { navigationLinks, productsLinks } = headerLinks;
 
     const handleToggleMenu = () => {
         setMenuOpen((prevState) => !prevState);
@@ -18,10 +18,14 @@ const Header: React.FC = () => {
     return (
         <header className="header">
             <div className="header__wrapper lock-padding">
-                <HeaderTop open={isMenuOpen} handleToggleMenu={handleToggleMenu} links={navigationRoutes}/>
-                <HeaderBody links={productsNavigationRoutes}/>
+                <HeaderTop
+                    open={isMenuOpen}
+                    handleToggleMenu={handleToggleMenu}
+                    links={navigationLinks}
+                />
+                <HeaderBody links={productsLinks} />
             </div>
-            <PhoneMenu closeMenu={closeMenu} open={isMenuOpen}/>
+            <PhoneMenu closeMenu={closeMenu} open={isMenuOpen} />
         </header>
     );
 };

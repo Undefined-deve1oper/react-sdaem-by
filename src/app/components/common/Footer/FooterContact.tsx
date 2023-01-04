@@ -1,11 +1,10 @@
-import React from 'react';
-import config from "../../../config/footer-config.json"
-import {Facebook, Instagram, YouTube} from "@mui/icons-material";
+import React from "react";
+import config from "../../../config/footer-config.json";
+import { Facebook, Instagram, YouTube } from "@mui/icons-material";
 
 const FooterContact: React.FC = () => {
     return (
         <div className="footer__contact">
-
             <div className="footer__social social-footer">
                 <p>Мы в соцсетях:</p>
                 <div className="social-footer__links">

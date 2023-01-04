@@ -11,7 +11,7 @@ type SelectFieldType = {
     closeMenuOnSelect?: boolean;
     options: OptionsItemType[];
     className: string;
-}
+};
 
 export type OptionsItemType = {
     label: string;

@@ -11,8 +11,8 @@ const HomePage: React.FC = () => {
             <section className="page__main-search main-search">
                 <MouseParallaxContainer
                     className="main-search__container _container"
-                    globalFactorX={ 0.3 }
-                    globalFactorY={ 0.3 }
+                    globalFactorX={0.3}
+                    globalFactorY={0.3}
                     resetOnLeave
                 >
                     <div className="main-search__body">
@@ -20,7 +20,7 @@ const HomePage: React.FC = () => {
                             Sdaem.by - у нас живут <span>ваши объявления</span>
                         </div>
                         <div className="main-search__search">
-                            <SearchEstateForm/>
+                            <SearchEstateForm />
                         </div>
                     </div>
                     <MouseParallaxChild

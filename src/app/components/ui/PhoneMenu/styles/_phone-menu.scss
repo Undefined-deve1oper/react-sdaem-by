@@ -49,8 +49,10 @@
         color: $darkColor;
         & .menu__item {
             width: 100%;
-            &:not(:last-child) {margin: 0px 0px 5px 0px;}
-        };
+            &:not(:last-child) {
+                margin: 0px 0px 5px 0px;
+            }
+        }
         & svg {
             display: none;
         }

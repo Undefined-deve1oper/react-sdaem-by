@@ -1,19 +1,18 @@
-import React from 'react';
+import React from "react";
 import Logo from "../Logo";
-import {NavLink} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const FooterBody: React.FC = () => {
     return (
         <div className={"footer__body"}>
-
             <div className="footer__main">
                 <Logo className={"footer__logo logo"} />
                 <h3 className="footer__subtitle">СДАЁМ БАЙ</h3>
                 <div className="footer__text">
                     <p>
-                        Sdaem.by - это веб-приложение где вы сможете взять в аренду
-                        любую недвижимость, которая вам понравится. Наш email:
-                        real-estate@sdaem.by
+                        Sdaem.by - это веб-приложение где вы сможете взять в
+                        аренду любую недвижимость, которая вам понравится. Наш
+                        email: real-estate@sdaem.by
                     </p>
                 </div>
             </div>
@@ -98,7 +97,10 @@ const FooterBody: React.FC = () => {
                         }}
                     >
                         <li className="menu-footer__item">
-                            <NavLink className="menu-footer__link" to={"/news/"}>
+                            <NavLink
+                                className="menu-footer__link"
+                                to={"/news/"}
+                            >
                                 Новости
                             </NavLink>
                             <NavLink
@@ -113,7 +115,10 @@ const FooterBody: React.FC = () => {
                             >
                                 Объявления на карте
                             </NavLink>
-                            <NavLink className="menu-footer__link" to={"/contacts"}>
+                            <NavLink
+                                className="menu-footer__link"
+                                to={"/contacts"}
+                            >
                                 Контакты
                             </NavLink>
                         </li>

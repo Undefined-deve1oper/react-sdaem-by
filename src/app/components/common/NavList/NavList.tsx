@@ -1,30 +1,30 @@
 import React from "react";
-import {RoutesNavType} from "../../../router/routes";
+import { RoutesLinksType } from "../../../router/routes";
 import NavItem from "../NavItem";
 
 type NavListProps = {
-    routes: RoutesNavType[];
+    routes: RoutesLinksType[];
     label?: string;
     closeMenu?: () => void;
     direction?: "row" | "column";
     className?: string;
-}
+};
 
 const NavList: React.FC<NavListProps> = ({
-     routes,
-     closeMenu,
-     direction = "row",
-     label,
-     className,
+    routes,
+    closeMenu,
+    direction = "row",
+    label,
+    className
 }) => {
     return (
         <nav className={className || "menu"}>
             {label && <h3>{label}</h3>}
-            <ul className="menu__list" style={{flexDirection: direction}}>
+            <ul className="menu__list" style={{ flexDirection: direction }}>
                 {routes.map((route) => (
                     <NavItem
                         closeMenu={closeMenu}
-                        key={route.name}
+                        key={route.path}
                         route={route}
                     />
                 ))}

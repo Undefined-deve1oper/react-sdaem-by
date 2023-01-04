@@ -1,64 +1,64 @@
 .page {
-	// .page__main-search
-	&__main-search {
-	}
+    // .page__main-search
+    &__main-search {
+    }
 }
 
 .main-search {
-	width: 100%;
-	@include adaptiv-value("padding-top", 100, 40, 1);
-	@include adaptiv-value("padding-bottom", 86, 30, 1);
-	// .main-search__container
-	&__container {
-		width: 100%;
-		min-height: 430px;
-		max-width: 1287px !important;
-		background: linear-gradient(360deg, #7E6AF3 15.95%, #6540CD 63.1%);
-		filter: drop-shadow(0px 20px 40px rgba(135, 124, 202, 0.15));
-		border-radius: 0px 0px 40px 40px;
+    width: 100%;
+    @include adaptiv-value("padding-top", 100, 40, 1);
+    @include adaptiv-value("padding-bottom", 86, 30, 1);
+    // .main-search__container
+    &__container {
+        width: 100%;
+        min-height: 430px;
+        max-width: 1287px !important;
+        background: linear-gradient(360deg, #7e6af3 15.95%, #6540cd 63.1%);
+        filter: drop-shadow(0px 20px 40px rgba(135, 124, 202, 0.15));
+        border-radius: 0px 0px 40px 40px;
 
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-	// .main-search__body
-	&__body {
-		max-width: 1065px;
-		z-index: 10;
-	}
+    // .main-search__body
+    &__body {
+        max-width: 1065px;
+        z-index: 10;
+    }
 
-	// .main-search__title
-	&__title {
-		font-weight: 700;
-		font-size: 30px;
-		line-height: 36px;
-		text-align: center;
-		color: $lightColor;
-		text-shadow: 0px 2px 5px rgba(0, 14, 142, 0.3);
-		@include adaptiv-value("margin-bottom", 50.5, 25, 1);
+    // .main-search__title
+    &__title {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 36px;
+        text-align: center;
+        color: $lightColor;
+        text-shadow: 0px 2px 5px rgba(0, 14, 142, 0.3);
+        @include adaptiv-value("margin-bottom", 50.5, 25, 1);
 
-		span {
-			color: $infoColor;
-		}
-	}
+        span {
+            color: $infoColor;
+        }
+    }
 
-	// .main-search__background
-	&__background {
-		width: 130%;
-		height: 110%;
-		background: url("../../../../assets/img/city-bg.png") center / cover no-repeat;
-		transform: scale(1.2);
-	}
-
+    // .main-search__background
+    &__background {
+        width: 130%;
+        height: 110%;
+        background: url("../../../../assets/img/city-bg.png") center / cover
+            no-repeat;
+        transform: scale(1.2);
+    }
 }
 
 .parallax {
-	width: 100%;
-	// .parallax__item
-	&__item {
-		position: absolute;
-		pointer-events: none;
-		backface-visibility: hidden;
-	}
+    width: 100%;
+    // .parallax__item
+    &__item {
+        position: absolute;
+        pointer-events: none;
+        backface-visibility: hidden;
+    }
 }

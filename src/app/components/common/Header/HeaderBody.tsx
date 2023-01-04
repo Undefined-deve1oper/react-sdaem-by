@@ -1,14 +1,14 @@
-import React from 'react';
-import Logo from '../Logo';
-import {NavLink} from "react-router-dom";
+import React from "react";
+import Logo from "../Logo";
+import { NavLink } from "react-router-dom";
 import NavList from "../NavList";
-import {RoutesNavType} from "../../../router/routes";
+import { RoutesLinksType } from "../../../router/routes";
 
 type HeaderBodyProps = {
-    links: RoutesNavType[];
-}
+    links: RoutesLinksType[];
+};
 
-const HeaderBody: React.FC<HeaderBodyProps> = ({links}) => {
+const HeaderBody: React.FC<HeaderBodyProps> = ({ links }) => {
     return (
         <div className="header__body body-header">
             <div className="header__container _container">

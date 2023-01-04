@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import "./scss/app.scss";
 import theme from "./theme.js";
-import {CssBaseline, ThemeProvider} from "@mui/material";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import AppRouter from "./router/AppRouter";
 
 const App: React.FC = () => {

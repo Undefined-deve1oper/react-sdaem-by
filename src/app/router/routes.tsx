@@ -1,88 +1,161 @@
 import React from "react";
-import {LocationOn} from "@mui/icons-material";
-import {SvgIconTypeMap} from "@mui/material";
-import {OverridableComponent} from "@mui/material/OverridableComponent";
+import { Navigate } from "react-router-dom";
+import { LocationOn } from "@mui/icons-material";
+import { SvgIconTypeMap } from "@mui/material";
+import { OverridableComponent } from "@mui/material/OverridableComponent";
+import SignUpPage from "../components/pages/SignUpPage";
+import SignInPage from "../components/pages/SignInPage";
 
-const Login = React.lazy(() => import('../layouts/login'));
-const Main = React.lazy(() => import('../layouts/main'));
-const News = React.lazy(() => import('../layouts/news'));
+const Login = React.lazy(() => import("../layouts/login"));
+const Main = React.lazy(() => import("../layouts/main"));
+const News = React.lazy(() => import("../layouts/news"));
 
-
-export type RoutesNavType = {
+export type RoutesLinksType = {
     path: string;
-    name: string;
-    exact?: boolean;
-    submenu?: RoutesNavType[];
-    icon?: OverridableComponent<SvgIconTypeMap<{}, 'svg'>> & {
+    title: string;
+    submenu?: RoutesLinksType[];
+    icon?: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
         muiName: string;
     };
 };
 
-export const navigationRoutes = [
-    {path: "/", name: "Главная", exact: true},
-    {path: "/news", name: "Новости", exact: false},
-    {
-        path: "/accommodation-and-rates",
-        name: "Размещение и тарифы",
-        exact: false
-    },
-    {
-        path: "/ads-on-the-map",
-        name: "Объявления на карте",
-        exact: false,
-        icon: LocationOn
-    },
-    {path: "/contacts", name: "Контакты", exact: false}
-];
+export type RoutesNavType = {
+    path: string;
+    element: string;
+    submenu?: RoutesNavType[];
+};
 
-export const productsNavigationRoutes = [
+const routes = [
+    { path: "/", element: <Main /> },
+    { path: "news", element: <News /> },
     {
-        path: "/apartments-for-a-day/",
-        name: "Квартиры на сутки",
-        submenu: [
+        path: "accommodation-and-rates",
+        element: <News />
+    },
+    {
+        path: "ads-on-the-map",
+        element: <News />
+    },
+    { path: "contacts", element: <News /> },
+    { path: "bookmarks", element: <News /> },
+    {
+        path: "login",
+        element: <Login />,
+        children: [
+            { path: "signup", element: <SignUpPage /> },
+            { path: "signin", element: <SignInPage /> },
+            { path: "*", element: <Navigate to="/login/signup" /> }
+        ]
+    },
+    {
+        path: "apartments-for-a-day/",
+        element: <News />,
+        children: [
             {
-                name: "Квартиры на сутки в Москве",
-                path: "/apartments-for-a-day/moscow"
+                path: "moscow",
+                element: <News />
             },
             {
-                name: "Квартиры на сутки в Санкт-Петербурге",
-                path: "/apartments-for-a-day/saint-petersburg"
+                path: "saint-petersburg",
+                element: <News />
             },
             {
-                name: "Квартиры на сутки в Екатеринбурге",
-                path: "/apartments-for-a-day/ekaterinburg"
+                path: "ekaterinburg",
+                element: <News />
             },
             {
-                name: "Квартиры на сутки в Омске",
-                path: "/apartments-for-a-day/omsk"
+                path: "omsk",
+                element: <News />
             },
             {
-                name: "Квартиры на сутки в Красноярске",
-                path: "/apartments-for-a-day/krasnoyarsk"
+                path: "krasnoyarsk",
+                element: <News />
             },
             {
-                name: "Квартиры на сутки в Воронеже",
-                path: "/apartments-for-a-day/voronezh"
+                path: "voronezh",
+                element: <News />
+            },
+            {
+                path: "*",
+                element: <Navigate to={"/apartments-for-a-day/"} />
             }
-        ],
+        ]
     },
     {
-        path: "/cottages-and-manor/",
-        name: "Коттеджи и усадьбы"
+        path: "cottages-and-manor/",
+        element: <News />
     },
     {
-        path: "/baths-and-saunas/",
-        name: "Бани и Сауны"
+        path: "baths-and-saunas/",
+        element: <News />
     },
     {
-        path: "/car-rental/",
-        name: "Авто напрокат"
-    }
+        path: "car-rental/",
+        element: <News />
+    },
+    { path: "place-an-ad", element: <News /> },
+    { path: "*", element: <Navigate to="/" /> }
 ];
 
-export const publicRoutes = [
-    {path: "/", component: Main, exact: true},
-    {path: "/login/:type?", component: Login, exact: true},
-    {path: "/news/:newsId?", component: News, exact: true},
-    {path: "/cars/:carsId?", component: News, exact: true},
-];
+export const headerLinks = {
+    navigationLinks: [
+        { path: "/", title: "Главная" },
+        { path: "/news", title: "Новости" },
+        {
+            path: "/accommodation-and-rates",
+            title: "Размещение и тарифы"
+        },
+        {
+            path: "/ads-on-the-map",
+            title: "Объявления на карте",
+            icon: LocationOn
+        },
+        { path: "/contacts", title: "Контакты" }
+    ],
+    productsLinks: [
+        {
+            path: "/apartments-for-a-day/",
+            title: "Квартиры на сутки",
+            submenu: [
+                {
+                    path: "moscow",
+                    title: "Квартиры на сутки в Москве"
+                },
+                {
+                    path: "saint-petersburg",
+                    title: "Квартиры на сутки в Санкт-Петербурге"
+                },
+                {
+                    path: "ekaterinburg",
+                    title: "Квартиры на сутки в Екатеринбурге"
+                },
+                {
+                    path: "omsk",
+                    title: "Квартиры на сутки в Омске"
+                },
+                {
+                    path: "krasnoyarsk",
+                    title: "Квартиры на сутки в Красноярске"
+                },
+                {
+                    path: "voronezh",
+                    title: "Квартиры на сутки в Воронеже"
+                }
+            ]
+        },
+        {
+            path: "/cottages-and-manor/",
+            title: "Коттеджи и усадьбы"
+        },
+        {
+            path: "/baths-and-saunas/",
+            title: "Бани и Сауны"
+        },
+        {
+            path: "/car-rental/",
+            title: "Авто напрокат"
+        }
+    ]
+};
+
+export default routes;

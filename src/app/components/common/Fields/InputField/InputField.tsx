@@ -1,5 +1,5 @@
-import React from 'react';
-import { TextField, TextFieldProps as MuiTextFieldProps } from '@mui/material';
+import React from "react";
+import { TextField, TextFieldProps as MuiTextFieldProps } from "@mui/material";
 
 type InputTypes = {
     type?: string;
@@ -13,15 +13,16 @@ type InputTypes = {
 
 const InputField: React.FC<InputTypes> = ({
     label,
-    type = 'text',
-    name, value,
+    type = "text",
+    name,
+    value,
     onChange,
     error = null,
     ...rest
 }) => {
     return (
         <TextField
-            variant='outlined'
+            variant="outlined"
             label={label}
             name={name}
             value={value}
