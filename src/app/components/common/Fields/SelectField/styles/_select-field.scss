@@ -76,6 +76,14 @@
 		&--is-focused {
 			background-color: $lightGrayColor !important;
 		}
+
+		&--is-disabled {
+			opacity: .4 !important;
+		}
+
+		&--is-selected {
+			background: $violetColor!important;
+		}
 	}
 
 	&-container {

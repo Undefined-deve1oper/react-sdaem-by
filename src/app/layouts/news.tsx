@@ -1,16 +1,15 @@
 import React from "react";
 import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
-import HomePage from "../components/pages/HomePage";
 
-const Main = () => {
+const News: React.FC = () => {
     return (
         <>
             <Header />
-            <HomePage />
+            <main className="page"></main>
             <Footer />
         </>
     );
 };
 
-export default Main;
+export default News;

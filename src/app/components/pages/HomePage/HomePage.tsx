@@ -3,10 +3,9 @@ import {
     MouseParallaxChild,
     MouseParallaxContainer
 } from "react-parallax-mouse";
+import SearchEstateForm from "../../ui/SearchEstateForm";
 
-const HomePage = () => {
-
-
+const HomePage: React.FC = () => {
     return (
         <main className="page">
             <section className="page__main-search main-search">
@@ -21,6 +20,7 @@ const HomePage = () => {
                             Sdaem.by - у нас живут <span>ваши объявления</span>
                         </div>
                         <div className="main-search__search">
+                            <SearchEstateForm/>
                         </div>
                     </div>
                     <MouseParallaxChild

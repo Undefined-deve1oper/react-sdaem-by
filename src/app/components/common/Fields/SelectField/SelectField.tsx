@@ -1,8 +1,24 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Select from "react-select";
 
-const SelectField = ({
+type SelectFieldType = {
+    label?: string;
+    value?: string;
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    defaultValue?: string;
+    error?: string;
+    name: string;
+    closeMenuOnSelect?: boolean;
+    options: OptionsItemType[];
+    className: string;
+}
+
+export type OptionsItemType = {
+    label: string;
+    value: string | number | { path: string; order: string };
+};
+
+const SelectField: React.FC<SelectFieldType> = ({
     label,
     name,
     value,
@@ -10,6 +26,8 @@ const SelectField = ({
     onChange,
     options,
     error,
+    closeMenuOnSelect = true,
+    className,
     ...rest
 }) => {
     const optionsArray = options.map((option) => ({
@@ -21,26 +39,16 @@ const SelectField = ({
     }));
 
     return (
-        <div {...rest}>
+        <div className={className || ""} {...rest}>
             <label htmlFor={name}>{label}</label>
             <Select
                 classNamePrefix="custom-select"
-                closeMenuOnSelect={true}
+                closeMenuOnSelect={closeMenuOnSelect}
                 placeholder={defaultValue}
                 options={optionsArray}
             />
         </div>
     );
-};
-
-SelectField.propTypes = {
-    label: PropTypes.string,
-    name: PropTypes.string,
-    value: PropTypes.string,
-    defaultValue: PropTypes.string,
-    onChange: PropTypes.func,
-    options: PropTypes.array,
-    error: PropTypes.string
 };
 
 export default React.memo(SelectField);
