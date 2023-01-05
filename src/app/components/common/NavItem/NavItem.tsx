@@ -1,5 +1,5 @@
 import React from "react";
-import { RoutesLinksType } from "../../../router/routes";
+import { RoutesLinksType } from "../../../router/mainRoutes";
 import { NavLink } from "react-router-dom";
 import { Icon } from "@mui/material";
 import Dropdown from "../Dropdown";

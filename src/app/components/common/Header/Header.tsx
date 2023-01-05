@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import HeaderTop from "./HeaderTop";
 import HeaderBody from "./HeaderBody";
 import PhoneMenu from "../../ui/PhoneMenu";
-import { headerLinks } from "../../../router/routes";
+import { headerLinks } from "../../../router/index";
 
 const Header: React.FC = () => {
     const [isMenuOpen, setMenuOpen] = useState(false);

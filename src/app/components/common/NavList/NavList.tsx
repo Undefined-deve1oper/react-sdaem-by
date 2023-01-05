@@ -1,5 +1,5 @@
 import React from "react";
-import { RoutesLinksType } from "../../../router/routes";
+import { RoutesLinksType } from "../../../router/mainRoutes";
 import NavItem from "../NavItem";
 
 type NavListProps = {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, NavLink } from "react-router-dom";
-import { RoutesLinksType } from "../../../router/routes";
+import { RoutesLinksType } from "../../../router/mainRoutes";
 import { Menu, MenuItem } from "@mui/material";
 import { ExpandMore } from "@mui/icons-material";
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { SelectField } from "../../common/Fields";
+import { InputField, SelectField } from "../../common/Fields";
 
 const SearchEstateForm: React.FC = () => {
     return (
@@ -28,6 +28,13 @@ const SearchEstateForm: React.FC = () => {
                             { label: "4", value: "four" }
                         ]}
                         className="search-panel__item"
+                    />
+                    <InputField
+                        name="from"
+                        placeholder="От"
+                        label="Цена за сутки (BYN)"
+                        className="search-panel__item"
+                        sx={{ height: "37px" }}
                     />
                 </form>
             </div>

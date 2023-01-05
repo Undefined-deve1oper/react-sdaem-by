@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { RoutesLinksType } from "../../../router/routes";
+import { RoutesLinksType } from "../../../router/mainRoutes";
 import NavList from "../NavList";
 import Bookmark from "../Bookmark";
 import Burger from "../Burger";

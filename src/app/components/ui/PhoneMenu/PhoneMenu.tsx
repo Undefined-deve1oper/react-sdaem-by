@@ -1,5 +1,5 @@
 import React from "react";
-import { headerLinks } from "../../../router/routes";
+import { headerLinks } from "../../../router/index";
 import NavList from "../../common/NavList";
 import Accordion from "../../common/Accordion";
 

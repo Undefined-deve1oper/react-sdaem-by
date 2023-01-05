@@ -24,13 +24,8 @@ const theme = createTheme(
                 main: "#EB5757",
                 dark: "#e24040"
             },
-            background: {
-                default: "#fff",
-                light: "#F8F8F8",
-                main: "red",
-                dark: "red",
-                gradient:
-                    "linear-gradient(105.54deg, #FFD54F 33.53%, #FEC100 94.13%)"
+            custom: {
+                light: "#F8F8F8"
             }
         },
         typography: {
@@ -55,6 +50,38 @@ const theme = createTheme(
                         maxWidth: "1307px",
                         padding: "0 15px",
                         margin: "0 auto"
+                    }
+                }
+            },
+            MuiTextField: {
+                styleOverrides: {
+                    root: {
+                        "& label": {
+                            color: "#686868",
+                            top: "50%",
+                            transform: "translateY(-50%)"
+                        },
+                        "& legend": {
+                            display: "none"
+                        },
+                        "&.input-base": {
+                            "& fieldset": {
+                                color: "#686868",
+                                border: `1px solid #f8f8f8`,
+                                background: "#f8f8f8",
+                                borderRadius: "20px"
+                            },
+                            "& .MuiInputBase-input": {
+                                padding: "0px",
+                                minHeight: "37px"
+                            },
+                            "& .MuiInputBase-input:hover + fieldset": {
+                                border: `1px solid #f8f8f8`
+                            },
+                            "& .MuiInputBase-input:focus + fieldset": {
+                                border: `2px solid rgba(102, 78, 249, 0.8)`
+                            }
+                        }
                     }
                 }
             }

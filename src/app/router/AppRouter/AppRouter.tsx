@@ -1,6 +1,6 @@
 import React, { Suspense } from "react";
 import { useRoutes } from "react-router-dom";
-import routes from "../routes";
+import routes from "../index";
 
 const AppRouter = () => {
     const elements = useRoutes(routes);

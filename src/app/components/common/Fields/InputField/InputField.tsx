@@ -12,25 +12,33 @@ type InputTypes = {
 } & MuiTextFieldProps;
 
 const InputField: React.FC<InputTypes> = ({
+    placeholder,
     label,
     type = "text",
     name,
     value,
     onChange,
     error = null,
+    variant = "outlined",
+    className,
     ...rest
 }) => {
     return (
-        <TextField
-            variant="outlined"
-            label={label}
-            name={name}
-            value={value}
-            onChange={onChange}
-            type={type}
-            {...rest}
-            // {...(error && { error: true, helperText: error })}
-        />
+        <div className={className || ""}>
+            <label htmlFor={name}>{label}</label>
+            <TextField
+                className={"input-base"}
+                variant={variant}
+                label={placeholder}
+                name={name}
+                value={value}
+                onChange={onChange}
+                type={type}
+                error={Boolean(error)}
+                helperText={error}
+                {...rest}
+            />
+        </div>
     );
 };
 
