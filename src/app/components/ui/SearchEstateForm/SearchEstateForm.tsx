@@ -1,5 +1,7 @@
 import React from "react";
+import { IconButton } from "@mui/material";
 import { InputField, SelectField } from "../../common/Fields";
+import { DisplaySettings } from "@mui/icons-material";
 
 const SearchEstateForm: React.FC = () => {
     return (
@@ -29,13 +31,27 @@ const SearchEstateForm: React.FC = () => {
                         ]}
                         className="search-panel__item"
                     />
-                    <InputField
-                        name="from"
-                        placeholder="От"
-                        label="Цена за сутки (BYN)"
-                        className="search-panel__item"
-                        sx={{ height: "37px" }}
-                    />
+                    <div className="search-panel__item">
+                        <label htmlFor="from">Цена за сутки (BYN)</label>
+                        <div className="search-panel__range">
+                            <InputField
+                                name="from"
+                                label="От"
+                                sx={{ flex: "0 1 50%" }}
+                            />
+                            <InputField
+                                name="to"
+                                label="До"
+                                sx={{ flex: "0 1 50%" }}
+                            />
+                        </div>
+                    </div>
+                    <div className="search-panel__item">
+                        <button className="search-panel__button">
+                            Больше опций
+                            <DisplaySettings />
+                        </button>
+                    </div>
                 </form>
             </div>
         </div>

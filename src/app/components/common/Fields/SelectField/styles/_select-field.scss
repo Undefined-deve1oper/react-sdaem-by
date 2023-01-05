@@ -4,12 +4,14 @@
     &__control {
         min-width: 150px;
         min-height: 37px;
-        background: $lightColor !important;
+        background: $lightGrayColor !important;
         border: 2px solid #f8f8f8 !important;
         border-radius: 20px !important;
         padding: 0px 12px !important;
+        transition: all 0.3s ease 0s;
 
         &--menu-is-open {
+            background: $lightColor !important;
             border-color: rgba(102, 78, 249, 0.8) !important;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
         }

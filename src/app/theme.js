@@ -56,27 +56,28 @@ const theme = createTheme(
             MuiTextField: {
                 styleOverrides: {
                     root: {
+                        padding: "6px 0px",
                         "& label": {
                             color: "#686868",
-                            top: "50%",
-                            transform: "translateY(-50%)"
-                        },
-                        "& legend": {
-                            display: "none"
+                            fontWeight: "500",
+                            padding: "0px 7.5px"
                         },
                         "&.input-base": {
                             "& fieldset": {
-                                color: "#686868",
-                                border: `1px solid #f8f8f8`,
+                                minHeight: "34px",
+                                borderRadius: "20px",
+                                border: `2px solid #f8f8f8`,
                                 background: "#f8f8f8",
-                                borderRadius: "20px"
+                                padding: "0px 15px"
                             },
                             "& .MuiInputBase-input": {
-                                padding: "0px",
-                                minHeight: "37px"
+                                color: "#686868",
+                                fontWeight: "500",
+                                minHeight: "38px",
+                                padding: "0px 15px"
                             },
                             "& .MuiInputBase-input:hover + fieldset": {
-                                border: `1px solid #f8f8f8`
+                                border: `2px solid #f8f8f8`
                             },
                             "& .MuiInputBase-input:focus + fieldset": {
                                 border: `2px solid rgba(102, 78, 249, 0.8)`
