@@ -3,14 +3,14 @@ import { InputField, SelectField } from "../../common/Fields";
 import { ArrowForwardIos, LocationOn, Tune } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
 import API from "../../../api";
+import {
+    handleChangeDataType,
+    OptionsItemType,
+    SearchEstateFormDataType
+} from "../../../types/types";
 
-interface citiesListType {
-    label: string;
-    value: string;
-}
-
-const initialState = {
-    cities: [],
+const initialState: SearchEstateFormDataType = {
+    city: "",
     rooms: "",
     from: "",
     to: ""
@@ -18,7 +18,7 @@ const initialState = {
 
 const SearchEstateForm: React.FC = () => {
     const [data, setData] = useState(initialState);
-    const [cities, setCities] = useState<citiesListType[]>([]);
+    const [cities, setCities] = useState<OptionsItemType[] | null>(null);
 
     useEffect(() => {
         API.cities.fetchAll().then((data) => {
@@ -30,8 +30,8 @@ const SearchEstateForm: React.FC = () => {
         });
     }, []);
 
-    const handleChange = useCallback((target: any) => {
-        console.log(target);
+    const handleChange = useCallback((target: handleChangeDataType) => {
+        console.log("target: ", target);
 
         setData((prevState) => ({
             ...prevState,
@@ -40,7 +40,7 @@ const SearchEstateForm: React.FC = () => {
     }, []);
 
     useEffect(() => {
-        console.log(data);
+        console.log("data: ", data);
     }, [data]);
 
     return (
@@ -48,18 +48,16 @@ const SearchEstateForm: React.FC = () => {
             <div className="search-estate__body">
                 <form className="search-estate__search search-panel">
                     <SelectField
-                        value={data.cities}
-                        onChange={handleChange}
+                        value={data.city}
+                        onSelectChange={handleChange}
                         name="city"
                         label="Город"
-                        defaultValue="Выберите"
                         options={cities}
                         className="search-panel__item"
                     />
                     <SelectField
                         name="rooms"
                         label="Комнаты"
-                        defaultValue="Выберите"
                         options={[
                             { label: "1", value: "one" },
                             { label: "2", value: "two" },

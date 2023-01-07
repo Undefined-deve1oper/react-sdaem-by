@@ -1,38 +1,33 @@
 import React from "react";
-import Select, { GroupBase } from "react-select";
+import Select, { OnChangeValue } from "react-select";
+import { IOption } from "../../../../types/select";
 
 type SelectFieldType = {
+    name: string;
     label?: string;
     value?: string;
-    onChange?: () => void;
-    defaultValue?: string;
+    placeholder?: string;
     error?: string;
-    name: string;
     closeMenuOnSelect?: boolean;
-    options: OptionsItemType[];
+    options: IOption[] | null;
     className?: string;
-    multiple?: boolean;
-};
-
-export type OptionsItemType = {
-    label: string;
-    value: string;
+    onSelectChange?: (option: object) => object;
 };
 
 const SelectField: React.FC<SelectFieldType> = ({
     label,
     name,
     value,
-    defaultValue = "Выберите",
-    onChange,
+    onSelectChange,
     options,
     error,
     closeMenuOnSelect = true,
+    placeholder = "Выберите",
     className,
     ...rest
 }) => {
-    const handleChange = (target: any) => {
-        onChange({ name, value: target.value });
+    const onChange = (option: OnChangeValue<IOption, boolean>) => {
+        onSelectChange({ name, value: option.value });
     };
 
     return (
@@ -41,10 +36,10 @@ const SelectField: React.FC<SelectFieldType> = ({
             <Select
                 classNamePrefix="custom-select"
                 closeMenuOnSelect={closeMenuOnSelect}
-                placeholder={defaultValue}
+                placeholder={placeholder}
+                onChange={onChange}
                 options={options}
-                onChange={handleChange}
-                value={value}
+                isLoading
             />
         </div>
     );
