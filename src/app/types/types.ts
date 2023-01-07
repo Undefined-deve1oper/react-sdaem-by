@@ -2,7 +2,7 @@ export type refType = {
     current?: any;
 };
 
-export type handleChangeDataType = {
+export type HandleChangeDataType = {
     name: string;
     value: string;
 };

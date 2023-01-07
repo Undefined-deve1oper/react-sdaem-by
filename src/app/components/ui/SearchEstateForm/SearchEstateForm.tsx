@@ -4,10 +4,10 @@ import { ArrowForwardIos, LocationOn, Tune } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
 import API from "../../../api";
 import {
-    handleChangeDataType,
-    OptionsItemType,
+    HandleChangeDataType,
     SearchEstateFormDataType
 } from "../../../types/types";
+import { IOption } from "../../../types/select";
 
 const initialState: SearchEstateFormDataType = {
     city: "",
@@ -18,7 +18,7 @@ const initialState: SearchEstateFormDataType = {
 
 const SearchEstateForm: React.FC = () => {
     const [data, setData] = useState(initialState);
-    const [cities, setCities] = useState<OptionsItemType[] | null>(null);
+    const [cities, setCities] = useState<IOption[] | null>(null);
 
     useEffect(() => {
         API.cities.fetchAll().then((data) => {
@@ -30,7 +30,7 @@ const SearchEstateForm: React.FC = () => {
         });
     }, []);
 
-    const handleChange = useCallback((target: handleChangeDataType) => {
+    const handleChange = useCallback((target: HandleChangeDataType) => {
         console.log("target: ", target);
 
         setData((prevState) => ({
@@ -67,7 +67,7 @@ const SearchEstateForm: React.FC = () => {
                         className="search-panel__item"
                     />
                     <div className="search-panel__item">
-                        <label htmlFor="from">Цена за сутки (BYN)</label>
+                        <label htmlFor="from">Цена за сутки (RUB)</label>
                         <div className="search-panel__range">
                             <InputField
                                 name="from"

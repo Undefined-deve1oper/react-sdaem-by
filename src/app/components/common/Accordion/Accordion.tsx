@@ -5,13 +5,13 @@ import {
     AccordionSummary
 } from "./styles/AccordionStyled";
 
-interface AccordionProps {
+interface IAccordion {
     label: string;
     className?: string;
     children: React.ReactChild | React.ReactNode;
 }
 
-const Accordion: React.FC<AccordionProps> = ({
+const Accordion: React.FC<IAccordion> = ({
     children,
     className,
     label,

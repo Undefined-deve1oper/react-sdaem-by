@@ -1,6 +1,7 @@
 import React from "react";
 import Select, { OnChangeValue } from "react-select";
 import { IOption } from "../../../../types/select";
+import { HandleChangeDataType } from "../../../../types/types";
 
 type SelectFieldType = {
     name: string;
@@ -9,9 +10,9 @@ type SelectFieldType = {
     placeholder?: string;
     error?: string;
     closeMenuOnSelect?: boolean;
-    options: IOption[] | null;
+    options: IOption[];
     className?: string;
-    onSelectChange?: (option: object) => object;
+    onSelectChange?: (option: HandleChangeDataType) => void;
 };
 
 const SelectField: React.FC<SelectFieldType> = ({
@@ -27,7 +28,11 @@ const SelectField: React.FC<SelectFieldType> = ({
     ...rest
 }) => {
     const onChange = (option: OnChangeValue<IOption, boolean>) => {
-        onSelectChange({ name, value: option.value });
+        console.log(option);
+
+        if (option !== null) {
+            onSelectChange?.({ name, value: option!.value });
+        }
     };
 
     return (
@@ -39,7 +44,7 @@ const SelectField: React.FC<SelectFieldType> = ({
                 placeholder={placeholder}
                 onChange={onChange}
                 options={options}
-                isLoading
+                // isLoading
             />
         </div>
     );

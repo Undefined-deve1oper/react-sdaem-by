@@ -3,12 +3,12 @@ import { headerLinks } from "../../../router/index";
 import NavList from "../../common/NavList";
 import Accordion from "../../common/Accordion";
 
-interface PhoneMenuProps {
+interface IPhoneMenu {
     open: boolean;
     closeMenu?: () => void;
 }
 
-const PhoneMenu: React.FC<PhoneMenuProps> = ({ open, closeMenu }) => {
+const PhoneMenu: React.FC<IPhoneMenu> = ({ open, closeMenu }) => {
     const { navigationLinks, productsLinks } = headerLinks;
 
     return (

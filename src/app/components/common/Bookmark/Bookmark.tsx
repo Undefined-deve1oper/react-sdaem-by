@@ -16,11 +16,11 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
     }
 }));
 
-interface BookmarkProps {
+interface IBookmark {
     label?: string;
 }
 
-const Bookmark: React.FC<BookmarkProps> = ({ label }) => {
+const Bookmark: React.FC<IBookmark> = ({ label }) => {
     return (
         <div className={"bookmark"}>
             <NavLink to="/bookmark" className={"bookmark__item"}>

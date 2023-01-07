@@ -4,7 +4,7 @@ import {
     MouseParallaxContainer
 } from "react-parallax-mouse";
 
-interface BackgroundParallaxProps {
+interface IBackgroundParallax {
     globalFactorX?: number;
     globalFactorY?: number;
     factorX?: number;
@@ -14,7 +14,7 @@ interface BackgroundParallaxProps {
     itemsClassName?: string;
 }
 
-const BackgroundParallax: React.FC<BackgroundParallaxProps> = ({
+const BackgroundParallax: React.FC<IBackgroundParallax> = ({
     className,
     itemsClassName,
     globalFactorX,
