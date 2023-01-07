@@ -27,6 +27,7 @@ const InputField: React.FC<InputTypes> = ({
             className={className || "input-base"}
             variant={variant}
             label={label}
+            id={name}
             name={name}
             value={value}
             onChange={onChange}

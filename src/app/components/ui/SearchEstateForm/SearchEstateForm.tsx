@@ -1,22 +1,59 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { InputField, SelectField } from "../../common/Fields";
 import { ArrowForwardIos, LocationOn, Tune } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
+import API from "../../../api";
+
+interface citiesListType {
+    label: string;
+    value: string;
+}
+
+const initialState = {
+    cities: [],
+    rooms: "",
+    from: "",
+    to: ""
+};
 
 const SearchEstateForm: React.FC = () => {
+    const [data, setData] = useState(initialState);
+    const [cities, setCities] = useState<citiesListType[]>([]);
+
+    useEffect(() => {
+        API.cities.fetchAll().then((data) => {
+            const citiesList = Object.keys(data).map((cityName) => ({
+                label: data[cityName].name,
+                value: data[cityName]._id
+            }));
+            setCities(citiesList);
+        });
+    }, []);
+
+    const handleChange = useCallback((target: any) => {
+        console.log(target);
+
+        setData((prevState) => ({
+            ...prevState,
+            [target.name]: target.value
+        }));
+    }, []);
+
+    useEffect(() => {
+        console.log(data);
+    }, [data]);
+
     return (
         <div className="search-estate">
             <div className="search-estate__body">
                 <form className="search-estate__search search-panel">
                     <SelectField
+                        value={data.cities}
+                        onChange={handleChange}
                         name="city"
                         label="Город"
                         defaultValue="Выберите"
-                        options={[
-                            { label: "Москва", value: "moscow" },
-                            { label: "Питер", value: "piter" },
-                            { label: "Омск", value: "omsk" }
-                        ]}
+                        options={cities}
                         className="search-panel__item"
                     />
                     <SelectField

@@ -1,21 +1,22 @@
 import React from "react";
-import Select from "react-select";
+import Select, { GroupBase } from "react-select";
 
 type SelectFieldType = {
     label?: string;
     value?: string;
-    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange?: () => void;
     defaultValue?: string;
     error?: string;
     name: string;
     closeMenuOnSelect?: boolean;
     options: OptionsItemType[];
-    className: string;
+    className?: string;
+    multiple?: boolean;
 };
 
 export type OptionsItemType = {
     label: string;
-    value: string | number | { path: string; order: string };
+    value: string;
 };
 
 const SelectField: React.FC<SelectFieldType> = ({
@@ -30,13 +31,9 @@ const SelectField: React.FC<SelectFieldType> = ({
     className,
     ...rest
 }) => {
-    const optionsArray = options.map((option) => ({
-        label: option.label,
-        value:
-            typeof option.value === "object"
-                ? JSON.stringify(option.value)
-                : option.value
-    }));
+    const handleChange = (target: any) => {
+        onChange({ name, value: target.value });
+    };
 
     return (
         <div className={className || ""} {...rest}>
@@ -45,7 +42,9 @@ const SelectField: React.FC<SelectFieldType> = ({
                 classNamePrefix="custom-select"
                 closeMenuOnSelect={closeMenuOnSelect}
                 placeholder={defaultValue}
-                options={optionsArray}
+                options={options}
+                onChange={handleChange}
+                value={value}
             />
         </div>
     );
