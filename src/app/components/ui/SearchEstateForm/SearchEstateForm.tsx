@@ -8,17 +8,18 @@ import {
     SearchEstateFormDataType
 } from "../../../types/types";
 import { IOption } from "../../../types/select";
+import RangeSliderField from "../../common/Fields/RangeSliderField";
 
 const initialState: SearchEstateFormDataType = {
     city: "",
     rooms: "",
-    from: "",
-    to: ""
+    price: [0, 15000]
 };
 
 const SearchEstateForm: React.FC = () => {
     const [data, setData] = useState(initialState);
-    const [cities, setCities] = useState<IOption[] | null>(null);
+    const [cities, setCities] = useState<IOption[]>([]);
+    const [rooms, setRooms] = useState<IOption[]>([]);
 
     useEffect(() => {
         API.cities.fetchAll().then((data) => {
@@ -28,10 +29,17 @@ const SearchEstateForm: React.FC = () => {
             }));
             setCities(citiesList);
         });
+        API.rooms.fetchAll().then((data) => {
+            const roomsList = Object.keys(data).map((roomName) => ({
+                label: data[roomName].name,
+                value: data[roomName]._id
+            }));
+            setRooms(roomsList);
+        });
     }, []);
 
-    const handleChange = useCallback((target: HandleChangeDataType) => {
-        console.log("target: ", target);
+    const handleChange = useCallback((target: any) => {
+        console.log("TARGET_VALUE: ", target);
 
         setData((prevState) => ({
             ...prevState,
@@ -39,47 +47,35 @@ const SearchEstateForm: React.FC = () => {
         }));
     }, []);
 
-    useEffect(() => {
-        console.log("data: ", data);
-    }, [data]);
-
     return (
         <div className="search-estate">
             <div className="search-estate__body">
                 <form className="search-estate__search search-panel">
                     <SelectField
+                        options={cities}
                         value={data.city}
                         onSelectChange={handleChange}
                         name="city"
                         label="Город"
-                        options={cities}
                         className="search-panel__item"
                     />
                     <SelectField
                         name="rooms"
                         label="Комнаты"
-                        options={[
-                            { label: "1", value: "one" },
-                            { label: "2", value: "two" },
-                            { label: "3", value: "three" },
-                            { label: "4", value: "four" }
-                        ]}
+                        value={data.rooms}
+                        onSelectChange={handleChange}
+                        options={rooms}
                         className="search-panel__item"
                     />
                     <div className="search-panel__item">
-                        <label htmlFor="from">Цена за сутки (RUB)</label>
-                        <div className="search-panel__range">
-                            <InputField
-                                name="from"
-                                label="От"
-                                sx={{ flex: "0 1 50%" }}
-                            />
-                            <InputField
-                                name="to"
-                                label="До"
-                                sx={{ flex: "0 1 50%" }}
-                            />
-                        </div>
+                        <RangeSliderField
+                            label="Цена за сутки (RUB)"
+                            name="price"
+                            onChange={handleChange}
+                            value={data.price}
+                            min={0}
+                            max={15000}
+                        />
                     </div>
                     <div className="search-panel__item">
                         <button type="button" className="search-panel__button">

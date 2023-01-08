@@ -1,5 +1,5 @@
 import React from "react";
-import Select, { OnChangeValue } from "react-select";
+import Select, { OnChangeValue, SingleValue } from "react-select";
 import { IOption } from "../../../../types/select";
 import { HandleChangeDataType } from "../../../../types/types";
 
@@ -27,13 +27,10 @@ const SelectField: React.FC<SelectFieldType> = ({
     className,
     ...rest
 }) => {
-    const onChange = (option: OnChangeValue<IOption, boolean>) => {
-        console.log(option);
-
-        if (option !== null) {
-            onSelectChange?.({ name, value: option!.value });
-        }
+    const onChange = (option: SingleValue<IOption>) => {
+        onSelectChange?.({ name, value: option!.value });
     };
+    const isLoading = options.length === 0;
 
     return (
         <div className={className || ""} {...rest}>
@@ -44,7 +41,7 @@ const SelectField: React.FC<SelectFieldType> = ({
                 placeholder={placeholder}
                 onChange={onChange}
                 options={options}
-                // isLoading
+                isLoading={isLoading}
             />
         </div>
     );

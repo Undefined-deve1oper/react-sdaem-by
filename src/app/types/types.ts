@@ -10,6 +10,5 @@ export type HandleChangeDataType = {
 export type SearchEstateFormDataType = {
     city: string;
     rooms: string;
-    from: string;
-    to: string;
+    price: number[];
 };
