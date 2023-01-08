@@ -3,10 +3,6 @@ import React, { useCallback, useEffect, useState } from "react";
 import { InputField } from "..";
 import Loader from "../../Loader";
 
-// const valuetext = (value: number) => {
-//     return `${value}₽`;
-// };
-
 type onChange = {
     name?: string;
     value: number[];
@@ -40,41 +36,39 @@ const RangeSliderField: React.FC<RangeSliderFieldProps> = ({
         }
     };
 
-    console.log(value);
-
-    if (value) {
-        return (
-            <>
-                <h3>{label || "Цена за сутки (RUB)"}</h3>
-                <div className="search-panel__range">
-                    <InputField
-                        inputProps={{ min: min }}
-                        label="От"
-                        name="min"
-                        type="number"
-                        value={String(value[0])}
-                        onChange={handleInputChange}
-                        sx={{ flex: "0 1 50%" }}
-                    />
-                    <InputField
-                        inputProps={{ max: max }}
-                        label="До"
-                        name="max"
-                        type="number"
-                        value={String(value[1])}
-                        onChange={handleInputChange}
-                        sx={{ flex: "0 1 50%" }}
-                    />
-                </div>
-
-                {description && (
-                    <p className="search-panel__description">{description}</p>
-                )}
-            </>
-        );
+    if (!value) {
+        return <Loader />;
     }
 
-    return <Loader />;
+    return (
+        <div className="search-panel__item">
+            <h3>{label || "Цена за сутки (RUB)"}</h3>
+            <div className="search-panel__range">
+                <InputField
+                    inputProps={{ min: min }}
+                    label="От"
+                    name="min"
+                    type="number"
+                    value={String(value[0])}
+                    onChange={handleInputChange}
+                    sx={{ flex: "0 1 50%" }}
+                />
+                <InputField
+                    inputProps={{ max: max }}
+                    label="До"
+                    name="max"
+                    type="number"
+                    value={String(value[1])}
+                    onChange={handleInputChange}
+                    sx={{ flex: "0 1 50%" }}
+                />
+            </div>
+
+            {description && (
+                <p className="search-panel__description">{description}</p>
+            )}
+        </div>
+    );
 };
 
 export default React.memo(RangeSliderField);

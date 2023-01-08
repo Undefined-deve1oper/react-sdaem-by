@@ -67,16 +67,14 @@ const SearchEstateForm: React.FC = () => {
                         options={rooms}
                         className="search-panel__item"
                     />
-                    <div className="search-panel__item">
-                        <RangeSliderField
-                            label="Цена за сутки (RUB)"
-                            name="price"
-                            onChange={handleChange}
-                            value={data.price}
-                            min={0}
-                            max={15000}
-                        />
-                    </div>
+                    <RangeSliderField
+                        label="Цена за сутки (RUB)"
+                        name="price"
+                        onChange={handleChange}
+                        value={data.price}
+                        min={0}
+                        max={15000}
+                    />
                     <div className="search-panel__item">
                         <button type="button" className="search-panel__button">
                             Больше опций

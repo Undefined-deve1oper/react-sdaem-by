@@ -57,11 +57,13 @@ const theme = createTheme(
                 styleOverrides: {
                     root: {
                         padding: "0px 0px",
+                        "&:hover label": {
+                            color: "rgba(102, 78, 249, 0.8)"
+                        },
                         "& label": {
                             fontSize: "14px",
                             color: "#000",
                             fontWeight: "500"
-                            // padding: "0px 7.5px"
                         },
                         "&.input-base": {
                             minWidth: "84px",
@@ -82,7 +84,10 @@ const theme = createTheme(
                                 borderRadius: "20px"
                             },
                             "& .MuiInputBase-input:hover + fieldset": {
-                                border: `2px solid #f8f8f8`
+                                border: `2px solid rgba(102, 78, 249, 0.8)`
+                            },
+                            "& .MuiInputBase-input:hover": {
+                                background: "#fff"
                             },
                             "& .MuiInputBase-input:focus + fieldset": {
                                 border: `2px solid rgba(102, 78, 249, 0.8)`
