@@ -91,6 +91,9 @@ const theme = createTheme(
                             },
                             "& .MuiInputBase-input:focus + fieldset": {
                                 border: `2px solid rgba(102, 78, 249, 0.8)`
+                            },
+                            "& .MuiInputBase-input:focus": {
+                                background: "#fff"
                             }
                         }
                     }

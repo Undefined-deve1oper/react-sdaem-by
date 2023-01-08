@@ -9,6 +9,7 @@ import {
 } from "../../../types/types";
 import { IOption } from "../../../types/select";
 import RangeSliderField from "../../common/Fields/RangeSliderField";
+import SearchButton from "../SearchButton";
 
 const initialState: SearchEstateFormDataType = {
     city: "",
@@ -39,8 +40,6 @@ const SearchEstateForm: React.FC = () => {
     }, []);
 
     const handleChange = useCallback((target: any) => {
-        console.log("TARGET_VALUE: ", target);
-
         setData((prevState) => ({
             ...prevState,
             [target.name]: target.value
@@ -75,26 +74,20 @@ const SearchEstateForm: React.FC = () => {
                         min={0}
                         max={15000}
                     />
-                    <div className="search-panel__item">
-                        <button type="button" className="search-panel__button">
-                            Больше опций
-                            <Tune />
-                        </button>
-                    </div>
-                    <div className="search-panel__item">
-                        <NavLink
-                            className="search-panel__link"
-                            to="/ads-on-the-map"
-                        >
-                            На карте <LocationOn />
-                        </NavLink>
-                    </div>
-                    <div className="search-panel__item">
-                        <button className="search-panel__submit">
-                            Показать
-                            <ArrowForwardIos />
-                        </button>
-                    </div>
+                    <SearchButton type="button">
+                        Больше опций
+                        <Tune />
+                    </SearchButton>
+                    <NavLink
+                        className="search-panel__link"
+                        to="/ads-on-the-map"
+                    >
+                        На карте <LocationOn />
+                    </NavLink>
+                    <SearchButton styleType="submit">
+                        Показать
+                        <ArrowForwardIos />
+                    </SearchButton>
                 </form>
             </div>
         </div>

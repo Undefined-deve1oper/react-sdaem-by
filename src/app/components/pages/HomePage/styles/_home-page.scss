@@ -1,6 +1,11 @@
 .page {
     // .page__main-search
+
     &__main-search {
+    }
+    // .page__main-products
+
+    &__main-products {
     }
 }
 
@@ -60,5 +65,172 @@
         height: 100%;
         background: url("../../../../assets/img/city-bg.png") center / cover
             no-repeat;
+    }
+}
+
+.main-products {
+    padding: 60px 0;
+    // .main-products__container
+
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // .main-products__items
+
+    &__items {
+    }
+
+    // .main-products__links
+
+    &__links {
+    }
+}
+
+.item-products {
+    flex: 1 1 953px;
+    // .item-products__row
+
+    &__row {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 30px;
+    }
+
+    // .item-products__column
+
+    &__column {
+        flex: 0 1 516px;
+    }
+
+    // .item-products__card
+
+    &__card {
+        width: 100%;
+    }
+}
+.product-card {
+    border-radius: 10px;
+    position: relative;
+    min-height: 270px;
+
+    // .product-card__image
+
+    &__image {
+        width: 100%;
+        height: 100%;
+
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        border-radius: 10px;
+        overflow: hidden;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease 0s;
+        }
+    }
+
+    // .product-card__content
+
+    &__content {
+        width: 100%;
+        height: 100%;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+
+        padding: 37.5px 37px;
+    }
+
+    // .product-card__subtitle
+
+    &__subtitle {
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 16px;
+        text-transform: uppercase;
+
+        background: linear-gradient(90deg, #9d94ff 0%, #6b50e9 94.5%);
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+
+    // .product-card__title
+
+    &__title {
+    }
+
+    // .product-card__badges
+
+    &__badges {
+    }
+
+    // .product-card__badge
+
+    &__badge {
+    }
+
+    @media (any-hover: hover) {
+        &:hover {
+            cursor: pointer;
+            .product-card__image > img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+.links-products {
+    flex: 1 1 297px;
+    // .links-products__row
+
+    &__row {
+    }
+
+    // .links-products__column
+
+    &__column {
+    }
+
+    // .links-products__title
+
+    &__title {
+    }
+
+    // .links-products__list
+
+    &__list {
+    }
+
+    // .links-products__item
+
+    &__item {
+    }
+
+    // .links-products__link
+
+    &__link {
+    }
+
+    // .links-products__quantity
+
+    &__quantity {
     }
 }
