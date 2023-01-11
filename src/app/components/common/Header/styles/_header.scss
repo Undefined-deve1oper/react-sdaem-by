@@ -47,7 +47,7 @@
         font-weight: 600;
 
         & svg {
-            color: $infoColor;
+            color: $warningColor;
         }
 
         @media (max-width: $md2 + px) {

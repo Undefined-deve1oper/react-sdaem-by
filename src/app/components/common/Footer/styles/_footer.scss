@@ -152,7 +152,7 @@
 
         @media (any-hover: hover) {
             &:hover {
-                color: $infoColor;
+                color: $warningColor;
             }
         }
     }
@@ -183,7 +183,7 @@
 
         @media (any-hover: hover) {
             &:hover {
-                color: $infoColor;
+                color: $warningColor;
                 transform: translate(0, -5px);
             }
         }
@@ -201,7 +201,7 @@
         text-align: center;
 
         & a {
-            color: $infoColor;
+            color: $warningColor;
         }
     }
 }
