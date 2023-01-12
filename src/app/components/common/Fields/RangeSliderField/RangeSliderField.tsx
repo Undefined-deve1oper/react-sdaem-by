@@ -51,7 +51,7 @@ const RangeSliderField: React.FC<RangeSliderFieldProps> = ({
                     type="number"
                     value={String(value[0])}
                     onChange={handleInputChange}
-                    sx={{ flex: "0 1 50%" }}
+                    sx={{ flex: "1 1 50%" }}
                 />
                 <InputField
                     inputProps={{ max: max }}
@@ -60,7 +60,7 @@ const RangeSliderField: React.FC<RangeSliderFieldProps> = ({
                     type="number"
                     value={String(value[1])}
                     onChange={handleInputChange}
-                    sx={{ flex: "0 1 50%" }}
+                    sx={{ flex: "1 1 50%" }}
                 />
             </div>
 

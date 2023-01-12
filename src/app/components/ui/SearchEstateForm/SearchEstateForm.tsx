@@ -78,12 +78,14 @@ const SearchEstateForm: React.FC = () => {
                         Больше опций
                         <Tune />
                     </SearchButton>
-                    <NavLink
-                        className="search-panel__link"
-                        to="/ads-on-the-map"
-                    >
-                        На карте <LocationOn />
-                    </NavLink>
+                    <SearchButton type="button">
+                        <NavLink
+                            className="search-panel__link"
+                            to="/ads-on-the-map"
+                        >
+                            На карте <LocationOn />
+                        </NavLink>
+                    </SearchButton>
                     <SearchButton styleType="submit">
                         Показать
                         <ArrowForwardIos />

@@ -36,6 +36,7 @@ const SelectField: React.FC<SelectFieldType> = ({
         <div className={className || ""} {...rest}>
             <label htmlFor={name}>{label}</label>
             <Select
+                className="custom-select-container"
                 classNamePrefix="custom-select"
                 closeMenuOnSelect={closeMenuOnSelect}
                 placeholder={placeholder}

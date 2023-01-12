@@ -46,12 +46,19 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 20px;
+    column-gap: 20px;
+    row-gap: 20px;
+
+    @media (max-width: $md2+px) {
+        flex-wrap: wrap;
+    }
+    @media (max-width: $md1+px) {
+        column-gap: 10px;
+    }
 
     // .search-panel__item
     &__item {
         flex: 1 1 16.6%;
-        min-height: 78px;
         white-space: nowrap;
 
         font-weight: 500;
@@ -66,8 +73,15 @@
         gap: 11px;
 
         &:not(:nth-last-child(2), :last-child) {
+            min-height: 66px;
             padding: 0px 20px 0px 0px;
             border-right: 1px solid rgba(102, 78, 249, 0.1);
+            @media (max-width: $md2+px) {
+                border-right: none;
+            }
+            @media (max-width: $md1+px) {
+                padding: 0px 10px 0px 0px;
+            }
         }
     }
 
@@ -81,10 +95,10 @@
         line-height: 17px;
         color: $lightGrayColor2;
 
+        gap: 5px;
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 15px;
         transition: all 0.3s ease 0s;
         color: $darkColor;
 

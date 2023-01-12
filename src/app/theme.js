@@ -62,8 +62,8 @@ const theme = createTheme(
                         },
                         "& label": {
                             fontSize: "14px",
-                            color: "#000",
-                            fontWeight: "500"
+                            color: "#bdbdbd",
+                            fontWeight: "700"
                         },
                         "&.input-base": {
                             minWidth: "84px",
