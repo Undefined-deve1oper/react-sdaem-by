@@ -68,14 +68,62 @@ export const headerLinks = {
 };
 
 export const productsLinks = {
-    navigationLinks: [
-        { label: "Квартиры в Москве", path: "", totalCount: 3567 },
-        { label: "Квартиры в Воронеже", path: "", totalCount: 2032 },
-        { label: "Квартиры в Красноярске", path: "", totalCount: 2302 },
-        { label: "Квартиры в Санкт-Петербурге", path: "", totalCount: 110 },
-        { label: "Квартиры в Омске", path: "", totalCount: 110 },
-        { label: "Квартиры в Екатеринбурге", path: "", totalCount: 110 }
-    ],
+    navigationLinks: {
+        apartments: [
+            {
+                label: "Квартиры в Москве",
+                path: "/apartments-for-a-day/moscow",
+                totalCount: 3567
+            },
+            {
+                label: "Квартиры в Воронеже",
+                path: "apartments-for-a-day/voronezh",
+                totalCount: 2032
+            },
+            {
+                label: "Квартиры в Красноярске",
+                path: "/apartments-for-a-day/krasnoyarsk",
+                totalCount: 2302
+            },
+            {
+                label: "Квартиры в Санкт-Петербурге",
+                path: "/apartments-for-a-day/saint-petersburg",
+                totalCount: 110
+            },
+            {
+                label: "Квартиры в Омске",
+                path: "/apartments-for-a-day/omsk",
+                totalCount: 110
+            },
+            {
+                label: "Квартиры в Екатеринбурге",
+                path: "/apartments-for-a-day/ekaterinburg",
+                totalCount: 110
+            }
+        ],
+        cottages: [
+            {
+                label: "Аггроусадьбы",
+                path: "/cottages-and-manor/aggro-estates",
+                totalCount: 110
+            },
+            {
+                label: "Коттеджи",
+                path: "/cottages-and-manor/cottages",
+                totalCount: 110
+            },
+            {
+                label: "Загородный комплекс",
+                path: "/cottages-and-manor/country-complex",
+                totalCount: 110
+            },
+            {
+                label: "Базы отдыха",
+                path: "/cottages-and-manor/recreation-centers",
+                totalCount: 110
+            }
+        ]
+    },
     mainLinks: [
         {
             label: "Воронеж",

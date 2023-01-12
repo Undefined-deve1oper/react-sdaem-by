@@ -76,7 +76,10 @@
         display: flex;
         align-items: flex-start;
         justify-content: center;
-        // gap: 30px;
+        @media (max-width: $md2+px) {
+            gap: 30px;
+            flex-wrap: wrap;
+        }
     }
 
     // .main-products__items
@@ -92,8 +95,12 @@
 
 .item-products {
     flex: 1 1 953px;
-    // .item-products__row
 
+    @media (min-width: $md2+px) {
+        padding: 0px 30px 0px 0px;
+    }
+
+    // .item-products__row
     &__row {
         width: 100%;
 
@@ -108,9 +115,9 @@
     // .item-products__column
 
     &__column {
-        flex: 1 1 407px;
+        flex: 1 1 377px;
         &._big {
-            flex: 1 1 516px;
+            flex: 1 1 496px;
         }
     }
 
@@ -126,10 +133,12 @@
     min-height: 270px;
     user-select: none;
 
-    &:hover {
-        .product-card__badges {
-            opacity: 1;
-            visibility: visible;
+    @media (any-hover: hover) {
+        &:hover {
+            .product-card__badges {
+                opacity: 1;
+                visibility: visible;
+            }
         }
     }
 
@@ -203,7 +212,7 @@
     &__subtitle {
         font-weight: 700;
         font-size: 13px;
-        line-height: 16px;
+        line-height: 17px;
         text-transform: uppercase;
         color: transparent;
 
@@ -212,6 +221,11 @@
         text-fill-color: transparent;
 
         margin: 0px 0px 21.5px 0px;
+
+        @media (max-width: $md4+px) {
+            font-size: 12px;
+            margin: 0px 0px 15px 0px;
+        }
     }
 
     // .product-card__title
@@ -225,6 +239,11 @@
 
         text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
         margin: 0px 0px 21.5px 0px;
+
+        @media (max-width: $md4+px) {
+            font-size: 20px;
+            margin: 0px 0px 15px 0px;
+        }
     }
 
     // .product-card__badges
@@ -235,9 +254,17 @@
         justify-content: flex-start;
         flex-wrap: wrap;
         gap: 16px;
-        opacity: 0;
-        visibility: hidden;
+
         transition: all 0.3s ease 0s;
+
+        @media (any-hover: hover) {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        @media (max-width: $md4+px) {
+            gap: 10px;
+        }
     }
 
     // .product-card__badge
@@ -265,6 +292,11 @@
             &:hover {
                 color: $lightColor;
             }
+        }
+
+        @media (max-width: $md4+px) {
+            padding: 4px 12px;
+            font-size: 10px;
         }
     }
 
