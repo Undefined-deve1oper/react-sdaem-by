@@ -1,67 +1,55 @@
 import { IEntity, IEntityObject } from "../../types/interfaces";
 
 export const citiesObject: IEntityObject = {
-    moscow: {
-        _id: "67rdca3eeb7f6fgeed471818",
-        name: "Москва",
-        link: "/apartments-for-a-day/moscow"
-    },
-    saintPetersburg: {
-        _id: "67rdca3eeb7f6fgeed471820",
-        name: "Санкт-Петербург",
-        link: "/apartments-for-a-day/saint-petersburg"
+    voronezh: {
+        _id: "67rdca3eeb7f6fgeed471829",
+        name: "Воронеж"
     },
     ekaterinburg: {
         _id: "67rdca3eeb7f6fgeed471814",
-        name: "Екатеринбург",
-        link: "/apartments-for-a-day/ekaterinburg"
-    },
-    omsk: {
-        _id: "67rdca3eeb7f6fgeed471822",
-        name: "Омск",
-        link: "/apartments-for-a-day/omsk"
+        name: "Екатеринбург"
     },
     krasnoyarsk: {
         _id: "67rdca3eeb7f6fgeed471824",
-        name: "Красноярск",
-        link: "/apartments-for-a-day/krasnoyarsk"
+        name: "Красноярск"
     },
-    voronezh: {
-        _id: "67rdca3eeb7f6fgeed471829",
-        name: "Воронеж",
-        link: "apartments-for-a-day/voronezh"
+    moscow: {
+        _id: "67rdca3eeb7f6fgeed471818",
+        name: "Москва"
+    },
+    omsk: {
+        _id: "67rdca3eeb7f6fgeed471822",
+        name: "Омск"
+    },
+    saintPetersburg: {
+        _id: "67rdca3eeb7f6fgeed471820",
+        name: "Санкт-Петербург"
     }
 };
 export const cities: IEntity[] = [
     {
-        _id: "67rdca3eeb7f6fgeed471818",
-        name: "Москва",
-        link: "apartments-for-a-day/moscow"
-    },
-    {
-        _id: "67rdca3eeb7f6fgeed471820",
-        name: "Санкт-Петербург",
-        link: "apartments-for-a-day/saint-petersburg"
+        _id: "67rdca3eeb7f6fgeed471829",
+        name: "Воронеж"
     },
     {
         _id: "67rdca3eeb7f6fgeed471814",
-        name: "Екатеринбург",
-        link: "apartments-for-a-day/ekaterinburg"
-    },
-    {
-        _id: "67rdca3eeb7f6fgeed471822",
-        name: "Омск",
-        link: "apartments-for-a-day/omsk"
+        name: "Екатеринбург"
     },
     {
         _id: "67rdca3eeb7f6fgeed471824",
-        name: "Красноярск",
-        link: "apartments-for-a-day/krasnoyarsk"
+        name: "Красноярск"
     },
     {
-        _id: "67rdca3eeb7f6fgeed471829",
-        name: "Воронеж",
-        link: "apartments-for-a-day/voronezh"
+        _id: "67rdca3eeb7f6fgeed471818",
+        name: "Москва"
+    },
+    {
+        _id: "67rdca3eeb7f6fgeed471822",
+        name: "Омск"
+    },
+    {
+        _id: "67rdca3eeb7f6fgeed471820",
+        name: "Санкт-Петербург"
     }
 ];
 const fetchAll = () =>
