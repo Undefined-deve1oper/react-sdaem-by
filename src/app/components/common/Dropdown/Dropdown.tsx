@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate, NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { RoutesLinksType } from "../../../router/mainRoutes";
-import { Menu, MenuItem } from "@mui/material";
-import { ExpandMore } from "@mui/icons-material";
 
 type DropdownProps = {
     defaultOption: RoutesLinksType;
@@ -31,10 +29,10 @@ const Dropdown: React.FC<DropdownProps> = ({ options, defaultOption }) => {
             <div className="dropdown__header">
                 <NavLink to={path}>{title}</NavLink>
                 <button className="dropdown__icon" onClick={handleClick}>
-                    <ExpandMore />
+                    {/* <ExpandMore /> */}
                 </button>
             </div>
-            <Menu
+            {/* <Menu
                 anchorEl={anchorEl}
                 open={open}
                 onClose={handleClose}
@@ -52,7 +50,7 @@ const Dropdown: React.FC<DropdownProps> = ({ options, defaultOption }) => {
                         {option.title}
                     </MenuItem>
                 ))}
-            </Menu>
+            </Menu> */}
         </div>
     );
 };

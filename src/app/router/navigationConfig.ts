@@ -1,5 +1,3 @@
-import { LocationOn } from "@mui/icons-material";
-
 export interface ILink {
     label: string;
     path: string;
@@ -16,8 +14,7 @@ export const headerLinks = {
         },
         {
             path: "/ads-on-the-map",
-            title: "Объявления на карте",
-            icon: LocationOn
+            title: "Объявления на карте"
         },
         { path: "/contacts", title: "Контакты" }
     ],

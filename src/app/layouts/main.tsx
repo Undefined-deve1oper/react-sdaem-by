@@ -7,8 +7,8 @@ const Main: React.FC = () => {
     return (
         <>
             <Header />
-            <HomePage />
-            <Footer />
+            {/* <HomePage /> */}
+            {/* <Footer/> */}
         </>
     );
 };

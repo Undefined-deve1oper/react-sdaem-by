@@ -6,10 +6,10 @@ import { Outlet } from "react-router-dom";
 const News: React.FC = () => {
     return (
         <>
-            <Header />
+            {/* <Header /> */}
             <main className="page"></main>
             <Outlet />
-            <Footer />
+            {/* <Footer/> */}
         </>
     );
 };

@@ -1,12 +1,22 @@
 import React from "react";
-import SearchEstateForm from "../../ui/SearchEstateForm";
-import { ProductsList } from "../../ui/Products";
-import ProductsNavs from "../../ui/Products/ProductsNavs";
+import { Filter } from "./section-filter/Filter";
 
 const HomePage: React.FC = () => {
     return (
         <main className="page">
-            <section className="page__main-search main-search">
+            <Filter />
+            {/* <Gallery /> */}
+            {/* <Rent /> */}
+            {/* <Presentation /> */}
+            {/* <About /> */}
+        </main>
+    );
+};
+
+export default HomePage;
+
+{
+    /* <section className="page__main-search main-search">
                 <div className="main-search__container _container">
                     <div className="main-search__body">
                         <div className="main-search__title">
@@ -21,9 +31,5 @@ const HomePage: React.FC = () => {
                     <ProductsList />
                     <ProductsNavs />
                 </div>
-            </section>
-        </main>
-    );
-};
-
-export default HomePage;
+            </section> */
+}

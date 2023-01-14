@@ -1,7 +1,5 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import { SvgIconTypeMap } from "@mui/material";
-import { OverridableComponent } from "@mui/material/OverridableComponent";
 import SignUpPage from "../components/pages/SignUpPage";
 import SignInPage from "../components/pages/SignInPage";
 
@@ -13,9 +11,6 @@ export type RoutesLinksType = {
     path: string;
     title: string;
     submenu?: RoutesLinksType[];
-    icon?: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
-        muiName: string;
-    };
 };
 
 export type RoutesNavType = {

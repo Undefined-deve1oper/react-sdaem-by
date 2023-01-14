@@ -1,18 +1,9 @@
 import React from "react";
-import "./scss/app.scss";
-import theme from "./theme.js";
-import { CssBaseline, ThemeProvider } from "@mui/material";
 import AppRouter from "./router/AppRouter";
+import "./scss/app.scss";
 
 const App: React.FC = () => {
-    return (
-        <>
-            <ThemeProvider theme={theme}>
-                <CssBaseline />
-                <AppRouter />
-            </ThemeProvider>
-        </>
-    );
+    return <AppRouter />;
 };
 
 export default App;

@@ -1,6 +1,5 @@
 import React from "react";
 import config from "../../../config/footer-config.json";
-import { Facebook, Instagram, YouTube } from "@mui/icons-material";
 
 const FooterContact: React.FC = () => {
     return (
@@ -13,21 +12,21 @@ const FooterContact: React.FC = () => {
                         href={"https://www.instagram.com/"}
                         target="_blank"
                     >
-                        <Instagram />
+                        {/* <Instagram /> */}
                     </a>
                     <a
                         className={"social-footer__link"}
                         href={"https://www.facebook.com/"}
                         target="_blank"
                     >
-                        <Facebook />
+                        {/* <Facebook /> */}
                     </a>
                     <a
                         className={"social-footer__link"}
                         href={"https://www.youtube.com/"}
                         target="_blank"
                     >
-                        <YouTube />
+                        {/* <YouTube /> */}
                     </a>
                 </div>
             </div>
