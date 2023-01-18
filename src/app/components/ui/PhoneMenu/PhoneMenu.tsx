@@ -1,7 +1,6 @@
 import React from "react";
 import { headerLinks } from "../../../router/index";
 import NavList from "../../common/NavList";
-import Accordion from "../../common/Accordion";
 
 interface IPhoneMenu {
     open: boolean;
@@ -16,24 +15,20 @@ const PhoneMenu: React.FC<IPhoneMenu> = ({ open, closeMenu }) => {
             <div className="mobile-menu__wrapper">
                 <ul className="mobile-menu__list">
                     <li className="mobile-menu__item">
-                        <Accordion label="Навигация по сайту">
-                            <NavList
-                                className="mobile-menu__sub-list"
-                                direction="column"
-                                routes={navigationLinks}
-                                closeMenu={closeMenu}
-                            />
-                        </Accordion>
+                        <NavList
+                            className="mobile-menu__sub-list"
+                            direction="column"
+                            routes={navigationLinks}
+                            closeMenu={closeMenu}
+                        />
                     </li>
                     <li className="mobile-menu__item">
-                        <Accordion label="Наше предложение">
-                            <NavList
-                                direction="column"
-                                closeMenu={closeMenu}
-                                className="mobile-menu__sub-list"
-                                routes={productsLinks}
-                            />
-                        </Accordion>
+                        <NavList
+                            direction="column"
+                            closeMenu={closeMenu}
+                            className="mobile-menu__sub-list"
+                            routes={productsLinks}
+                        />
                     </li>
                 </ul>
             </div>

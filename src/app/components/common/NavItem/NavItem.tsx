@@ -1,10 +1,7 @@
 import React from "react";
 import { RoutesLinksType } from "../../../router/mainRoutes";
 import { NavLink } from "react-router-dom";
-import { Icon } from "@mui/material";
 import Dropdown from "../Dropdown";
-import Accordion from "../Accordion";
-import NavList from "../NavList";
 
 type NavItemProps = {
     route: RoutesLinksType;
@@ -25,7 +22,6 @@ const NavItem: React.FC<NavItemProps> = ({ route, closeMenu }) => {
                     onClick={closeMenu}
                 >
                     {route.title}
-                    {route.icon && <Icon component={route.icon} />}
                 </NavLink>
             )}
         </li>

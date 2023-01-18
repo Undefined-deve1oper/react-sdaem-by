@@ -1,12 +1,8 @@
-import CircularProgress from '@mui/material/CircularProgress';
-import React from 'react';
+// import CircularProgress from '@mui/material/CircularProgress';
+import React from "react";
 
 const Loader = () => {
-  return (
-    <>
-      <CircularProgress />
-    </>
-  );
+    return <>{/* <CircularProgress /> */}</>;
 };
 
 export default Loader;
