@@ -3,6 +3,7 @@ import HeaderTop from "./HeaderTop";
 import HeaderBody from "./HeaderBody";
 import PhoneMenu from "../../ui/PhoneMenu";
 import { headerLinks } from "../../../router/index";
+import { useRequest } from "../../../hooks/useRequest";
 
 export interface IHeaderNavData {
     id: number;
@@ -12,15 +13,7 @@ export interface IHeaderNavData {
 }
 
 const Header: React.FC = () => {
-    // const [isMenuOpen, setMenuOpen] = useState(false);
-    // const { navigationLinks, productsLinks } = headerLinks;
-
-    // const handleToggleMenu = () => {
-    //     setMenuOpen((prevState) => !prevState);
-    // };
-    // const closeMenu = () => {
-    //     setMenuOpen(false);
-    // };
+    const { data, loading, error } = useRequest("navigation/");
 
     return (
         <header className="header">
