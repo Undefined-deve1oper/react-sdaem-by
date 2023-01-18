@@ -4,6 +4,13 @@ import HeaderBody from "./HeaderBody";
 import PhoneMenu from "../../ui/PhoneMenu";
 import { headerLinks } from "../../../router/index";
 
+export interface IHeaderNavData {
+    id: number;
+    item: string;
+    path: string;
+    isIcon?: boolean;
+}
+
 const Header: React.FC = () => {
     // const [isMenuOpen, setMenuOpen] = useState(false);
     // const { navigationLinks, productsLinks } = headerLinks;
