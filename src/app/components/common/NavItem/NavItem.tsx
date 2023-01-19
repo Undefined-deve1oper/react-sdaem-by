@@ -1,6 +1,7 @@
 import React from "react";
 import { RoutesLinksType } from "../../../router/mainRoutes";
 import { NavLink } from "react-router-dom";
+import IconSvg from "../IconSvg";
 
 type NavItemProps = {
     route: RoutesLinksType;
@@ -15,6 +16,9 @@ const NavItem: React.FC<NavItemProps> = ({ route }) => {
                 }
                 to={route.path}
             >
+                {route.icon === "mark" && (
+                    <IconSvg id={"#mark"} className={"icon"} />
+                )}
                 {route.item}
             </NavLink>
         </li>
