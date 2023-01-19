@@ -1,25 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { RoutesLinksType } from "../../../../router/mainRoutes";
 import NavList from "../../NavList";
 import Bookmark from "../../Bookmark";
 import Burger from "../../Burger";
 import { useRequest } from "../../../../hooks/useRequest";
 import Loader from "../../Loader";
-
-// type HeaderTopProps = {
-//     open?: boolean;
-//     handleToggleMenu?: () => void;
-//     links?: RoutesLinksType[];
-// };
+import { api } from "../../../../types/enums";
 
 const HeaderTop: React.FC = () => {
-    const { data, loading, error } = useRequest("navigation/");
+    const [isOpen, setOpen] = useState<boolean>(false);
+    const { data, loading, error } = useRequest(api.navigation);
+
+    const handleToggleMenu = () => {
+        setOpen((prevState) => !prevState);
+    };
 
     return (
         <div className="header__top top-header">
             <div className="top-header__container _container">
-                {/* <Burger open={open} onToggleMenu={handleToggleMenu} /> */}
+                <Burger open={isOpen} onToggleMenu={handleToggleMenu} />
                 {loading && <Loader height={39.4} />}
                 {error ? (
                     <span className="error">

@@ -20,6 +20,7 @@ const Header: React.FC = () => {
         <header className="header">
             <div className="header__wrapper lock-padding">
                 <HeaderTop />
+                <HeaderBody />
             </div>
         </header>
     );

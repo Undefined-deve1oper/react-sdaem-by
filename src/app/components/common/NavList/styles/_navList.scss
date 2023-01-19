@@ -11,17 +11,21 @@
 
     // .menu__item
     &__item {
+        position: relative;
         font-weight: 400;
         font-size: 14px;
         line-height: 17px;
         display: flex;
         align-items: center;
-        // justify-content: space-between;
+        justify-content: space-between;
 
         @media (any-hover: hover) {
             &:hover .menu__link {
-                color: $warningColor;
-                border-color: #ffd54f;
+                color: $darkColor;
+                border-color: $warningColor;
+                & svg {
+                    fill: $darkColor;
+                }
             }
         }
     }
@@ -37,13 +41,7 @@
         padding: 10px 0;
 
         &._active {
-            color: $warningColor;
-
-            &::after {
-                opacity: 1;
-                width: 100%;
-                visibility: visible;
-            }
+            color: $darkColor;
         }
     }
 
@@ -93,4 +91,5 @@
     height: 11px;
     fill: $mainColor;
     margin: 0px 5px 0px 0px;
+    transition: all 0.3s ease 0s;
 }

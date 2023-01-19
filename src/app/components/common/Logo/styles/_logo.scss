@@ -2,9 +2,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 134px;
+    min-width: 134px;
     @media (max-width: $md4 + px) {
-        width: 120px;
+        min-width: 120px;
         height: auto;
         object-fit: cover;
     }

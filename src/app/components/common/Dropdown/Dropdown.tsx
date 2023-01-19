@@ -1,20 +1,16 @@
-import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import { RoutesLinksType } from "../../../router/mainRoutes";
+import React from "react";
+import { DropdownList } from "./DropdownList/DropdownList";
+import { IListDropdown } from "./DropdownList/DropdownList";
 
-// type DropdownProps = {
-//     defaultOption: RoutesLinksType;
-//     options: RoutesLinksType[];
-// };
-
-const Dropdown: React.FC = () => {
+interface IPropsDropdown {
+    data: IListDropdown[];
+}
+const Dropdown: React.FC<IPropsDropdown> = ({ data }) => {
     return (
-        <div className="dropdown">
-            <div className="dropdown__header">
-                {/* <NavLink to={path}>{title}</NavLink>
-                <button className="dropdown__icon" onClick={handleClick}>
-                </button> */}
-            </div>
+        <div className="menu__list">
+            {data.map((menu) => {
+                return <DropdownList key={menu.title} menu={menu} />;
+            })}
         </div>
     );
 };
