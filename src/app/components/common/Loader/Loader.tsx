@@ -2,14 +2,16 @@ import React from "react";
 import ContentLoader from "react-content-loader";
 
 interface IPropsLoader {
+    width?: number;
+    height?: number;
     count?: number;
 }
 
-const Loader: React.FC<IPropsLoader> = ({ count }) => {
+const Loader: React.FC<IPropsLoader> = ({ count, width, height }) => {
     return (
         <ContentLoader
-            width={725}
-            height={61}
+            width={width || 725}
+            height={height || 61}
             viewBox="0 0 725 45"
             backgroundColor="#d9d9d9"
             foregroundColor="#ecebeb"

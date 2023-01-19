@@ -13,7 +13,7 @@ const PhoneMenu: React.FC<IPhoneMenu> = ({ open, closeMenu }) => {
     return (
         <div className={"header__menu mobile-menu" + (open ? " _active" : "")}>
             <div className="mobile-menu__wrapper">
-                <ul className="mobile-menu__list">
+                {/* <ul className="mobile-menu__list">
                     <li className="mobile-menu__item">
                         <NavList
                             className="mobile-menu__sub-list"
@@ -30,7 +30,7 @@ const PhoneMenu: React.FC<IPhoneMenu> = ({ open, closeMenu }) => {
                             routes={productsLinks}
                         />
                     </li>
-                </ul>
+                </ul> */}
             </div>
         </div>
     );

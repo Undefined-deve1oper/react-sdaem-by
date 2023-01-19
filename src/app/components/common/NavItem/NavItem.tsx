@@ -1,7 +1,6 @@
 import React from "react";
 import { RoutesLinksType } from "../../../router/mainRoutes";
 import { NavLink } from "react-router-dom";
-import Dropdown from "../Dropdown";
 
 type NavItemProps = {
     route: RoutesLinksType;

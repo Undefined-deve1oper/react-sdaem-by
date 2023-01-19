@@ -20,7 +20,7 @@ const HeaderTop: React.FC = () => {
         <div className="header__top top-header">
             <div className="top-header__container _container">
                 {/* <Burger open={open} onToggleMenu={handleToggleMenu} /> */}
-                {loading && <Loader />}
+                {loading && <Loader height={39.4} />}
                 {error ? (
                     <span className="error">
                         Ошибка сервера, попробуйте обновить страницу
