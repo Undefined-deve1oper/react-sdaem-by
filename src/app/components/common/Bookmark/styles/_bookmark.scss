@@ -2,6 +2,7 @@
     // .bookmark__item
     &__item {
         color: $mainColor;
+        fill: $mainColor;
 
         display: flex;
         align-items: center;
@@ -12,6 +13,7 @@
         @media (any-hover: hover) {
             &:hover {
                 color: $violetColor;
+                fill: $violetColor;
             }
         }
     }
@@ -21,7 +23,10 @@
         color: inherit;
     }
 
-    & svg {
-        color: inherit;
+    // .bookmark__heart
+    &__heart {
+        width: 18px;
+        height: 16px;
+        fill: inherit;
     }
 }
