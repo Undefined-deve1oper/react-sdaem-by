@@ -5,14 +5,12 @@ import NavItem from "../NavItem";
 type NavListProps = {
     routes: RoutesLinksType[];
     label?: string;
-    closeMenu?: () => void;
     direction?: "row" | "column";
     className?: string;
 };
 
 const NavList: React.FC<NavListProps> = ({
     routes,
-    closeMenu,
     direction = "row",
     label,
     className
@@ -22,11 +20,7 @@ const NavList: React.FC<NavListProps> = ({
             {label && <h3>{label}</h3>}
             <ul className="menu__list" style={{ flexDirection: direction }}>
                 {routes.map((route) => (
-                    <NavItem
-                        closeMenu={closeMenu}
-                        key={route.path}
-                        route={route}
-                    />
+                    <NavItem key={route.id} route={route} />
                 ))}
             </ul>
         </nav>

@@ -1,8 +1,8 @@
 import React from "react";
-import Logo from "../Logo";
+import Logo from "../../Logo";
 import { NavLink } from "react-router-dom";
-import NavList from "../NavList";
-import { RoutesLinksType } from "../../../router/mainRoutes";
+import NavList from "../../NavList";
+import { RoutesLinksType } from "../../../../router/mainRoutes";
 
 type HeaderBodyProps = {
     links: RoutesLinksType[];

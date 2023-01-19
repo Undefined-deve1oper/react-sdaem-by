@@ -8,9 +8,10 @@ const Main = React.lazy(() => import("../layouts/main"));
 const News = React.lazy(() => import("../layouts/news"));
 
 export type RoutesLinksType = {
+    id: number;
+    item: string;
     path: string;
-    title: string;
-    submenu?: RoutesLinksType[];
+    icon?: string;
 };
 
 export type RoutesNavType = {

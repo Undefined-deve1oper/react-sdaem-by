@@ -16,27 +16,10 @@ export interface IHeaderNavData {
 }
 
 const Header: React.FC = () => {
-    const { data, loading, error } = useRequest("navigation/");
-
     return (
         <header className="header">
             <div className="header__wrapper lock-padding">
-                <div className="header__container _container">
-                    {loading && <Loader />}
-                    {error && (
-                        <span className="error">
-                            Ошибка сервера, попробуйте обновить страницу
-                        </span>
-                    )}
-                    <div className="top-header__actions actions-header">
-                        <Bookmark label="Закладки" />
-                    </div>
-                    <div className="header-buttons">
-                        <NavLink to="/login" className="header-buttons-button">
-                            Вход и регистрация
-                        </NavLink>
-                    </div>
-                </div>
+                <HeaderTop />
             </div>
         </header>
     );

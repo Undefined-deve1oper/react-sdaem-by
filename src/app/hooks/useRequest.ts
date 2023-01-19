@@ -5,7 +5,7 @@ import httpService from "../services/http.service";
 export const useRequest = (apiUrl: string) => {
     const [data, setData] = useState<IHeaderNavData[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string>("");
+    const [error, setError] = useState<boolean>(false);
 
     useEffect(() => {
         const requestHandler = async () => {
@@ -15,7 +15,7 @@ export const useRequest = (apiUrl: string) => {
                 setData(data.content);
             } catch (error) {
                 setLoading(false);
-                setError(error.message);
+                setError(true);
             }
         };
         requestHandler();

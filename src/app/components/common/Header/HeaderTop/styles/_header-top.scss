@@ -1,0 +1,35 @@
+.top-header {
+    min-height: 40px;
+    background: $lightGrayColor;
+
+    // .top-header__container
+    &__container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    // .top-header__menu
+    &__menu {
+        flex: 0 1 690px;
+        font-weight: 400;
+        color: $mainColor;
+
+        & a::after {
+            display: none;
+        }
+
+        svg {
+            font-size: 16px !important;
+            margin: 0px 5px 0px 0px;
+        }
+    }
+
+    // .top-header__actions
+    &__actions {
+        padding: 0px 20px 0px 40px;
+        @media (max-width: $md4 + px) {
+            padding: 0 20px 0 0;
+        }
+    }
+}

@@ -5,25 +5,19 @@ import Dropdown from "../Dropdown";
 
 type NavItemProps = {
     route: RoutesLinksType;
-    closeMenu?: () => void;
 };
 
-const NavItem: React.FC<NavItemProps> = ({ route, closeMenu }) => {
+const NavItem: React.FC<NavItemProps> = ({ route }) => {
     return (
         <li className="menu__item">
-            {route.path && route.submenu ? (
-                <Dropdown defaultOption={route} options={route.submenu} />
-            ) : (
-                <NavLink
-                    className={({ isActive }) =>
-                        `menu__link ${isActive ? "_active" : ""}`
-                    }
-                    to={route.path}
-                    onClick={closeMenu}
-                >
-                    {route.title}
-                </NavLink>
-            )}
+            <NavLink
+                className={({ isActive }) =>
+                    `menu__link ${isActive ? "_active" : ""}`
+                }
+                to={route.path}
+            >
+                {route.item}
+            </NavLink>
         </li>
     );
 };
