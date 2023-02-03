@@ -17,3 +17,26 @@ export interface IOption {
     value: string;
     link?: string;
 }
+
+export interface ILink {
+    label: string;
+    path: string;
+    totalCount?: number;
+}
+
+export interface IContact {
+    mail: string;
+    href: string;
+    workTime: string;
+    tel: string;
+    employer: string;
+    address: string;
+    ip: string;
+}
+
+export interface IHeaderNavData {
+    id: number;
+    item: string;
+    path: string;
+    isIcon?: boolean;
+}

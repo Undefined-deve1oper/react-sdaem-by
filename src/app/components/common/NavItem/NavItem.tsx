@@ -1,6 +1,6 @@
 import React from "react";
-import { RoutesLinksType } from "../../../router/mainRoutes";
 import { NavLink } from "react-router-dom";
+import { RoutesLinksType } from "../../../router";
 import IconSvg from "../IconSvg";
 
 type NavItemProps = {

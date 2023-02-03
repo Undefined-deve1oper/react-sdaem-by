@@ -1,8 +1,6 @@
 import React from "react";
-import { useRequest } from "../../../hooks/useRequest";
-import { api } from "../../../types/enums";
+import { IHeaderNavData } from "../../../types/interfaces";
 import { IListDropdown } from "../../common/Dropdown/DropdownList/DropdownList";
-import { IHeaderNavData } from "../../common/Header/Header";
 import NavList from "../../common/NavList";
 
 interface IPhoneMenu {

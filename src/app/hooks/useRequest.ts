@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { IListDropdown } from "../components/common/Dropdown/DropdownList/DropdownList";
-import { IHeaderNavData } from "../components/common/Header/Header";
 import httpService from "../services/http.service";
+import { IHeaderNavData } from "../types/interfaces";
 
-export const useRequest = (apiUrl: string) => {
-    const [data, setData] = useState<IHeaderNavData[] & IListDropdown[]>([]);
+export function useRequest<T>(apiUrl: string) {
+    const [data, setData] = useState<IListDropdown[] & IHeaderNavData[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [error, setError] = useState<boolean>(false);
 
@@ -27,4 +27,4 @@ export const useRequest = (apiUrl: string) => {
         loading,
         error
     };
-};
+}
