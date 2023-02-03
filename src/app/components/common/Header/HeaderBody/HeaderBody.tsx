@@ -14,7 +14,7 @@ const HeaderBody: React.FC = () => {
             <div className="header__container _container">
                 <Logo />
                 <nav className="header__menu menu">
-                    {loading && <Loader count={4} />}
+                    {loading && <Loader height={37} count={4} />}
                     {error ? (
                         <span className="error">
                             Ошибка сервера, попробуйте обновить страницу

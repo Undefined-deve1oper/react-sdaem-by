@@ -63,3 +63,9 @@
 
 @import "./HeaderTop/styles/header-top";
 @import "./HeaderBody/styles/header-body";
+
+.loader {
+    @media (max-width: $md2+px) {
+        display: none;
+    }
+}
