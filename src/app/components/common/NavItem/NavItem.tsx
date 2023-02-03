@@ -1,32 +1,24 @@
-import React from 'react';
-import {navigationRoutes, RoutesNavType} from "../../../router/routes";
-import {NavLink} from "react-router-dom";
-import {Icon} from "@mui/material";
-import Dropdown from "../Dropdown";
-import Accordion from "../Accordion";
-import NavList from "../NavList";
+import React from "react";
+import { RoutesLinksType } from "../../../router/mainRoutes";
+import { NavLink } from "react-router-dom";
+import IconSvg from "../IconSvg";
 
 type NavItemProps = {
-    route: RoutesNavType;
-    closeMenu?: () => void;
-}
+    route: RoutesLinksType;
+};
 
-const NavItem: React.FC<NavItemProps> = ({route, closeMenu}) => {
+const NavItem: React.FC<NavItemProps> = ({ route }) => {
     return (
         <li className="menu__item">
-            {route.path && route.submenu ? (
-                <Dropdown defaultOption={route} options={route.submenu}/>
-            ) : (
-                <NavLink
-                    activeClassName="_active"
-                    className={"menu__link"}
-                    to={route.path}
-                    onClick={closeMenu}
-                >
-                    {route.name}
-                    {route.icon && <Icon component={route.icon}/>}
-                </NavLink>
-            )}
+            <NavLink
+                className={({ isActive }) =>
+                    `menu__link ${isActive ? "_active" : ""}`
+                }
+                to={route.path}
+            >
+                {route.icon && <IconSvg name={route.icon} svgClass={"icon"} />}
+                {route.item}
+            </NavLink>
         </li>
     );
 };

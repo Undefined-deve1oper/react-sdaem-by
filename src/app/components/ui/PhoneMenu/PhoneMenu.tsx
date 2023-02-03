@@ -1,44 +1,23 @@
 import React from "react";
-import {navigationRoutes, productsNavigationRoutes} from "../../../router/routes";
+import { useRequest } from "../../../hooks/useRequest";
+import { api } from "../../../types/enums";
+import { IListDropdown } from "../../common/Dropdown/DropdownList/DropdownList";
+import { IHeaderNavData } from "../../common/Header/Header";
 import NavList from "../../common/NavList";
-import Accordion from "../../common/Accordion";
 
-interface PhoneMenuProps {
+interface IPhoneMenu {
     open: boolean;
-    closeMenu?: () => void;
+    data: IHeaderNavData[] & IListDropdown[];
 }
 
-const PhoneMenu: React.FC<PhoneMenuProps> = ({open, closeMenu}) => {
+const PhoneMenu: React.FC<IPhoneMenu> = ({ open, data }) => {
     return (
         <div className={"header__menu mobile-menu" + (open ? " _active" : "")}>
-            <div className="mobile-menu__wrapper">
-                <ul className="mobile-menu__list">
-                    <li className="mobile-menu__item">
-                        <Accordion
-                            label="Навигация по сайту"
-                        >
-                            <NavList
-                                className="mobile-menu__sub-list"
-                                direction="column"
-                                routes={navigationRoutes}
-                                closeMenu={closeMenu}
-                            />
-                        </Accordion>
-                    </li>
-                    <li className="mobile-menu__item">
-                        <Accordion
-                            label="Наше предложение"
-                        >
-                            <NavList
-                                direction="column"
-                                closeMenu={closeMenu}
-                                className="mobile-menu__sub-list"
-                                routes={productsNavigationRoutes}
-                            />
-                        </Accordion>
-                    </li>
-                </ul>
-            </div>
+            <NavList
+                routes={data}
+                className={"mobile-menu__list"}
+                direction="column"
+            />
         </div>
     );
 };

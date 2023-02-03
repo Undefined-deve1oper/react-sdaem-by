@@ -1,116 +1,72 @@
 .menu {
-	@media (max-width: $md2+px) {
-		display: none;
-	}
-	// .menu__list
-	&__list {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
+    @media (max-width: $md2+px) {
+        display: none;
+    }
+    // .menu__list
+    &__list {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-	// .menu__item
-	&__item {
-		position: relative;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
+    // .menu__item
+    &__item {
+        position: relative;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-		//@media (max-width: $md2 + px) {
-		//	& .dropdown {
-		//		display: none;
-		//	}
-		//}
+        @media (any-hover: hover) {
+            &:hover .menu__link {
+                color: $darkColor;
+                border-color: $warningColor;
+                & svg {
+                    fill: $darkColor;
+                }
+            }
+        }
+    }
 
-		@media (min-width: $md2 + px) {
-			@media (any-hover: hover) {
-				&:hover .menu__link {
-					color: $infoColor;
+    // .menu__link
+    &__link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        color: $mainColor;
+        border-bottom: 3px solid #f8f8f8;
+        transition: all 0.3s ease-out 0s;
+        padding: 10px 0;
 
-					&::after {
-						opacity: 1;
-						width: 100%;
-						visibility: visible;
-					}
-				}
-			}
-		}
-	}
+        &._active {
+            color: $darkColor;
+        }
 
-	// .menu__link
-	&__link {
-		position: relative;
-		display: flex;
-		align-items: center;
-		color: inherit;
-		font-weight: inherit;
-		transition: all 0.3s ease-out 0s;
+        @media (max-width: $md2+px) {
+            border: none;
+            svg {
+                display: none;
+            }
+        }
+    }
+}
 
-		& svg {
-			font-size: 18px;
-			margin: 0px 0px 0px 15px;
-			@media (max-width: $md1 + px) {
-				margin: 0px 0px 0px 5px;
-			}
-		}
+._active {
+    border-color: #ffd54f;
+    color: $darkColor;
 
-		&._active {
-			color: $infoColor;
+    .icon {
+        fill: $darkColor;
+    }
+}
 
-			&::after {
-				opacity: 1;
-				width: 100%;
-				visibility: visible;
-			}
-		}
-
-		@media (min-width: $md2 + px) {
-			&::after {
-				content: "";
-				width: 0;
-				height: 3px;
-				background: $infoColor;
-
-				position: absolute;
-				top: calc(100% + 16.5px);
-				left: 50%;
-				transform: translate(-50%, 0%);
-
-				opacity: 0;
-				visibility: hidden;
-				transition: all 0.3s ease-out 0s;
-			}
-		}
-	}
-
-	// menu__sub-list
-	&__sub-list {
-		flex: 1 1 100%;
-		background: none;
-	}
-
-	// menu__sub-item
-	&__sub-item {
-		cursor: pointer;
-		padding: 10px 15px;
-		transition: all 0.3s ease-out;
-		@media (any-hover: hover) {
-			&:hover {
-				background: $lightGrayColor;
-			}
-		}
-	}
-
-	// menu__sub-link
-	&__sub-link {
-		display: block;
-		color: inherit;
-		font-weight: 500;
-		font-size: 14px;
-		line-height: 17px;
-
-		svg {
-			display: none;
-		}
-	}
+.icon {
+    width: 11px;
+    height: 11px;
+    fill: $mainColor;
+    margin: 0px 5px 0px 0px;
+    transition: all 0.3s ease 0s;
 }

@@ -1,33 +1,17 @@
-import React from 'react';
-import {Badge, styled, Typography} from "@mui/material";
-import {FavoriteBorder} from "@mui/icons-material";
-import {NavLink} from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
+import IconSvg from "../IconSvg";
 
-const StyledBadge = styled(Badge)(({theme}) => ({
-    '& .MuiBadge-badge': {
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontSize: "10px",
-        color: '#fff',
-        top: "3px",
-        right: "-1px",
-        background: theme.palette.primary.main
-    },
-}));
-
-interface BookmarkProps {
+interface IBookmark {
     label?: string;
 }
 
-const Bookmark: React.FC<BookmarkProps> = ({label}) => {
+const Bookmark: React.FC<IBookmark> = ({ label }) => {
     return (
         <div className={"bookmark"}>
             <NavLink to="/bookmark" className={"bookmark__item"}>
-                <Typography className={"bookmark__label"}>{label}</Typography>
-                <StyledBadge badgeContent={5} color="secondary">
-                    <FavoriteBorder/>
-                </StyledBadge>
+                <h3 className={"bookmark__label"}>{label}</h3>
+                <IconSvg name={"heart"} svgClass={"bookmark__favourite"} />
             </NavLink>
         </div>
     );

@@ -1,11 +1,11 @@
 import React from "react";
 
-interface BurgerProps {
+interface IBurger {
     open: boolean;
     onToggleMenu: () => void;
 }
 
-const Burger: React.FC<BurgerProps> = ({open, onToggleMenu}) => {
+const Burger: React.FC<IBurger> = ({ open, onToggleMenu }) => {
     return (
         <button onClick={onToggleMenu} type="button" className="icon-menu">
             <span className={open ? "_active" : ""}></span>

@@ -13,7 +13,11 @@ $mainColor: #8291a3;
 $darkColor: #1e2123;
 $lightColor: #fff;
 $lightGrayColor: #f8f8f8;
-$lightGrayColor2: #BDBDBD;
+$lightGrayColor2: #bdbdbd;
 $violetColor: #664ef9;
-$infoColor: #FFD54F;
-$infoColorGradient: linear-gradient(106.06deg, #ffd54f 1.12%, #fec100 97.96%);
+$warningColor: #ffd54f;
+$warningColorGradient: linear-gradient(
+    106.06deg,
+    #ffd54f 1.12%,
+    #fec100 97.96%
+);
