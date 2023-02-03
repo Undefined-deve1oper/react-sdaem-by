@@ -1,5 +1,5 @@
 import { FC } from "react";
-import IconsSVG from "../../../assets/svg/sprite.svg";
+import IconsSVG from "../../../assets/svg/svg-sprite.svg";
 
 interface IPropsSvg {
     name: string;

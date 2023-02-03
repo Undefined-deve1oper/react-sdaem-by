@@ -22,7 +22,7 @@ http.interceptors.request.use(
 );
 
 function transformData(data: any) {
-    return data && !data.id
+    return data && !data.id && !data.ip
         ? Object.keys(data).map((key) => ({
               ...data[key]
           }))
