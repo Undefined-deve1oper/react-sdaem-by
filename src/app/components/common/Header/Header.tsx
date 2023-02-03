@@ -1,12 +1,6 @@
-import React, { useState } from "react";
-import HeaderTop from "./HeaderTop";
+import React from "react";
 import HeaderBody from "./HeaderBody";
-import PhoneMenu from "../../ui/PhoneMenu";
-import { headerLinks } from "../../../router/index";
-import { useRequest } from "../../../hooks/useRequest";
-import Loader from "../Loader";
-import { NavLink } from "react-router-dom";
-import Bookmark from "../Bookmark";
+import HeaderTop from "./HeaderTop";
 
 export interface IHeaderNavData {
     id: number;

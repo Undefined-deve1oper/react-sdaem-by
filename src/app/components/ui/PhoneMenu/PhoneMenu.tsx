@@ -1,37 +1,23 @@
 import React from "react";
-import { headerLinks } from "../../../router/index";
+import { useRequest } from "../../../hooks/useRequest";
+import { api } from "../../../types/enums";
+import { IListDropdown } from "../../common/Dropdown/DropdownList/DropdownList";
+import { IHeaderNavData } from "../../common/Header/Header";
 import NavList from "../../common/NavList";
 
 interface IPhoneMenu {
     open: boolean;
-    closeMenu?: () => void;
+    data: IHeaderNavData[] & IListDropdown[];
 }
 
-const PhoneMenu: React.FC<IPhoneMenu> = ({ open, closeMenu }) => {
-    const { navigationLinks, productsLinks } = headerLinks;
-
+const PhoneMenu: React.FC<IPhoneMenu> = ({ open, data }) => {
     return (
         <div className={"header__menu mobile-menu" + (open ? " _active" : "")}>
-            <div className="mobile-menu__wrapper">
-                {/* <ul className="mobile-menu__list">
-                    <li className="mobile-menu__item">
-                        <NavList
-                            className="mobile-menu__sub-list"
-                            direction="column"
-                            routes={navigationLinks}
-                            closeMenu={closeMenu}
-                        />
-                    </li>
-                    <li className="mobile-menu__item">
-                        <NavList
-                            direction="column"
-                            closeMenu={closeMenu}
-                            className="mobile-menu__sub-list"
-                            routes={productsLinks}
-                        />
-                    </li>
-                </ul> */}
-            </div>
+            <NavList
+                routes={data}
+                className={"mobile-menu__list"}
+                direction="column"
+            />
         </div>
     );
 };

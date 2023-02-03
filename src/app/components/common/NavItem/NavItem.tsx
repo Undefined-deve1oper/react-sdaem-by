@@ -16,9 +16,7 @@ const NavItem: React.FC<NavItemProps> = ({ route }) => {
                 }
                 to={route.path}
             >
-                {route.icon === "mark" && (
-                    <IconSvg id={"#mark"} className={"icon"} />
-                )}
+                {route.icon && <IconSvg name={route.icon} svgClass={"icon"} />}
                 {route.item}
             </NavLink>
         </li>

@@ -4,6 +4,7 @@
     }
     // .menu__list
     &__list {
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: space-between;
@@ -43,36 +44,12 @@
         &._active {
             color: $darkColor;
         }
-    }
 
-    // menu__sub-list
-    &__sub-list {
-        flex: 1 1 100%;
-        background: none;
-    }
-
-    // menu__sub-item
-    &__sub-item {
-        cursor: pointer;
-        padding: 10px 15px;
-        transition: all 0.3s ease-out;
-        @media (any-hover: hover) {
-            &:hover {
-                background: $lightGrayColor;
+        @media (max-width: $md2+px) {
+            border: none;
+            svg {
+                display: none;
             }
-        }
-    }
-
-    // menu__sub-link
-    &__sub-link {
-        display: block;
-        color: inherit;
-        font-weight: 500;
-        font-size: 14px;
-        line-height: 17px;
-
-        svg {
-            display: none;
         }
     }
 }

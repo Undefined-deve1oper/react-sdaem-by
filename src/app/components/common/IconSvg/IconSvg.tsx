@@ -1,15 +1,38 @@
 import { FC } from "react";
-import sprite from "../../../assets/svg/sprite.svg";
+import IconsSVG from "../../../assets/svg/sprite.svg";
 
 interface IPropsSvg {
-    id: string;
-    className?: string;
+    name: string;
+    width?: string;
+    height?: string;
+    svgClass?: string;
+    fillColor?: string;
+    strokeColor?: string;
 }
 
-const IconSvg: FC<IPropsSvg> = ({ id, className }) => {
+const IconSvg: FC<IPropsSvg> = ({
+    name,
+    width,
+    height,
+    svgClass = "",
+    fillColor,
+    strokeColor
+}) => {
+    const classes = [`svg-icon`, `svg-icon-${name}`];
+
+    if (svgClass) {
+        classes.push(svgClass);
+    }
+
     return (
-        <svg className={className}>
-            <use href={sprite + id} />
+        <svg
+            className={classes.join(" ")}
+            fill={fillColor}
+            stroke={strokeColor}
+            width={width}
+            height={height}
+        >
+            <use xlinkHref={`${IconsSVG}#${name}`} />
         </svg>
     );
 };

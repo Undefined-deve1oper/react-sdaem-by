@@ -41,12 +41,15 @@ export const DropdownList: React.FC<IPropsDropdown> = ({ menu }) => {
             onClick={() => setIsOpen((prevState) => !prevState)}
         >
             {menu?.title}
-            {menu?.isIcon && <IconSvg id={"#mark"} className={"icon"} />}
+            {menu?.isIcon && <IconSvg name={"mark"} svgClass={"icon"} />}
             {isOpen && (
-                <ul className={"list"}>
+                <ul className={"dropdown-list"}>
                     {menu?.list.map((item) => (
-                        <li key={item.city} className={"listItem"}>
-                            <NavLink to={item.path} className={"itemLink"}>
+                        <li key={item.city} className={"dropdown-list__item"}>
+                            <NavLink
+                                to={item.path}
+                                className={"dropdown-list__link"}
+                            >
                                 {item.value}
                             </NavLink>
                         </li>

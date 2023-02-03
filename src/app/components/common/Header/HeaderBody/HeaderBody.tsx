@@ -1,7 +1,6 @@
 import React from "react";
 import Logo from "../../Logo";
 import { NavLink } from "react-router-dom";
-import NavList from "../../NavList";
 import Loader from "../../Loader";
 import { api } from "../../../../types/enums";
 import { useRequest } from "../../../../hooks/useRequest";
@@ -9,7 +8,6 @@ import Dropdown from "../../Dropdown";
 
 const HeaderBody: React.FC = () => {
     const { data, loading, error } = useRequest(api.menuList);
-    console.log(data);
 
     return (
         <div className="header__body body-header">
