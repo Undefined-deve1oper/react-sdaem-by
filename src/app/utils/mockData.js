@@ -8,6 +8,7 @@ import menuList from "../mockData/menuList.json";
 import navigation from "../mockData/navigation.json";
 import news from "../mockData/news.json";
 import sidebar from "../mockData/sidebar.json";
+import options from "../config/options.json";
 import httpService from "../services/http.service";
 
 const useMockData = () => {
@@ -16,7 +17,7 @@ const useMockData = () => {
     async function initialize() {
         try {
             console.log("fdsfds");
-            // await httpService.put("sidebar/", sidebar);
+            await httpService.patch("options/", options);
         } catch (error) {
             setError(error);
         }
