@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback } from "react";
 import Select, { SingleValue } from "react-select";
 import { IOption } from "../../../../types/interfaces";
 import { HandleChangeDataType } from "../../../../types/types";
@@ -25,9 +25,9 @@ const SelectField: React.FC<SelectFieldType> = ({
     className,
     ...rest
 }) => {
-    const onChange = (option: SingleValue<IOption>) => {
+    const onChange = useCallback((option: SingleValue<IOption>) => {
         onSelectChange?.({ name, value: option!.value });
-    };
+    }, []);
     const isLoading = options.length === 0;
 
     return (

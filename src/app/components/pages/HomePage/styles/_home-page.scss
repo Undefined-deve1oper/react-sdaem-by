@@ -13,6 +13,10 @@
     display: inline-flex;
     position: relative;
 
+    @media (max-width: $md4+px) {
+        flex-wrap: wrap;
+    }
+
     // .tab-list__item
     &__item {
         padding: 13px 20px;
@@ -35,6 +39,19 @@
         }
         &:last-child {
             border-radius: 0 10px 0 0;
+        }
+
+        @media (max-width: $md3+px) {
+            padding: 10px 16px;
+        }
+        @media (max-width: $md4+px) {
+            flex: 0 0 50%;
+            &:nth-child(2) {
+                border-radius: 0 10px 0 0;
+            }
+            &:last-child {
+                border-radius: 0;
+            }
         }
 
         &.selected {

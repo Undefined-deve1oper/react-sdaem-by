@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { citiesOptions, roomsOptions } from "../../../../constants/options";
 import { path } from "../../../../types/enums";
@@ -14,9 +14,9 @@ const SelectGroup: React.FC<SelectGroupTypes> = ({ data, onChange }) => {
     const location = useLocation();
     const isHome = location.pathname === path.home;
 
-    const handleChange = (data: any) => {
+    const handleChange = useCallback((data: any) => {
         onChange({ target: { name: data.name, value: data.value } });
-    };
+    }, []);
 
     return (
         <>
@@ -44,4 +44,4 @@ const SelectGroup: React.FC<SelectGroupTypes> = ({ data, onChange }) => {
     );
 };
 
-export default SelectGroup;
+export default React.memo(SelectGroup);

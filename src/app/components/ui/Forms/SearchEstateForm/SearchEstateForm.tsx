@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import useForm from "../../../../hooks/useForm";
-import ButtonGroup from "../../Groups/ButtonGroup";
-import PriceRangeGroup from "../../Groups/PriceRangeGroup";
-import SelectGroup from "../../Groups/SelectGroup";
+import { ButtonGroup, PriceRangeGroup, SelectGroup } from "../../Groups";
+import OpenForm from "../../OpenForm";
 import { validatorConfig } from "./validatorConfig";
 
 type EstateFormTypes = {
@@ -26,42 +25,32 @@ const EstateForm: React.FC<EstateFormTypes> = ({ onSubmit }) => {
         false,
         validatorConfig
     );
-    console.log(data);
+    const [openOptions, setOptions] = useState(false);
+
+    const handleToggleOptions = () => {
+        setOptions((prevState) => !prevState);
+    };
 
     return (
         <div className="search-estate">
             <div className="search-estate__body">
                 <form
-                    className="search-estate__search search-panel"
+                    className={
+                        "search-estate__search search-panel " +
+                        (openOptions ? "_open" : "")
+                    }
                     onSubmit={onSubmit}
                 >
                     <SelectGroup data={data} onChange={handleChange} />
-                    <PriceRangeGroup data={data} onChange={handleChange} />
-                    <ButtonGroup />
-                    {/* <RangeSliderField
-                        label="Цена за сутки (RUB)"
-                        name="price"
+                    <PriceRangeGroup
+                        data={data}
                         onChange={handleChange}
-                        value={data.price}
-                        min={0}
-                        max={15000}
+                        errors={errors}
                     />
-                    <SearchButton type="button">
-                        Больше опций
-                        <Tune />
-                    </SearchButton>
-                    <SearchButton type="button">
-                        <NavLink
-                            className="search-panel__link"
-                            to="/ads-on-the-map"
-                        >
-                            На карте <LocationOn />
-                        </NavLink>
-                    </SearchButton>
-                    <SearchButton styleType="submit">
-                        Показать
-                        <ArrowForwardIos />
-                    </SearchButton> */}
+                    <ButtonGroup onToggleOptions={handleToggleOptions} />
+                    {openOptions && (
+                        <OpenForm data={data} onChange={handleChange} />
+                    )}
                 </form>
             </div>
         </div>

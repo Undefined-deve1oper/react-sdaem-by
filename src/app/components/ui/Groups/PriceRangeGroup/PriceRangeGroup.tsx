@@ -5,9 +5,16 @@ import { TextField } from "../../../common/Fields";
 type ProceRangeGroupType = {
     data: SearchEstateFormDataType;
     onChange: (target: any) => void;
+    errors?: {
+        [key: string]: any;
+    };
 };
 
-const PriceRangeGroup: React.FC<ProceRangeGroupType> = ({ data, onChange }) => {
+const PriceRangeGroup: React.FC<ProceRangeGroupType> = ({
+    data,
+    onChange,
+    errors
+}) => {
     return (
         <div className="search-panel__item">
             <span>Цена за сутки (RUB)</span>
@@ -18,6 +25,7 @@ const PriceRangeGroup: React.FC<ProceRangeGroupType> = ({ data, onChange }) => {
                     type="number"
                     onChange={onChange}
                     value={data.priceMin}
+                    error={errors?.priceMin}
                 />
                 <TextField
                     name="priceMax"
@@ -25,6 +33,7 @@ const PriceRangeGroup: React.FC<ProceRangeGroupType> = ({ data, onChange }) => {
                     type="number"
                     onChange={onChange}
                     value={data.priceMax}
+                    error={errors?.priceMax}
                 />
             </div>
         </div>

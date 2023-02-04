@@ -10,8 +10,8 @@ export type HandleChangeDataType = {
 export type SearchEstateFormDataType = {
     city?: string;
     rooms?: string;
-    priceMin: string;
-    priceMax: string;
+    priceMin?: string;
+    priceMax?: string;
     area?: string;
     metro?: string;
     type?: string;

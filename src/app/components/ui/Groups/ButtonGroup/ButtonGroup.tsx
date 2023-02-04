@@ -4,13 +4,21 @@ import { path } from "../../../../types/enums";
 import Button from "../../../common/Button";
 import IconSvg from "../../../common/IconSvg";
 
-const ButtonGroup: React.FC = () => {
+type ButtonGroupTypes = {
+    onToggleOptions: () => void;
+};
+
+const ButtonGroup: React.FC<ButtonGroupTypes> = ({ onToggleOptions }) => {
     const location = useLocation();
     const isHome = location.pathname === path.home;
 
     return (
         <div className="search-panel__buttons">
-            <Button type="button" className={"search-panel__button"}>
+            <Button
+                type="button"
+                className={"search-panel__button"}
+                onClick={onToggleOptions}
+            >
                 Больше опций
                 <IconSvg name={"options"} width="18" height="18" />
             </Button>
