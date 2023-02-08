@@ -1,4 +1,6 @@
 {
     "port": 8080,
-    "mongoUri": "mongodb+srv://kirill:st7UUA%40QdjWW6Ny@cluster0.sbumxet.mongodb.net/sdaemBy?retryWrites=true&w=majority"
+    "mongoUri": "mongodb+srv://kirill:st7UUA%40QdjWW6Ny@cluster0.sbumxet.mongodb.net/sdaemBy?retryWrites=true&w=majority",
+    "accessSecret": "super secret from backend",
+    "refreshSecret": "super refresh key"
 }
