@@ -18,7 +18,6 @@ router.post("/signUp", [
     async (req, res) => {
         try {
             const errors = validationResult(req);
-            console.log(errors);
 
             if (!errors.isEmpty()) {
                 return res.status(400).json({
@@ -43,7 +42,7 @@ router.post("/signUp", [
             const hashedPassword = await bycrypt.hash(password, 12);
 
             const newUser = await User.create({
-                ...generateUserData,
+                ...generateUserData(),
                 ...req.body,
                 password: hashedPassword
             });
@@ -60,7 +59,7 @@ router.post("/signUp", [
     }
 ]);
 
-router.post("/signInWithPassword", [
+router.post("/signIn", [
     check("email", "Некоректный email").normalizeEmail().isEmail(),
     check("password", "Минимальная длина пароля 8 символов").exists(),
     async (req, res) => {
@@ -77,6 +76,7 @@ router.post("/signInWithPassword", [
             const { email, password } = req.body;
 
             const existingUser = await User.findOne({ email });
+            console.log(existingUser);
 
             if (!existingUser) {
                 return res.status(400).send({

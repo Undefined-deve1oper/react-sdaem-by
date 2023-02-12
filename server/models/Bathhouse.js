@@ -12,7 +12,7 @@ const conveniences = {
 };
 
 const schema = new Schema({
-    id: String,
+    _id: String,
     price: Number,
     images: [String],
     buns: [String],

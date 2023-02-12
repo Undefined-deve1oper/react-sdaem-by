@@ -18,7 +18,7 @@ const carTypes = [
 ];
 
 const schema = new Schema({
-    id: { type: Schema.Types.ObjectId, ref: "Category" },
+    _id: { type: Schema.Types.ObjectId, ref: "Category" },
     price: Number,
     images: [String],
     type: {
