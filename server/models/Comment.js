@@ -2,19 +2,20 @@ const { Schema, model } = require("mongoose");
 
 const schema = new Schema(
     {
-        pageId: {
+        id: { type: String, unique: true },
+        estateId: {
             type: Schema.Types.ObjectId,
-            ref: "Category"
-        },
-        text: {
-            type: String
-        },
-        rate: {
-            type: Number
+            ref: "Estate"
         },
         userId: {
             type: Schema.Types.ObjectId,
             ref: "User"
+        },
+        content: {
+            type: String
+        },
+        rate: {
+            type: Number
         },
         answerOn: {
             type: Schema.Types.ObjectId,
@@ -22,9 +23,7 @@ const schema = new Schema(
         }
     },
     {
-        timestamps: {
-            createdAt: "created_at"
-        }
+        timestamps: { createdAt: "created_at" }
     }
 );
 

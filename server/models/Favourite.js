@@ -2,12 +2,13 @@ const { Schema, model } = require("mongoose");
 
 const schema = new Schema(
     {
-        reviewId: {
-            type: String,
-            ref: "Review"
+        id: { type: String, unique: true },
+        estateId: {
+            type: Schema.Types.ObjectId,
+            ref: "Estate"
         },
         userId: {
-            type: String,
+            type: Schema.Types.ObjectId,
             ref: "User"
         }
     },

@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router({ mergeParams: true });
+const authRoutes = require("./auth.routes");
 
-router.use("/auth", require("./auth.routes"));
+router.use("/auth", authRoutes);
 router.use("/comment", require("./comment.routes"));
 router.use("/news", require("./news.routes"));
 router.use("/favourite", require("./favourite.routes"));
