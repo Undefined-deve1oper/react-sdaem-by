@@ -5,10 +5,11 @@ class FavouriteController {
         try {
             const newFavourite = await Favourite.create({
                 ...req.body,
-                userId: req.user.id
+                userId: req.user._id
             });
             res.status(201).send(newFavourite);
         } catch (error) {
+            console.log(error);
             res.status(500).json({
                 message: "На сервере произошла ошибка. Попробуйте позже"
             });
@@ -32,7 +33,7 @@ class FavouriteController {
             const { favouriteId } = req.params;
             const removedFavourite = await Favourite.findById(favouriteId);
 
-            if (removedFavourite.userId.toString() === req.user.id) {
+            if (removedFavourite.userId.toString() === req.user._id) {
                 await removedFavourite.remove();
                 return res.send(null);
             } else {

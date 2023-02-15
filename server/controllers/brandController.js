@@ -14,7 +14,7 @@ class BrandController {
 
     async getOne(req, res) {
         const { id } = req.params;
-        const brand = await Brand.find({ id });
+        const brand = await Brand.find({ _id: id });
         return res.json(brand);
     }
 }

@@ -5,17 +5,15 @@ const Estate = require("../models/Estate");
 class EstateController {
     async create(req, res) {
         try {
-            let { name, price, brandId, typeId, info } = req.body;
-            const { img } = req.files;
-            let fileName = uuid.v4() + ".jpg";
-            img.mv(path.resolve(__dirname, "..", "static", fileName));
+            let { label, price, brandId, typeId, info, img } = req.body;
+
             const estate = await Estate.create({
-                name,
+                label,
                 price,
                 brandId,
                 typeId,
-                img: fileName,
-                info: info
+                img,
+                info
             });
 
             return res.json(estate);

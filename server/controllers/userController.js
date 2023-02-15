@@ -1,3 +1,5 @@
+const User = require("../models/User");
+
 class UserController {
     async getUser(req, res) {
         try {
@@ -14,7 +16,7 @@ class UserController {
         try {
             const { userId } = req.params;
 
-            if (userId === req.user.id) {
+            if (userId === req.user._id) {
                 const updatedUser = await User.findByIdAndUpdate(
                     userId,
                     req.body,

@@ -1,6 +1,26 @@
 const Post = require("../models/Post");
 
 class PostController {
+    async create(req, res) {
+        try {
+            let { title, previewTextrice, fullText, image, author } = req.body;
+
+            const post = await Post.create({
+                title,
+                previewTextrice,
+                fullText,
+                image,
+                author
+            });
+
+            return res.json(post);
+        } catch (error) {
+            res.status(500).json({
+                message: "На сервере произошла ошибка. Попробуйте позже"
+            });
+        }
+    }
+
     async getAll(req, res) {
         try {
             const posts = await Post.find();
