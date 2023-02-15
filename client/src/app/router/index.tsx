@@ -8,7 +8,7 @@ const Main = React.lazy(() => import("../layouts/main"));
 const News = React.lazy(() => import("../layouts/news"));
 
 export type RoutesLinksType = {
-    id: number;
+    _id: number;
     item: string;
     path: string;
     icon?: string;

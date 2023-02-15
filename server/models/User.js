@@ -2,7 +2,6 @@ const { Schema, model } = require("mongoose");
 
 const schema = new Schema(
     {
-        id: { type: String, unique: true },
         name: String,
         subscribe: Boolean,
         birthYear: Number,

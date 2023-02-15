@@ -6,7 +6,7 @@ export interface IListDropdown {
     title: string;
     isIcon?: boolean;
     list: {
-        id: number;
+        _id: number;
         value: string;
         label: string;
         city: string;

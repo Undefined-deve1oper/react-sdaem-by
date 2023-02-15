@@ -1,0 +1,186 @@
+[
+    {
+        "price": "4500",
+        "rating": "0",
+        "img": "https://ltdfoto.ru/images/2023/02/14/6.jpg",
+        "label": "gold",
+        "info": {
+            "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
+            "capacity": "4 (2+2)",
+            "room": "1",
+            "square": "139",
+            "ownerContacts": {
+                "avatar": "/avatar.svg",
+                "title": "Владелец",
+                "name": "Dmitriy",
+                "tel": "+375 (29) 291-14-44",
+                "ownerEmail": "vladimir6234@tut.by",
+                "telegram": "https://www.telegram.com/",
+                "whatsapp": "https://web.whatsapp.com/",
+                "email": "sdaem@sdaem.by"
+            }
+        }
+    },
+    {
+        "price": "4500",
+        "rating": "0",
+        "img": "https://ltdfoto.ru/images/2023/02/14/6.jpg",
+        "label": "gold",
+        "info": {
+            "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
+            "capacity": "4 (2+2)",
+            "room": "1",
+            "square": "139",
+            "ownerContacts": {
+                "avatar": "/avatar.svg",
+                "title": "Владелец",
+                "name": "Dmitriy",
+                "tel": "+375 (29) 291-14-44",
+                "ownerEmail": "vladimir6234@tut.by",
+                "telegram": "https://www.telegram.com/",
+                "whatsapp": "https://web.whatsapp.com/",
+                "email": "sdaem@sdaem.by"
+            }
+        }
+    },
+
+    {
+        "price": "4500",
+        "rating": "0",
+        "img": "https://ltdfoto.ru/images/2023/02/14/14.png",
+        "label": "gold",
+        "info": {
+            "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
+            "capacity": "4 (2+2)",
+            "room": "1",
+            "square": "139",
+            "ownerContacts": {
+                "avatar": "/avatar.svg",
+                "title": "Владелец",
+                "name": "Dmitriy",
+                "tel": "+375 (29) 291-14-44",
+                "ownerEmail": "vladimir6234@tut.by",
+                "telegram": "https://www.telegram.com/",
+                "whatsapp": "https://web.whatsapp.com/",
+                "email": "sdaem@sdaem.by"
+            }
+        }
+    },
+    {
+        "price": "4500",
+        "rating": "1",
+        "img": "https://ltdfoto.ru/images/2023/02/14/14.png",
+        "label": "gold",
+        "info": {
+            "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
+            "capacity": "4 (2+2)",
+            "room": "1",
+            "square": "139",
+            "ownerContacts": {
+                "avatar": "/avatar.svg",
+                "title": "Владелец",
+                "name": "Dmitriy",
+                "tel": "+375 (29) 291-14-44",
+                "ownerEmail": "vladimir6234@tut.by",
+                "telegram": "https://www.telegram.com/",
+                "whatsapp": "https://web.whatsapp.com/",
+                "email": "sdaem@sdaem.by"
+            }
+        }
+    },
+
+    {
+        "price": "4800",
+        "rating": "0",
+        "img": "https://ltdfoto.ru/images/2023/02/14/18.jpg",
+        "label": "gold",
+        "info": {
+            "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
+            "capacity": "4 (2+2)",
+            "room": "1",
+            "square": "139",
+            "ownerContacts": {
+                "avatar": "/avatar.svg",
+                "title": "Владелец",
+                "name": "Dmitriy",
+                "tel": "+375 (29) 291-14-44",
+                "ownerEmail": "vladimir6234@tut.by",
+                "telegram": "https://www.telegram.com/",
+                "whatsapp": "https://web.whatsapp.com/",
+                "email": "sdaem@sdaem.by"
+            }
+        }
+    },
+
+    {
+        "price": "4500",
+        "rating": "1",
+        "img": "https://ltdfoto.ru/images/2023/02/14/18.jpg",
+        "label": "silver",
+        "info": {
+            "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
+            "capacity": "4 (2+2)",
+            "room": "1",
+            "square": "139",
+            "ownerContacts": {
+                "avatar": "/avatar.svg",
+                "title": "Владелец",
+                "name": "Dmitriy",
+                "tel": "+375 (29) 291-14-44",
+                "ownerEmail": "vladimir6234@tut.by",
+                "telegram": "https://www.telegram.com/",
+                "whatsapp": "https://web.whatsapp.com/",
+                "email": "sdaem@sdaem.by"
+            }
+        }
+    },
+
+    {
+        "price": "4500",
+        "rating": "5",
+        "img": "https://wallpaperaccess.com/full/1600667.jpg",
+        "label": "gold",
+        "brandId": "63ecd3d809b8f04ccc7e280b",
+        "typeId": "63ecd3d709b8f04ccc7e27e9",
+        "info": {
+            "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
+            "capacity": "4 (2+2)",
+            "room": "1",
+            "square": "139",
+            "ownerContacts": {
+                "avatar": "/avatar.svg",
+                "title": "Владелец",
+                "name": "Dmitriy",
+                "tel": "+375 (29) 291-14-44",
+                "ownerEmail": "vladimir6234@tut.by",
+                "telegram": "https://www.telegram.com/",
+                "whatsapp": "https://web.whatsapp.com/",
+                "email": "sdaem@sdaem.by"
+            }
+        }
+    },
+    {
+        "price": "4000",
+        "rating": "5",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/d/d1/2018_Ford_Mustang_GT_5.0.jpg",
+        "label": "gold",
+        "brandId": "63ecd3d809b8f04ccc7e2811",
+        "typeId": "63ecd3d709b8f04ccc7e27e9",
+        "info": {
+            "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
+            "capacity": "4 (2+2)",
+            "room": "1",
+            "square": "139",
+            "ownerContacts": {
+                "avatar": "/avatar.svg",
+                "title": "Владелец",
+                "name": "Dmitriy",
+                "tel": "+375 (29) 291-14-44",
+                "ownerEmail": "vladimir6234@tut.by",
+                "telegram": "https://www.telegram.com/",
+                "whatsapp": "https://web.whatsapp.com/",
+                "email": "sdaem@sdaem.by"
+            }
+        }
+    }
+]

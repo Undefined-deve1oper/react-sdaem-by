@@ -1,0 +1,28 @@
+const Post = require("../models/Post");
+
+class PostController {
+    async getAll(req, res) {
+        try {
+            const posts = await Post.find();
+            res.status(200).send(posts);
+        } catch (error) {
+            res.status(500).json({
+                message: "На сервере произошла ошибка. Попробуйте позже"
+            });
+        }
+    }
+
+    async getOne(req, res) {
+        try {
+            const { postId } = req.params;
+            const post = await Post.findById(postId);
+            res.status(200).send(post);
+        } catch (error) {
+            res.status(500).json({
+                message: "На сервере произошла ошибка. Попробуйте позже"
+            });
+        }
+    }
+}
+
+module.exports = new PostController();

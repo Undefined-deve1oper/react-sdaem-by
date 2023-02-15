@@ -1,0 +1,206 @@
+[
+    {
+        "typeId": 0,
+        "name": "Setl Group"
+    },
+    {
+        "typeId": 0,
+        "name": "Гранель"
+    },
+    {
+        "typeId": 0,
+        "name": "Эталон"
+    },
+    {
+        "typeId": 0,
+        "name": "Инград"
+    },
+    {
+        "typeId": 0,
+        "name": "Самолет"
+    },
+    {
+        "typeId": 0,
+        "name": "Донстрой"
+    },
+    {
+        "typeId": 0,
+        "name": "MR Group"
+    },
+    {
+        "typeId": 0,
+        "name": "Пионер"
+    },
+    {
+        "typeId": 1,
+        "name": "Grand-stroy"
+    },
+    {
+        "typeId": 1,
+        "name": "ROTENSTEIN"
+    },
+    {
+        "typeId": 1,
+        "name": "Олимпстройсервис"
+    },
+    {
+        "typeId": 1,
+        "name": "PopHouse"
+    },
+    {
+        "typeId": 1,
+        "name": "Загородный дом"
+    },
+    {
+        "typeId": 1,
+        "name": "Интек Бау Групп"
+    },
+    {
+        "typeId": 1,
+        "name": "ГК Фундамент"
+    },
+    {
+        "typeId": 1,
+        "name": "Vesco Construction"
+    },
+    {
+        "typeId": 2,
+        "name": "СаунаСтройСервис"
+    },
+    {
+        "typeId": 2,
+        "name": "ROTENSTEIN"
+    },
+    {
+        "typeId": 2,
+        "name": "RosBuild"
+    },
+    {
+        "typeId": 2,
+        "name": "Баньковъ"
+    },
+    {
+        "typeId": 2,
+        "name": "ПРОФИ"
+    },
+    {
+        "typeId": 2,
+        "name": "Бани33"
+    },
+    {
+        "typeId": 2,
+        "name": "ЮгСтройБани"
+    },
+    {
+        "typeId": 2,
+        "name": "СТУДИЯ САУН"
+    },
+    {
+        "typeId": 3,
+        "name": "Audi"
+    },
+    {
+        "typeId": 3,
+        "name": "Alfa Romeo"
+    },
+    {
+        "typeId": 3,
+        "name": "Aston Martin"
+    },
+    {
+        "typeId": 3,
+        "name": "BMW"
+    },
+    {
+        "typeId": 3,
+        "name": "Cadillac"
+    },
+    {
+        "typeId": 3,
+        "name": "Chevrolet"
+    },
+    {
+        "typeId": 3,
+        "name": "Corvette"
+    },
+    {
+        "typeId": 3,
+        "name": "Dodge"
+    },
+    {
+        "typeId": 3,
+        "name": "Ferrari"
+    },
+    {
+        "typeId": 3,
+        "name": "Ford"
+    },
+    {
+        "typeId": 3,
+        "name": "GMC"
+    },
+    {
+        "typeId": 3,
+        "name": "Honda"
+    },
+    {
+        "typeId": 3,
+        "name": "Jaguar"
+    },
+    {
+        "typeId": 3,
+        "name": "Jeep"
+    },
+    {
+        "typeId": 3,
+        "name": "Lamborghini"
+    },
+    {
+        "typeId": 3,
+        "name": "Land Rover"
+    },
+    {
+        "typeId": 3,
+        "name": "Lexus"
+    },
+    {
+        "typeId": 3,
+        "name": "Maybach"
+    },
+    {
+        "typeId": 3,
+        "name": "Mazzanti"
+    },
+    {
+        "typeId": 3,
+        "name": "McLaren"
+    },
+    {
+        "typeId": 3,
+        "name": "Mercedes-Benz"
+    },
+    {
+        "typeId": 3,
+        "name": "Nissan"
+    },
+    {
+        "typeId": 3,
+        "name": "Porsche"
+    },
+    {
+        "typeId": 3,
+        "name": "Rolls-Royce"
+    },
+    {
+        "typeId": 3,
+        "name": "Toyota"
+    },
+    {
+        "typeId": 3,
+        "name": "Volkswagen"
+    },
+    {
+        "typeId": 3,
+        "name": "Volvo"
+    }
+]

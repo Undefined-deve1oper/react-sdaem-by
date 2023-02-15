@@ -35,7 +35,7 @@ export interface IContact {
 }
 
 export interface IHeaderNavData {
-    id: number;
+    _id: number;
     item: string;
     path: string;
     isIcon?: boolean;
