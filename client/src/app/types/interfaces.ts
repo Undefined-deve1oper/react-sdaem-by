@@ -38,5 +38,5 @@ export interface IHeaderNavData {
     _id: number;
     item: string;
     path: string;
-    isIcon?: boolean;
+    icon?: string;
 }

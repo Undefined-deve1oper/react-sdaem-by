@@ -1,11 +1,10 @@
 import React from "react";
-import { IHeaderNavData } from "../../../types/interfaces";
-import { IListDropdown } from "../../common/Dropdown/DropdownList/DropdownList";
+import { RoutesLinksType } from "../../../router";
 import NavList from "../../common/NavList";
 
 interface IPhoneMenu {
     open: boolean;
-    data: IHeaderNavData[] & IListDropdown[];
+    data: RoutesLinksType[];
 }
 
 const PhoneMenu: React.FC<IPhoneMenu> = ({ open, data }) => {
