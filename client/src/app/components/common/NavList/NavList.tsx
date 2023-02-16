@@ -20,7 +20,7 @@ const NavList: React.FC<NavListProps> = ({
             {label && <h3>{label}</h3>}
             <ul className="menu__list" style={{ flexDirection: direction }}>
                 {routes.map((route) => (
-                    <NavItem key={route.id} route={route} />
+                    <NavItem key={route._id} route={route} />
                 ))}
             </ul>
         </nav>
