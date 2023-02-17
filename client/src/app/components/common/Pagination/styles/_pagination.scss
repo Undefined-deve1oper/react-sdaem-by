@@ -1,0 +1,41 @@
+.pagination {
+    display: inline-flex;
+    gap: 15px;
+
+    // .pagination__item
+    &__item {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        color: #000;
+        position: relative;
+
+        &::after {
+            content: "";
+
+            width: calc(100% + 11px);
+            height: 2px;
+            background: $warningColor;
+            opacity: 1;
+            visibility: hidden;
+
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            z-index: 2;
+            transform: translate(-50%, 0px);
+            transition: all 0.3s ease 0s;
+        }
+
+        &._active::after {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}

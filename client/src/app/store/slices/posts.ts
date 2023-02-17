@@ -1,7 +1,7 @@
 import { createSlice, Dispatch, PayloadAction } from "@reduxjs/toolkit";
 import postsService from "../../services/posts.service";
 
-export interface PostItem {
+export interface PostRow {
     _id: string;
     title: string;
     previewText: string;
@@ -12,14 +12,22 @@ export interface PostItem {
     updatedAt?: string;
 }
 
+export interface PostItem {
+    count: number;
+    rows: PostRow[];
+}
+
 interface PostState {
-    entities: PostItem[];
+    entities: PostItem;
     isLoading: boolean;
     error: string | null;
 }
 
 const initialState: PostState = {
-    entities: [],
+    entities: {
+        count: 0,
+        rows: []
+    },
     isLoading: true,
     error: null
 };
@@ -31,7 +39,7 @@ const postsSlice = createSlice({
         postsRequested(state) {
             state.isLoading = true;
         },
-        postsReceived(state, action: PayloadAction<PostItem[]>) {
+        postsReceived(state, action: PayloadAction<PostItem>) {
             state.entities = action.payload;
             state.isLoading = false;
         },
@@ -45,18 +53,19 @@ const postsSlice = createSlice({
 const { reducer: postsReducer, actions } = postsSlice;
 const { postsRequested, postsReceived, postsRequestFailed } = actions;
 
-export const loadPostsList = () => async (dispatch: Dispatch) => {
-    dispatch(postsRequested());
-    try {
-        const { content } = await postsService.fetchAll();
-        dispatch(postsReceived(content));
-    } catch (error) {
-        dispatch(postsRequestFailed(error.message));
-    }
-};
+export const loadPostsList =
+    (limit: number, page: number) => async (dispatch: Dispatch) => {
+        dispatch(postsRequested());
+        try {
+            const { content } = await postsService.fetchAll(limit, page);
+            dispatch(postsReceived(content));
+        } catch (error) {
+            dispatch(postsRequestFailed(error.message));
+        }
+    };
 export const getPostById = (postId: string) => (state: any) => {
     return state.posts.entities
-        ? state.posts.entities.find((post: PostItem) => post._id === postId)
+        ? state.posts.entities.find((post: PostRow) => post._id === postId)
         : null;
 };
 

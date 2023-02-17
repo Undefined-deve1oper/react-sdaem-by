@@ -1,39 +1,20 @@
 import React from "react";
-import ContentLoader from "react-content-loader";
+import { Circles } from "react-loader-spinner";
 
 interface IPropsLoader {
-    width?: number;
-    height?: number;
-    count?: number;
+    visible?: boolean;
 }
 
-const Loader: React.FC<IPropsLoader> = ({ count, width, height }) => {
+const Loader: React.FC<IPropsLoader> = ({ visible }) => {
     return (
-        <ContentLoader
-            width={width || 725}
-            height={height || 61}
-            viewBox="0 0 725 45"
-            backgroundColor="#d9d9d9"
-            foregroundColor="#ecebeb"
-        >
-            {count === 4 ? (
-                <>
-                    <rect x="200" y="20" rx="3" ry="3" width="120" height="6" />
-                    <rect x="400" y="20" rx="3" ry="3" width="120" height="6" />
-                    <rect x="600" y="20" rx="3" ry="3" width="120" height="6" />
-                    <rect x="0" y="20" rx="3" ry="3" width="120" height="6" />
-                </>
-            ) : (
-                <>
-                    <rect x="155" y="20" rx="3" ry="3" width="85" height="6" />
-                    <rect x="320" y="20" rx="3" ry="3" width="85" height="6" />
-                    <rect x="480" y="20" rx="3" ry="3" width="85" height="6" />
-                    <rect x="640" y="20" rx="3" ry="3" width="85" height="6" />
-                    <rect x="0" y="20" rx="3" ry="3" width="85" height="6" />
-                </>
-            )}
-        </ContentLoader>
+        <Circles
+            color="#9d94ff"
+            wrapperClass={"loader"}
+            height={100}
+            width={100}
+            visible={visible}
+        />
     );
 };
 
-export default Loader;
+export default React.memo(Loader);

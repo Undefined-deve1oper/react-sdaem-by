@@ -14,7 +14,7 @@ const PostsSearchbar: React.FC = () => {
                 name="searchbar"
                 value={value}
                 onChange={handleChange}
-                placeholder="Поиск по статьям..."
+                label="Поиск по статьям..."
             />
         </div>
     );

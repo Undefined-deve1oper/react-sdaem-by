@@ -10,7 +10,7 @@ const AppLoader: React.FC<IAppLoader> = ({ children }) => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(loadPostsList());
+        dispatch(loadPostsList(6, 1));
     }, [dispatch]);
 
     return <>{children}</>;

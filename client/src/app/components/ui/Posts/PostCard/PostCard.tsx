@@ -1,16 +1,16 @@
 import React from "react";
-import { PostItem } from "../../../../store";
+import { PostRow } from "../../../../store";
+import { getFormatDate } from "../../../../utils/dateHelpers";
+import { textCropper } from "../../../../utils/helpers";
 import Button from "../../../common/Button";
 
 interface IPostCard {
-    item: PostItem;
+    item: PostRow;
 }
 
 const PostCard: React.FC<IPostCard> = ({ item, ...rest }) => {
-    const slicedText =
-        item.previewText.length > 209
-            ? item.previewText.slice(0, 219) + "..."
-            : item.previewText;
+    const slicedText = textCropper(item.previewText, 219);
+    const formatDate = getFormatDate(item.createdAt);
 
     return (
         <div className="post-card">
@@ -22,7 +22,7 @@ const PostCard: React.FC<IPostCard> = ({ item, ...rest }) => {
                 <h3 className="post-card__title">{item.title}</h3>
                 <div className="post-card__text">{slicedText}</div>
                 <div className="post-card__info">
-                    <Button className="post-card__date">14 января 2021</Button>
+                    <Button className="post-card__date">{formatDate}</Button>
                     <Button className="post-card__read">Читать</Button>
                 </div>
             </div>

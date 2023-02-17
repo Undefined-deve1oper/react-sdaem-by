@@ -86,3 +86,15 @@ body {
 .error {
     color: red;
 }
+
+.error-container {
+    padding: 15px;
+    text-align: center;
+}
+
+.error-message {
+    font-weight: 700;
+    @include adaptiv-value("font-size", 30, 20, 1);
+    color: red;
+    line-height: 120%;
+}

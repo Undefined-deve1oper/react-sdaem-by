@@ -23,8 +23,18 @@ class PostController {
 
     async getAll(req, res) {
         try {
-            const posts = await Post.find();
-            res.status(200).send(posts);
+            let { limit, page } = req.query;
+            page = page || 1;
+            limit = limit || 9;
+            let offset = page * limit - limit;
+
+            const posts = await Post.find().skip(offset).limit(limit);
+            const count = await Post.find().count();
+
+            res.status(200).send({
+                count,
+                rows: posts
+            });
         } catch (error) {
             res.status(500).json({
                 message: "На сервере произошла ошибка. Попробуйте позже"
