@@ -10,7 +10,11 @@ const PostsSearchbar: React.FC = () => {
 
     return (
         <div className="posts-header__form">
-            <Searchbar value={value} onChange={handleChange} />
+            <Searchbar
+                value={value}
+                onChange={handleChange}
+                placeholder="Поиск по статьям..."
+            />
         </div>
     );
 };
