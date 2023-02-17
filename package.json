@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "use-react-router-breadcrumbs": "^4.0.1",
-    "uuid": "^9.0.0"
-  }
-}

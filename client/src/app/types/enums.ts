@@ -1,8 +1,6 @@
 export enum api {
-    flats = "/flats",
-    cars = "/cars",
-    baths = "/baths-and-saunas/",
-    cottages = "/cottages",
+    home = "/",
+    estates = "/estates",
     navigation = "/navigation",
     menuList = "/menu",
     posts = "/posts",
