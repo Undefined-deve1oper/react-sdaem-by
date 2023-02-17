@@ -1,0 +1,32 @@
+.bookmark {
+    // .bookmark__item
+    &__item {
+        color: $mainColor;
+        fill: $mainColor;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include adaptiv-value("gap", 10, 5, 1);
+        transition: all 0.3s ease-out 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $violetColor;
+                fill: $violetColor;
+            }
+        }
+    }
+
+    // .bookmark__label
+    .bookmark__label {
+        color: inherit;
+    }
+
+    // .bookmark__favourite
+    &__favourite {
+        width: 18px;
+        height: 16px;
+        fill: inherit;
+    }
+}

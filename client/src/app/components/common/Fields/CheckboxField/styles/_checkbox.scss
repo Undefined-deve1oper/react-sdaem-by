@@ -1,0 +1,28 @@
+.checkbox-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    column-gap: 62px;
+    row-gap: 30px;
+}
+
+.checkbox-list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+
+    margin: 0px 0px 15px 0px;
+
+    // .checkbox-list__item
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        color: $darkColor;
+
+        margin: 0px 0px 15px 0px;
+    }
+}
