@@ -1,0 +1,44 @@
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 100%;
+    color: $dullGray;
+
+    margin: 0px 0px 25px 0px;
+
+    // .breadcrumbs__item
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        margin-right: 7px;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+        color: inherit;
+    }
+
+    // .breadcrumbs__link
+    &__link {
+        color: inherit;
+        font-weight: inherit;
+    }
+
+    // .breadcrumbs__home-run
+    &__home-run {
+        fill: $violetColor;
+    }
+
+    // . breadcrumb__dot
+    &__dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        fill: $violetColor;
+        margin-right: 7px;
+    }
+}

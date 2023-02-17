@@ -1,11 +1,11 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
-import SignUpPage from "../components/pages/SignUpPage";
 import SignInPage from "../components/pages/SignInPage";
+import SignUpPage from "../components/pages/SignUpPage";
 
 const Login = React.lazy(() => import("../layouts/login"));
 const Main = React.lazy(() => import("../layouts/main"));
-const News = React.lazy(() => import("../layouts/news"));
+const Posts = React.lazy(() => import("../layouts/posts"));
 
 export type RoutesLinksType = {
     _id: number;
@@ -21,75 +21,48 @@ export type RoutesNavType = {
 };
 
 const routes = [
-    { path: "/", element: <Main /> },
-    { path: "news", element: <News /> },
+    { path: "/", breadcrumb: "Главная", element: <Main /> },
+    { path: "posts", breadcrumb: "Новости", element: <Posts /> },
     {
         path: "accommodation-and-rates",
-        element: <News />
+        breadcrumb: "Размещение и тарифы",
+        element: <Posts />
     },
     {
         path: "ads-on-the-map",
-        element: <News />
+        breadcrumb: "Объявления на карте",
+        element: <Posts />
     },
-    { path: "contacts", element: <News /> },
-    { path: "bookmarks", element: <News /> },
+    { path: "contacts", breadcrumb: "Контакты", element: <Posts /> },
+    { path: "bookmarks", breadcrumb: "Закладки", element: <Posts /> },
     {
         path: "login",
         element: <Login />,
         children: [
-            { path: "signup", element: <SignUpPage /> },
-            { path: "signin", element: <SignInPage /> },
-            { path: "*", element: <Navigate to="/login/signup" /> }
-        ]
-    },
-    {
-        path: "apartments-for-a-day/",
-        element: <News />,
-        children: [
             {
-                path: "moscow",
-                element: <News />
+                path: "signup",
+                breadcrumb: "Регистрация",
+                element: <SignUpPage />
             },
-            {
-                path: "saint-petersburg",
-                element: <News />
-            },
-            {
-                path: "ekaterinburg",
-                element: <News />
-            },
-            {
-                path: "omsk",
-                element: <News />
-            },
-            {
-                path: "krasnoyarsk",
-                element: <News />
-            },
-            {
-                path: "voronezh",
-                element: <News />
-            },
+            { path: "signin", breadcrumb: "Вход", element: <SignInPage /> },
             {
                 path: "*",
-                element: <Navigate to={"/apartments-for-a-day/"} />
+                breadcrumb: "Не найдено",
+                element: <Navigate to="/login/signup" />
             }
         ]
     },
     {
-        path: "cottages-and-manor/",
-        element: <News />
+        path: "estates",
+        breadcrumb: "Каталог",
+        element: <Posts />
     },
     {
-        path: "baths-and-saunas/",
-        element: <News />
+        path: "place-an-ad",
+        breadcrumb: "Разместить объявления",
+        element: <Posts />
     },
-    {
-        path: "car-rental/",
-        element: <News />
-    },
-    { path: "place-an-ad", element: <News /> },
-    { path: "*", element: <Navigate to="/" /> }
+    { path: "*", breadcrumb: "Не найдено", element: <Navigate to="/" /> }
 ];
 
 export default routes;

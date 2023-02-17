@@ -99,7 +99,7 @@ const FooterBody: React.FC = () => {
                         <li className="menu-footer__item">
                             <NavLink
                                 className="menu-footer__link"
-                                to={"/news/"}
+                                to={"/posts/"}
                             >
                                 Новости
                             </NavLink>

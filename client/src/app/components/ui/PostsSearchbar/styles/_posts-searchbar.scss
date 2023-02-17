@@ -1,0 +1,19 @@
+.posts-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    // .posts-header__title
+    &__title {
+        flex: 1 1 auto;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 100%;
+        color: $darkColor;
+    }
+
+    // .posts-header__form
+    &__form {
+        flex: 1 1 50%;
+    }
+}

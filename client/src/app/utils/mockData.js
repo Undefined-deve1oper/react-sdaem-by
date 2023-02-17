@@ -6,7 +6,7 @@ import cottages from "../mockData/cottages.json";
 import flats from "../mockData/flats.json";
 import menuList from "../mockData/menuList.json";
 import navigation from "../mockData/navigation.json";
-import news from "../mockData/news.json";
+import posts from "../mockData/posts.json";
 import sidebar from "../mockData/sidebar.json";
 import httpService from "../services/http.service";
 

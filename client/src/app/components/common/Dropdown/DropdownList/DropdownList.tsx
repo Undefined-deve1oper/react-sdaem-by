@@ -9,7 +9,6 @@ export interface IListDropdown {
         _id: number;
         value: string;
         label: string;
-        city: string;
         path: string;
     }[];
 }
@@ -45,7 +44,7 @@ export const DropdownList: React.FC<IPropsDropdown> = ({ menu }) => {
             {isOpen && (
                 <ul className={"dropdown-list"}>
                     {menu?.list.map((item) => (
-                        <li key={item.city} className={"dropdown-list__item"}>
+                        <li key={item._id} className={"dropdown-list__item"}>
                             <NavLink
                                 to={item.path}
                                 className={"dropdown-list__link"}

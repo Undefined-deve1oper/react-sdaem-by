@@ -5,6 +5,6 @@ export enum api {
     cottages = "/cottages",
     navigation = "/navigation",
     menuList = "/menu",
-    news = "/news",
+    posts = "/posts",
     contacts = "/contacts"
 }

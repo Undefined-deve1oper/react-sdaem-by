@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from "axios";
+import axios from "axios";
 import configFile from "../config.json";
 
 const http = axios.create({
@@ -6,7 +6,7 @@ const http = axios.create({
 });
 
 http.interceptors.request.use(
-    async function (config: AxiosRequestConfig): Promise<AxiosRequestConfig> {
+    async function (config: any): Promise<any> {
         if (configFile.isFireBase) {
             const containSlash = /\/$/gi.test(String(config.url));
             config.url =

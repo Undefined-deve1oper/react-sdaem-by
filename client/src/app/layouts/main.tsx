@@ -1,16 +1,8 @@
 import React from "react";
-import Footer from "../components/common/Footer";
-import Header from "../components/common/Header";
+import Wrapper from "../components/common/Wrapper";
 
 const Main: React.FC = () => {
-    return (
-        <>
-            <Header />
-            <main className="page"></main>
-            {/* <HomePage /> */}
-            <Footer />
-        </>
-    );
+    return <Wrapper>Hello</Wrapper>;
 };
 
 export default Main;

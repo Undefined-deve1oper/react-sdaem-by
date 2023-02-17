@@ -12,7 +12,7 @@ module.exports = async () => {
     const posts = await Post.find();
     if (posts.length !== postsMockData.length) {
         await createInitialEntity(Post, postsMockData);
-        console.log("added news in mongoDB");
+        console.log("added posts in mongoDB");
     }
 
     const types = await Type.find();
