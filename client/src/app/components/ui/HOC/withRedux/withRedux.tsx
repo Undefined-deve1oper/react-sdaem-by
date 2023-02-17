@@ -1,7 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
-import createStore from "../../../../store/createStore";
-const store = createStore();
+import { store } from "../../../../store";
 
 const withRedux =
     (Component: any) =>

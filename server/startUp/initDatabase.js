@@ -10,7 +10,7 @@ const estatesMockData = require("../mock/estate.json");
 
 module.exports = async () => {
     const posts = await Post.find();
-    if (posts.length !== postsMockData.length) {
+    if (true || posts.length !== postsMockData.length) {
         await createInitialEntity(Post, postsMockData);
         console.log("added posts in mongoDB");
     }

@@ -18,6 +18,10 @@
         line-height: 17px;
         color: $dullGray;
 
+        &:focus {
+            border-color: $violetColor;
+        }
+
         &::placeholder {
             font-weight: 500;
             font-size: 14px;

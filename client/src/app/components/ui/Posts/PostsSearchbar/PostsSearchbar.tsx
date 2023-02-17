@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Searchbar from "../../common/Searchbar";
+import Searchbar from "../../../common/Searchbar";
 
 const PostsSearchbar: React.FC = () => {
     const [value, setValue] = useState("");
@@ -11,6 +11,7 @@ const PostsSearchbar: React.FC = () => {
     return (
         <div className="posts-header__form">
             <Searchbar
+                name="searchbar"
                 value={value}
                 onChange={handleChange}
                 placeholder="Поиск по статьям..."

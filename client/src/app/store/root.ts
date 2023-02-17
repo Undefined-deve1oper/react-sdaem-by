@@ -5,8 +5,6 @@ const rootReducer = combineReducers({
     posts: postsReducer
 });
 
-function createStore() {
-    return configureStore({ reducer: rootReducer });
-}
-
-export default createStore;
+export const store = configureStore({
+    reducer: rootReducer
+});

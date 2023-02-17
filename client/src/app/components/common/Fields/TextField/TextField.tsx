@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-type TextFieldTypes = {
+export type TextFieldTypes = {
     type?: string;
     label?: string;
     name: string;
@@ -36,7 +36,7 @@ const TextField: React.FC<TextFieldTypes> = ({
                 onChange={onChange}
                 value={value}
                 placeholder={label}
-                className={"text-field__input " + className}
+                className={className + " text-field__input"}
                 {...rest}
             />
             {error && <p className="text-field__error error">{error}</p>}
