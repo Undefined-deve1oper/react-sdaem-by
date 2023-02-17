@@ -8,3 +8,21 @@ export enum api {
     posts = "/posts",
     contacts = "/contacts"
 }
+
+export enum path {
+    home = "/",
+    apartments = "/catalog/flats",
+    cottages = "/catalog/cottages",
+    bathsAndSaunas = "/catalog/baths-and-saunas",
+    cars = "/catalog/cars",
+    news = "news",
+    detail = "/news/detail/:id",
+    bookmarks = "bookmarks",
+    rate = "rate",
+    contacts = "contacts",
+    catalog = "catalog/:type",
+    productDetail = "/catalog/product/:id",
+    notfound = "*",
+    login = "login",
+    registration = "registration"
+}

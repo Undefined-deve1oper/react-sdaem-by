@@ -1,0 +1,235 @@
+.search-estate {
+    // .search-estate__body
+    &__body {
+    }
+
+    // .search-estate__search
+    &__search {
+        background: #fff;
+        border-radius: 0 10px 10px 10px;
+        padding: 15px 21px;
+        @media (max-width: $md3+px) {
+            border-radius: 0 0px 10px 10px;
+        }
+        &._open {
+            border-radius: 0 10px 0px 0px;
+        }
+    }
+
+    // .search-estate__elements
+    &__elements {
+    }
+}
+
+.estate-elements {
+    // .estate-elements__button
+    &__button {
+        padding: 13px 20px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 17px;
+        color: $lightColor;
+        background: rgba(45, 57, 136, 0.5);
+        transition: all 0.3s ease-out 0s;
+
+        &._active {
+            border-radius: 10px 10px 0 0;
+            background: $lightColor;
+            color: $violetColor;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                border-radius: 10px 10px 0 0;
+                background: $lightColor;
+                color: $violetColor;
+            }
+        }
+    }
+}
+
+.search-panel {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 20px;
+    position: relative;
+
+    @media (max-width: $md2+px) {
+        flex-wrap: wrap;
+    }
+    @media (max-width: $md1+px) {
+        column-gap: 10px;
+    }
+
+    // .search-panel__item
+    &__item {
+        flex: 1 1 16.6%;
+        white-space: nowrap;
+
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: $lightGrayColor2;
+
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        gap: 11px;
+
+        &:not(:last-child) {
+            min-height: 66px;
+            padding: 0px 20px 0px 0px;
+            border-right: 1px solid rgba(102, 78, 249, 0.1);
+            @media (max-width: $md2+px) {
+                border-right: none;
+            }
+            @media (max-width: $md1+px) {
+                padding: 0px 10px 0px 0px;
+            }
+        }
+    }
+
+    // .search-panel__link
+    &__link {
+        width: 100%;
+        height: 100%;
+
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: $lightGrayColor2;
+
+        gap: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease 0s;
+        color: $darkColor;
+
+        & svg {
+            color: $violetColor;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $violetColor;
+            }
+        }
+    }
+
+    // .search-panel__range
+    &__range {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        gap: 15px;
+
+        &::after {
+            content: "";
+            width: 6px;
+            height: 2px;
+            background: $violetColor;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        & input {
+            max-width: 80px;
+            @media (max-width: $md2+px) {
+                max-width: 100%;
+            }
+        }
+    }
+
+    .search-panel__buttons {
+        flex: 1 1 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        @media (max-width: $md3+px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    // .search-panel__button
+    &__button {
+        flex: 1 1 50%;
+        height: 100%;
+
+        @media (max-width: $md3+px) {
+            height: auto;
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 10px;
+
+        color: $darkColor;
+        font-weight: 500;
+        white-space: nowrap;
+        border-radius: 0px;
+
+        transition: all 0.3s ease 0s;
+
+        & svg {
+            fill: $violetColor;
+        }
+
+        @media (min-width: $md2+px) {
+            &:not(:last-child, :first-child) {
+                border-left: 1px solid rgba(102, 78, 249, 0.1);
+                padding: 0px 0px 0px 20px;
+            }
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                cursor: pointer;
+                color: $violetColor;
+            }
+        }
+    }
+
+    // .search-panel__submit
+    &__submit {
+        flex: 1 1 100%;
+        position: relative;
+
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: #242424;
+        background: $warningColor;
+        padding: 10px 15px;
+        border-radius: 22px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 10px;
+
+        transition: all 0.3s ease-out 0s;
+
+        & svg {
+            font-size: 14px;
+            transform: rotate(-180deg);
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background: $violetColor;
+                color: $lightColor;
+            }
+        }
+    }
+}
