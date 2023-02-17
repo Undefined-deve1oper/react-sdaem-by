@@ -6,7 +6,7 @@ const http = axios.create({
 });
 
 http.interceptors.request.use(
-    async function (config: any): Promise<any> {
+    async function (config) {
         if (configFile.isFireBase) {
             const containSlash = /\/$/gi.test(String(config.url));
             config.url =
@@ -21,7 +21,7 @@ http.interceptors.request.use(
     }
 );
 
-function transformData(data: any) {
+function transformData(data) {
     return data && !data.id && !data.ip
         ? Object.keys(data).map((key) => ({
               ...data[key]
