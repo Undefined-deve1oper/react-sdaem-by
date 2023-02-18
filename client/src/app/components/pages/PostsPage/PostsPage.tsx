@@ -1,5 +1,5 @@
 import React from "react";
-import { usePaginate } from "../../../hooks/usePaginate";
+import { usePaginate } from "../../../hooks";
 import { useStateSelector } from "../../../store";
 import Error from "../../common/Error";
 import Pagination from "../../common/Pagination";
@@ -7,13 +7,6 @@ import { SkeletonPostsList } from "../../common/Skeletons/Posts";
 import { PostsList, PostsSearchbar } from "../../ui/Posts";
 
 const PostsPage: React.FC = () => {
-    // Нельзя
-    // const {
-    //     entities: posts,
-    //     isLoading: postsLoading,
-    //     error: postsError
-    // } = useStateSelector((state) => state.posts);
-    // Можно
     const posts = useStateSelector((state) => state.posts.entities);
     const postsLoading = useStateSelector((state) => state.posts.isLoading);
     const postsError = useStateSelector((state) => state.posts.error);
@@ -40,6 +33,7 @@ const PostsPage: React.FC = () => {
                 ) : (
                     <SkeletonPostsList />
                 )}
+                {posts.length === 0 && <h2>К сожалению, постов нет.</h2>}
                 {postsError && <Error message={postsError} />}
             </div>
         </>

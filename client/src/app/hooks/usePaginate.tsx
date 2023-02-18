@@ -6,7 +6,7 @@ import {
     useStateSelector
 } from "../store";
 
-export const usePaginate = () => {
+const usePaginate = () => {
     const postsTotalCount = useStateSelector((state) => state.posts.totalCount);
     const currentPage = useStateSelector((state) => state.posts.currentPage);
     const perPage = useStateSelector((state) => state.posts.perPage);
@@ -27,3 +27,5 @@ export const usePaginate = () => {
         perPage
     };
 };
+
+export default usePaginate;

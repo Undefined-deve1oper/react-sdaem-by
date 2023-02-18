@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import useForm from "../../../../hooks/useForm";
+import { useForm } from "../../../../hooks";
 import { ButtonGroup, PriceRangeGroup, SelectGroup } from "../../Groups";
 import OpenForm from "../../OpenForm";
 import { validatorConfig } from "./validatorConfig";
