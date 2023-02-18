@@ -1,6 +1,9 @@
 import { useEffect } from "react";
-import { useAppDispatch, useStateSelector } from "../../../../store";
-import { loadPostsList } from "../../../../store/slices/posts";
+import { useAppDispatch } from "../../../../store";
+import {
+    loadFilteredPostsList,
+    loadPostsList
+} from "../../../../store/slices/posts";
 
 interface IAppLoader {
     children: React.ReactChild | React.ReactNode;
@@ -8,11 +11,9 @@ interface IAppLoader {
 
 const AppLoader: React.FC<IAppLoader> = ({ children }) => {
     const dispatch = useAppDispatch();
-    const currentPage = useStateSelector((state) => state.posts.currentPage);
-    const perPage = useStateSelector((state) => state.posts.perPage);
 
     useEffect(() => {
-        dispatch(loadPostsList(perPage, currentPage));
+        dispatch(loadPostsList());
     }, [dispatch]);
 
     return <>{children}</>;

@@ -1,6 +1,5 @@
 .breadcrumbs {
-    display: flex;
-    align-items: center;
+    text-align: left;
 
     font-weight: 400;
     font-size: 14px;
@@ -11,14 +10,12 @@
 
     // .breadcrumbs__item
     &__item {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: inline;
 
         margin-right: 7px;
         font-weight: 400;
         font-size: 14px;
-        line-height: 100%;
+        line-height: 160%;
         color: inherit;
     }
 
@@ -26,6 +23,7 @@
     &__link {
         color: inherit;
         font-weight: inherit;
+        line-height: 160%;
     }
 
     // .breadcrumbs__home-run

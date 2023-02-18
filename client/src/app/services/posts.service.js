@@ -3,12 +3,9 @@ import httpService from "./http.service";
 const postsEndPoint = "posts";
 
 const postsService = {
-    fetchAll: async (limit, page) => {
+    fetchAll: async (params) => {
         const { data } = await httpService.get(postsEndPoint, {
-            params: {
-                limit,
-                page
-            }
+            params: { ...params }
         });
         return data;
     },

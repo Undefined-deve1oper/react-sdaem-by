@@ -1,6 +1,6 @@
 import { createSlice, Dispatch, PayloadAction } from "@reduxjs/toolkit";
-import { act } from "@testing-library/react";
 import postsService from "../../services/posts.service";
+import { AppThunk } from "../types";
 
 export interface PostItem {
     _id: string;
@@ -17,18 +17,14 @@ interface PostState {
     entities: PostItem[];
     isLoading: boolean;
     error: string | null;
-    currentPage: number;
-    perPage: number;
-    totalCount: number;
+    filteredEntities: PostItem[];
 }
 
 const initialState: PostState = {
     entities: [],
+    filteredEntities: [],
     isLoading: true,
-    error: null,
-    currentPage: 1,
-    perPage: 6,
-    totalCount: 0
+    error: null
 };
 
 const postsSlice = createSlice({
@@ -38,17 +34,17 @@ const postsSlice = createSlice({
         postsRequested(state) {
             state.isLoading = true;
         },
-        postsReceived(state, action: PayloadAction<PostState>) {
-            state.entities = action.payload.entities;
-            state.totalCount = action.payload.totalCount;
+        postsReceived(state, action: PayloadAction<PostItem[]>) {
+            state.entities = action.payload;
             state.isLoading = false;
         },
         postsRequestFailed(state, action) {
             state.error = action.payload;
             state.isLoading = false;
         },
-        currentPageChanged(state, action: PayloadAction<number>) {
-            state.currentPage = action.payload;
+        filteredPostsReceived: (state, action: PayloadAction<PostItem[]>) => {
+            state.filteredEntities = action.payload;
+            state.isLoading = false;
         }
     }
 });
@@ -58,28 +54,35 @@ const {
     postsRequested,
     postsReceived,
     postsRequestFailed,
-    currentPageChanged
+    filteredPostsReceived
 } = actions;
 
-export const loadPostsList =
-    (limit: number, page: number) => async (dispatch: Dispatch) => {
+export const loadPostsList = () => async (dispatch: Dispatch) => {
+    dispatch(postsRequested());
+    try {
+        const { content } = await postsService.fetchAll();
+        dispatch(postsReceived(content));
+    } catch (error) {
+        dispatch(postsRequestFailed(error.message));
+    }
+};
+
+export const loadFilteredPostsList =
+    (queryParams?: any): AppThunk =>
+    async (dispatch) => {
         dispatch(postsRequested());
         try {
-            const { content } = await postsService.fetchAll(limit, page);
-            dispatch(postsReceived(content));
+            const { content } = await postsService.fetchAll(queryParams);
+            dispatch(filteredPostsReceived(content || []));
         } catch (error) {
             dispatch(postsRequestFailed(error.message));
         }
     };
-export const getPostById = (postId: string) => (state: any) => {
+
+export const getPostById = (postId: any) => (state: any) => {
     return state.posts.entities
         ? state.posts.entities.find((post: PostItem) => post._id === postId)
         : null;
 };
-
-export const changeCurrentPage =
-    (pageIndex: number) => (dispatch: Dispatch) => {
-        dispatch(currentPageChanged(pageIndex));
-    };
 
 export default postsReducer;

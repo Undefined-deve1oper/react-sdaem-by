@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { PostItem } from "../../../../store";
 import { getFormatDate } from "../../../../utils/dateHelpers";
 import { textCropper } from "../../../../utils/helpers";
@@ -23,7 +24,9 @@ const PostCard: React.FC<IPostCard> = ({ item, ...rest }) => {
                 <div className="post-card__text">{slicedText}</div>
                 <div className="post-card__info">
                     <Button className="post-card__date">{formatDate}</Button>
-                    <Button className="post-card__read">Читать</Button>
+                    <NavLink to={`/posts/${item._id}`}>
+                        <Button className="post-card__read">Читать</Button>
+                    </NavLink>
                 </div>
             </div>
         </div>

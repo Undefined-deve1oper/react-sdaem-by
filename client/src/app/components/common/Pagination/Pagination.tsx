@@ -14,7 +14,6 @@ const Pagination: React.FC<IPagination> = ({
     onPageChange
 }) => {
     const pageCount = Math.ceil(itemsCount / pageSize);
-
     if (pageCount === 1) return null;
     const pages = Array.from({ length: pageCount }, (_, index) => index + 1);
 

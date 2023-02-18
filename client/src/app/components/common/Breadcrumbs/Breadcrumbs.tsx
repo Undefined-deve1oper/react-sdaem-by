@@ -5,12 +5,12 @@ import routes from "../../../router";
 import IconSvg from "../IconSvg";
 
 const Breadcrumbs: React.FC = () => {
-    const breadcrumbs = useBreadcrumbs(routes, { disableDefaults: true });
+    const breadcrumbs = useBreadcrumbs(routes);
 
     return (
         <div className="breadcrumbs">
             {breadcrumbs.map(({ match, breadcrumb }) => (
-                <div className="breadcrumbs__item" key={match.pathname}>
+                <span className="breadcrumbs__item" key={match.pathname}>
                     {match.pathname === "/" ? (
                         <NavLink
                             className={"breadcrumbs__link"}
@@ -34,7 +34,7 @@ const Breadcrumbs: React.FC = () => {
                             </NavLink>
                         </>
                     )}
-                </div>
+                </span>
             ))}
         </div>
     );

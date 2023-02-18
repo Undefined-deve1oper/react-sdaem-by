@@ -1,31 +1,41 @@
-import { useEffect } from "react";
-import {
-    changeCurrentPage,
-    loadPostsList,
-    useAppDispatch,
-    useStateSelector
-} from "../store";
+import { useCallback, useEffect, useState } from "react";
 
-const usePaginate = () => {
-    const postsTotalCount = useStateSelector((state) => state.posts.totalCount);
-    const currentPage = useStateSelector((state) => state.posts.currentPage);
-    const perPage = useStateSelector((state) => state.posts.perPage);
-    const dispatch = useAppDispatch();
-
-    const handlePageChange = (pageIndex: number) => {
-        dispatch(changeCurrentPage(pageIndex));
-    };
+function usePaginate<T>(
+    items: Array<T>,
+    defaultLimitSize: number,
+    defaultCurrentPage: number
+) {
+    const [totalPages, setTotalPages] = useState(0);
+    const [limit, setLimit] = useState(defaultLimitSize);
+    const [page, setPage] = useState(defaultCurrentPage);
 
     useEffect(() => {
-        dispatch(loadPostsList(perPage, currentPage));
-    }, [currentPage]);
+        if (items.length < limit) {
+            setPage(1);
+        }
+    }, [items, limit]);
+
+    const handlePageChange = useCallback((pageIndex: number) => {
+        setPage(pageIndex);
+    }, []);
+    const handleLimitChange = useCallback((event: any) => {
+        setLimit(parseInt(event.target.value, 10));
+        setPage(1);
+    }, []);
+
+    const itemsListCrop = items.slice(
+        (page - 1) * limit,
+        (page - 1) * limit + limit
+    );
 
     return {
+        itemsListCrop,
         handlePageChange,
-        postsTotalCount,
-        currentPage,
-        perPage
+        handleLimitChange,
+        totalPages,
+        limit,
+        page
     };
-};
+}
 
 export default usePaginate;

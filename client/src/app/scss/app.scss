@@ -98,3 +98,7 @@ body {
     color: red;
     line-height: 120%;
 }
+
+.feedback {
+    @include adaptiv-value("font-size", 42, 24, 1);
+}

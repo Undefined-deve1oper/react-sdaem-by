@@ -29,12 +29,8 @@ class PostController {
             let offset = page * limit - limit;
 
             const posts = await Post.find().skip(offset).limit(limit);
-            const count = await Post.find().count();
 
-            res.status(200).send({
-                totalCount: count,
-                entities: posts
-            });
+            res.status(200).send(posts);
         } catch (error) {
             res.status(500).json({
                 message: "На сервере произошла ошибка. Попробуйте позже"

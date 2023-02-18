@@ -1,5 +1,8 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
+import { DynamicPostsBreadcrumb } from "../components/common/Breadcrumbs";
+import PostPage from "../components/pages/PostPage";
+import PostsPage from "../components/pages/PostsPage";
 import SignInPage from "../components/pages/SignInPage";
 import SignUpPage from "../components/pages/SignUpPage";
 
@@ -22,7 +25,23 @@ export type RoutesNavType = {
 
 const routes = [
     { path: "/", breadcrumb: "Главная", element: <Main /> },
-    { path: "posts", breadcrumb: "Новости", element: <Posts /> },
+    {
+        path: "posts",
+        breadcrumb: "Новости",
+        element: <Posts />,
+        children: [
+            {
+                path: "",
+                breadcrumb: "Новости",
+                element: <PostsPage />
+            },
+            {
+                path: ":postId",
+                breadcrumb: DynamicPostsBreadcrumb,
+                element: <PostPage />
+            }
+        ]
+    },
     {
         path: "accommodation-and-rates",
         breadcrumb: "Размещение и тарифы",

@@ -1,0 +1,85 @@
+.share {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @media (max-width: $md4+px) {
+        width: 100%;
+    }
+
+    // .share__title
+    &__title {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: $darkColor;
+    }
+
+    // .share__icon
+    &__icon {
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        fill: $darkColor;
+        transition: all 0.3s ease 0s;
+    }
+
+    // .share__item
+    &__item {
+        border-radius: 50%;
+        background-color: rgba(102, 78, 249, 0.1) !important;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 8px !important;
+        transition: all 0.3s ease 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: #f4f5fa;
+                .icon {
+                    fill: $darkColor;
+                }
+            }
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+        .share__icon {
+            fill: $violetColor;
+        }
+    }
+}
+
+.social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.posts-detail {
+    background-color: rgba(102, 78, 249, 0.1) !important;
+
+    @media (any-hover: hover) {
+        &:hover {
+            background-color: #f4f5fa !important;
+            .icon {
+                fill: $darkColor;
+            }
+        }
+    }
+}
+.estates-detail {
+    background-color: #f4f5fa !important;
+    &:hover {
+        background-color: rgba(102, 78, 249, 0.1) !important;
+        .icon {
+            fill: $violetColor;
+        }
+    }
+}
