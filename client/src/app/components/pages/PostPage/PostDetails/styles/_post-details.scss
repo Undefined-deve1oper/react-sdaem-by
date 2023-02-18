@@ -26,7 +26,7 @@
 }
 
 .post-details {
-    padding: 0px 0px 40px 0px;
+    margin: 0px 0px 40px 0px;
     // .post-details__title
     &__title {
         @include adaptiv-value("font-size", 30, 24, 1);

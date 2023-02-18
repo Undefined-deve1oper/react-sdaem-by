@@ -2,13 +2,20 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { getPostById, PostItem, useStateSelector } from "../../../../store";
 import { getFormatDate } from "../../../../utils/dateHelpers";
+import SkeletonPostDetail from "../../../common/Skeletons/Posts/SkeletonPostDetail";
 import ShareButtons from "../../../ui/ShareButtons";
 
 const PostDetails = () => {
     const { postId } = useParams();
     const post = useStateSelector<PostItem>(getPostById(postId));
 
-    if (!post) return <h1>Loading...</h1>;
+    if (!post) {
+        return (
+            <div className="post-details">
+                <SkeletonPostDetail />
+            </div>
+        );
+    }
 
     return (
         <div className="post-details">
