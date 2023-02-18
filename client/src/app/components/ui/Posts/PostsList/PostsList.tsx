@@ -1,38 +1,20 @@
-import React, { useEffect } from "react";
-import { usePaginate } from "../../../../hooks/usePaginate";
-import {
-    loadPostsList,
-    PostItem,
-    PostRow,
-    useAppDispatch
-} from "../../../../store";
-import Pagination from "../../../common/Pagination";
+import React from "react";
+import { PostItem } from "../../../../store";
 import PostCard from "../PostCard";
 
 interface IPostsList {
-    items: PostRow[];
-    totalCount: number;
+    items: PostItem[];
 }
 
-const PostsList: React.FC<IPostsList> = ({ items, totalCount, ...rest }) => {
-    const { limit, page, handlePageChange } = usePaginate(3, 1);
-
+const PostsList: React.FC<IPostsList> = ({ items, ...rest }) => {
     return (
-        <>
-            <ul className="posts__list posts-list">
-                {items.map((item: any) => (
-                    <li className="posts-list__item" key={item._id}>
-                        <PostCard item={item} {...rest} />
-                    </li>
-                ))}
-            </ul>
-            <Pagination
-                onPageChange={handlePageChange}
-                itemsCount={totalCount}
-                currentPage={page}
-                pageSize={limit}
-            />
-        </>
+        <ul className="posts__list posts-list">
+            {items.map((item: any) => (
+                <li className="posts-list__item" key={item._id}>
+                    <PostCard item={item} {...rest} />
+                </li>
+            ))}
+        </ul>
     );
 };
 

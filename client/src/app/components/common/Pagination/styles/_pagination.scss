@@ -1,6 +1,7 @@
 .pagination {
     display: inline-flex;
     gap: 15px;
+    user-select: none;
 
     // .pagination__item
     &__item {
@@ -16,20 +17,17 @@
             width: calc(100% + 11px);
             height: 2px;
             background: $warningColor;
-            opacity: 1;
-            visibility: hidden;
+            display: none;
 
             position: absolute;
             left: 50%;
             bottom: 0;
             z-index: 2;
             transform: translate(-50%, 0px);
-            transition: all 0.3s ease 0s;
         }
 
         &._active::after {
-            opacity: 1;
-            visibility: visible;
+            display: block;
         }
 
         @media (any-hover: hover) {

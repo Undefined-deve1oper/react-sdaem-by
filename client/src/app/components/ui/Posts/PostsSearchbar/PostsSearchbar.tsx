@@ -11,7 +11,6 @@ const PostsSearchbar: React.FC = () => {
     return (
         <div className="posts-header__form">
             <Searchbar
-                name="searchbar"
                 value={value}
                 onChange={handleChange}
                 label="Поиск по статьям..."

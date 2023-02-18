@@ -1,22 +1,29 @@
-import { useState } from "react";
+import { useEffect } from "react";
+import {
+    changeCurrentPage,
+    loadPostsList,
+    useAppDispatch,
+    useStateSelector
+} from "../store";
 
-export const usePaginate = (initLimit: number, initPage: number) => {
-    const [limit, setLimit] = useState<number>(initLimit);
-    const [page, setPage] = useState<number>(initPage);
+export const usePaginate = () => {
+    const postsTotalCount = useStateSelector((state) => state.posts.totalCount);
+    const currentPage = useStateSelector((state) => state.posts.currentPage);
+    const perPage = useStateSelector((state) => state.posts.perPage);
+    const dispatch = useAppDispatch();
 
     const handlePageChange = (pageIndex: number) => {
-        setPage(pageIndex);
+        dispatch(changeCurrentPage(pageIndex));
     };
 
-    const handleLimitChange = (size: number) => {
-        setLimit(size);
-        setPage(1);
-    };
+    useEffect(() => {
+        dispatch(loadPostsList(perPage, currentPage));
+    }, [currentPage]);
 
     return {
-        page,
-        limit,
         handlePageChange,
-        handleLimitChange
+        postsTotalCount,
+        currentPage,
+        perPage
     };
 };

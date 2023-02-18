@@ -1,11 +1,11 @@
 import React from "react";
-import { PostRow } from "../../../../store";
+import { PostItem } from "../../../../store";
 import { getFormatDate } from "../../../../utils/dateHelpers";
 import { textCropper } from "../../../../utils/helpers";
 import Button from "../../../common/Button";
 
 interface IPostCard {
-    item: PostRow;
+    item: PostItem;
 }
 
 const PostCard: React.FC<IPostCard> = ({ item, ...rest }) => {

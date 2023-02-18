@@ -3,6 +3,12 @@
     align-items: center;
     justify-content: space-between;
 
+    @media (max-width: $md4+px) {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 30px;
+    }
+
     // .posts-header__title
     &__title {
         flex: 1 1 auto;
@@ -15,5 +21,12 @@
     // .posts-header__form
     &__form {
         flex: 0 1 42.5%;
+        @media (max-width: $md3+px) {
+            flex: 0 1 50%;
+        }
+        @media (max-width: $md4+px) {
+            width: 100%;
+            flex: 1 1 auto;
+        }
     }
 }

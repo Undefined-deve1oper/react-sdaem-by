@@ -24,16 +24,16 @@ class PostController {
     async getAll(req, res) {
         try {
             let { limit, page } = req.query;
-            page = page || 1;
-            limit = limit || 9;
+            page = page;
+            limit = limit;
             let offset = page * limit - limit;
 
             const posts = await Post.find().skip(offset).limit(limit);
             const count = await Post.find().count();
 
             res.status(200).send({
-                count,
-                rows: posts
+                totalCount: count,
+                entities: posts
             });
         } catch (error) {
             res.status(500).json({
