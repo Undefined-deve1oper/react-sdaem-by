@@ -22,7 +22,7 @@ export type UserType = {
     _id?: string;
     name: string;
     subscribe: boolean;
-    birthYear: Date | number;
+    birthYear: Date;
     avatarImage?: string;
     email: string;
     password: string;

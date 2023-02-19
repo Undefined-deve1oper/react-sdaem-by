@@ -10,6 +10,7 @@ import {
     TextField
 } from "../../../common/Fields";
 import { validatorConfig } from "./validatorConfig";
+import Reaptcha from "reaptcha";
 
 const genderItems = [
     { id: "male", title: "Мужчина" },
@@ -19,11 +20,11 @@ const genderItems = [
 const initialData: UserType = {
     name: "",
     subscribe: false,
-    birthYear: Date.now(),
+    birthYear: new Date(),
     email: "",
     password: "",
     role: "USER",
-    gender: "female"
+    gender: "male"
 };
 
 const SignUpForm: React.FC = () => {
@@ -36,6 +37,11 @@ const SignUpForm: React.FC = () => {
         handleKeyDown
     } = useForm(initialData, false, validatorConfig);
     const location = useLocation();
+    const [verified, setVerified] = useState(false);
+
+    const onVerify = () => {
+        setVerified(true);
+    };
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
@@ -47,6 +53,8 @@ const SignUpForm: React.FC = () => {
             handleResetForm(event);
         }
     };
+
+    const isValid = verified && Object.keys(errors).length === 0;
 
     return (
         <form
@@ -66,7 +74,6 @@ const SignUpForm: React.FC = () => {
             />
             <TextField
                 name="email"
-                type="email"
                 label="Email..."
                 icon="email"
                 value={data.email}
@@ -84,7 +91,13 @@ const SignUpForm: React.FC = () => {
                 onChange={handleChange}
                 className="login-form__item"
             />
-            <DatePickerField value={data.birthYear} />
+            <DatePickerField
+                name={"birthYear"}
+                value={data.birthYear}
+                onChange={handleChange}
+                error={errors.birthYear}
+                minDate={new Date("1955-01-01")}
+            />
             <RadioGroupField
                 name="gender"
                 items={genderItems}
@@ -98,8 +111,16 @@ const SignUpForm: React.FC = () => {
                 label="Получать спецпредложения"
                 onChange={handleChange}
             />
-            <Button type="submit" className="login-form__btn">
-                Войти
+            <Reaptcha
+                sitekey="6LdbXDohAAAAAOSRPg7cLWorWEB_GXXS9isiZ-eB"
+                onVerify={onVerify}
+            />
+            <Button
+                type="submit"
+                disabled={!isValid}
+                className={`login-form__btn ${!isValid ? "disabled" : ""}`}
+            >
+                Зарегистрироваться
             </Button>
         </form>
     );

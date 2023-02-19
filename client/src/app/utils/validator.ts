@@ -1,3 +1,5 @@
+import { getFullYearByTimeStamp } from "./dateHelpers";
+
 export type ConfigFieldNameType = {
     message: string;
     value?: number | number[];
@@ -13,18 +15,17 @@ export type ValidatorConfigType = {
         min?: ConfigFieldNameType;
         isValidInterval?: ConfigFieldNameType;
         isValidDate?: ConfigFieldNameType;
+        notThePast?: any;
+        isAdult?: any;
     };
 };
 
-export function validator(
-    data: { [key: string]: any },
-    validatorConfig: ValidatorConfigType
-) {
+export function validator(data: any, validatorConfig: ValidatorConfigType) {
     const errors: { [key: string]: string } = {};
 
     function validate(
         validateMethod: string,
-        fieldData: string,
+        fieldData: any,
         config: ConfigFieldNameType
     ) {
         let statusValidate;
@@ -50,6 +51,19 @@ export function validator(
             case "isContainDigit": {
                 const digitRegExp = /\d+/g;
                 statusValidate = !digitRegExp.test(fieldData);
+                break;
+            }
+            case "isCorrectDate": {
+                statusValidate = data.toString() === "Invalid Date";
+                break;
+            }
+            case "isAdult": {
+                if (fieldData) {
+                    const fullYears = getFullYearByTimeStamp(
+                        Date.now() - fieldData.getTime()
+                    );
+                    statusValidate = fullYears < 18;
+                }
                 break;
             }
             case "min": {

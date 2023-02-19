@@ -7,6 +7,7 @@
     background: url("../../../../assets/svg/main-bg.svg") center / cover
             no-repeat,
         linear-gradient(360deg, #7e6af3 15.95%, #6540cd 63.1%);
+    padding: 60px 0;
 
     & .breadcrumbs {
         width: 100%;
@@ -171,5 +172,11 @@
         font-size: 16px;
         line-height: 24px;
         color: $darkColor;
+        margin: 20px 0px 0px 0px;
+
+        &.disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
     }
 }

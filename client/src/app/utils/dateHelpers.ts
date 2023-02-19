@@ -25,3 +25,7 @@ export function getFormatDate(data: string) {
 
     return `${date} ${month} ${year}`;
 }
+
+export function getFullYearByTimeStamp(timestamp: any) {
+    return Math.floor(timestamp / 1000 / 60 / 60 / 24 / 365);
+}

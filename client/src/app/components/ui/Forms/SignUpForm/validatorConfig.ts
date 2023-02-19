@@ -19,28 +19,23 @@ export const validatorConfig = {
         isContainDigit: {
             message: "Поле пароль должно иметь как минимум одно число"
         },
-        isContainCapitalSymbol: {
+        isCapitalSymbol: {
             message: "Поле пароль должно иметь как минимум одну заглавную букву"
         },
         min: {
             message: "Поле пароль должно содержать минимум 6 символов",
-            params: 6
+            value: 6
         }
     },
-    license: {
+    birthYear: {
         isRequired: {
-            message: "Поле обязательно для заполнения"
-        }
-    },
-    birth: {
-        isRequired: {
-            message: "Поле Дата Рождения обязательно для заполнения"
+            message: `Поле "Дата Рождения" обязательно для заполнения`
         },
         isCorrectDate: {
-            message: "Поле Дата Рождения некоректна"
+            message: `Поле "Дата Рождения" некоректно`
         },
         isAdult: {
-            message: "Наш сервис предназначен для лиц старше 18 лет",
+            message: `Наш сервис предназначен для лиц старше 18 лет`,
             params: 18
         }
     }

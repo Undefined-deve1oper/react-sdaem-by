@@ -13,10 +13,10 @@ const SignUpPage: React.FC<Props> = (props) => {
                     <SignUpForm />
                 </div>
                 <div className="sign-up__info">
-                    <h3 className="sign-up__subtitle">
-                        Пользователь обязуется:
-                    </h3>
                     <ul className="sign-up__list">
+                        <h3 className="sign-up__subtitle">
+                            Пользователь обязуется:
+                        </h3>
                         <li className="sign-up__item">
                             предоставлять достоверную и актуальную информацию
                             при регистрации и добавлении объекта;
