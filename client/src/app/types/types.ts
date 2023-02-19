@@ -17,3 +17,20 @@ export type SearchEstateFormDataType = {
     type?: string;
     capacity?: string;
 };
+
+export type UserType = {
+    _id?: string;
+    name: string;
+    subscribe: boolean;
+    birthYear: Date | number;
+    avatarImage?: string;
+    email: string;
+    password: string;
+    role: "USER" | "ADMIN";
+    gender: "male" | "female";
+};
+
+export type SignInDataType = {
+    email: string;
+    password: string;
+};

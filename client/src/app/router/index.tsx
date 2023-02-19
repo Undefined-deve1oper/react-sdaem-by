@@ -58,17 +58,13 @@ const routes = [
         path: "login",
         element: <Login />,
         children: [
+            { path: "", element: <Navigate to="/login/signin" /> },
             {
                 path: "signup",
                 breadcrumb: "Регистрация",
                 element: <SignUpPage />
             },
-            { path: "signin", breadcrumb: "Вход", element: <SignInPage /> },
-            {
-                path: "*",
-                breadcrumb: "Не найдено",
-                element: <Navigate to="/login/signup" />
-            }
+            { path: "signin", breadcrumb: "Вход", element: <SignInPage /> }
         ]
     },
     {

@@ -9,7 +9,7 @@ export default function useSearch<T>(
     const [filteredData, setFilteredData] = useState(data || []);
     const [isSearching, setIsSearching] = useState(false);
 
-    const debouncedSearchTerm = useDebounce(searchTerm, 700);
+    const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
     const handleChangeSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchTerm(event.target.value);

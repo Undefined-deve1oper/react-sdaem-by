@@ -1,5 +1,5 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect } from "react";
+import { useLocation, useParams } from "react-router-dom";
 import { getPostById, PostItem, useStateSelector } from "../../../../store";
 import { getFormatDate } from "../../../../utils/dateHelpers";
 import SkeletonPostDetail from "../../../common/Skeletons/Posts/SkeletonPostDetail";
@@ -7,7 +7,12 @@ import ShareButtons from "../../../ui/ShareButtons";
 
 const PostDetails = () => {
     const { postId } = useParams();
+    const { pathname } = useLocation();
     const post = useStateSelector<PostItem>(getPostById(postId));
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
 
     if (!post) {
         return (
@@ -19,6 +24,7 @@ const PostDetails = () => {
 
     return (
         <div className="post-details">
+            {/* <SkeletonPostDetail /> */}
             <h1 className="post-details__title">{post.title}</h1>
             <div className="post-details__share">
                 <div className="post-details__date">

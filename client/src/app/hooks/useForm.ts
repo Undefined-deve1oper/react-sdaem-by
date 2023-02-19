@@ -41,6 +41,7 @@ function useForm<T>(
                     el.tagName.toLowerCase() === "button" ||
                     el.tagName.toLowerCase() === "input"
             );
+
             const fieldIndex = Array.prototype.indexOf.call(
                 formElements,
                 event.target
@@ -49,7 +50,7 @@ function useForm<T>(
         }
     }, []);
 
-    const handleResetForm = (event: React.FormEvent<HTMLButtonElement>) => {
+    const handleResetForm = (event: React.FormEvent) => {
         event.preventDefault();
         setData(initialData);
         setErrors({});

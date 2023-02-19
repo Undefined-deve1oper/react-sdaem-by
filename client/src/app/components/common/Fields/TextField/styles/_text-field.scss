@@ -1,5 +1,25 @@
 .text-field {
     flex: 1 1 100%;
+
+    // .text-field__content
+    &__content {
+        position: relative;
+    }
+
+    &.error {
+        & input {
+            border: 2px solid $dangerColor;
+        }
+        & .text-field__icon {
+            fill: $dangerColor;
+        }
+        @media (any-hover: hover) {
+            &:hover .text-field__icon {
+                fill: $dangerColor !important;
+            }
+        }
+    }
+
     // .text-field__input
     &__input {
         width: 100%;
@@ -19,5 +39,6 @@
 
     // .text-field__error
     &__error {
+        margin: 10px 0px 0px 0px;
     }
 }

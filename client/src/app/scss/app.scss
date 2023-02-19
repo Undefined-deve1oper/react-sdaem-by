@@ -84,7 +84,7 @@ body {
 }
 
 .error {
-    color: red;
+    color: $dangerColor;
 }
 
 .error-container {
@@ -95,7 +95,7 @@ body {
 .error-message {
     font-weight: 700;
     @include adaptiv-value("font-size", 30, 20, 1);
-    color: red;
+    color: $dangerColor;
     line-height: 120%;
 }
 

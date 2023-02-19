@@ -1,12 +1,15 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import Breadcrumbs from "../components/common/Breadcrumbs";
 
 const Login: React.FC = () => {
     return (
-        <div>
-            <h1>Login</h1>
-            <Outlet />
-        </div>
+        <main className="login-page">
+            {/* <Breadcrumbs /> */}
+            <div className="login-page__container _container">
+                <Outlet />
+            </div>
+        </main>
     );
 };
 
