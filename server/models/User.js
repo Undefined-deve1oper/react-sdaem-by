@@ -4,7 +4,7 @@ const schema = new Schema(
     {
         name: String,
         subscribe: Boolean,
-        birthYear: Number,
+        birthYear: Date,
         avatarImage: String,
         password: String,
         email: { type: String, required: true, unique: true },

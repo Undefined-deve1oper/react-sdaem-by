@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "../../../../hooks";
 import { UserType } from "../../../../types/types";
 import Button from "../../../common/Button";
@@ -11,6 +11,8 @@ import {
 } from "../../../common/Fields";
 import { validatorConfig } from "./validatorConfig";
 import Reaptcha from "reaptcha";
+import { getAuthErrors, signUp, useAppDispatch } from "../../../../store";
+import { useSelector } from "react-redux";
 
 const genderItems = [
     { id: "male", title: "Мужчина" },
@@ -28,6 +30,8 @@ const initialData: UserType = {
 };
 
 const SignUpForm: React.FC = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
     const {
         data,
         errors,
@@ -36,8 +40,9 @@ const SignUpForm: React.FC = () => {
         handleResetForm,
         handleKeyDown
     } = useForm(initialData, false, validatorConfig);
-    const location = useLocation();
     const [verified, setVerified] = useState(false);
+    const loginError = useSelector(getAuthErrors());
+    const dispatch = useAppDispatch();
 
     const onVerify = () => {
         setVerified(true);
@@ -51,78 +56,84 @@ const SignUpForm: React.FC = () => {
                 ? location.state.from.pathname
                 : "/";
             handleResetForm(event);
+            dispatch(signUp(data)).then(() =>
+                navigate(redirect, { replace: true })
+            );
         }
     };
 
     const isValid = verified && Object.keys(errors).length === 0;
 
     return (
-        <form
-            className={"login-form"}
-            onSubmit={handleSubmit}
-            onKeyDown={handleKeyDown}
-        >
-            <TextField
-                autoFocus
-                name="name"
-                label="Имя..."
-                icon="user"
-                value={data.name}
-                error={errors.name}
-                onChange={handleChange}
-                className="login-form__item"
-            />
-            <TextField
-                name="email"
-                label="Email..."
-                icon="email"
-                value={data.email}
-                error={errors.email}
-                onChange={handleChange}
-                className="login-form__item"
-            />
-            <TextField
-                name="password"
-                type="password"
-                label="Пароль..."
-                icon="password"
-                value={data.password}
-                error={errors.password}
-                onChange={handleChange}
-                className="login-form__item"
-            />
-            <DatePickerField
-                name={"birthYear"}
-                value={data.birthYear}
-                onChange={handleChange}
-                error={errors.birthYear}
-                minDate={new Date("1955-01-01")}
-            />
-            <RadioGroupField
-                name="gender"
-                items={genderItems}
-                value={data.gender}
-                onChange={handleChange}
-                label="Выберите ваш пол"
-            />
-            <SwitchField
-                value={data.subscribe}
-                name="subscribe"
-                label="Получать спецпредложения"
-                onChange={handleChange}
-            />
-            <Reaptcha
-                sitekey="6LdbXDohAAAAAOSRPg7cLWorWEB_GXXS9isiZ-eB"
-                onVerify={onVerify}
-            />
-            <Button
-                type="submit"
-                disabled={!isValid}
-                className={`login-form__btn ${!isValid ? "disabled" : ""}`}
+        <>
+            <form
+                className={"login-form"}
+                onSubmit={handleSubmit}
+                onKeyDown={handleKeyDown}
             >
-                Зарегистрироваться
-            </Button>
-        </form>
+                <TextField
+                    autoFocus
+                    name="name"
+                    label="Имя..."
+                    icon="user"
+                    value={data.name}
+                    error={errors.name}
+                    onChange={handleChange}
+                    className="login-form__item"
+                />
+                <TextField
+                    name="email"
+                    label="Email..."
+                    icon="email"
+                    value={data.email}
+                    error={errors.email}
+                    onChange={handleChange}
+                    className="login-form__item"
+                />
+                <TextField
+                    name="password"
+                    type="password"
+                    label="Пароль..."
+                    icon="password"
+                    value={data.password}
+                    error={errors.password}
+                    onChange={handleChange}
+                    className="login-form__item"
+                />
+                <DatePickerField
+                    name={"birthYear"}
+                    value={data.birthYear}
+                    onChange={handleChange}
+                    error={errors.birthYear}
+                    minDate={new Date("1955-01-01")}
+                />
+                <RadioGroupField
+                    name="gender"
+                    items={genderItems}
+                    value={data.gender}
+                    onChange={handleChange}
+                    label="Выберите ваш пол"
+                />
+                <SwitchField
+                    value={data.subscribe}
+                    name="subscribe"
+                    label="Получать спецпредложения"
+                    onChange={handleChange}
+                />
+                <Reaptcha
+                    sitekey="6LdbXDohAAAAAOSRPg7cLWorWEB_GXXS9isiZ-eB"
+                    onVerify={onVerify}
+                />
+                <Button
+                    type="submit"
+                    disabled={!isValid}
+                    className={`login-form__btn ${!isValid ? "disabled" : ""}`}
+                >
+                    Зарегистрироваться
+                </Button>
+            </form>
+            {loginError && <p className="form-error">{loginError}</p>}
+        </>
     );
 };
 

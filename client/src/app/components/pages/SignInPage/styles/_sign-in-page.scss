@@ -180,3 +180,8 @@
         }
     }
 }
+
+.form-error {
+    color: $dangerColor;
+    @include adaptiv-value("font-size", 24, 18, 1);
+}

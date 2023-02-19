@@ -1,22 +1,27 @@
 import { useEffect } from "react";
-import { useAppDispatch } from "../../../../store";
+import { useSelector } from "react-redux";
 import {
-    loadFilteredPostsList,
-    loadPostsList
-} from "../../../../store/slices/posts";
+    getIsLoggedIn,
+    getUsersLoadingStatus,
+    loadUsersList,
+    useAppDispatch
+} from "../../../../store";
+import { loadPostsList } from "../../../../store/slices/posts";
+import Loader from "../../../common/Loader";
 
-interface IAppLoader {
-    children: React.ReactChild | React.ReactNode;
-}
-
-const AppLoader: React.FC<IAppLoader> = ({ children }) => {
+const AppLoader = ({ children }: any) => {
+    const usersStatusLoading = useSelector(getUsersLoadingStatus());
+    const isLoggedIn = useSelector(getIsLoggedIn());
     const dispatch = useAppDispatch();
 
     useEffect(() => {
+        dispatch(loadUsersList());
         dispatch(loadPostsList());
-    }, [dispatch]);
+    }, [dispatch, isLoggedIn]);
 
-    return <>{children}</>;
+    if (usersStatusLoading) return <Loader />;
+
+    return children;
 };
 
 export default AppLoader;

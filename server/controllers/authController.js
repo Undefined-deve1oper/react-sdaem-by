@@ -39,6 +39,7 @@ class AuthController {
             await tokenService.save(newUser._id, tokens.refreshToken);
             res.status(201).send({ ...tokens, userId: newUser._id });
         } catch (error) {
+            console.log(error);
             res.status(500).json({
                 message: "На сервере произошла ошибка. Попробуйте позже"
             });

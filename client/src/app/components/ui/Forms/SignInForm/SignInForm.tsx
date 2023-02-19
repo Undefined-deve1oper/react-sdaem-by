@@ -1,6 +1,8 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "../../../../hooks";
+import { getAuthErrors, signIn, useAppDispatch } from "../../../../store";
 import { SignInDataType } from "../../../../types/types";
 import Button from "../../../common/Button";
 import { TextField } from "../../../common/Fields";
@@ -12,6 +14,8 @@ const initialData: SignInDataType = {
 };
 
 const SignInForm: React.FC = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
     const {
         data,
         errors,
@@ -20,7 +24,8 @@ const SignInForm: React.FC = () => {
         handleResetForm,
         handleKeyDown
     } = useForm(initialData, false, validatorConfig);
-    const location = useLocation();
+    const loginError = useSelector(getAuthErrors());
+    const dispatch = useAppDispatch();
 
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
@@ -29,40 +34,46 @@ const SignInForm: React.FC = () => {
             const redirect = location.state
                 ? location.state.from.pathname
                 : "/";
+            dispatch(signIn({ payload: data })).then(() =>
+                navigate(redirect, { replace: true })
+            );
             handleResetForm(event);
         }
     };
 
     return (
-        <form
-            className={"login-form"}
-            onSubmit={handleSubmit}
-            onKeyDown={handleKeyDown}
-        >
-            <TextField
-                autoFocus
-                name="email"
-                label="Email..."
-                icon="email"
-                value={data.email}
-                error={errors.email}
-                onChange={handleChange}
-                className="login-form__item"
-            />
-            <TextField
-                name="password"
-                type="password"
-                label="Пароль..."
-                icon="password"
-                value={data.password}
-                error={errors.password}
-                onChange={handleChange}
-                className="login-form__item"
-            />
-            <Button type="submit" className="login-form__btn">
-                Войти
-            </Button>
-        </form>
+        <>
+            <form
+                className={"login-form"}
+                onSubmit={handleSubmit}
+                onKeyDown={handleKeyDown}
+            >
+                <TextField
+                    autoFocus
+                    name="email"
+                    label="Email..."
+                    icon="email"
+                    value={data.email}
+                    error={errors.email}
+                    onChange={handleChange}
+                    className="login-form__item"
+                />
+                <TextField
+                    name="password"
+                    type="password"
+                    label="Пароль..."
+                    icon="password"
+                    value={data.password}
+                    error={errors.password}
+                    onChange={handleChange}
+                    className="login-form__item"
+                />
+                <Button type="submit" className="login-form__btn">
+                    Войти
+                </Button>
+            </form>
+            {loginError && <p className="form-error">{loginError}</p>}
+        </>
     );
 };
 

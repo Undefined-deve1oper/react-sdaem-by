@@ -24,6 +24,7 @@ const DatePickerField: React.FC<DatePickerFieldType> = ({
                 value: data.toString() === "Invalid Date" || !data ? "" : data
             }
         };
+
         onChange(fakeEvent);
         // onChange({ target: { name, value: data } });
     };

@@ -5,9 +5,13 @@ import Bookmark from "../../Bookmark";
 import Burger from "../../Burger";
 import NavList from "../../NavList";
 import data from "../../../../config/navigation-config.json";
+import { getAuthErrors, getIsLoggedIn } from "../../../../store";
+import { useSelector } from "react-redux";
 
 const HeaderTop: React.FC = () => {
     const [isOpen, setOpen] = useState<boolean>(false);
+    const isLoggedIn = useSelector(getIsLoggedIn());
+    const authErrors = useSelector(getAuthErrors());
 
     const handleToggleMenu = () => {
         setOpen((prevState) => !prevState);
@@ -26,11 +30,18 @@ const HeaderTop: React.FC = () => {
                     <div className="top-header__actions actions-header">
                         <Bookmark label="Закладки" />
                     </div>
-                    <div className="header-buttons">
-                        <NavLink to="/login" className="header-buttons-button">
-                            Вход и регистрация
-                        </NavLink>
-                    </div>
+                    {isLoggedIn && !authErrors ? (
+                        <h1>Добро пожаловать</h1>
+                    ) : (
+                        <div className="header-buttons">
+                            <NavLink
+                                to="/login"
+                                className="header-buttons-button"
+                            >
+                                Вход и регистрация
+                            </NavLink>
+                        </div>
+                    )}
                 </div>
             </div>
         </>
