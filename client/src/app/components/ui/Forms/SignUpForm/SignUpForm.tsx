@@ -4,6 +4,7 @@ import { useForm } from "../../../../hooks";
 import { UserType } from "../../../../types/types";
 import Button from "../../../common/Button";
 import {
+    DatePickerField,
     RadioGroupField,
     SwitchField,
     TextField
@@ -83,6 +84,7 @@ const SignUpForm: React.FC = () => {
                 onChange={handleChange}
                 className="login-form__item"
             />
+            <DatePickerField value={data.birthYear} />
             <RadioGroupField
                 name="gender"
                 items={genderItems}
