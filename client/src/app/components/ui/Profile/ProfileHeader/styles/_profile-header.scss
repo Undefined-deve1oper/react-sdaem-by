@@ -1,0 +1,45 @@
+.profile-header {
+    width: 100%;
+    background: $lightColor;
+    margin: 15px 0px 0px 0px;
+
+    // .profile-header__container
+    &__container {
+    }
+}
+
+.profile-list {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 65px;
+
+    // .profile-list__item
+    &__item {
+    }
+
+    // .profile-list__link
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        color: $darkColor;
+        fill: $darkColor;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        padding: 15px 0;
+
+        &._active {
+            border-bottom: 3px solid $warningColor;
+        }
+
+        & .svg-icon {
+            width: 16px;
+            height: 16px;
+            fill: inherit;
+        }
+    }
+}

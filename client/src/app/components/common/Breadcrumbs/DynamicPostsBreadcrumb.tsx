@@ -1,4 +1,3 @@
-import useBreadcrumbs from "use-react-router-breadcrumbs";
 import { textCropper } from "../../../utils/helpers";
 
 const postTitlesById: any = {

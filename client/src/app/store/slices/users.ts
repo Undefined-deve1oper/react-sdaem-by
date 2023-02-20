@@ -187,8 +187,6 @@ export const logOut = (): AppThunk => async (dispatch) => {
 export const getUsersList = () => (state: RootStore) => state.users.entities;
 export const getCurrentUserData = () => (state: RootStore) => {
     if (state.users.auth) {
-        console.log(state.users.entities);
-
         return state.users.entities
             ? state.users.entities.find(
                   (user: UserType) => user._id === state.users.auth.userId

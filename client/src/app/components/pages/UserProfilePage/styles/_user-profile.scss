@@ -1,0 +1,10 @@
+.page {
+    background: $lightGrayColor;
+}
+
+.user-profile {
+    // .user-profile .breadcrumbs
+    & .breadcrumbs {
+        padding: 30px 0;
+    }
+}

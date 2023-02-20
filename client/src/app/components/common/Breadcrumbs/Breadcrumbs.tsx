@@ -2,7 +2,23 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import useBreadcrumbs from "use-react-router-breadcrumbs";
 import routes from "../../../router";
+import { getUserById, useStateSelector } from "../../../store";
 import IconSvg from "../IconSvg";
+
+type RouteParams = {
+    userId: string;
+    roomId: string;
+    route: string;
+};
+
+export const UserBreadcrumb: React.FC<any> = (props) => {
+    const user = useStateSelector(getUserById(props.match.params.userId));
+
+    if (user) {
+        return <span>{`${user?.name}`}</span>;
+    }
+    return <span>Пользователь не найден</span>;
+};
 
 const Breadcrumbs: React.FC = () => {
     const breadcrumbs = useBreadcrumbs(routes);
