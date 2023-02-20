@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useForm } from "../../../../hooks";
-import { getAuthErrors, signIn, useAppDispatch } from "../../../../store";
+import { getAuthSignInError, signIn, useAppDispatch } from "../../../../store";
 import { SignInDataType } from "../../../../types/types";
 import Button from "../../../common/Button";
 import { TextField } from "../../../common/Fields";
@@ -24,7 +24,7 @@ const SignInForm: React.FC = () => {
         handleResetForm,
         handleKeyDown
     } = useForm(initialData, false, validatorConfig);
-    const loginError = useSelector(getAuthErrors());
+    const loginError = useSelector(getAuthSignInError());
     const dispatch = useAppDispatch();
 
     const handleSubmit = (event: React.FormEvent) => {
@@ -34,9 +34,7 @@ const SignInForm: React.FC = () => {
             const redirect = location.state
                 ? location.state.from.pathname
                 : "/";
-            dispatch(signIn({ payload: data })).then(() =>
-                navigate(redirect, { replace: true })
-            );
+            dispatch(signIn({ payload: data, redirect, navigate }));
             handleResetForm(event);
         }
     };

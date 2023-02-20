@@ -1,11 +1,9 @@
 import { createAction, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import localStorageService, {
-    setTokens
-} from "../../services/localStorage.service";
+import authService from "../../services/auth.service";
+import localStorageService from "../../services/localStorage.service";
 import userService from "../../services/user.service";
 import { SignInDataType, UserType } from "../../types/types";
 import generateAuthError from "../../utils/AuthErrors";
-import authService from "../../services/auth.service";
 import { AppThunk, RootStore } from "../types";
 
 type UserInitialState = {
@@ -16,25 +14,28 @@ type UserInitialState = {
         userId: string | null;
     };
     isLoggedIn: boolean;
-    dataLoaded: boolean;
+    signInError: string | null;
+    signUpError: string | null;
 };
 
 const initialState: UserInitialState = localStorageService.getAccessToken()
     ? {
           entities: [],
           isLoading: true,
-          error: null,
-          auth: { userId: localStorageService.getUserId() },
+          signInError: null,
+          signUpError: null,
           isLoggedIn: true,
-          dataLoaded: false
+          auth: { userId: localStorageService.getUserId() },
+          error: null
       }
     : {
           entities: [],
-          isLoading: false,
-          error: null,
-          auth: { userId: null },
+          isLoading: true,
+          signInError: null,
+          signUpError: null,
           isLoggedIn: false,
-          dataLoaded: false
+          auth: { userId: null },
+          error: null
       };
 
 const usersSlice = createSlice({
@@ -46,7 +47,6 @@ const usersSlice = createSlice({
         },
         usersReceived: (state, action: PayloadAction<UserType[]>) => {
             state.entities = action.payload;
-            state.dataLoaded = true;
             state.isLoading = false;
         },
         usersRequestFailed: (state, action: PayloadAction<string>) => {
@@ -54,7 +54,8 @@ const usersSlice = createSlice({
             state.isLoading = false;
         },
         authRequested: (state) => {
-            state.error = null;
+            state.signInError = null;
+            state.signUpError = null;
         },
         authRequestSuccess: (state, action) => {
             state.auth = action.payload;
@@ -62,6 +63,12 @@ const usersSlice = createSlice({
         },
         authRequestFailed: (state, action) => {
             state.error = action.payload;
+        },
+        authSignInRequestFailed(state, action) {
+            state.signInError = action.payload;
+        },
+        authSignUpRequestFailed(state, action) {
+            state.signUpError = action.payload;
         },
         userCreated: (state, action) => {
             state.entities.push(action.payload);
@@ -75,6 +82,11 @@ const usersSlice = createSlice({
                 (user) => user._id === action.payload._id
             );
             state.entities[index] = action.payload;
+        },
+        userDeleted(state, action) {
+            state.entities = state.entities.filter(
+                (user) => user._id !== action.payload
+            );
         }
     }
 });
@@ -87,6 +99,8 @@ const {
     authRequested,
     authRequestSuccess,
     authRequestFailed,
+    authSignInRequestFailed,
+    authSignUpRequestFailed,
     userLoggedOut,
     userUpdated
 } = actions;
@@ -95,6 +109,63 @@ const userUpdateRequested = createAction("users/userUpdateRequested");
 const userUpdateRequestedFailed = createAction(
     "users/userUpdateRequestedFailed"
 );
+
+export const loadUsersList = (): AppThunk => async (dispatch) => {
+    dispatch(usersRequested());
+    try {
+        const { content } = await userService.fetchAll();
+        dispatch(usersReceived(content));
+    } catch (error) {
+        dispatch(usersRequestFailed(error.message));
+    }
+};
+
+export const signUp =
+    (payload: UserType): AppThunk =>
+    async (dispatch) => {
+        dispatch(authRequested());
+        try {
+            const data = await authService.signUp(payload);
+            localStorageService.setTokens(data);
+            dispatch(authRequestSuccess({ userId: data.userId }));
+        } catch (error) {
+            dispatch(authRequestFailed(error.message));
+            const { message, code } = error.response.data.error;
+            if (code === 400) {
+                dispatch(authSignUpRequestFailed(generateAuthError(message)));
+            } else {
+                dispatch(authSignUpRequestFailed(error.message));
+            }
+        }
+    };
+
+export const signIn =
+    ({
+        payload,
+        redirect,
+        navigate
+    }: {
+        payload: SignInDataType;
+        redirect?: string;
+        navigate: any;
+    }): AppThunk =>
+    async (dispatch) => {
+        const { email, password } = payload;
+        dispatch(authRequested());
+        try {
+            const data = await authService.signIn({ email, password });
+            localStorageService.setTokens(data);
+            dispatch(authRequestSuccess({ userId: data.userId }));
+            navigate(redirect, { replace: true });
+        } catch (error) {
+            const { message, code } = error.response.data.error;
+            if (code === 400) {
+                dispatch(authSignInRequestFailed(generateAuthError(message)));
+            } else {
+                dispatch(authSignInRequestFailed(error.message));
+            }
+        }
+    };
 
 export const updateUserData =
     (payload: UserType): AppThunk =>
@@ -108,57 +179,16 @@ export const updateUserData =
         }
     };
 
-export const signUp =
-    (payload: UserType): AppThunk =>
-    async (dispatch) => {
-        dispatch(authRequested());
-        try {
-            const data = await authService.signUp(payload);
-            setTokens(data);
-            dispatch(authRequestSuccess({ userId: data.userId }));
-        } catch (error) {
-            dispatch(authRequestFailed(error.message));
-        }
-    };
-
-export const signIn =
-    ({ payload }: { payload: SignInDataType }): AppThunk =>
-    async (dispatch) => {
-        const { email, password } = payload;
-        dispatch(authRequested());
-        try {
-            const data = await authService.signIn({ email, password });
-            setTokens(data);
-            dispatch(authRequestSuccess({ userId: data.userId }));
-        } catch (error) {
-            const { code, message } = error.response.data.error;
-            if (code === 400) {
-                const errorMessage = generateAuthError(message);
-                dispatch(authRequestFailed(errorMessage));
-            } else {
-                dispatch(authRequestFailed(error.message));
-            }
-        }
-    };
-
 export const logOut = (): AppThunk => async (dispatch) => {
     localStorageService.removeAuthData();
     dispatch(userLoggedOut());
 };
 
-export const loadUsersList = (): AppThunk => async (dispatch) => {
-    dispatch(usersRequested());
-    try {
-        const { content } = await userService.fetchAll();
-        dispatch(usersReceived(content));
-    } catch (error) {
-        dispatch(usersRequestFailed(error.message));
-    }
-};
-
 export const getUsersList = () => (state: RootStore) => state.users.entities;
 export const getCurrentUserData = () => (state: RootStore) => {
     if (state.users.auth) {
+        console.log(state.users.entities);
+
         return state.users.entities
             ? state.users.entities.find(
                   (user: UserType) => user._id === state.users.auth.userId
@@ -180,6 +210,9 @@ export const getIsLoggedIn = () => (state: RootStore) => state.users.isLoggedIn;
 export const getCurrentUserId = () => (state: RootStore) => {
     return state.users.auth.userId;
 };
-export const getAuthErrors = () => (state: RootStore) => state.users.error;
+export const getAuthSignInError = () => (state: RootStore) =>
+    state.users.signInError;
+export const getAuthSignUpError = () => (state: RootStore) =>
+    state.users.signUpError;
 
 export default usersReducer;

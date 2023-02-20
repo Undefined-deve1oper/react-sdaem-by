@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
+import Reaptcha from "reaptcha";
 import { useForm } from "../../../../hooks";
+import { getAuthSignUpError, signUp, useAppDispatch } from "../../../../store";
 import { UserType } from "../../../../types/types";
 import Button from "../../../common/Button";
 import {
@@ -10,9 +13,6 @@ import {
     TextField
 } from "../../../common/Fields";
 import { validatorConfig } from "./validatorConfig";
-import Reaptcha from "reaptcha";
-import { getAuthErrors, signUp, useAppDispatch } from "../../../../store";
-import { useSelector } from "react-redux";
 
 const genderItems = [
     { id: "male", title: "Мужчина" },
@@ -41,7 +41,7 @@ const SignUpForm: React.FC = () => {
         handleKeyDown
     } = useForm(initialData, false, validatorConfig);
     const [verified, setVerified] = useState(false);
-    const loginError = useSelector(getAuthErrors());
+    const loginError = useSelector(getAuthSignUpError());
     const dispatch = useAppDispatch();
 
     const onVerify = () => {

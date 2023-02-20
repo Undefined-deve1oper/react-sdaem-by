@@ -1,14 +1,8 @@
-import React, { useCallback } from "react";
-import { NavLink } from "react-router-dom";
-import {
-    useFiltersQuery,
-    usePaginate,
-    useSearch,
-    useSort
-} from "../../../hooks";
-import { useStateSelector } from "../../../store";
+import React from "react";
+import { useSelector } from "react-redux";
+import { usePaginate, useSearch, useSort } from "../../../hooks";
+import { getPostsList, getPostsLoadingStatus } from "../../../store";
 import Breadcrumbs from "../../common/Breadcrumbs";
-import Error from "../../common/Error";
 import Pagination from "../../common/Pagination";
 import Searchbar from "../../common/Searchbar";
 import SectionWrapper from "../../common/SectionWrapper";
@@ -23,9 +17,8 @@ const options = [
 ];
 
 const PostsPage: React.FC = () => {
-    const posts = useStateSelector((state) => state.posts.entities);
-    const postsLoading = useStateSelector((state) => state.posts.isLoading);
-    const postsError = useStateSelector((state) => state.posts.error);
+    const posts = useSelector(getPostsList());
+    const postsLoading = useSelector(getPostsLoadingStatus());
 
     const { filteredData, searchTerm, handleChangeSearch } = useSearch(posts, {
         searchBy: "title"
@@ -71,7 +64,6 @@ const PostsPage: React.FC = () => {
                 {postsListCrop.length === 0 && (
                     <h2 className="feedback">К сожалению, постов нет.</h2>
                 )}
-                {postsError && <Error message={postsError} />}
             </div>
         </SectionWrapper>
     );

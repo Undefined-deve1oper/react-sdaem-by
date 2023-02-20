@@ -1,19 +1,52 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 import configFile from "../config.json";
+import { toast } from "react-toastify";
+import localStorageService from "./localStorage.service";
+import authService from "./auth.service";
 
 const http = axios.create({
     baseURL: configFile.apiEndPoint
 });
 
 http.interceptors.request.use(
-    async function (config) {
+    async function (config: AxiosRequestConfig): Promise<any> {
+        const expiresDate = localStorageService.getTokenExpiresDate();
+        const refreshToken = localStorageService.getRefreshToken();
+
+        const isExpired = refreshToken && Number(expiresDate) < Date.now();
+
         if (configFile.isFireBase) {
             const containSlash = /\/$/gi.test(String(config.url));
             config.url =
                 (containSlash ? config.url?.slice(0, -1) : config.url) +
                 ".json";
-        }
 
+            if (isExpired) {
+                const data = await authService.refresh();
+                localStorageService.setTokens({
+                    expiresIn: data.expires_in,
+                    accessToken: data.id_token,
+                    userId: data.user_id,
+                    refreshToken: data.refresh_token
+                });
+            }
+            const accessToken = localStorageService.getAccessToken();
+            if (accessToken) {
+                config.params = { ...config.params, auth: accessToken };
+            }
+        } else {
+            if (isExpired) {
+                const data = await authService.refresh();
+                localStorageService.setTokens(data);
+            }
+            const accessToken = localStorageService.getAccessToken();
+            if (accessToken) {
+                config.headers = {
+                    ...config.headers,
+                    Authorization: `Bearer ${accessToken}`
+                };
+            }
+        }
         return config;
     },
     function (error) {
@@ -38,6 +71,14 @@ http.interceptors.response.use(
         return res;
     },
     function (error) {
+        const expectedErrors =
+            error.response &&
+            error.response.status >= 400 &&
+            error.response.status < 500;
+        if (!expectedErrors) {
+            console.log(error);
+            toast.error("Something was wrong. Try it later");
+        }
         return Promise.reject(error);
     }
 );

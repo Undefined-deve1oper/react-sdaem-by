@@ -183,5 +183,5 @@
 
 .form-error {
     color: $dangerColor;
-    @include adaptiv-value("font-size", 24, 18, 1);
+    margin: 0px 0px 15px 0px;
 }

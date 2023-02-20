@@ -1,6 +1,6 @@
 import { createSlice, Dispatch, PayloadAction } from "@reduxjs/toolkit";
 import postsService from "../../services/posts.service";
-import { AppThunk } from "../types";
+import { AppThunk, RootStore } from "../types";
 
 export interface PostItem {
     _id: string;
@@ -84,5 +84,9 @@ export const getPostById = (postId: any) => (state: any) => {
         ? state.posts.entities.find((post: PostItem) => post._id === postId)
         : null;
 };
+
+export const getPostsList = () => (state: RootStore) => state.posts.entities;
+export const getPostsLoadingStatus = () => (state: RootStore) =>
+    state.posts.isLoading;
 
 export default postsReducer;

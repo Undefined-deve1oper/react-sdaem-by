@@ -16,6 +16,11 @@ export function setTokens({
     refreshToken,
     expiresIn = 3600
 }: SetTokensProps) {
+    // console.log("userId: ", userId);
+    // console.log("accessToken: ", accessToken);
+    // console.log("refreshToken: ", refreshToken);
+    // console.log("expiresIn: ", expiresIn);
+
     const expiresDate = (new Date().getTime() + expiresIn * 1000).toString();
 
     localStorage.setItem(TOKEN_KEY, accessToken);

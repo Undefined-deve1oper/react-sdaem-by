@@ -1,7 +1,7 @@
 const User = require("../models/User");
 
 class UserController {
-    async getUser(req, res) {
+    async getUsers(req, res) {
         try {
             const users = await User.find();
             res.status(200).send(users);

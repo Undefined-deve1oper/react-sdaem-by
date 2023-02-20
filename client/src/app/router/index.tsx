@@ -9,6 +9,7 @@ import SignUpPage from "../components/pages/SignUpPage";
 const Login = React.lazy(() => import("../layouts/login"));
 const Main = React.lazy(() => import("../layouts/main"));
 const Posts = React.lazy(() => import("../layouts/posts"));
+const Bookmark = React.lazy(() => import("../layouts/bookmark"));
 
 export type RoutesLinksType = {
     _id: number;
@@ -53,7 +54,7 @@ const routes = [
         element: <Posts />
     },
     { path: "contacts", breadcrumb: "Контакты", element: <Posts /> },
-    { path: "bookmarks", breadcrumb: "Закладки", element: <Posts /> },
+    { path: "bookmark", breadcrumb: "Закладки", element: <Bookmark /> },
     {
         path: "login",
         element: <Login />,

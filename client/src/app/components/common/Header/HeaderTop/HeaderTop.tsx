@@ -1,17 +1,17 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
+import data from "../../../../config/navigation-config.json";
+import { getIsLoggedIn } from "../../../../store";
+import NavProfile from "../../../ui/NavProfile";
 import PhoneMenu from "../../../ui/PhoneMenu";
 import Bookmark from "../../Bookmark";
 import Burger from "../../Burger";
 import NavList from "../../NavList";
-import data from "../../../../config/navigation-config.json";
-import { getAuthErrors, getIsLoggedIn } from "../../../../store";
-import { useSelector } from "react-redux";
 
 const HeaderTop: React.FC = () => {
     const [isOpen, setOpen] = useState<boolean>(false);
     const isLoggedIn = useSelector(getIsLoggedIn());
-    const authErrors = useSelector(getAuthErrors());
 
     const handleToggleMenu = () => {
         setOpen((prevState) => !prevState);
@@ -30,8 +30,8 @@ const HeaderTop: React.FC = () => {
                     <div className="top-header__actions actions-header">
                         <Bookmark label="Закладки" />
                     </div>
-                    {isLoggedIn && !authErrors ? (
-                        <h1>Добро пожаловать</h1>
+                    {isLoggedIn ? (
+                        <NavProfile />
                     ) : (
                         <div className="header-buttons">
                             <NavLink
