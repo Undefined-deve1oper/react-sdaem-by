@@ -7,6 +7,8 @@ type DatePickerFieldType = {
     value: Date;
     minDate: Date;
     error: string | null;
+    className?: string;
+    title?: string;
     onChange: (event: any) => void;
 };
 
@@ -15,7 +17,9 @@ const DatePickerField: React.FC<DatePickerFieldType> = ({
     value,
     minDate,
     error,
-    onChange
+    onChange,
+    className,
+    title
 }) => {
     const handleChange = (data: Date) => {
         const fakeEvent = {
@@ -26,21 +30,25 @@ const DatePickerField: React.FC<DatePickerFieldType> = ({
         };
 
         onChange(fakeEvent);
-        // onChange({ target: { name, value: data } });
     };
 
     return (
         <div className="date-picker">
+            {title && (
+                <h3 className="date-picker__title form-title">{title}</h3>
+            )}
             <div className="date-picker__content">
                 <DatePicker
-                    selected={value}
+                    selected={new Date(value)}
                     onChange={handleChange}
                     showYearDropdown
                     minDate={minDate || Date.now()}
                     dateFormatCalendar="MMMM"
                     yearDropdownItemNumber={68}
                     scrollableYearDropdown
-                    wrapperClassName={"text-field login-form__item"}
+                    wrapperClassName={
+                        className || "text-field login-form__item"
+                    }
                 />
                 <IconSvg name="date" />
             </div>

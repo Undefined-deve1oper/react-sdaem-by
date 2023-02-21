@@ -32,6 +32,19 @@ const userService = {
             payload
         );
         return data;
+    },
+    saveAvatarPhoto: async (payload: any) => {
+        const { data } = await httpService.post(
+            userEndpoint + localStorageService.getUserId() + "/upload_avatar",
+            [...payload],
+            {
+                headers: {
+                    "Content-Type": "multipart/form-data"
+                }
+            }
+        );
+
+        return data;
     }
 };
 

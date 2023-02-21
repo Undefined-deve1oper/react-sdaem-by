@@ -22,7 +22,7 @@ const genderItems = [
 const initialData: UserType = {
     name: "",
     subscribe: false,
-    birthYear: new Date(),
+    birthYear: Date.now(),
     email: "",
     password: "",
     role: "USER",
@@ -32,14 +32,11 @@ const initialData: UserType = {
 const SignUpForm: React.FC = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    const {
-        data,
-        errors,
-        handleChange,
-        validate,
-        handleResetForm,
-        handleKeyDown
-    } = useForm(initialData, false, validatorConfig);
+    const { data, errors, handleChange, validate, handleResetForm } = useForm(
+        initialData,
+        false,
+        validatorConfig
+    );
     const [verified, setVerified] = useState(false);
     const loginError = useSelector(getAuthSignUpError());
     const dispatch = useAppDispatch();
@@ -66,11 +63,7 @@ const SignUpForm: React.FC = () => {
 
     return (
         <>
-            <form
-                className={"login-form"}
-                onSubmit={handleSubmit}
-                onKeyDown={handleKeyDown}
-            >
+            <form className={"login-form"} onSubmit={handleSubmit}>
                 <TextField
                     autoFocus
                     name="name"

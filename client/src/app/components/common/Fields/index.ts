@@ -4,6 +4,7 @@ import CheckboxField from "./CheckboxField";
 import SwitchField from "./SwitchField";
 import RadioGroupField from "./RadioGroupField";
 import DatePickerField from "./DatePickerField";
+import FileField from "./FileField";
 
 export {
     SelectField,
@@ -11,5 +12,6 @@ export {
     CheckboxField,
     SwitchField,
     RadioGroupField,
-    DatePickerField
+    DatePickerField,
+    FileField
 };

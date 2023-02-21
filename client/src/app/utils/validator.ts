@@ -60,7 +60,7 @@ export function validator(data: any, validatorConfig: ValidatorConfigType) {
             case "isAdult": {
                 if (fieldData) {
                     const fullYears = getFullYearByTimeStamp(
-                        Date.now() - fieldData.getTime()
+                        Date.now() - new Date(fieldData).getTime()
                     );
                     statusValidate = fullYears < 18;
                 }

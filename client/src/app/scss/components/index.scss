@@ -4,6 +4,7 @@
 @import "../../components/common/Fields/SwitchField/styles/swith-field";
 @import "../../components/common/Fields/RadioGroupField/styles/radio-group";
 @import "../../components/common/Fields/DatePickerField/styles/date-picker";
+@import "../../components/common/Fields/FileField/styles/file-field";
 @import "../../components/common/Button/styles/button";
 @import "../../components/common/Header/header";
 @import "../../components/common/NavList/styles/nav-list";
@@ -26,10 +27,13 @@
 @import "../../components/pages/PostPage/PostDetails/styles/post-details";
 @import "../../components/pages/PostPage/PostReadMore/styles/post-read-more";
 @import "../../components/pages/UserProfilePage/styles/user-profile";
+@import "../../components/pages/UserEditPage/styles/user-edit";
+@import "../../components/pages/EstatesPage/styles/estate-page";
 @import "../../components/ui/Posts/PostsList/styles/posts-list";
 @import "../../components/ui/ShareButtons/styles/share-buttons";
 @import "../../components/ui/Posts/PostCard/styles/post-card";
 @import "../../components/ui/Forms/SearchEstateForm/styles/search-estate-form.scss";
+@import "../../components/ui/Forms/UserEditForm/styles/user-edit-form";
 @import "../../components/ui/PhoneMenu/styles/phone-menu";
 @import "../../components/ui/OpenForm/styles/open-form";
 @import "../../components/ui/NavProfile/styles/nav-profile";

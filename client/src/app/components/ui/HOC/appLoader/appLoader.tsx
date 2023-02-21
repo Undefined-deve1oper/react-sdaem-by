@@ -6,6 +6,7 @@ import {
     loadUsersList,
     useAppDispatch
 } from "../../../../store";
+import { loadEstatesList } from "../../../../store/slices/estates";
 import { loadPostsList } from "../../../../store/slices/posts";
 import Loader from "../../../common/Loader";
 
@@ -17,6 +18,7 @@ const AppLoader = ({ children }: any) => {
     useEffect(() => {
         dispatch(loadUsersList());
         dispatch(loadPostsList());
+        dispatch(loadEstatesList());
     }, [dispatch, isLoggedIn]);
 
     if (usersStatusLoading) return <Loader />;

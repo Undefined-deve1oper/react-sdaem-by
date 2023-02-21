@@ -15,7 +15,6 @@ const ButtonGroup: React.FC<ButtonGroupTypes> = ({ onToggleOptions }) => {
     return (
         <div className="search-panel__buttons">
             <Button
-                type="button"
                 className={"search-panel__button"}
                 onClick={onToggleOptions}
             >
@@ -24,7 +23,7 @@ const ButtonGroup: React.FC<ButtonGroupTypes> = ({ onToggleOptions }) => {
             </Button>
             {isHome ? (
                 <>
-                    <Button type="button" className="search-panel__button">
+                    <Button className="search-panel__button">
                         На карте
                         <IconSvg width="13" height="16" name={"mark"} />
                     </Button>

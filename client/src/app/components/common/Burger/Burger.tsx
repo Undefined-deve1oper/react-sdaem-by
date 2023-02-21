@@ -7,7 +7,7 @@ interface IBurger {
 
 const Burger: React.FC<IBurger> = ({ open, onToggleMenu }) => {
     return (
-        <button onClick={onToggleMenu} type="button" className="icon-menu">
+        <button onClick={onToggleMenu} className="icon-menu">
             <span className={open ? "_active" : ""}></span>
         </button>
     );

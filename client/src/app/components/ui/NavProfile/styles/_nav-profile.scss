@@ -1,5 +1,7 @@
 .nav-profile {
     position: relative;
+    user-select: none;
+
     // .nav-profile__body
     &__body {
         display: flex;
@@ -58,7 +60,7 @@
 }
 
 .list-profile {
-    width: calc(100% + 60px);
+    min-width: 200px;
     display: flex;
     align-items: flex-start;
     flex-direction: column;

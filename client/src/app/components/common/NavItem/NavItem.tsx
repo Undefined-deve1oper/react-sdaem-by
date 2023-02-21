@@ -15,6 +15,7 @@ const NavItem: React.FC<NavItemProps> = ({ route }) => {
                     `menu__link ${isActive ? "_active" : ""}`
                 }
                 to={route.path}
+                end
             >
                 {route.icon && <IconSvg name={route.icon} svgClass={"icon"} />}
                 {route.item}

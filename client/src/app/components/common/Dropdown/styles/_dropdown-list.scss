@@ -26,6 +26,7 @@
         display: inline-block;
         width: 100%;
         transition: all 0.3s ease 0s;
+        pointer-events: none;
 
         &:first-child {
             border-radius: 10px 10px 0 0;
@@ -46,6 +47,7 @@
     // .dropdown-list__link
     &__link {
         width: 100%;
+        pointer-events: all;
         display: inline-block;
         font-weight: 500;
         font-size: 14px;

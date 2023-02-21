@@ -17,7 +17,11 @@ const schema = new Schema(
         info: {
             type: Object,
             _id: { type: String, unique: true },
-            description: { type: String }
+            description: { type: String },
+            ownerId: {
+                type: Schema.Types.ObjectId,
+                ref: "User"
+            }
         }
     },
     {

@@ -13,6 +13,7 @@ export type TextFieldTypes = {
     onChange?: (target: any) => void;
     className?: string;
     icon?: string;
+    title?: string;
 };
 
 const TextField: React.FC<TextFieldTypes> = ({
@@ -24,6 +25,7 @@ const TextField: React.FC<TextFieldTypes> = ({
     error = null,
     className = "",
     icon,
+    title,
     ...rest
 }) => {
     const [showPassword, setShowPassword] = useState(false);
@@ -34,6 +36,7 @@ const TextField: React.FC<TextFieldTypes> = ({
 
     return (
         <div className={className + ` text-field ${error ? " error" : ""}`}>
+            {title && <h3 className="text-field__title form-title">{title}</h3>}
             <div className="text-field__content">
                 {type === "password" ? (
                     <>
@@ -49,7 +52,6 @@ const TextField: React.FC<TextFieldTypes> = ({
                         />
                         {icon && (
                             <Button
-                                type="button"
                                 className="text-field__icon"
                                 onClick={handleShowPassword}
                             >
@@ -70,7 +72,7 @@ const TextField: React.FC<TextFieldTypes> = ({
                             {...rest}
                         />
                         {icon && (
-                            <Button type="button" className="text-field__icon">
+                            <Button className="text-field__icon">
                                 <IconSvg name={icon} />
                             </Button>
                         )}

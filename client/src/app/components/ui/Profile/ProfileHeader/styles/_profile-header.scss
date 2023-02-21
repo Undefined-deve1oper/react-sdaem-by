@@ -1,7 +1,6 @@
 .profile-header {
     width: 100%;
     background: $lightColor;
-    margin: 15px 0px 0px 0px;
 
     // .profile-header__container
     &__container {
@@ -12,7 +11,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 65px;
+    flex-wrap: wrap;
+    column-gap: 65px;
 
     // .profile-list__item
     &__item {

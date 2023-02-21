@@ -12,7 +12,11 @@ const Button: React.FC<ButtonType> = ({
     ...rest
 }) => {
     return (
-        <button type={type} className={className + " btn"} {...rest}>
+        <button
+            type={type || "button"}
+            className={className + " btn"}
+            {...rest}
+        >
             {children}
         </button>
     );

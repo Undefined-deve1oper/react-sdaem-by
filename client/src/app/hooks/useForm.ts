@@ -58,6 +58,7 @@ function useForm<T>(
 
     return {
         data,
+        setData,
         errors,
         enterError,
         handleChange,

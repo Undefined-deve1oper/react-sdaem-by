@@ -7,37 +7,37 @@
                 "_id": 0,
                 "label": "Квартиры на сутки в Москве",
                 "value": "Квартиры на сутки в Москве",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e6"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e6"
             },
             {
                 "_id": 1,
                 "label": "Квартиры на сутки в Санкт-Петербурге",
                 "value": "Квартиры на сутки в Санкт-Петербурге",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e6"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e6"
             },
             {
                 "_id": 2,
                 "label": "Квартиры на сутки в Екатеринбурге",
                 "value": "Квартиры на сутки в Екатеринбурге",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e6"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e6"
             },
             {
                 "_id": 3,
                 "label": "Квартиры на сутки в Омске",
                 "value": "Квартиры на сутки в Омске",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e6"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e6"
             },
             {
                 "_id": 4,
                 "label": "Квартиры на сутки в Красноярске",
                 "value": "Квартиры на сутки в Красноярске",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e6"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e6"
             },
             {
                 "_id": 5,
                 "label": "Квартиры на сутки в Воронеже",
                 "value": "Квартиры на сутки в Воронеже",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e6"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e6"
             }
         ]
     },
@@ -48,37 +48,37 @@
                 "_id": 0,
                 "value": "Коттеджы и усадьбы в Москве",
                 "label": "Коттеджы и усадьбы в Москве",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e7"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e7"
             },
             {
                 "_id": 1,
                 "label": "Коттеджы и усадьбы в Санкт-Петербурге",
                 "value": "Коттеджы и усадьбы в Санкт-Петербурге",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e7"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e7"
             },
             {
                 "_id": 2,
                 "label": "Коттеджы и усадьбы в Екатеринбурге",
                 "value": "Коттеджы и усадьбы в Екатеринбурге",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e7"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e7"
             },
             {
                 "_id": 3,
                 "label": "Коттеджы и усадьбы в Омске",
                 "value": "Коттеджы и усадьбы в Омске",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e7"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e7"
             },
             {
                 "_id": 4,
                 "label": "Коттеджы и усадьбы в Красноярске",
                 "value": "Коттеджы и усадьбы в Красноярске",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e7"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e7"
             },
             {
                 "_id": 5,
                 "label": "Коттеджы и усадьбы в Воронеже",
                 "value": "Коттеджы и усадьбы в Воронеже",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e7"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e7"
             }
         ]
     },
@@ -89,37 +89,37 @@
                 "_id": 0,
                 "value": "Бани и сауны в Минске",
                 "label": "Бани и сауны в Минске",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e8"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e8"
             },
             {
                 "_id": 1,
                 "value": "Бани и сауны в Гомеле",
                 "label": "Бани и сауны в Гомеле",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e8"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e8"
             },
             {
                 "_id": 2,
                 "value": "Бани и сауны в Бресте",
                 "label": "Бани и сауны в Бресте",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e8"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e8"
             },
             {
                 "_id": 3,
                 "value": "Бани и сауны в Витебске",
                 "label": "Бани и сауны в Витебске",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e8"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e8"
             },
             {
                 "_id": 4,
                 "value": "Бани и сауны в Гродно",
                 "label": "Бани и сауны в Гродно",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e8"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e8"
             },
             {
                 "_id": 5,
                 "value": "Бани и сауны в Могилеве",
                 "label": "Бани и сауны в Могилеве",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e8"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e8"
             }
         ]
     },
@@ -130,37 +130,37 @@
                 "_id": 0,
                 "value": "Авто напрокат в Москве",
                 "label": "Авто напрокат в Москве",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e9"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e9"
             },
             {
                 "_id": 1,
                 "value": "Авто напрокат в Санкт-Петербурге",
                 "label": "Авто напрокат в Санкт-Петербурге",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e9"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e9"
             },
             {
                 "_id": 2,
                 "value": "Авто напрокат в Екатеринбурге",
                 "label": "Авто напрокат в Екатеринбурге",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e9"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e9"
             },
             {
                 "_id": 3,
                 "value": "Авто напрокат в Омске",
                 "label": "Авто напрокат в Омске",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e9"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e9"
             },
             {
                 "_id": 4,
                 "value": "Авто напрокат в Красноярске",
                 "label": "Авто напрокат в Красноярске",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e9"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e9"
             },
             {
                 "_id": 5,
                 "value": "Авто напрокат в Воронеже",
                 "label": "Авто напрокат в Воронеже",
-                "path": "estates?typeId=63ecd3d709b8f04ccc7e27e9"
+                "path": "/estates?typeId=63ecd3d709b8f04ccc7e27e9"
             }
         ]
     }

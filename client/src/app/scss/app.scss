@@ -103,3 +103,12 @@ body {
 .feedback {
     @include adaptiv-value("font-size", 42, 24, 1);
 }
+
+.form-title {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: $dullGray;
+
+    margin: 0px 0px 15px 0px;
+}

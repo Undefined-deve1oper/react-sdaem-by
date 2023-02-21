@@ -1,4 +1,10 @@
-import { createAction, createSlice, PayloadAction } from "@reduxjs/toolkit";
+import {
+    AnyAction,
+    createAction,
+    createSlice,
+    Dispatch,
+    PayloadAction
+} from "@reduxjs/toolkit";
 import authService from "../../services/auth.service";
 import localStorageService from "../../services/localStorage.service";
 import userService from "../../services/user.service";
@@ -87,6 +93,12 @@ const usersSlice = createSlice({
             state.entities = state.entities.filter(
                 (user) => user._id !== action.payload
             );
+        },
+        savePhotoSuccess: (state, action) => {
+            const userIndex = state.entities.findIndex(
+                (user) => user._id === action.payload._id
+            );
+            state.entities[userIndex].avatarImage = action.payload.avatarImage;
         }
     }
 });
@@ -102,7 +114,8 @@ const {
     authSignInRequestFailed,
     authSignUpRequestFailed,
     userLoggedOut,
-    userUpdated
+    userUpdated,
+    savePhotoSuccess
 } = actions;
 
 const userUpdateRequested = createAction("users/userUpdateRequested");
@@ -168,14 +181,25 @@ export const signIn =
     };
 
 export const updateUserData =
-    (payload: UserType): AppThunk =>
+    (payload: UserType, goBack: any): AppThunk =>
     async (dispatch) => {
         dispatch(userUpdateRequested());
         try {
             const { content } = await userService.updateUserData(payload);
             dispatch(userUpdated(content));
+            goBack();
         } catch (error) {
             dispatch(userUpdateRequestedFailed());
+        }
+    };
+export const saveUserAvatarPhoto =
+    (uint8Array: any) => async (dispatch: Dispatch) => {
+        dispatch(usersRequested());
+        try {
+            const { content } = await userService.saveAvatarPhoto(uint8Array);
+            dispatch(savePhotoSuccess(content));
+        } catch (error) {
+            dispatch(usersRequestFailed(error.message));
         }
     };
 

@@ -13,7 +13,7 @@ const months = [
     "Декабря"
 ];
 
-export function getFormatDate(data: string) {
+export function getFormatDate(data: Date | string) {
     const newDate = new Date(data);
     const date =
         newDate.getDate() < 10 ? `0${newDate.getDate()}` : newDate.getDate();

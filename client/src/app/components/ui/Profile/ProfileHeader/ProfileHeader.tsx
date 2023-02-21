@@ -20,6 +20,7 @@ const ProfileHeader: React.FC = () => {
                                         isActive ? " _active" : ""
                                     }`
                                 }
+                                end
                             >
                                 {item.icon && <IconSvg name={item.icon} />}
                                 {item.title}

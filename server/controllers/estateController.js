@@ -1,4 +1,3 @@
-const uuid = require("uuid");
 const path = require("path");
 const Estate = require("../models/Estate");
 
@@ -33,41 +32,29 @@ class EstateController {
         let estates;
         if (!brandId && !typeId) {
             const content = await Estate.find().skip(offset).limit(limit);
-            const count = await Estate.find().count();
-            estates = {
-                count,
-                rows: content
-            };
+
+            estates = content;
         }
         if (brandId && !typeId) {
             const content = await Estate.find({ brandId })
                 .skip(offset)
                 .limit(limit);
-            const count = await Estate.find({ brandId }).count();
-            estates = {
-                count,
-                rows: content
-            };
+
+            estates = content;
         }
         if (!brandId && typeId) {
             const content = await Estate.find({ typeId })
                 .skip(offset)
                 .limit(limit);
-            const count = await Estate.find({ typeId }).count();
-            estates = {
-                count,
-                rows: content
-            };
+
+            estates = content;
         }
         if (brandId && typeId) {
             const content = await Estate.find({ typeId, brandId })
                 .skip(offset)
                 .limit(limit);
-            const count = await Estate.find({ typeId, brandId }).count();
-            estates = {
-                count,
-                rows: content
-            };
+
+            estates = content;
         }
         return res.json(estates);
     }

@@ -22,12 +22,13 @@ export type UserType = {
     _id?: string;
     name: string;
     subscribe: boolean;
-    birthYear: Date;
+    birthYear: any;
     avatarImage?: string;
-    email: string;
-    password: string;
-    role: "USER" | "ADMIN";
+    email?: string;
+    password?: string;
+    role?: "USER" | "ADMIN";
     gender: "male" | "female";
+    createdAt?: any;
 };
 
 export type SignInDataType = {

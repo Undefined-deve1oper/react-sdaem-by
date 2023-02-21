@@ -4,18 +4,25 @@ import {
     DynamicPostsBreadcrumb,
     UserBreadcrumb
 } from "../components/common/Breadcrumbs";
+import { EstatesBreadcrumb } from "../components/common/Breadcrumbs/Breadcrumbs";
 import ProtectedRoute from "../components/common/ProtectedRoute";
-import PostPage from "../components/pages/PostPage";
-import PostsPage from "../components/pages/PostsPage";
-import SignInPage from "../components/pages/SignInPage";
-import SignUpPage from "../components/pages/SignUpPage";
-import UserProfilePage from "../components/pages/UserProfilePage";
 
 const Login = React.lazy(() => import("../layouts/login"));
 const Main = React.lazy(() => import("../layouts/main"));
 const Posts = React.lazy(() => import("../layouts/posts"));
+const Estates = React.lazy(() => import("../layouts/estates"));
 const Bookmark = React.lazy(() => import("../layouts/bookmark"));
 const UserProfile = React.lazy(() => import("../layouts/userProfile"));
+const UserEditPage = React.lazy(
+    () => import("../components/pages/UserEditPage")
+);
+const UserProfilePage = React.lazy(
+    () => import("../components/pages/UserProfilePage")
+);
+const PostPage = React.lazy(() => import("../components/pages/PostPage"));
+const PostsPage = React.lazy(() => import("../components/pages/PostsPage"));
+const SignInPage = React.lazy(() => import("../components/pages/SignInPage"));
+const SignUpPage = React.lazy(() => import("../components/pages/SignUpPage"));
 
 export type RoutesLinksType = {
     _id: number;
@@ -76,8 +83,8 @@ const routes = [
     },
     {
         path: "estates",
-        breadcrumb: "Каталог",
-        element: <Posts />
+        breadcrumb: EstatesBreadcrumb,
+        element: <Estates />
     },
     {
         path: "users",
@@ -91,6 +98,15 @@ const routes = [
                 element: (
                     <ProtectedRoute>
                         <UserProfilePage />
+                    </ProtectedRoute>
+                )
+            },
+            {
+                path: ":userId/edit",
+                breadcrumb: "Редактировать",
+                element: (
+                    <ProtectedRoute>
+                        <UserEditPage />
                     </ProtectedRoute>
                 )
             }
