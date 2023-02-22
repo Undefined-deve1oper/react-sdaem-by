@@ -1,4 +1,4 @@
-import { omit } from "lodash";
+import omit from "lodash.omit";
 import queryString from "query-string";
 import { useCallback, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router";

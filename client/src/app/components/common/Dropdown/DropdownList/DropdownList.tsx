@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink } from "react-router-dom";
+import { useOutside } from "../../../../hooks";
 import IconSvg from "../../IconSvg";
 
 export interface IListDropdown {
@@ -17,28 +18,11 @@ export interface IPropsDropdown {
 }
 
 export const DropdownList: React.FC<IPropsDropdown> = ({ menu }) => {
-    const [isOpen, setIsOpen] = useState(false);
     const ref = useRef<HTMLButtonElement>(null);
-
-    useEffect(() => {
-        const handleClickOutsideDropdown = (e: MouseEvent) => {
-            const path = e.composedPath();
-            if (path[0] !== ref?.current) {
-                setIsOpen(false);
-            }
-        };
-        window.addEventListener("click", handleClickOutsideDropdown);
-        return () => {
-            window.removeEventListener("click", handleClickOutsideDropdown);
-        };
-    }, []);
+    const { isOpen, handleOpen } = useOutside(ref);
 
     return (
-        <button
-            className={"menu__item"}
-            ref={ref}
-            onClick={() => setIsOpen((prevState) => !prevState)}
-        >
+        <button className={"menu__item"} ref={ref} onClick={handleOpen}>
             {menu?.title}
             {menu?.isIcon && <IconSvg name={"mark"} svgClass={"icon"} />}
             {isOpen && (

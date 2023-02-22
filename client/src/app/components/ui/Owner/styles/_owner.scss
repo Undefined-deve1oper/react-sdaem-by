@@ -1,5 +1,4 @@
 .owner-wrapper {
-    position: relative;
 }
 
 .show-owner {
@@ -24,20 +23,39 @@
 
 .owner {
     min-width: 275px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 40px rgba(135, 124, 202, 0.3);
 
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 100px;
+    right: 50%;
     z-index: 5;
+    transform: scale(0) perspective(600px) translate(50%, 0%) rotateX(45deg);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s ease 0s;
+
+    &._active {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1) perspective(600px) translate(50%, 0%) rotateX(0deg);
+    }
 
     // .owner__body
     &__body {
         padding: 26px;
+        border-radius: 10px;
         background: $lightColor;
+
         display: flex;
         align-items: center;
         flex-direction: column;
         justify-content: center;
+    }
+
+    // .owner__content
+    &__content {
+        width: 100%;
     }
 
     // .owner__image
@@ -47,5 +65,94 @@
         border: 4px solid $violetColor;
         border-radius: 50%;
         overflow: hidden;
+        margin: 0px 0px 10px 0px;
+    }
+
+    // .owner__title
+    &__title {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        color: #bdbdbd;
+        margin: 0px 0px 5px 0px;
+        text-align: center;
+    }
+
+    // .owner__name
+    &__name {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 100%;
+        color: $darkColor;
+        margin: 0px 0px 20px 0px;
+        text-align: center;
+    }
+
+    // .owner__list
+    &__list {
+        width: 100%;
+        margin: 0px 0px 30px 0px;
+    }
+
+    // .owner__item
+    &__item {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 10px;
+
+        font-weight: 400;
+        font-size: 18px;
+        color: $darkColor;
+        text-align: left;
+        &:not(:last-child) {
+            margin: 0px 0px 15px 0px;
+        }
+
+        & span {
+            font-weight: 600;
+            color: $violetColor;
+            text-align: right;
+        }
+    }
+
+    // .owner-contacts
+    &-contacts {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        // .owner-contacts__item
+        &__item {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 15px;
+            font-size: 16px;
+            font-weight: 600;
+            color: $darkColor;
+        }
+
+        // .owner-contacts__icon
+        &__icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+
+            background: $violetColor;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            & .svg-icon {
+                width: 18px;
+                height: 18px;
+                fill: $lightColor;
+            }
+        }
     }
 }

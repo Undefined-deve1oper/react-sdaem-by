@@ -1,10 +1,9 @@
-import React from "react";
+import React, { RefObject } from "react";
 
 type ButtonType = {
     children: React.ReactChild | React.ReactNode;
     className?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
-
 const Button: React.FC<ButtonType> = ({
     children,
     type,
@@ -21,5 +20,4 @@ const Button: React.FC<ButtonType> = ({
         </button>
     );
 };
-
 export default Button;

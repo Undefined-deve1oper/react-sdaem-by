@@ -1,52 +1,35 @@
-import React from "react";
+import React, { useRef } from "react";
+import { NavLink } from "react-router-dom";
+import { useOutside } from "../../../hooks";
 import { getUserById, useStateSelector } from "../../../store";
 import { getFormatDate } from "../../../utils/dateHelpers";
-import Button from "../../common/Button";
 import IconSvg from "../../common/IconSvg";
+import OwnerCard from "../OwnerCard";
 
-interface IOwner {
+export interface IOwner {
     ownerId: string;
 }
 
 const Owner: React.FC<IOwner> = ({ ownerId }) => {
-    const owner = useStateSelector(getUserById(ownerId));
+    const ref = useRef<HTMLButtonElement>(null);
+    const { isOpen, handleOpen } = useOutside(ref);
 
-    if (owner) {
-        const correctBirthDate = getFormatDate(owner.createdAt);
-        const existsSince = getFormatDate(owner.createdAt);
-
-        return (
-            <div className="owner-wrapper">
-                <Button className="show-owner">
-                    <IconSvg name="phone" />
-                    Контакты
-                </Button>
-                <div className="owner">
-                    <div className="owner__body">
-                        <div className="owner__image">
-                            <img src={owner.avatarImage} alt="Avatat" />
-                        </div>
-                        <div className="owner__content">
-                            <span className="owner__title">Владелец</span>
-                            <h3 className="owner__name">{owner.name}</h3>
-                            <ul className="owner__list">
-                                <li className="owner__item">
-                                    Пол: {owner.gender}
-                                </li>
-                                <li className="owner__item">
-                                    Пол: {correctBirthDate}
-                                </li>
-                                <li className="owner__item">
-                                    На сайте с: {existsSince}
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+    return (
+        <div className="owner-wrapper">
+            <button
+                type="button"
+                ref={ref}
+                className={"show-owner"}
+                onClick={handleOpen}
+            >
+                <IconSvg name="phone" />
+                Контакты
+            </button>
+            <div className={"owner" + (isOpen ? " _active" : "")}>
+                <OwnerCard ownerId={ownerId} />
             </div>
-        );
-    }
-    return <h1>Произошла ошибка. Попробуйте позже</h1>;
+        </div>
+    );
 };
 
 export default React.memo(Owner);

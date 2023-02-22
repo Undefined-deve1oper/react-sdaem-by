@@ -1,11 +1,13 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import Wrapper from "../components/common/Wrapper";
-import EstatesPage from "../components/pages/EstatesPage";
 
 const Estates: React.FC = () => {
     return (
         <Wrapper>
-            <EstatesPage />
+            <section className="estates">
+                <Outlet />
+            </section>
         </Wrapper>
     );
 };

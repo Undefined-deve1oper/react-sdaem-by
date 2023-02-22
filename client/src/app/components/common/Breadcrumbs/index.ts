@@ -1,5 +1,4 @@
-import Breadcrumbs, { UserBreadcrumb } from "./Breadcrumbs";
-import DynamicPostsBreadcrumb from "./DynamicPostsBreadcrumb";
+import Breadcrumbs, { UserBreadcrumb, PostsBreadcrumb } from "./Breadcrumbs";
 
-export { DynamicPostsBreadcrumb, UserBreadcrumb };
+export { PostsBreadcrumb, UserBreadcrumb };
 export default Breadcrumbs;

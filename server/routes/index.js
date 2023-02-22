@@ -8,6 +8,7 @@ const typeRouter = require("./type.routes");
 const favouriteRoutes = require("./favourite.routes");
 const commentRoutes = require("./comment.routes");
 const userRoutes = require("./user.routes");
+const bookingRoutes = require("./booking.routes");
 
 router.use("/auth", authRoutes);
 router.use("/comment", commentRoutes);
@@ -17,5 +18,6 @@ router.use("/estates", estatesRoutes);
 router.use("/brand", brandRouter);
 router.use("/type", typeRouter);
 router.use("/user", userRoutes);
+router.use("/booking", bookingRoutes);
 
 module.exports = router;

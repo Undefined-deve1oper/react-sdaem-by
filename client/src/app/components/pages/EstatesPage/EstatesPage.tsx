@@ -1,18 +1,28 @@
-import React from "react";
-import { useStateSelector } from "../../../store";
+import queryString from "query-string";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { useAppDispatch, useStateSelector } from "../../../store";
 import {
     getEstatesList,
-    getestatesLoadingStatus
+    getestatesLoadingStatus,
+    loadEstatesList
 } from "../../../store/slices/estates";
 import { SkeletonEstatesList } from "../../common/Skeletons/Estates";
 import { EstatesList, EstatesRecommended } from "../../ui/Estates";
 
 const EstatesPage: React.FC = () => {
+    const { search } = useLocation();
+    const { typeId } = queryString.parse(search);
+    const dispatch = useAppDispatch();
     const estates = useStateSelector(getEstatesList());
     const estatesLoading = useStateSelector(getestatesLoadingStatus());
 
+    useEffect(() => {
+        dispatch(loadEstatesList({ typeId }));
+    }, [search]);
+
     return (
-        <section className="estates">
+        <>
             <EstatesRecommended />
             <div className="estates__container _container">
                 {!estatesLoading ? (
@@ -21,7 +31,7 @@ const EstatesPage: React.FC = () => {
                     <SkeletonEstatesList />
                 )}
             </div>
-        </section>
+        </>
     );
 };
 

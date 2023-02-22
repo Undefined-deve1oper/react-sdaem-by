@@ -60,8 +60,8 @@ class EstateController {
     }
 
     async getOne(req, res) {
-        const { id } = req.params;
-        const device = await Estate.findById({ id });
+        const { estateId } = req.params;
+        const device = await Estate.findById({ estateId });
         return res.json(device);
     }
 }

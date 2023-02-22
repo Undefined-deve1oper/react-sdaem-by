@@ -5,6 +5,6 @@ const auth = require("../middleware/auth.middleware");
 
 router.post("/", auth, estateController.create);
 router.get("/", estateController.getAll);
-router.get("/:id", estateController.getOne);
+router.get("/:estateId", estateController.getOne);
 
 module.exports = router;

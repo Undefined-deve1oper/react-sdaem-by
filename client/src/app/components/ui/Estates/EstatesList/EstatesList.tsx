@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { EstateItem } from "../../../../store/slices/estates";
 import Button from "../../../common/Button";
 import ButtonFavorite from "../../../common/ButtonFavorite";
@@ -61,7 +62,6 @@ const EstatesList: React.FC<EstatesListProps> = ({ estates }) => {
                         key={estate._id}
                         className="estates-products__card estate-card"
                     >
-                        <div className="estate-card__labels"></div>
                         <div className="estate-card__images">
                             <ImageSlider
                                 items={estate.images}
@@ -91,9 +91,12 @@ const EstatesList: React.FC<EstatesListProps> = ({ estates }) => {
                                     onToggle={console.log}
                                 />
                                 <Owner ownerId={estate.info.ownerId} />
-                                <Button className="estate-card__more">
+                                <NavLink
+                                    to={`/estates/${estate._id}`}
+                                    className="estate-card__more"
+                                >
                                     Подробнее
-                                </Button>
+                                </NavLink>
                             </div>
                         </div>
                     </div>

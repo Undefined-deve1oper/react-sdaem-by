@@ -18,7 +18,8 @@
 @import "../../components/common/Searchbar/styles/searchbar";
 @import "../../components/common/Footer/styles/footer";
 @import "../../components/common/Loader/styles/loader";
-@import "../../components/common/Tooltip/styles/tooltip";
+@import "../../components/common/ButtonFavorite/styles/button-favourite";
+@import "../../components/common/RatingList/styles/rating";
 @import "../../components/common/Skeletons/styles/skeleton";
 @import "../../components/pages/SignInPage/styles/sign-in-page";
 @import "../../components/pages/SignUpPage/styles/sign-up-page";
@@ -28,6 +29,7 @@
 @import "../../components/pages/UserProfilePage/styles/user-profile";
 @import "../../components/pages/UserEditPage/styles/user-edit";
 @import "../../components/pages/EstatesPage/styles/estate-page";
+@import "../../components/pages/EstatePage/EstateDetail/styles/estate-detail";
 @import "../../components/pages/HomePage/styles/home-filter";
 @import "../../components/pages/HomePage/styles/home-page";
 @import "../../components/ui/Posts/PostsList/styles/posts-list";

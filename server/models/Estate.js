@@ -7,7 +7,7 @@ const schema = new Schema(
         images: [String],
         city: { type: String },
         title: String,
-        label: String,
+        location: String,
         brandId: {
             type: Schema.Types.ObjectId,
             ref: "Brand"

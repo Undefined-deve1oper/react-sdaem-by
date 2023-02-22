@@ -2,7 +2,6 @@
     {
         "price": "4500",
         "rating": "0",
-        "label": "gold",
         "city": "Москва",
         "images": [
             "https://wallpaperaccess.com/full/1600667.jpg",
@@ -12,6 +11,7 @@
         "brandId": "63ed187a1cc9b5878bd3244a",
         "typeId": "63ecd3d709b8f04ccc7e27e8",
         "title": "Элитная квартира",
+        "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "info": {
             "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
             "capacity": "4 (2+2)",
@@ -23,11 +23,11 @@
     {
         "price": "4500",
         "rating": "0",
-        "label": "gold",
         "city": "Москва",
         "brandId": "63ed187a1cc9b5878bd3244a",
         "typeId": "63ecd3d709b8f04ccc7e27e8",
         "title": "Элитная квартира",
+        "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "images": [
             "https://wallpaperaccess.com/full/1600667.jpg",
             "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
@@ -38,16 +38,7 @@
             "capacity": "4 (2+2)",
             "room": "1",
             "square": "139",
-            "ownerId": {
-                "avatar": "/avatar.svg",
-                "title": "Владелец",
-                "name": "Dmitriy",
-                "tel": "+375 (29) 291-14-44",
-                "ownerEmail": "vladimir6234@tut.by",
-                "telegram": "https://www.telegram.com/",
-                "whatsapp": "https://web.whatsapp.com/",
-                "email": "sdaem@sdaem.by"
-            }
+            "ownerId": "63f265a701224e3ff39ec92d"
         }
     },
 
@@ -55,7 +46,7 @@
         "price": "4500",
         "rating": "0",
         "title": "Элитная квартира",
-        "label": "gold",
+        "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "city": "Санкт-Петербург",
         "images": [
             "https://wallpaperaccess.com/full/1600667.jpg",
@@ -69,28 +60,19 @@
             "capacity": "4 (2+2)",
             "room": "1",
             "square": "139",
-            "ownerId": {
-                "avatar": "/avatar.svg",
-                "title": "Владелец",
-                "name": "Dmitriy",
-                "tel": "+375 (29) 291-14-44",
-                "ownerEmail": "vladimir6234@tut.by",
-                "telegram": "https://www.telegram.com/",
-                "whatsapp": "https://web.whatsapp.com/",
-                "email": "sdaem@sdaem.by"
-            }
+            "ownerId": "63f265a701224e3ff39ec92d"
         }
     },
     {
         "price": "4500",
         "rating": "1",
         "title": "Элитная квартира",
+        "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "images": [
             "https://wallpaperaccess.com/full/1600667.jpg",
             "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
             "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
         ],
-        "label": "gold",
         "city": "Санкт-Петербург",
         "info": {
             "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
@@ -99,24 +81,15 @@
             "square": "139",
             "brandId": "63ed187a1cc9b5878bd32446",
             "typeId": "63ecd3d709b8f04ccc7e27e7",
-            "ownerId": {
-                "avatar": "/avatar.svg",
-                "title": "Владелец",
-                "name": "Dmitriy",
-                "tel": "+375 (29) 291-14-44",
-                "ownerEmail": "vladimir6234@tut.by",
-                "telegram": "https://www.telegram.com/",
-                "whatsapp": "https://web.whatsapp.com/",
-                "email": "sdaem@sdaem.by"
-            }
+            "ownerId": "63f265a701224e3ff39ec92d"
         }
     },
 
     {
         "price": "4800",
         "rating": "0",
-        "label": "gold",
         "title": "Элитная квартира",
+        "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "brandId": "63ed187a1cc9b5878bd32444",
         "typeId": "63ecd3d709b8f04ccc7e27e6",
         "images": [
@@ -130,24 +103,15 @@
             "capacity": "4 (2+2)",
             "room": "1",
             "square": "139",
-            "ownerId": {
-                "avatar": "/avatar.svg",
-                "title": "Владелец",
-                "name": "Dmitriy",
-                "tel": "+375 (29) 291-14-44",
-                "ownerEmail": "vladimir6234@tut.by",
-                "telegram": "https://www.telegram.com/",
-                "whatsapp": "https://web.whatsapp.com/",
-                "email": "sdaem@sdaem.by"
-            }
+            "ownerId": "63f265a701224e3ff39ec92d"
         }
     },
 
     {
         "price": "4500",
         "rating": "1",
-        "label": "silver",
         "title": "Элитная квартира",
+        "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "images": [
             "https://wallpaperaccess.com/full/1600667.jpg",
             "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
@@ -161,16 +125,7 @@
             "capacity": "4 (2+2)",
             "room": "1",
             "square": "139",
-            "ownerId": {
-                "avatar": "/avatar.svg",
-                "title": "Владелец",
-                "name": "Dmitriy",
-                "tel": "+375 (29) 291-14-44",
-                "ownerEmail": "vladimir6234@tut.by",
-                "telegram": "https://www.telegram.com/",
-                "whatsapp": "https://web.whatsapp.com/",
-                "email": "sdaem@sdaem.by"
-            }
+            "ownerId": "63f265a701224e3ff39ec92d"
         }
     },
 
@@ -182,8 +137,8 @@
             "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
             "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
         ],
-        "label": "gold",
         "title": "BMW M5 E60",
+        "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "brandId": "63ecd3d809b8f04ccc7e280b",
         "typeId": "63ecd3d709b8f04ccc7e27e9",
         "city": "Воронеж",
@@ -198,8 +153,8 @@
     {
         "price": "4000",
         "rating": "5",
-        "label": "gold",
         "title": "Ford Mustang GT",
+        "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "city": "Воронеж",
         "brandId": "63ecd3d809b8f04ccc7e2811",
         "typeId": "63ecd3d709b8f04ccc7e27e9",
@@ -213,16 +168,7 @@
             "capacity": "4 (2+2)",
             "room": "1",
             "square": "139",
-            "ownerId": {
-                "avatar": "/avatar.svg",
-                "title": "Владелец",
-                "name": "Dmitriy",
-                "tel": "+375 (29) 291-14-44",
-                "ownerEmail": "vladimir6234@tut.by",
-                "telegram": "https://www.telegram.com/",
-                "whatsapp": "https://web.whatsapp.com/",
-                "email": "sdaem@sdaem.by"
-            }
+            "ownerId": "63f265a701224e3ff39ec92d"
         }
     }
 ]

@@ -75,9 +75,11 @@ export const loadEstatesList =
         }
     };
 
-export const getPostById = (postId: any) => (state: any) => {
+export const getEstateById = (estateId: any) => (state: any) => {
     return state.estates.entities
-        ? state.estates.entities.find((post: EstateItem) => post._id === postId)
+        ? state.estates.entities.find(
+              (estate: EstateItem) => estate._id === estateId
+          )
         : null;
 };
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 import {
-    DynamicPostsBreadcrumb,
+    PostsBreadcrumb,
     UserBreadcrumb
 } from "../components/common/Breadcrumbs";
 import { EstatesBreadcrumb } from "../components/common/Breadcrumbs/Breadcrumbs";
@@ -19,6 +19,8 @@ const UserEditPage = React.lazy(
 const UserProfilePage = React.lazy(
     () => import("../components/pages/UserProfilePage")
 );
+const EstatesPage = React.lazy(() => import("../components/pages/EstatesPage"));
+const EstatePage = React.lazy(() => import("../components/pages/EstatePage"));
 const PostPage = React.lazy(() => import("../components/pages/PostPage"));
 const PostsPage = React.lazy(() => import("../components/pages/PostsPage"));
 const SignInPage = React.lazy(() => import("../components/pages/SignInPage"));
@@ -51,7 +53,7 @@ const routes = [
             },
             {
                 path: ":postId",
-                breadcrumb: DynamicPostsBreadcrumb,
+                breadcrumb: PostsBreadcrumb,
                 element: <PostPage />
             }
         ]
@@ -83,8 +85,19 @@ const routes = [
     },
     {
         path: "estates",
-        breadcrumb: EstatesBreadcrumb,
-        element: <Estates />
+        element: <Estates />,
+        children: [
+            {
+                path: "",
+                breadcrumb: EstatesBreadcrumb,
+                element: <EstatesPage />
+            },
+            {
+                path: ":estateId",
+                // breadcrumb: EstateDetailBreadcrumb,
+                element: <EstatePage />
+            }
+        ]
     },
     {
         path: "users",
