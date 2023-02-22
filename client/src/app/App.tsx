@@ -4,6 +4,8 @@ import { ToastContainer } from "react-toastify";
 import { withRedux, withRouter } from "./components/ui/HOC";
 import AppLoader from "./components/ui/HOC/appLoader/appLoader";
 import AppRouter from "./router/AppRouter";
+import "swiper/css";
+import "swiper/css/pagination";
 import "./scss/app.scss";
 
 const App: React.FC = () => {

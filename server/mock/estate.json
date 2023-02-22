@@ -2,10 +2,16 @@
     {
         "price": "4500",
         "rating": "0",
-        "img": "https://imageup.ru/img169/4219273/6.jpg",
         "label": "gold",
+        "city": "Москва",
+        "images": [
+            "https://wallpaperaccess.com/full/1600667.jpg",
+            "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
+            "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
+        ],
         "brandId": "63ed187a1cc9b5878bd3244a",
         "typeId": "63ecd3d709b8f04ccc7e27e8",
+        "title": "Элитная квартира",
         "info": {
             "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
             "capacity": "4 (2+2)",
@@ -17,10 +23,16 @@
     {
         "price": "4500",
         "rating": "0",
-        "img": "https://imageup.ru/img169/4219273/6.jpg",
         "label": "gold",
+        "city": "Москва",
         "brandId": "63ed187a1cc9b5878bd3244a",
         "typeId": "63ecd3d709b8f04ccc7e27e8",
+        "title": "Элитная квартира",
+        "images": [
+            "https://wallpaperaccess.com/full/1600667.jpg",
+            "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
+            "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
+        ],
         "info": {
             "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
             "capacity": "4 (2+2)",
@@ -42,8 +54,14 @@
     {
         "price": "4500",
         "rating": "0",
-        "img": "https://imageup.ru/img169/4219273/6.jpg",
+        "title": "Элитная квартира",
         "label": "gold",
+        "city": "Санкт-Петербург",
+        "images": [
+            "https://wallpaperaccess.com/full/1600667.jpg",
+            "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
+            "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
+        ],
         "brandId": "63ed187a1cc9b5878bd32446",
         "typeId": "63ecd3d709b8f04ccc7e27e7",
         "info": {
@@ -66,8 +84,14 @@
     {
         "price": "4500",
         "rating": "1",
-        "img": "https://imageup.ru/img169/4219273/6.jpg",
+        "title": "Элитная квартира",
+        "images": [
+            "https://wallpaperaccess.com/full/1600667.jpg",
+            "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
+            "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
+        ],
         "label": "gold",
+        "city": "Санкт-Петербург",
         "info": {
             "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
             "capacity": "4 (2+2)",
@@ -91,10 +115,16 @@
     {
         "price": "4800",
         "rating": "0",
-        "img": "https://imageup.ru/img169/4219273/6.jpg",
         "label": "gold",
+        "title": "Элитная квартира",
         "brandId": "63ed187a1cc9b5878bd32444",
         "typeId": "63ecd3d709b8f04ccc7e27e6",
+        "images": [
+            "https://wallpaperaccess.com/full/1600667.jpg",
+            "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
+            "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
+        ],
+        "city": "Омск",
         "info": {
             "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
             "capacity": "4 (2+2)",
@@ -116,8 +146,14 @@
     {
         "price": "4500",
         "rating": "1",
-        "img": "https://imageup.ru/img169/4219273/6.jpg",
         "label": "silver",
+        "title": "Элитная квартира",
+        "images": [
+            "https://wallpaperaccess.com/full/1600667.jpg",
+            "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
+            "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
+        ],
+        "city": "Омск",
         "brandId": "63ed187a1cc9b5878bd3243a",
         "typeId": "63ecd3d709b8f04ccc7e27e6",
         "info": {
@@ -141,34 +177,37 @@
     {
         "price": "4500",
         "rating": "5",
-        "img": "https://wallpaperaccess.com/full/1600667.jpg",
+        "images": [
+            "https://wallpaperaccess.com/full/1600667.jpg",
+            "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
+            "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
+        ],
         "label": "gold",
+        "title": "BMW M5 E60",
         "brandId": "63ecd3d809b8f04ccc7e280b",
         "typeId": "63ecd3d709b8f04ccc7e27e9",
+        "city": "Воронеж",
         "info": {
             "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
             "capacity": "4 (2+2)",
             "room": "1",
             "square": "139",
-            "ownerId": {
-                "avatar": "/avatar.svg",
-                "title": "Владелец",
-                "name": "Dmitriy",
-                "tel": "+375 (29) 291-14-44",
-                "ownerEmail": "vladimir6234@tut.by",
-                "telegram": "https://www.telegram.com/",
-                "whatsapp": "https://web.whatsapp.com/",
-                "email": "sdaem@sdaem.by"
-            }
+            "ownerId": "63f265a701224e3ff39ec92d"
         }
     },
     {
         "price": "4000",
         "rating": "5",
-        "img": "https://upload.wikimedia.org/wikipedia/commons/d/d1/2018_Ford_Mustang_GT_5.0.jpg",
         "label": "gold",
+        "title": "Ford Mustang GT",
+        "city": "Воронеж",
         "brandId": "63ecd3d809b8f04ccc7e2811",
         "typeId": "63ecd3d709b8f04ccc7e27e9",
+        "images": [
+            "https://wallpaperaccess.com/full/1600667.jpg",
+            "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
+            "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
+        ],
         "info": {
             "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
             "capacity": "4 (2+2)",

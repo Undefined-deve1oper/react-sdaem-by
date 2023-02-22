@@ -4,7 +4,9 @@ const schema = new Schema(
     {
         price: { type: Number },
         rating: { type: Number, default: 0 },
-        img: { type: String },
+        images: [String],
+        city: { type: String },
+        title: String,
         label: String,
         brandId: {
             type: Schema.Types.ObjectId,

@@ -1,26 +1,36 @@
-import { createSlice, Dispatch, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, Dispatch } from "@reduxjs/toolkit";
 import estatesService from "../../services/estates.service";
-import { AppThunk, RootStore } from "../types";
+import { RootStore } from "../types";
 
-export interface PostItem {
+export interface EstateInfoItem {
     _id: string;
+    description: string;
+    ownerId: string;
+}
+
+export interface EstateItem {
+    _id: string;
+    price: string;
+    rating: string;
+    images: string[];
+    city: string;
+    label: string;
     title: string;
-    previewText: string;
-    fullText: string;
-    image: string;
-    author: string;
+    brandId: string;
+    typeId: string;
     createdAt: string;
+    info: EstateInfoItem;
     updatedAt?: string;
 }
 
-interface estatestate {
-    entities: PostItem[];
+interface estateState {
+    entities: EstateItem[];
     isLoading: boolean;
     error: string | null;
-    filteredEntities: PostItem[];
+    filteredEntities: EstateItem[];
 }
 
-const initialState: estatestate = {
+const initialState: estateState = {
     entities: [],
     filteredEntities: [],
     isLoading: true,
@@ -67,11 +77,11 @@ export const loadEstatesList =
 
 export const getPostById = (postId: any) => (state: any) => {
     return state.estates.entities
-        ? state.estates.entities.find((post: PostItem) => post._id === postId)
+        ? state.estates.entities.find((post: EstateItem) => post._id === postId)
         : null;
 };
 
-export const getestatesList = () => (state: RootStore) =>
+export const getEstatesList = () => (state: RootStore) =>
     state.estates.entities;
 export const getestatesLoadingStatus = () => (state: RootStore) =>
     state.estates.isLoading;

@@ -6,6 +6,8 @@
     &__content {
         width: 100%;
         position: relative;
+        border: 2px solid #f8f8f8;
+        border-radius: 30px;
 
         & .login-form__item {
             margin: 0;

@@ -5,7 +5,7 @@ import { HandleChangeDataType } from "../../../../types/types";
 
 type SelectFieldType = {
     name: string;
-    value?: string;
+    value?: any;
     placeholder?: string;
     error?: string;
     closeMenuOnSelect?: boolean;
@@ -32,6 +32,7 @@ const SelectField: React.FC<SelectFieldType> = ({
 
     return (
         <Select
+            value={value}
             className={className + " custom-select-container"}
             classNamePrefix="custom-select"
             closeMenuOnSelect={closeMenuOnSelect}

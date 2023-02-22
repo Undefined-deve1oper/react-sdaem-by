@@ -18,9 +18,8 @@
 @import "../../components/common/Searchbar/styles/searchbar";
 @import "../../components/common/Footer/styles/footer";
 @import "../../components/common/Loader/styles/loader";
+@import "../../components/common/Tooltip/styles/tooltip";
 @import "../../components/common/Skeletons/styles/skeleton";
-@import "../../components/pages/HomePage/styles/home-filter";
-@import "../../components/pages/HomePage/styles/home-page";
 @import "../../components/pages/SignInPage/styles/sign-in-page";
 @import "../../components/pages/SignUpPage/styles/sign-up-page";
 @import "../../components/pages/PostsPage/styles/posts";
@@ -29,6 +28,8 @@
 @import "../../components/pages/UserProfilePage/styles/user-profile";
 @import "../../components/pages/UserEditPage/styles/user-edit";
 @import "../../components/pages/EstatesPage/styles/estate-page";
+@import "../../components/pages/HomePage/styles/home-filter";
+@import "../../components/pages/HomePage/styles/home-page";
 @import "../../components/ui/Posts/PostsList/styles/posts-list";
 @import "../../components/ui/ShareButtons/styles/share-buttons";
 @import "../../components/ui/Posts/PostCard/styles/post-card";
@@ -38,3 +39,4 @@
 @import "../../components/ui/OpenForm/styles/open-form";
 @import "../../components/ui/NavProfile/styles/nav-profile";
 @import "../../components/ui/Profile/ProfileHeader/styles/profile-header";
+@import "../../components/ui/Owner/styles/owner";

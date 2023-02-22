@@ -1,0 +1,338 @@
+.estates {
+    width: 100%;
+    background: $lightColor;
+}
+
+.header-estates {
+    background: linear-gradient(
+        90deg,
+        rgba(148, 175, 255, 0.1) 0%,
+        rgb(78, 100, 249, 0.1) 94.5%
+    );
+    padding: 45px 0;
+
+    // .header-estates__title
+    &__title {
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 100%;
+        color: $darkColor;
+    }
+}
+
+// .estates-products
+.estates-products {
+    // .estates-products__header
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 21.5px 0px;
+
+        @include adaptiv-value("margin-bottom", 70, 30, 1);
+    }
+
+    //  .estates-products__select
+    &__select {
+        position: relative;
+
+        & .svg-icon {
+            width: 15px;
+            height: 16.15px;
+            fill: $dullGray;
+
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            z-index: 2;
+            transform: translate(0px, -50%);
+        }
+
+        & .custom-select__control {
+            min-width: 230px !important;
+            border-radius: 18px !important;
+            padding: 0px 10px 0px 37px !important;
+        }
+    }
+
+    // .estates-products
+    &__view {
+    }
+
+    // .estates-products__row
+    &__row {
+        &.tiles {
+            gap: 30px;
+            display: grid;
+            align-items: flex-start;
+            justify-content: space-between;
+            grid-template-columns: repeat(3, minmax(285px, 1fr));
+
+            @media (max-width: $md2+px) {
+                grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+            }
+            & .estate-card {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+            }
+        }
+        &.list {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 30px;
+
+            & .estate-card {
+                width: 100%;
+                flex: 0 1 auto;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &__images {
+                    width: 40%;
+                }
+                &__img {
+                    width: 100%;
+                    height: 100vh;
+                    max-height: 300px;
+                    object-fit: cover;
+                }
+
+                @media (max-width: $md3+px) {
+                    flex-direction: column;
+
+                    &__images {
+                        width: 100%;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+
+    // .estates-products__card
+    &__card {
+    }
+}
+
+.estate-card {
+    flex: 1 1 406px;
+
+    // .estate-card__images
+    &__images {
+        width: 100%;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    // .estate-card__img
+    &__img {
+        width: 100%;
+        height: 100vh;
+        max-height: 240px;
+        object-fit: cover;
+    }
+
+    // .estate-card__content
+    &__content {
+        padding: 20px;
+    }
+
+    // .estate-card__price
+    &__price {
+        display: flex;
+        flex-direction: column;
+
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #bdbdbd;
+
+        margin: 0px 0px 20px 0px;
+
+        & span {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            color: $violetColor;
+        }
+    }
+
+    // .estate-card__title
+    &__title {
+        @include adaptiv-value("font-size", 24, 20, 1);
+        color: $darkColor;
+        margin: 0px 0px 15px 0px;
+    }
+
+    // .estate-card__location
+    &__location {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        margin: 0px 0px 20px 0px;
+
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: $darkColor;
+
+        & .svg-icon {
+            width: 16px;
+            height: 16px;
+            fill: $dullGray;
+        }
+    }
+
+    // .estate-card__description
+    &__description {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: $dullGray;
+        padding: 0px 0px 15px 0px;
+        border-bottom: 1px solid rgba(78, 100, 249, 0.1);
+        margin: 0px 0px 15px 0px;
+    }
+
+    // .estate-card__contacts
+    &__contacts {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    // .estate-card__more
+    &__more {
+        padding: 10px 15px;
+        background: rgba(255, 213, 79, 0.1);
+        border-radius: 17px;
+
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        color: $warningColor;
+        transition: all 0.3s ease 0s;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $lightColor;
+                background: $warningColor;
+            }
+        }
+    }
+}
+
+// .estates-view
+.estates-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 21.5px;
+
+    // .estates-view__item
+    &__item {
+        background: #ffffff;
+        box-shadow: 0px 5px 20px rgba(0, 96, 206, 0.1);
+        border-radius: 18px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 11.5px 15px;
+        fill: #bdbdbd;
+
+        // &._active {
+        //     fill: $violetColor;
+        // }
+
+        & .svg-icon {
+            width: 15px;
+            height: 14px;
+            fill: inherit;
+        }
+
+        &:focus {
+            fill: $violetColor;
+        }
+    }
+}
+
+.swiper-pagination {
+    bottom: 0 !important;
+    padding: 5px 0;
+}
+
+.swiper-pagination-bullets {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.swiper-pagination-bullet {
+    position: relative;
+    cursor: pointer;
+    flex: 0 0 27px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    z-index: 20;
+
+    &:not(:last-child) {
+        margin-right: 12px;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 1px solid $violetColor;
+        transition: transform 0.3s ease-out;
+        transform: scale(0);
+    }
+
+    &::after {
+        content: "";
+        width: 11px;
+        height: 11px;
+        background-color: $lightColor;
+        border-radius: 50%;
+        transition: background-color 0.3s ease-out;
+    }
+
+    &._active {
+        &::after {
+            background-color: $violetColor;
+        }
+
+        &::before {
+            transform: scale(1);
+        }
+    }
+}
+
+.swiper-pagination-bullet-active {
+    &::after {
+        background-color: $violetColor;
+    }
+
+    &::before {
+        transform: scale(1);
+    }
+}

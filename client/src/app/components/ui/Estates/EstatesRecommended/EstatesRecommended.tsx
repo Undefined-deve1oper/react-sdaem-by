@@ -8,8 +8,11 @@ const EstatesRecommended: React.FC = () => {
     const location = useLocation();
 
     return (
-        <div className="_container">
-            <Breadcrumbs />
+        <div className="header-estates">
+            <div className="_container">
+                <Breadcrumbs />
+                <h3 className="header-estates__title">Аренда имущества</h3>
+            </div>
         </div>
     );
 };
