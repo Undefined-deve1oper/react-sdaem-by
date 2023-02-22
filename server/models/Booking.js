@@ -8,7 +8,7 @@ const schema = new Schema(
         entry: {
             type: Date
         },
-        fullPrice: {
+        totalPrice: {
             type: Number
         },
         estateId: {

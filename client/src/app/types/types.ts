@@ -35,3 +35,13 @@ export type SignInDataType = {
     email: string;
     password: string;
 };
+
+export type BookingType = {
+    _id?: string;
+    entry: Date;
+    departure: Date;
+    estateId: string;
+    userId: string;
+    totalPrice: number;
+    createdAt?: number;
+};
