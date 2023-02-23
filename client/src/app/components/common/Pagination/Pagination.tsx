@@ -4,7 +4,7 @@ interface IPagination {
     itemsCount: number;
     pageSize: number;
     currentPage: number;
-    onPageChange: (index: number) => void;
+    onPageChange: (pageIndex: number) => void;
 }
 
 const Pagination: React.FC<IPagination> = ({

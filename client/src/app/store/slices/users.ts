@@ -221,13 +221,14 @@ export const getCurrentUserData = () => (state: RootStore) => {
 
 export const getUsersLoadingStatus = () => (state: RootStore) =>
     state.users.isLoading;
-export const getUserById = (userId: string) => (state: RootStore) => {
-    if (state.users.entities) {
-        return state.users.entities.find(
-            (user: UserType) => user._id === userId
-        );
-    }
-};
+export const getUserById =
+    (userId: string | undefined) => (state: RootStore) => {
+        if (state.users.entities) {
+            return state.users.entities.find(
+                (user: UserType) => user._id === userId
+            );
+        }
+    };
 export const getIsLoggedIn = () => (state: RootStore) => state.users.isLoggedIn;
 export const getCurrentUserId = () => (state: RootStore) => {
     return state.users.auth.userId;

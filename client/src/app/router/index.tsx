@@ -13,6 +13,7 @@ const Posts = React.lazy(() => import("../layouts/posts"));
 const Estates = React.lazy(() => import("../layouts/estates"));
 const Bookmark = React.lazy(() => import("../layouts/bookmark"));
 const UserProfile = React.lazy(() => import("../layouts/userProfile"));
+const UserBooking = React.lazy(() => import("../layouts/UserBooking"));
 const UserEditPage = React.lazy(
     () => import("../components/pages/UserEditPage")
 );
@@ -120,6 +121,15 @@ const routes = [
                 element: (
                     <ProtectedRoute>
                         <UserEditPage />
+                    </ProtectedRoute>
+                )
+            },
+            {
+                path: ":userId/booking",
+                breadcrumb: "Мои бронирования",
+                element: (
+                    <ProtectedRoute>
+                        <UserBooking />
                     </ProtectedRoute>
                 )
             }

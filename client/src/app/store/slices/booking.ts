@@ -84,7 +84,7 @@ export const deleteUserBooking = (id: string) => async (dispatch: Dispatch) => {
 };
 export const getUserBooking = (userId: string) => (state: RootStore) => {
     return state.booking.entities.filter(
-        (booking) => booking.userId.toString() === userId
+        (booking: any) => booking.userId.toString() === userId
     );
 };
 export const getBookingLoading = () => (state: RootStore) =>
@@ -119,7 +119,7 @@ export const getUserBookingCount =
         )?.length;
     };
 export const getBookingById =
-    ({ _id: userId }: { _id: string }) =>
+    ({ _id: userId }: { _id: string | null }) =>
     (state: RootStore) => {
         const usersEstate = state.booking.entities.filter(
             (room) => room.userId === userId

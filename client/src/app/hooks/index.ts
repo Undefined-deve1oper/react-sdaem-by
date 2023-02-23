@@ -4,6 +4,7 @@ import useSearch from "./useSearch";
 import useFiltersQuery from "./useFiltersQuery";
 import useSort from "./useSort";
 import useOutside from "./useOutside";
+import useDialog from "./useDialog";
 
 export {
     useForm,
@@ -11,5 +12,6 @@ export {
     useSearch,
     useFiltersQuery,
     useSort,
-    useOutside
+    useOutside,
+    useDialog
 };

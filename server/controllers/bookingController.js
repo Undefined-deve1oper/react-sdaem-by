@@ -43,8 +43,11 @@ class BookingController {
             const { bookingId } = req.params;
             const removedBooking = await Booking.findById(bookingId);
             const currentUser = await User.findById(req.user._id);
+            const isAvaibleToRemove =
+                req.user._id === removedBooking.userId.toString() ||
+                currentUser.role === "ADMIN";
 
-            if (currentUser.role === "ADMIN") {
+            if (isAvaibleToRemove) {
                 await removedBooking.remove();
                 return res.send(null);
             } else {

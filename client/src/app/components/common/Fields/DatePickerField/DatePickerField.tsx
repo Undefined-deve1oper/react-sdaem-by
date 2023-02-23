@@ -9,6 +9,7 @@ type DatePickerFieldType = {
     error: string | null;
     className?: string;
     title?: string;
+    label?: string;
     onChange: (event: any) => void;
 };
 
@@ -19,6 +20,7 @@ const DatePickerField: React.FC<DatePickerFieldType> = ({
     error,
     onChange,
     className,
+    label,
     title
 }) => {
     const handleChange = (data: Date) => {
@@ -43,12 +45,13 @@ const DatePickerField: React.FC<DatePickerFieldType> = ({
                     onChange={handleChange}
                     showYearDropdown
                     minDate={minDate || Date.now()}
-                    dateFormatCalendar="MMMM"
+                    dateFormatCalendar="dd-MM-yyyy"
                     yearDropdownItemNumber={68}
                     scrollableYearDropdown
                     wrapperClassName={
                         className || "text-field login-form__item"
                     }
+                    placeholderText={label}
                 />
                 <IconSvg name="date" />
             </div>

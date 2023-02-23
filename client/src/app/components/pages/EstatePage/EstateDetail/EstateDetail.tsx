@@ -7,6 +7,7 @@ import ButtonFavorite from "../../../common/ButtonFavorite";
 import IconSvg from "../../../common/IconSvg";
 import Rating from "../../../common/Rating";
 import ImageSlider from "../../../common/SliderImages/SliderImages";
+import Booking from "../../../ui/Booking";
 import OwnerCard from "../../../ui/OwnerCard";
 import ShareButtons from "../../../ui/ShareButtons";
 
@@ -97,7 +98,7 @@ const EstateDetail: React.FC = () => {
                                     Бронирование
                                 </h2>
                                 <div className="estates-booking__block">
-                                    {/* <Booking {...estate} /> */}
+                                    <Booking {...estate} />
                                 </div>
                             </section>
                         )}

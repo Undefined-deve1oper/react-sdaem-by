@@ -35,7 +35,7 @@ const RangeSliderField: React.FC<RangeSliderFieldProps> = ({
     };
 
     if (!value) {
-        return <Loader />;
+        return <Loader visible={true} />;
     }
 
     return (

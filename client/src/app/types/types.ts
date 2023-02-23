@@ -41,7 +41,7 @@ export type BookingType = {
     entry: Date;
     departure: Date;
     estateId: string;
-    userId: string;
+    userId?: string;
     totalPrice: number;
     createdAt?: number;
 };

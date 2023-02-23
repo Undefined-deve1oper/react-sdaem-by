@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useState } from "react";
+import { RefObject, useCallback, useEffect, useState } from "react";
 
 export default function useOutside<T>(ref: RefObject<T>) {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -7,13 +7,14 @@ export default function useOutside<T>(ref: RefObject<T>) {
         setIsOpen((prevState) => !prevState);
     };
 
+    const handleClickOutsideDropdown = useCallback((e: MouseEvent) => {
+        const path = e.composedPath();
+        if (path[0] !== ref?.current) {
+            setIsOpen(false);
+        }
+    }, []);
+
     useEffect(() => {
-        const handleClickOutsideDropdown = (e: MouseEvent) => {
-            const path = e.composedPath();
-            if (path[0] !== ref?.current) {
-                setIsOpen(false);
-            }
-        };
         window.addEventListener("click", handleClickOutsideDropdown);
         return () => {
             window.removeEventListener("click", handleClickOutsideDropdown);

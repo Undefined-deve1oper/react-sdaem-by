@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 
 function usePaginate<T>(
     items: Array<T>,
@@ -8,12 +8,6 @@ function usePaginate<T>(
     const [totalPages, setTotalPages] = useState(0);
     const [limit, setLimit] = useState(defaultLimitSize);
     const [page, setPage] = useState(defaultCurrentPage);
-
-    useEffect(() => {
-        if (items.length < limit) {
-            setPage(1);
-        }
-    }, [items, limit]);
 
     const handlePageChange = useCallback((pageIndex: number) => {
         setPage(pageIndex);

@@ -1,0 +1,39 @@
+.booking-estate {
+    &__form {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__submit-block {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        gap: 15px;
+        font-size: 18px;
+        font-weight: 600;
+        color: $dangerColor;
+    }
+
+    &__error {
+        font-size: 18px;
+        font-weight: 600;
+        color: $dangerColor;
+    }
+
+    &__button {
+        border: 1px solid $violetColor;
+        color: $violetColor;
+        border-radius: 30px;
+        transition: all 0.3s ease 0s;
+        background: $lightColor;
+        font-size: 16px;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $lightColor;
+                background: $violetColor;
+            }
+        }
+    }
+}
