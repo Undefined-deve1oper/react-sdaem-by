@@ -10,10 +10,13 @@ import BookingCard from "../BookingCard";
 
 type BookingListProps = {
     role?: string;
-    currentUserId: string;
+    currentUserId?: string;
 };
 
-const BookingList: React.FC<BookingListProps> = ({ role, currentUserId }) => {
+const BookingList: React.FC<BookingListProps> = ({
+    role,
+    currentUserId = ""
+}) => {
     const userBooking = useStateSelector(getUserBooking(currentUserId));
     const bookingList = useStateSelector(getBookingList());
     const { page, itemsListCrop, limit, handlePageChange } = usePaginate(

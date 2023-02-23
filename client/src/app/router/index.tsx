@@ -10,6 +10,7 @@ import ProtectedRoute from "../components/common/ProtectedRoute";
 const Login = React.lazy(() => import("../layouts/login"));
 const Main = React.lazy(() => import("../layouts/main"));
 const Posts = React.lazy(() => import("../layouts/posts"));
+const Admin = React.lazy(() => import("../layouts/admin"));
 const Estates = React.lazy(() => import("../layouts/estates"));
 const Bookmark = React.lazy(() => import("../layouts/bookmark"));
 const UserProfile = React.lazy(() => import("../layouts/userProfile"));
@@ -134,6 +135,15 @@ const routes = [
                 )
             }
         ]
+    },
+    {
+        path: "admin",
+        breadcrumb: "Панель администратора",
+        element: (
+            <ProtectedRoute isAdmin={true} to="/estates">
+                <Admin />
+            </ProtectedRoute>
+        )
     },
     {
         path: "place-an-ad",

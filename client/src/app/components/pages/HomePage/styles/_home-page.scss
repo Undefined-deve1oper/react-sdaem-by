@@ -55,6 +55,44 @@
             }
         }
 
+        &.second {
+            color: $darkColor;
+            background: none;
+            transition: all 0.3s ease 0s;
+            position: relative;
+
+            &::after {
+                content: "";
+                width: 0;
+                height: 3px;
+                opacity: 0;
+                visibility: hidden;
+
+                background: $violetColor;
+
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                z-index: 2;
+                transition: all 0.3s ease 0s;
+            }
+
+            &:hover {
+                // color: $lightColor;
+                // background: $violetColor;
+            }
+
+            &.selected {
+                &::after {
+                    content: "";
+                    width: calc(100% + 10px);
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+        }
+
         &.selected {
             background-color: #ffffff;
             color: #664ef9;

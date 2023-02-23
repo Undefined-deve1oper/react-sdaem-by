@@ -59,11 +59,7 @@ const NavProfile = () => {
                     {currentUser.role === "ADMIN" && (
                         <li
                             className="list-profile__item"
-                            onClick={() =>
-                                handleClickSettingsMenu(
-                                    `/users/${currentUser._id}/dashboard`
-                                )
-                            }
+                            onClick={() => handleClickSettingsMenu(`/admin`)}
                         >
                             <Button className="list-profile__link">
                                 <IconSvg name="admin" />
