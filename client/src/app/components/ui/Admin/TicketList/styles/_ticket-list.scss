@@ -1,0 +1,44 @@
+.admin {
+    &__ticket-loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    &__ticket-block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px;
+        border-radius: 3px;
+        box-shadow: 4px 4px 8px 3px rgba(34, 60, 80, 0.2);
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+        color: $darkColor;
+        font-weight: 400;
+    }
+    &__ticket-created {
+        font-weight: 600;
+    }
+    &__ticket-text {
+        @media (max-width: $md4+px) {
+            display: none;
+        }
+    }
+
+    &__ticket-button {
+        border: 1px solid $violetColor;
+        color: $violetColor;
+        border-radius: 10px;
+        transition: all 0.3s ease 0s;
+        background: $lightColor;
+        font-size: 16px;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $lightColor;
+                background: $violetColor;
+            }
+        }
+    }
+}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-type Order = "asc" | "desc";
+export type Order = "asc" | "desc";
 
 export default function useSort<T>(
     items: T[],

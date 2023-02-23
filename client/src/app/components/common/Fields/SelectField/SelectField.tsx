@@ -1,7 +1,6 @@
 import React, { useCallback } from "react";
 import Select, { SingleValue } from "react-select";
 import { IOption } from "../../../../types/interfaces";
-import { HandleChangeDataType } from "../../../../types/types";
 
 type SelectFieldType = {
     name: string;
@@ -11,7 +10,7 @@ type SelectFieldType = {
     closeMenuOnSelect?: boolean;
     options: IOption[];
     className?: string;
-    onSelectChange?: (option: HandleChangeDataType) => void;
+    onSelectChange?: (option: any) => void;
 };
 
 const SelectField: React.FC<SelectFieldType> = ({
@@ -25,8 +24,8 @@ const SelectField: React.FC<SelectFieldType> = ({
     className,
     ...rest
 }) => {
-    const onChange = useCallback((option: SingleValue<IOption>) => {
-        onSelectChange?.({ name, value: option!.value });
+    const onChange = useCallback((option: SingleValue<any>) => {
+        onSelectChange?.({ target: { name, value: option!.value } });
     }, []);
     const isLoading = options.length === 0;
 

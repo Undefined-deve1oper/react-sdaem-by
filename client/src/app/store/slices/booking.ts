@@ -113,7 +113,7 @@ export const reserveEstate =
         }
     };
 export const getUserBookingCount =
-    (userId: string) => (dispatch: Dispatch, getState: any) => {
+    (userId: any) => (dispatch: Dispatch, getState: any) => {
         return getState().booking.entities.filter(
             (booking: any) => booking.userId.toString() === userId
         )?.length;

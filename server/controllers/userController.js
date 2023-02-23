@@ -1,4 +1,5 @@
 const User = require("../models/User");
+const Token = require("../models/Token");
 const path = require("path");
 const crypto = require("crypto");
 const fs = require("fs");
@@ -62,6 +63,20 @@ class UserController {
 
             stream.write(Buffer.from(req.body), "utf-8");
             stream.end();
+        } catch (error) {
+            res.status(500).json({
+                message: "На сервере произошла ошибка. Попробуйте позже"
+            });
+        }
+    }
+
+    async deleteUser(req, res) {
+        try {
+            const { userId } = req.params;
+            await User.findByIdAndDelete(userId);
+            const removedToken = await Token.findOne({ userId });
+            await removedToken.remove();
+            return res.send(null);
         } catch (error) {
             res.status(500).json({
                 message: "На сервере произошла ошибка. Попробуйте позже"

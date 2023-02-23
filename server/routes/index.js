@@ -9,6 +9,7 @@ const favouriteRoutes = require("./favourite.routes");
 const commentRoutes = require("./comment.routes");
 const userRoutes = require("./user.routes");
 const bookingRoutes = require("./booking.routes");
+const ticketRoutes = require("./ticket.routes");
 
 router.use("/auth", authRoutes);
 router.use("/comment", commentRoutes);
@@ -19,5 +20,6 @@ router.use("/brand", brandRouter);
 router.use("/type", typeRouter);
 router.use("/user", userRoutes);
 router.use("/booking", bookingRoutes);
+router.use("/ticket", ticketRoutes);
 
 module.exports = router;

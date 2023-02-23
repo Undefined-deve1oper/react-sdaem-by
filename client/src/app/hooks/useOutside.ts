@@ -6,6 +6,9 @@ export default function useOutside<T>(ref: RefObject<T>) {
     const handleOpen = () => {
         setIsOpen((prevState) => !prevState);
     };
+    const closeOpen = () => {
+        setIsOpen(false);
+    };
 
     const handleClickOutsideDropdown = useCallback((e: MouseEvent) => {
         const path = e.composedPath();
@@ -23,6 +26,7 @@ export default function useOutside<T>(ref: RefObject<T>) {
 
     return {
         isOpen,
+        closeOpen,
         handleOpen
     };
 }

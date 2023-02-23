@@ -115,6 +115,7 @@ const {
     authSignUpRequestFailed,
     userLoggedOut,
     userUpdated,
+    userDeleted,
     savePhotoSuccess
 } = actions;
 
@@ -206,6 +207,14 @@ export const saveUserAvatarPhoto =
 export const logOut = (): AppThunk => async (dispatch) => {
     localStorageService.removeAuthData();
     dispatch(userLoggedOut());
+};
+export const deleteUser = (userId: any) => async (dispatch: Dispatch) => {
+    try {
+        await userService.deleteUser(userId);
+        dispatch(userDeleted(userId));
+    } catch (error) {
+        dispatch(usersRequestFailed(error.message));
+    }
 };
 
 export const getUsersList = () => (state: RootStore) => state.users.entities;

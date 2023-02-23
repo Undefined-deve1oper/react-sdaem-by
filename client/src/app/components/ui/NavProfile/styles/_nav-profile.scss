@@ -20,6 +20,7 @@
         width: 30px;
         height: 30px;
         border-radius: 50%;
+        pointer-events: none;
 
         & img {
             width: 100%;
@@ -30,6 +31,7 @@
 
     // .nav-profile__name
     &__name {
+        pointer-events: none;
         font-weight: 500;
         font-size: 14px;
         line-height: 17px;
@@ -41,6 +43,7 @@
 
     // .nav-profile__more
     &__more {
+        pointer-events: none;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -79,7 +82,6 @@
     transform: translate3d(0px, 20px, 0px);
 
     @media (max-width: $md4+px) {
-        min-width: 200px;
         align-items: flex-end;
     }
 

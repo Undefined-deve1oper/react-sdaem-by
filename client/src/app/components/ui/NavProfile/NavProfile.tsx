@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { NavLink, useNavigate } from "react-router-dom";
+import { useOutside } from "../../../hooks";
 import { getCurrentUserData, logOut, useAppDispatch } from "../../../store";
 import Button from "../../common/Button";
 import IconSvg from "../../common/IconSvg";
@@ -9,17 +10,12 @@ const NavProfile = () => {
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
     const currentUser = useSelector(getCurrentUserData());
-    const [isOpen, setOpen] = useState(false);
+    const ref = useRef(null);
+    const { isOpen, handleOpen, closeOpen } = useOutside(ref);
 
-    const closeMenu = () => {
-        setOpen(false);
-    };
-    const toggleOpenMenu = () => {
-        setOpen((prevState) => !prevState);
-    };
     const handleClickSettingsMenu = (path: string, replace?: boolean) => {
         navigate(path, { replace: replace || false });
-        closeMenu();
+        closeOpen();
     };
     const handleLogOut = () => {
         dispatch(logOut());
@@ -30,7 +26,11 @@ const NavProfile = () => {
 
         return (
             <div className="nav-profile">
-                <div className="nav-profile__body" onClick={toggleOpenMenu}>
+                <div
+                    className="nav-profile__body"
+                    ref={ref}
+                    onClick={handleOpen}
+                >
                     <div className="nav-profile__avatar">
                         <img src={avatarImage} alt="Avatar" />
                     </div>

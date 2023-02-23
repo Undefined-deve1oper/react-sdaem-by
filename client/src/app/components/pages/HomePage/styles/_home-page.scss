@@ -18,6 +18,13 @@
         flex-wrap: wrap;
     }
 
+    // .tab-list__panel
+    &__panel {
+        display: flex;
+        flex-direction: column;
+        overflow-x: auto;
+    }
+
     // .tab-list__item
     &__item {
         padding: 13px 20px;
@@ -55,6 +62,14 @@
             }
         }
 
+        &.selected {
+            background-color: #ffffff;
+            color: #664ef9;
+            &:hover {
+                background-color: #ffffff;
+            }
+        }
+
         &.second {
             color: $darkColor;
             background: none;
@@ -84,20 +99,20 @@
             }
 
             &.selected {
+                @media (max-width: $md4+px) {
+                    &::after {
+                        content: "";
+                        display: none;
+                    }
+                    color: $lightColor;
+                    background: $violetColor;
+                }
                 &::after {
                     content: "";
                     width: calc(100% + 10px);
                     visibility: visible;
                     opacity: 1;
                 }
-            }
-        }
-
-        &.selected {
-            background-color: #ffffff;
-            color: #664ef9;
-            &:hover {
-                background-color: #ffffff;
             }
         }
     }

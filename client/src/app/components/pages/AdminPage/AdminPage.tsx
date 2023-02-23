@@ -6,8 +6,12 @@ import {
     getestatesLoadingStatus
 } from "../../../store/slices/estates";
 import Tabs from "../../common/Tabs";
+import { TicketList, UsersTable } from "../../ui/Admin";
 import { BookingList } from "../../ui/Booking";
 import EstatePage from "../EstatePage";
+
+// Email -> admin@gmail.com
+// Password -> Test1234
 
 const AdminPage: React.FC = () => {
     const estates = useStateSelector(getEstatesList());
@@ -18,7 +22,7 @@ const AdminPage: React.FC = () => {
         {
             _id: 0,
             name: "Пользователи",
-            component: <EstatePage />
+            component: <UsersTable />
         },
         {
             _id: 1,
@@ -33,7 +37,7 @@ const AdminPage: React.FC = () => {
         {
             _id: 3,
             name: "Тикеты",
-            component: <EstatePage />
+            component: <TicketList />
         }
     ];
 

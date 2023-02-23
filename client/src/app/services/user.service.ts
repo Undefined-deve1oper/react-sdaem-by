@@ -45,6 +45,10 @@ const userService = {
         );
 
         return data;
+    },
+    deleteUser: async (id: string) => {
+        const data = await httpService.delete(userEndpoint + id);
+        return data;
     }
 };
 

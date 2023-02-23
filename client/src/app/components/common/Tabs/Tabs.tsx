@@ -41,7 +41,9 @@ const Tabs: React.FC<ITabs> = ({ options, ...rest }) => {
                     hidden={value !== index}
                     {...rest}
                 >
-                    <TabPanel key={option.name}>{option.component}</TabPanel>
+                    <TabPanel key={option.name} className={"tab-list__panel"}>
+                        {option.component}
+                    </TabPanel>
                 </div>
             ))}
         </ReactTabs>
