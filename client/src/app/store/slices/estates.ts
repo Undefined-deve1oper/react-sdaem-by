@@ -1,3 +1,4 @@
+import { CommentType } from "./../../types/types";
 import { createSlice, Dispatch } from "@reduxjs/toolkit";
 import estatesService from "../../services/estates.service";
 import { RootStore } from "../types";
@@ -81,6 +82,16 @@ export const getEstateById = (estateId: any) => (state: any) => {
               (estate: EstateItem) => estate._id === estateId
           )
         : null;
+};
+
+export const getEstateRating = (estateId: string) => (state: RootStore) => {
+    if (state.comments.entities) {
+        const estateComments = state.comments.entities.filter(
+            (comment: CommentType) => comment.estateId === estateId
+        );
+        return estateComments.map((comment: CommentType) => comment.rating);
+    }
+    return null;
 };
 
 export const getEstatesList = () => (state: RootStore) =>

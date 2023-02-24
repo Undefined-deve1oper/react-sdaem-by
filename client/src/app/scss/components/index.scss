@@ -22,6 +22,7 @@
 @import "../../components/common/RatingList/styles/rating";
 @import "../../components/common/Tabs/styles/tabs";
 @import "../../components/common/Table/Table/styles/table";
+@import "../../components/common/ProgressBar/styles/progress-bar";
 @import "../../components/common/Skeletons/styles/skeleton";
 @import "../../components/pages/SignInPage/styles/sign-in-page";
 @import "../../components/pages/SignUpPage/styles/sign-up-page";
@@ -54,3 +55,7 @@
 @import "../../components/ui/Modals/SuccessModal/styles/success-modal";
 @import "../../components/ui/Modals/CheckModal/styles/check-modal";
 @import "../../components/ui/Admin/TicketList/styles/ticket-list";
+@import "../../components/ui/Estates/EstateComments/styles/estate-comments";
+@import "../../components/ui/Estates/EstateComment/styles/estate-comment";
+@import "../../components/ui/Estates/EstateStatisticsBar/styles/estate-statisics-bar";
+@import "../../components/ui/Estates/EstateCommentsList/styles/estate-comments-list";

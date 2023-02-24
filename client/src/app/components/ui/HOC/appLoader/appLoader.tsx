@@ -7,6 +7,7 @@ import {
     useAppDispatch
 } from "../../../../store";
 import { loadBooking } from "../../../../store/slices/booking";
+import { loadCommentsList } from "../../../../store/slices/comments";
 import { loadEstatesList } from "../../../../store/slices/estates";
 import { loadPostsList } from "../../../../store/slices/posts";
 import Loader from "../../../common/Loader";
@@ -20,6 +21,7 @@ const AppLoader = ({ children }: any) => {
         dispatch(loadUsersList());
         dispatch(loadPostsList());
         dispatch(loadEstatesList());
+        dispatch(loadCommentsList());
         dispatch(loadBooking());
     }, [isLoggedIn]);
 

@@ -4,6 +4,7 @@ import SignUpForm from "./SignUpForm";
 import UserEditForm from "./UserEditForm";
 import BookingForm from "./BookingForm";
 import CreateTicketForm from "./CreateTicketForm";
+import CreateCommentForm from "./CreateCommentForm";
 
 export {
     SearchEstateForm,
@@ -11,5 +12,6 @@ export {
     SignUpForm,
     UserEditForm,
     BookingForm,
-    CreateTicketForm
+    CreateTicketForm,
+    CreateCommentForm
 };

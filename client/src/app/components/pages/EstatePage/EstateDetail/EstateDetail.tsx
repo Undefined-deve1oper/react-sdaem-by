@@ -1,27 +1,30 @@
 import React, { useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import { getIsLoggedIn, useStateSelector } from "../../../../store";
-import { getEstateById } from "../../../../store/slices/estates";
+import { useStateSelector } from "../../../../store";
+import {
+    getEstateById,
+    getEstateRating
+} from "../../../../store/slices/estates";
 import { getFormatDate } from "../../../../utils/dateHelpers";
+import { getAverageEstateRate } from "../../../../utils/getAverageEstateRate";
 import ButtonFavorite from "../../../common/ButtonFavorite";
 import IconSvg from "../../../common/IconSvg";
 import Rating from "../../../common/Rating";
 import ImageSlider from "../../../common/SliderImages/SliderImages";
-import Booking from "../../../ui/Booking";
 import OwnerCard from "../../../ui/OwnerCard";
 import ShareButtons from "../../../ui/ShareButtons";
 
 const EstateDetail: React.FC = () => {
     const { pathname } = useLocation();
-    const { estateId } = useParams();
+    const { estateId } = useParams<{ estateId: string }>();
     const estate = useStateSelector(getEstateById(estateId));
-    const isLoggedIn = useStateSelector(getIsLoggedIn());
+    const rating = useStateSelector(getEstateRating(estateId || ""));
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [pathname]);
 
-    if (estate) {
+    if (estate && rating) {
         const correctCreateDate = getFormatDate(estate.createdAt);
         const correctUpdatedDate = getFormatDate(estate.updatedAt);
 
@@ -53,7 +56,13 @@ const EstateDetail: React.FC = () => {
                                     {estate.location}
                                 </div>
                                 <div className="estate-detail__rating">
-                                    <Rating value={estate.rating} />
+                                    <Rating
+                                        name="rating"
+                                        readOnly
+                                        defaultState={getAverageEstateRate(
+                                            rating
+                                        )}
+                                    />
                                 </div>
                             </div>
                             <div className="estate-detail__footer">
@@ -92,16 +101,6 @@ const EstateDetail: React.FC = () => {
                                 </li>
                             </ul>
                         </div>
-                        {isLoggedIn && (
-                            <section className="estates-booking">
-                                <h2 className="estates-booking__title">
-                                    Бронирование
-                                </h2>
-                                <div className="estates-booking__block">
-                                    <Booking {...estate} />
-                                </div>
-                            </section>
-                        )}
                     </div>
                     <div className="estate-detail__owner">
                         <OwnerCard ownerId={estate.info.ownerId} />

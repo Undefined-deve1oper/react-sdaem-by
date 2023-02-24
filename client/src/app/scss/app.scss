@@ -113,3 +113,26 @@ body {
 
     margin: 0px 0px 15px 0px;
 }
+
+.star {
+    input[type="radio"] {
+        display: none;
+    }
+
+    &-rating {
+        display: flex;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.rating {
+    &__title {
+        color: $darkColor;
+        font-weight: 400;
+        font-size: 16px;
+        margin: 0px 0px 10px 0px;
+    }
+}

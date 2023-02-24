@@ -51,3 +51,14 @@ export type BookingDateType = {
     departure: Date;
     estateId?: string;
 };
+
+export type CommentType = {
+    _id?: string;
+    content: string;
+    rating: string;
+    estateId: string;
+    userId?: string;
+    answerOn?: string | UserType;
+    createdAt?: Date | string;
+    updatedAt?: Date | string;
+};

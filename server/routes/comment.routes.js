@@ -5,7 +5,7 @@ const auth = require("../middleware/auth.middleware");
 
 router
     .route("/")
-    .get(auth, commentController.getOne)
+    .get(commentController.getOne)
     .post(auth, commentController.create);
 router.delete("/:commentId", auth, commentController.delete);
 

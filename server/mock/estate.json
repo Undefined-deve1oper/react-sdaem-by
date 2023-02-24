@@ -1,7 +1,7 @@
 [
     {
         "price": "4500",
-        "rating": "0",
+        "rating": "",
         "city": "Москва",
         "images": [
             "https://wallpaperaccess.com/full/1600667.jpg",
@@ -22,7 +22,7 @@
     },
     {
         "price": "4500",
-        "rating": "0",
+        "rating": "",
         "city": "Москва",
         "brandId": "63ed187a1cc9b5878bd3244a",
         "typeId": "63ecd3d709b8f04ccc7e27e8",
@@ -44,7 +44,7 @@
 
     {
         "price": "4500",
-        "rating": "0",
+        "rating": "",
         "title": "Элитная квартира",
         "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "city": "Санкт-Петербург",
@@ -65,7 +65,7 @@
     },
     {
         "price": "4500",
-        "rating": "1",
+        "rating": "",
         "title": "Элитная квартира",
         "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "images": [
@@ -87,7 +87,7 @@
 
     {
         "price": "4800",
-        "rating": "0",
+        "rating": "",
         "title": "Элитная квартира",
         "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "brandId": "63ed187a1cc9b5878bd32444",
@@ -109,7 +109,7 @@
 
     {
         "price": "4500",
-        "rating": "1",
+        "rating": "",
         "title": "Элитная квартира",
         "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "images": [
@@ -131,7 +131,7 @@
 
     {
         "price": "4500",
-        "rating": "5",
+        "rating": "",
         "images": [
             "https://wallpaperaccess.com/full/1600667.jpg",
             "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
@@ -152,7 +152,7 @@
     },
     {
         "price": "4000",
-        "rating": "5",
+        "rating": "",
         "title": "Ford Mustang GT",
         "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "city": "Воронеж",

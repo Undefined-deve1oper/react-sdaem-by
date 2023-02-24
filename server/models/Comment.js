@@ -13,8 +13,8 @@ const schema = new Schema(
         content: {
             type: String
         },
-        rate: {
-            type: Number
+        rating: {
+            type: String
         },
         answerOn: {
             type: Schema.Types.ObjectId,
@@ -22,7 +22,7 @@ const schema = new Schema(
         }
     },
     {
-        timestamps: { createdAt: "created_at" }
+        timestamps: true
     }
 );
 
