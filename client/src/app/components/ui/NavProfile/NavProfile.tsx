@@ -18,7 +18,7 @@ const NavProfile = () => {
         closeOpen();
     };
     const handleLogOut = () => {
-        dispatch(logOut());
+        dispatch(logOut(navigate));
     };
 
     if (currentUser) {

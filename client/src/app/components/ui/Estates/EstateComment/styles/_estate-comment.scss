@@ -9,6 +9,7 @@
 
     // .estate-comments__item
     &__item {
+        position: relative;
         width: 100%;
         background: $lightColor;
         border-radius: 15px;
@@ -84,10 +85,23 @@
 
     // .comment-header__answer-text
     &__answer-text {
+        position: absolute;
+        right: 25px;
+        bottom: 25px;
+        transition: all 0.3s ease 0s;
+        text-transform: capitalize;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $violetColor;
+                cursor: pointer;
+            }
+        }
     }
 
     // .comment-header__answer-user
     &__answer-user {
+        margin: 10px 0px 0px 0px;
     }
 }
 
@@ -124,7 +138,7 @@
 
     // .comments-content__description
     &__description {
-        max-width: 100%;
+        max-width: calc(100% - 90px);
         white-space: pre-wrap;
         word-wrap: break-word;
     }

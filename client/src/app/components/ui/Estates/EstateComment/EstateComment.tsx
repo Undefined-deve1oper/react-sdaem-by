@@ -68,8 +68,6 @@ const EstateComment: React.FC<EstateCommentProps> = ({ comment, onAnswer }) => {
                             >
                                 {authorComment.name}
                             </span>
-                        </div>
-                        <div className="comment-header__description">
                             {isLoggedIn &&
                                 currentUser?._id !== authorComment._id && (
                                     <span
@@ -81,6 +79,8 @@ const EstateComment: React.FC<EstateCommentProps> = ({ comment, onAnswer }) => {
                                         ответить
                                     </span>
                                 )}
+                        </div>
+                        <div className="comment-header__description">
                             {answeredUser && (
                                 <p className="comment-header__answer-user">
                                     Ответ пользователю: {answeredUser.name}

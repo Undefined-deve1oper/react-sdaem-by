@@ -204,10 +204,13 @@ export const saveUserAvatarPhoto =
         }
     };
 
-export const logOut = (): AppThunk => async (dispatch) => {
-    localStorageService.removeAuthData();
-    dispatch(userLoggedOut());
-};
+export const logOut =
+    (navigate: any): AppThunk =>
+    async (dispatch) => {
+        localStorageService.removeAuthData();
+        dispatch(userLoggedOut());
+        navigate("/login/signin", { replace: true });
+    };
 export const deleteUser = (userId: any) => async (dispatch: Dispatch) => {
     try {
         await userService.deleteUser(userId);
