@@ -30,16 +30,19 @@ const SelectField: React.FC<SelectFieldType> = ({
     const isLoading = options.length === 0;
 
     return (
-        <Select
-            value={value}
-            className={className + " custom-select-container"}
-            classNamePrefix="custom-select"
-            closeMenuOnSelect={closeMenuOnSelect}
-            placeholder={placeholder}
-            onChange={onChange}
-            options={options}
-            isLoading={isLoading}
-        />
+        <>
+            <Select
+                value={value}
+                className={className + " custom-select-container"}
+                classNamePrefix="custom-select"
+                closeMenuOnSelect={closeMenuOnSelect}
+                placeholder={placeholder}
+                onChange={onChange}
+                options={options}
+                isLoading={isLoading}
+            />
+            {error && <p className="text-field__error error">{error}</p>}
+        </>
     );
 };
 

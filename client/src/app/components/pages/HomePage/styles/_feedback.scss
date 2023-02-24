@@ -1,6 +1,6 @@
 .feedback {
     width: 100%;
-    padding: 0px 0px 80px 0px;
+    padding: 80px 0px 80px;
 
     // .feedback__container
     &__container {
@@ -20,7 +20,7 @@
         // .feedback-header__line
         &__line {
             width: 30px;
-            border: 2px solid #4a72ff;
+            border: 2px solid $violetColor;
         }
 
         // .feedback-header__title

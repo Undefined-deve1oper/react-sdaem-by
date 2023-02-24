@@ -14,7 +14,7 @@ const initialData = {
 };
 
 const CreateTicketForm: React.FC = () => {
-    const { data, handleChange, errors, validate } = useForm(
+    const { data, handleChange, errors, validate, handleResetForm } = useForm(
         initialData,
         false,
         validatorConfig
@@ -26,6 +26,7 @@ const CreateTicketForm: React.FC = () => {
         if (validate(data)) {
             await ticketService.create({ ...data, status: "pending" });
             toast.success("Сообщение успешно отправлено!");
+            handleResetForm(event);
         }
     };
     return (
@@ -53,7 +54,7 @@ const CreateTicketForm: React.FC = () => {
                 value={data.message}
                 title="Сообщение"
                 onChange={handleChange}
-                error={errors.description}
+                error={errors.message}
                 className="feedback-form__item"
             />
             <div className="feedbacl-form__item">
@@ -67,6 +68,7 @@ const CreateTicketForm: React.FC = () => {
                         { label: "Вопрос", value: "offer" },
                         { label: "Другое", value: "other" }
                     ]}
+                    error={errors.cause}
                 />
             </div>
             <Button type="submit" className="feedback-form__button">

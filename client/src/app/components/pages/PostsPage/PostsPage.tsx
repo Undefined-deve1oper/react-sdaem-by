@@ -62,7 +62,9 @@ const PostsPage: React.FC = () => {
                     />
                 )}
                 {postsListCrop.length === 0 && (
-                    <h2 className="feedback">К сожалению, постов нет.</h2>
+                    <h2 className="info-title">
+                        К сожалению, посты не найдены.
+                    </h2>
                 )}
             </div>
         </SectionWrapper>

@@ -45,7 +45,7 @@ const DatePickerField: React.FC<DatePickerFieldType> = ({
                     onChange={handleChange}
                     showYearDropdown
                     minDate={minDate || Date.now()}
-                    dateFormatCalendar="dd-MM-yyyy"
+                    dateFormatCalendar="MMMM"
                     yearDropdownItemNumber={68}
                     scrollableYearDropdown
                     wrapperClassName={

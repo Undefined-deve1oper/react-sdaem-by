@@ -7,8 +7,8 @@ import {
 } from "../../../store/slices/estates";
 import Tabs from "../../common/Tabs";
 import { TicketList, UsersTable } from "../../ui/Admin";
+import EstatesStatus from "../../ui/Admin/EstatesStatus";
 import { BookingList } from "../../ui/Booking";
-import EstatePage from "../EstatePage";
 
 // Email -> admin@gmail.com
 // Password -> Test1234
@@ -31,8 +31,8 @@ const AdminPage: React.FC = () => {
         },
         {
             _id: 2,
-            name: "Номера",
-            component: <EstatePage />
+            name: "Товары",
+            component: <EstatesStatus estates={estates} />
         },
         {
             _id: 3,

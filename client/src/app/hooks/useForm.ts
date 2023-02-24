@@ -21,6 +21,8 @@ function useForm<T>(
 
     const handleChange = useCallback(
         ({ target }: { target: { name: string; value: string } }) => {
+            console.log(target);
+
             setData((prevState) => ({
                 ...prevState,
                 [target.name]: target.value

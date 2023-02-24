@@ -5,7 +5,11 @@ export default function useDebounce<T>(value: T, delay?: number): T {
 
     useEffect(() => {
         const time = setTimeout(() => {
-            setDebounce(value);
+            if (typeof value === "function") {
+                value();
+            } else {
+                setDebounce(value);
+            }
         }, delay || 600);
 
         return () => {

@@ -12,9 +12,14 @@ export const validatorConfig = {
             message: "Имя не может быть пустым"
         }
     },
-    description: {
+    message: {
         isRequired: {
             message: "Сообщение обязательно для заполнения"
+        }
+    },
+    cause: {
+        isRequired: {
+            message: "Причина обязательна для заполнения"
         }
     }
 };

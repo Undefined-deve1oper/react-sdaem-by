@@ -71,7 +71,7 @@
         white-space: normal;
     }
     &__modal-list {
-        // margin-bottom: 15px;
+        margin: 0px 0px 30px 0px;
     }
     &__modal-item {
         &:not(:last-child) {
@@ -99,4 +99,8 @@
         font-size: 20px;
         color: $lightColor;
     }
+}
+
+.admin__ticket-id {
+    @include adaptiv-value("font-size", 20, 16, 1);
 }

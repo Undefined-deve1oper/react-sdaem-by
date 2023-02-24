@@ -45,3 +45,9 @@ export type BookingType = {
     totalPrice: number;
     createdAt?: number;
 };
+
+export type BookingDateType = {
+    entry: Date;
+    departure: Date;
+    estateId?: string;
+};
