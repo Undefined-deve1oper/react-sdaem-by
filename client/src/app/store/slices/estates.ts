@@ -1,4 +1,4 @@
-import { CommentType } from "./../../types/types";
+import { CommentType, FavouriteType } from "./../../types/types";
 import { createSlice, Dispatch } from "@reduxjs/toolkit";
 import estatesService from "../../services/estates.service";
 import { RootStore } from "../types";
@@ -83,6 +83,26 @@ export const getEstateById = (estateId: any) => (state: any) => {
           )
         : null;
 };
+export const getEstatesByUserId = (userId: any) => (state: RootStore) => {
+    if (state.estates.entities) {
+        return state.estates.entities.filter(
+            (estate) => estate.info.ownerId === userId
+        );
+    }
+    return [];
+};
+export const getEstatesByFavouritesList =
+    (favouritesList: FavouriteType[]) => (state: RootStore) => {
+        if (state.estates.entities) {
+            return state.estates.entities.filter((estate) => {
+                const favouriteIndex = favouritesList.findIndex(
+                    (f) => f.estateId === estate._id
+                );
+                return estate._id === favouritesList[favouriteIndex]?.estateId;
+            });
+        }
+        return [];
+    };
 
 export const getEstateRating = (estateId: string) => (state: RootStore) => {
     if (state.comments.entities) {
@@ -96,7 +116,7 @@ export const getEstateRating = (estateId: string) => (state: RootStore) => {
 
 export const getEstatesList = () => (state: RootStore) =>
     state.estates.entities;
-export const getestatesLoadingStatus = () => (state: RootStore) =>
+export const getEstatesLoadingStatus = () => (state: RootStore) =>
     state.estates.isLoading;
 
 export default estatesReducer;

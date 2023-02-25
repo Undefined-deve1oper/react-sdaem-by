@@ -1,10 +1,23 @@
 import React, { useEffect } from "react";
 import { useLocation, useParams } from "react-router-dom";
-import { useStateSelector } from "../../../../store";
+import { toast } from "react-toastify";
+import { useFavourite } from "../../../../hooks";
+import {
+    getCurrentUserId,
+    getIsLoggedIn,
+    useAppDispatch,
+    useStateSelector
+} from "../../../../store";
 import {
     getEstateById,
     getEstateRating
 } from "../../../../store/slices/estates";
+import {
+    createFavourite,
+    getFavouritesByEstateId,
+    getIsFavorite,
+    removeFavourite
+} from "../../../../store/slices/favourites";
 import { getFormatDate } from "../../../../utils/dateHelpers";
 import { getAverageEstateRate } from "../../../../utils/getAverageEstateRate";
 import ButtonFavorite from "../../../common/ButtonFavorite";
@@ -19,6 +32,7 @@ const EstateDetail: React.FC = () => {
     const { estateId } = useParams<{ estateId: string }>();
     const estate = useStateSelector(getEstateById(estateId));
     const rating = useStateSelector(getEstateRating(estateId || ""));
+    const { isFavourite, handleSelectFavorite } = useFavourite(estateId || "");
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -68,8 +82,8 @@ const EstateDetail: React.FC = () => {
                             <div className="estate-detail__footer">
                                 <ButtonFavorite
                                     label="В закладки"
-                                    status={false}
-                                    onToggle={console.log}
+                                    status={isFavourite || false}
+                                    onToggle={handleSelectFavorite}
                                 />
                                 <ShareButtons
                                     estatesPage

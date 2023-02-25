@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { useAppDispatch, useStateSelector } from "../../../store";
 import {
     getEstatesList,
-    getestatesLoadingStatus,
+    getEstatesLoadingStatus,
     loadEstatesList
 } from "../../../store/slices/estates";
 import { SkeletonEstatesList } from "../../common/Skeletons/Estates";
@@ -15,7 +15,7 @@ const EstatesPage: React.FC = () => {
     const { typeId } = queryString.parse(search);
     const dispatch = useAppDispatch();
     const estates = useStateSelector(getEstatesList());
-    const estatesLoading = useStateSelector(getestatesLoadingStatus());
+    const estatesLoading = useStateSelector(getEstatesLoadingStatus());
 
     useEffect(() => {
         dispatch(loadEstatesList({ typeId }));

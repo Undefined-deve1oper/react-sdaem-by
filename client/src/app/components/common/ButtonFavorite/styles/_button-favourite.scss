@@ -7,7 +7,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    gap: 10px;
+    padding: 10px 15px;
     fill: $dangerColor;
 
     // .favourite-btn__title
@@ -16,7 +17,6 @@
         font-size: 14px;
         line-height: 17px;
         color: $dangerColor;
-        padding: 0 20px;
     }
 
     & svg {

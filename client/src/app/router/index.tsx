@@ -7,19 +7,23 @@ import {
 import { EstatesBreadcrumb } from "../components/common/Breadcrumbs/Breadcrumbs";
 import ProtectedRoute from "../components/common/ProtectedRoute";
 
+const NotFound = React.lazy(() => import("../layouts/notFound"));
 const Login = React.lazy(() => import("../layouts/login"));
 const Main = React.lazy(() => import("../layouts/main"));
 const Posts = React.lazy(() => import("../layouts/posts"));
 const Admin = React.lazy(() => import("../layouts/admin"));
 const Estates = React.lazy(() => import("../layouts/estates"));
-const Bookmark = React.lazy(() => import("../layouts/bookmark"));
+const Favourites = React.lazy(() => import("../layouts/favourites"));
 const UserProfile = React.lazy(() => import("../layouts/userProfile"));
-const UserBooking = React.lazy(() => import("../layouts/UserBooking"));
+const UserBooking = React.lazy(() => import("../layouts/userBooking"));
 const UserEditPage = React.lazy(
     () => import("../components/pages/UserEditPage")
 );
 const UserProfilePage = React.lazy(
     () => import("../components/pages/UserProfilePage")
+);
+const EstateEditPage = React.lazy(
+    () => import("../components/pages/EstateEditPage")
 );
 const EstatesPage = React.lazy(() => import("../components/pages/EstatesPage"));
 const EstatePage = React.lazy(() => import("../components/pages/EstatePage"));
@@ -63,15 +67,10 @@ const routes = [
     {
         path: "accommodation-and-rates",
         breadcrumb: "Размещение и тарифы",
-        element: <Posts />
+        element: <NotFound />
     },
-    {
-        path: "ads-on-the-map",
-        breadcrumb: "Объявления на карте",
-        element: <Posts />
-    },
-    { path: "contacts", breadcrumb: "Контакты", element: <Posts /> },
-    { path: "bookmark", breadcrumb: "Закладки", element: <Bookmark /> },
+    { path: "contacts", breadcrumb: "Контакты", element: <NotFound /> },
+    { path: "favourites", breadcrumb: "Закладки", element: <Favourites /> },
     {
         path: "login",
         element: <Login />,
@@ -98,6 +97,15 @@ const routes = [
                 path: ":estateId",
                 // breadcrumb: EstateDetailBreadcrumb,
                 element: <EstatePage />
+            },
+            {
+                path: ":estateId/edit",
+                // breadcrumb: EstateDetailBreadcrumb,
+                element: (
+                    <ProtectedRoute>
+                        <EstateEditPage />
+                    </ProtectedRoute>
+                )
             }
         ]
     },
@@ -148,7 +156,7 @@ const routes = [
     {
         path: "place-an-ad",
         breadcrumb: "Разместить объявления",
-        element: <Posts />
+        element: <NotFound />
     },
     { path: "*", breadcrumb: "Не найдено", element: <Navigate to="/" /> }
 ];

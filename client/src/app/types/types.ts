@@ -62,3 +62,11 @@ export type CommentType = {
     createdAt?: Date | string;
     updatedAt?: Date | string;
 };
+
+export type FavouriteType = {
+    _id: string;
+    estateId: string;
+    userId: string;
+    createdAt?: Date;
+    updatedAt?: Date;
+};

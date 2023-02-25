@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { getCurrentUserData, useStateSelector } from "../../../../store";
 import { getFormatDate } from "../../../../utils/dateHelpers";
-import Button from "../../../common/Button";
 import IconSvg from "../../../common/IconSvg";
 
 const ProfileUserCard: React.FC = () => {

@@ -3,7 +3,7 @@ import { useStateSelector } from "../../../store";
 import { getBookingLoading } from "../../../store/slices/booking";
 import {
     getEstatesList,
-    getestatesLoadingStatus
+    getEstatesLoadingStatus
 } from "../../../store/slices/estates";
 import Tabs from "../../common/Tabs";
 import { TicketList, UsersTable } from "../../ui/Admin";
@@ -15,7 +15,7 @@ import { BookingList } from "../../ui/Booking";
 
 const AdminPage: React.FC = () => {
     const estates = useStateSelector(getEstatesList());
-    const estatesLoading = useStateSelector(getestatesLoadingStatus());
+    const estatesLoading = useStateSelector(getEstatesLoadingStatus());
     const bookingLoading = useStateSelector(getBookingLoading());
 
     const tabsColumns = [

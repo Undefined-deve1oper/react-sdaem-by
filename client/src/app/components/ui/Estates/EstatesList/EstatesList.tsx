@@ -1,12 +1,9 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
 import { EstateItem } from "../../../../store/slices/estates";
 import Button from "../../../common/Button";
-import ButtonFavorite from "../../../common/ButtonFavorite";
 import { SelectField } from "../../../common/Fields";
 import IconSvg from "../../../common/IconSvg";
-import ImageSlider from "../../../common/SliderImages/SliderImages";
-import Owner from "../../Owner";
+import EstateCard from "../EstateCard";
 
 const selectItems = [
     { value: "0", label: "По возрастанию" },
@@ -26,6 +23,13 @@ const EstatesList: React.FC<EstatesListProps> = ({ estates }) => {
     const setDirectionTiels = () => {
         setDirection("tiles");
     };
+
+    if (estates.length === 0)
+        return (
+            <p className="main-estates__title">
+                К сожелению объявлений не найдено
+            </p>
+        );
 
     return (
         <div className="estates-products">
@@ -58,48 +62,7 @@ const EstatesList: React.FC<EstatesListProps> = ({ estates }) => {
             </div>
             <div className={"estates-products__row " + direction}>
                 {estates.map((estate) => (
-                    <div
-                        key={estate._id}
-                        className="estates-products__card estate-card"
-                    >
-                        <div className="estate-card__images">
-                            <ImageSlider
-                                items={estate.images}
-                                pagination={{ clickable: true }}
-                                grabCursor={true}
-                                className={"estate-card__img"}
-                            />
-                        </div>
-                        <div className="estate-card__content">
-                            <div className="estate-card__price">
-                                <span>{estate.price} RUB</span>
-                                за сутки
-                            </div>
-                            <div className="estate-card__title">
-                                {estate.title}
-                            </div>
-                            <div className="estate-card__location">
-                                <IconSvg name="mark" />
-                                {estate.city}
-                            </div>
-                            <div className="estate-card__description">
-                                {estate.info.description}
-                            </div>
-                            <div className="estate-card__contacts">
-                                <ButtonFavorite
-                                    status={true}
-                                    onToggle={console.log}
-                                />
-                                <Owner ownerId={estate.info.ownerId} />
-                                <NavLink
-                                    to={`/estates/${estate._id}`}
-                                    className="estate-card__more"
-                                >
-                                    Подробнее
-                                </NavLink>
-                            </div>
-                        </div>
-                    </div>
+                    <EstateCard estate={estate} key={estate._id} />
                 ))}
             </div>
         </div>

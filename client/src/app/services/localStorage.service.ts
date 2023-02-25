@@ -2,6 +2,7 @@ const TOKEN_KEY = "jwt-token";
 const REFRESH_KEY = "jwt-refresh-token";
 const EXPIRES_KEY = "jwt-expires";
 const USER_ID_KEY = "user-local-id";
+const FAVORITES_ESTATE_KEY = "favorites-estate";
 
 type SetTokensProps = {
     expiresIn: number;
@@ -16,11 +17,6 @@ export function setTokens({
     refreshToken,
     expiresIn = 3600
 }: SetTokensProps) {
-    // console.log("userId: ", userId);
-    // console.log("accessToken: ", accessToken);
-    // console.log("refreshToken: ", refreshToken);
-    // console.log("expiresIn: ", expiresIn);
-
     const expiresDate = (new Date().getTime() + expiresIn * 1000).toString();
 
     localStorage.setItem(TOKEN_KEY, accessToken);
@@ -52,13 +48,36 @@ export function removeAuthData() {
     localStorage.removeItem(USER_ID_KEY);
 }
 
+export function getFavoritesEstate() {
+    return localStorage.getItem(FAVORITES_ESTATE_KEY);
+}
+
+export function toggleFavoriteEstate(estateId: string) {
+    let favoritesEstateList = JSON.parse(getFavoritesEstate()!) || [];
+
+    if (!favoritesEstateList.some((id: string) => id === estateId)) {
+        favoritesEstateList.push(estateId);
+    } else {
+        favoritesEstateList = favoritesEstateList.filter(
+            (id: string) => id !== estateId
+        );
+    }
+
+    localStorage.setItem(
+        FAVORITES_ESTATE_KEY,
+        JSON.stringify(favoritesEstateList)
+    );
+}
+
 const localStorageService = {
     setTokens,
     getAccessToken,
     getRefreshToken,
     getTokenExpiresDate,
     getUserId,
-    removeAuthData
+    removeAuthData,
+    getFavoritesEstate,
+    toggleFavoriteEstate
 };
 
 export default localStorageService;

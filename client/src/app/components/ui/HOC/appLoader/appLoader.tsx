@@ -9,6 +9,7 @@ import {
 import { loadBooking } from "../../../../store/slices/booking";
 import { loadCommentsList } from "../../../../store/slices/comments";
 import { loadEstatesList } from "../../../../store/slices/estates";
+import { loadFavouritesList } from "../../../../store/slices/favourites";
 import { loadPostsList } from "../../../../store/slices/posts";
 import Loader from "../../../common/Loader";
 
@@ -18,10 +19,11 @@ const AppLoader = ({ children }: any) => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        dispatch(loadUsersList());
-        dispatch(loadPostsList());
-        dispatch(loadEstatesList());
+        dispatch(loadFavouritesList());
         dispatch(loadCommentsList());
+        dispatch(loadEstatesList());
+        dispatch(loadPostsList());
+        dispatch(loadUsersList());
         dispatch(loadBooking());
     }, [isLoggedIn]);
 

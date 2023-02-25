@@ -6,6 +6,7 @@ import useFilters from "./useFilters";
 import useSort from "./useSort";
 import useOutside from "./useOutside";
 import useDialog from "./useDialog";
+import useFavourite from "./useFavourite";
 
 export {
     useForm,
@@ -15,5 +16,6 @@ export {
     useSort,
     useOutside,
     useDialog,
-    useFilters
+    useFilters,
+    useFavourite
 };

@@ -5,7 +5,7 @@ const favouriteController = require("../controllers/favouriteController");
 
 router
     .route("/")
-    .get(auth, favouriteController.getOne)
+    .get(favouriteController.getOne)
     .post(auth, favouriteController.create);
 
 router.delete("/:favouriteId", auth, favouriteController.delete);
