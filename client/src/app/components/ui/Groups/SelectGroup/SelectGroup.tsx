@@ -1,7 +1,7 @@
-import React, { useCallback, useState } from "react";
-import { useLocation } from "react-router-dom";
-import { citiesOptions, roomsOptions } from "../../../../constants/options";
-import { api } from "../../../../types/enums";
+import React, { useCallback } from "react";
+import { useStateSelector } from "../../../../store";
+import { getCitiesList } from "../../../../store/slices/cities";
+import { getTypesList } from "../../../../store/slices/types";
 import { SearchEstateFormDataType } from "../../../../types/types";
 import { SelectField } from "../../../common/Fields";
 
@@ -11,33 +11,25 @@ type SelectGroupTypes = {
 };
 
 const SelectGroup: React.FC<SelectGroupTypes> = ({ data, onChange }) => {
-    const location = useLocation();
-    const isHome = location.pathname === api.home;
-
-    const handleChange = useCallback((data: any) => {
-        onChange({ target: { name: data.name, value: data.value } });
-    }, []);
+    const cities = useStateSelector(getCitiesList());
+    const types = useStateSelector(getTypesList());
 
     return (
         <>
-            {isHome && (
-                <div className="search-panel__item">
-                    <span>Город</span>
-                    <SelectField
-                        options={citiesOptions}
-                        value={data.city}
-                        onSelectChange={handleChange}
-                        name="city"
-                    />
-                </div>
-            )}
             <div className="search-panel__item">
-                <span>Комнаты</span>
+                <span>Город</span>
                 <SelectField
-                    name="rooms"
-                    value={data.rooms}
-                    onSelectChange={handleChange}
-                    options={roomsOptions}
+                    options={cities}
+                    onSelectChange={onChange}
+                    name="cityId"
+                />
+            </div>
+            <div className="search-panel__item">
+                <span>Тип</span>
+                <SelectField
+                    name="typeId"
+                    onSelectChange={onChange}
+                    options={types}
                 />
             </div>
         </>

@@ -1,10 +1,10 @@
 import {
-    AnyAction,
     createAction,
     createSlice,
     Dispatch,
     PayloadAction
 } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 import authService from "../../services/auth.service";
 import localStorageService from "../../services/localStorage.service";
 import userService from "../../services/user.service";

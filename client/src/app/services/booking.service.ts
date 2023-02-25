@@ -1,19 +1,19 @@
 import { BookingType } from "../types/types";
 import httpService from "./http.service";
 
-const bookingEndPoint = "booking/";
+const bookingEndpoint = "booking/";
 
 const bookingService = {
     create: async (payload: BookingType) => {
-        const { data } = await httpService.post(bookingEndPoint, payload);
+        const { data } = await httpService.post(bookingEndpoint, payload);
         return data;
     },
     fetchAll: async () => {
-        const { data } = await httpService.get(bookingEndPoint);
+        const { data } = await httpService.get(bookingEndpoint);
         return data;
     },
     delete: async (id: string) => {
-        const { data } = await httpService.delete(bookingEndPoint + id);
+        const { data } = await httpService.delete(bookingEndpoint + id);
         return data;
     }
 };

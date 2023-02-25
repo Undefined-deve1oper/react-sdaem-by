@@ -1,23 +1,11 @@
 import React, { useEffect } from "react";
-import { useLocation, useParams } from "react-router-dom";
-import { toast } from "react-toastify";
+import { NavLink, useLocation, useParams } from "react-router-dom";
 import { useFavourite } from "../../../../hooks";
-import {
-    getCurrentUserId,
-    getIsLoggedIn,
-    useAppDispatch,
-    useStateSelector
-} from "../../../../store";
+import { getCurrentUserId, useStateSelector } from "../../../../store";
 import {
     getEstateById,
     getEstateRating
 } from "../../../../store/slices/estates";
-import {
-    createFavourite,
-    getFavouritesByEstateId,
-    getIsFavorite,
-    removeFavourite
-} from "../../../../store/slices/favourites";
 import { getFormatDate } from "../../../../utils/dateHelpers";
 import { getAverageEstateRate } from "../../../../utils/getAverageEstateRate";
 import ButtonFavorite from "../../../common/ButtonFavorite";
@@ -33,6 +21,7 @@ const EstateDetail: React.FC = () => {
     const estate = useStateSelector(getEstateById(estateId));
     const rating = useStateSelector(getEstateRating(estateId || ""));
     const { isFavourite, handleSelectFavorite } = useFavourite(estateId || "");
+    const currentUserId = useStateSelector(getCurrentUserId());
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -46,6 +35,16 @@ const EstateDetail: React.FC = () => {
             <div className="estate-detail">
                 <div className="estate-detail__welcome">
                     <div className="estate-detail__row">
+                        <div className="estate-card__functions">
+                            {currentUserId === estate.info.ownerId && (
+                                <NavLink
+                                    to={`/estates/${estate._id}/edit`}
+                                    className="estate-card__edit"
+                                >
+                                    <IconSvg name="edit" />
+                                </NavLink>
+                            )}
+                        </div>
                         <div className="estate-detail__slider">
                             <ImageSlider
                                 items={estate.images}

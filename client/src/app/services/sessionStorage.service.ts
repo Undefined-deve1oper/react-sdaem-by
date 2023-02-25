@@ -3,7 +3,7 @@ export function toSessionStorage(key: string, data: any) {
 }
 
 export function fromSessionStorage(key: string) {
-    return JSON.parse(sessionStorage.getItem(key) || "");
+    return JSON.parse(sessionStorage.getItem(key) || "{}");
 }
 
 const sessionStorageService = {

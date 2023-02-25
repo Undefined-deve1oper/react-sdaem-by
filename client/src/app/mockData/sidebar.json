@@ -59,7 +59,7 @@
             {
                 "id": 1,
                 "value": "Коттеджы",
-                "type": "Коттедж на сутки",
+                "type": "Коттедж",
                 "path": "catalog/cottages",
                 "amount": 8
             },

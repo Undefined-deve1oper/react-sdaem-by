@@ -9,14 +9,7 @@ interface ISkeletonPostsList {
 const SkeletonPostsList: React.FC<ISkeletonPostsList> = ({ count = 6 }) => {
     return (
         <div className="skeleton-estates">
-            <div className="skeleton-estates__header">
-                <SkeletonElement type="select" />
-                <div className="skeleton-estates__view">
-                    <SkeletonElement type="view" />
-                    <SkeletonElement type="view" />
-                </div>
-            </div>
-            <SkeletonElement type="estate-title" />
+            {/* <SkeletonElement type="estate-title" /> */}
             <ul className="skeleton-estates__list">
                 {Array(count)
                     .fill("")

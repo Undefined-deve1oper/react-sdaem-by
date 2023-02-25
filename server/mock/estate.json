@@ -2,15 +2,15 @@
     {
         "price": "4500",
         "rating": "",
-        "city": "Москва",
         "images": [
             "https://wallpaperaccess.com/full/1600667.jpg",
             "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
             "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
         ],
         "brandId": "63ed187a1cc9b5878bd3244a",
-        "typeId": "63ecd3d709b8f04ccc7e27e8",
+        "typeId": "63fa1ed26ac7a5d3db84a270",
         "title": "Элитная квартира",
+        "cityId": "63fa1ed66ac7a5d3db84a2df",
         "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "info": {
             "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
@@ -23,10 +23,10 @@
     {
         "price": "4500",
         "rating": "",
-        "city": "Москва",
         "brandId": "63ed187a1cc9b5878bd3244a",
-        "typeId": "63ecd3d709b8f04ccc7e27e8",
+        "typeId": "63fa1ed26ac7a5d3db84a270",
         "title": "Элитная квартира",
+        "cityId": "63fa1ed66ac7a5d3db84a2e0",
         "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "images": [
             "https://wallpaperaccess.com/full/1600667.jpg",
@@ -47,14 +47,14 @@
         "rating": "",
         "title": "Элитная квартира",
         "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
-        "city": "Санкт-Петербург",
+        "cityId": "63fa1ed66ac7a5d3db84a2df",
         "images": [
             "https://wallpaperaccess.com/full/1600667.jpg",
             "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
             "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
         ],
         "brandId": "63ed187a1cc9b5878bd32446",
-        "typeId": "63ecd3d709b8f04ccc7e27e7",
+        "typeId": "63fa1ed26ac7a5d3db84a270",
         "info": {
             "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
             "capacity": "4 (2+2)",
@@ -73,14 +73,14 @@
             "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
             "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
         ],
-        "city": "Санкт-Петербург",
+        "typeId": "63fa1ed26ac7a5d3db84a270",
+        "cityId": "63fa1ed66ac7a5d3db84a2df",
         "info": {
             "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
             "capacity": "4 (2+2)",
             "room": "1",
             "square": "139",
             "brandId": "63ed187a1cc9b5878bd32446",
-            "typeId": "63ecd3d709b8f04ccc7e27e7",
             "ownerId": "63f265a701224e3ff39ec92d"
         }
     },
@@ -91,13 +91,13 @@
         "title": "Элитная квартира",
         "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "brandId": "63ed187a1cc9b5878bd32444",
-        "typeId": "63ecd3d709b8f04ccc7e27e6",
+        "typeId": "63fa1ed26ac7a5d3db84a270",
         "images": [
             "https://wallpaperaccess.com/full/1600667.jpg",
             "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
             "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
         ],
-        "city": "Омск",
+        "cityId": "63fa1ed66ac7a5d3db84a2e2",
         "info": {
             "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
             "capacity": "4 (2+2)",
@@ -117,9 +117,9 @@
             "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
             "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
         ],
-        "city": "Омск",
+        "cityId": "63fa1ed66ac7a5d3db84a2df",
         "brandId": "63ed187a1cc9b5878bd3243a",
-        "typeId": "63ecd3d709b8f04ccc7e27e6",
+        "typeId": "63fa1ed26ac7a5d3db84a270",
         "info": {
             "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
             "capacity": "4 (2+2)",
@@ -140,8 +140,8 @@
         "title": "BMW M5 E60",
         "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "brandId": "63ecd3d809b8f04ccc7e280b",
-        "typeId": "63ecd3d709b8f04ccc7e27e9",
-        "city": "Воронеж",
+        "typeId": "63fa1ed26ac7a5d3db84a270",
+        "cityId": "63fa1ed66ac7a5d3db84a2e4",
         "info": {
             "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
             "capacity": "4 (2+2)",
@@ -155,9 +155,9 @@
         "rating": "",
         "title": "Ford Mustang GT",
         "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
-        "city": "Воронеж",
+        "cityId": "63fa1ed66ac7a5d3db84a2e3",
         "brandId": "63ecd3d809b8f04ccc7e2811",
-        "typeId": "63ecd3d709b8f04ccc7e27e9",
+        "typeId": "63fa1ed26ac7a5d3db84a270",
         "images": [
             "https://wallpaperaccess.com/full/1600667.jpg",
             "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",

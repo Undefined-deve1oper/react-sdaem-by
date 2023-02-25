@@ -2,11 +2,13 @@ const Post = require("../models/Post");
 const Type = require("../models/Type");
 const Brand = require("../models/Brand");
 const Estate = require("../models/Estate");
+const City = require("../models/City");
 
 const postsMockData = require("../mock/posts.json");
 const typesMockData = require("../mock/types.json");
 const brandsMockData = require("../mock/brands.json");
 const estatesMockData = require("../mock/estate.json");
+const citiesMockData = require("../mock/cities.json");
 
 module.exports = async () => {
     const posts = await Post.find();
@@ -25,6 +27,12 @@ module.exports = async () => {
     if (brands.length !== brandsMockData.length) {
         await createInitialEntity(Brand, brandsMockData);
         console.log("added brands in mongoDB");
+    }
+
+    const cities = await City.find();
+    if (cities.length !== citiesMockData.length) {
+        await createInitialEntity(City, citiesMockData);
+        console.log("added cities in mongoDB");
     }
 
     const estates = await Estate.find();

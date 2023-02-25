@@ -6,7 +6,7 @@
 }
 
 .dropdown-list {
-    width: calc(100% + 100px);
+    width: calc(100% + 165px);
 
     position: absolute;
     top: 60px;
@@ -51,6 +51,7 @@
         display: inline-block;
         font-weight: 500;
         font-size: 14px;
+        line-height: 150% !important;
         padding: 10px 15px;
         line-height: 17px;
         color: inherit;

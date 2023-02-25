@@ -5,10 +5,14 @@ import Button from "../../../common/Button";
 import IconSvg from "../../../common/IconSvg";
 
 type ButtonGroupTypes = {
+    handleReset: (e: any) => void;
     onToggleOptions: () => void;
 };
 
-const ButtonGroup: React.FC<ButtonGroupTypes> = ({ onToggleOptions }) => {
+const ButtonGroup: React.FC<ButtonGroupTypes> = ({
+    onToggleOptions,
+    handleReset
+}) => {
     const location = useLocation();
     const isHome = location.pathname === api.home;
 
@@ -33,13 +37,9 @@ const ButtonGroup: React.FC<ButtonGroupTypes> = ({ onToggleOptions }) => {
                     </Button>
                 </>
             ) : (
-                <>
-                    <Button>Очистить</Button>
-                    <Button className="search-panel__submit">
-                        Показать объекты
-                        <IconSvg name="arrow" width="13" height="15" />
-                    </Button>
-                </>
+                <Button className="search-panel__submit" onClick={handleReset}>
+                    Очистить
+                </Button>
             )}
         </div>
     );

@@ -70,7 +70,15 @@ const routes = [
         element: <NotFound />
     },
     { path: "contacts", breadcrumb: "Контакты", element: <NotFound /> },
-    { path: "favourites", breadcrumb: "Закладки", element: <Favourites /> },
+    {
+        path: "favourites",
+        breadcrumb: "Закладки",
+        element: (
+            <ProtectedRoute>
+                <Favourites />
+            </ProtectedRoute>
+        )
+    },
     {
         path: "login",
         element: <Login />,
@@ -100,7 +108,7 @@ const routes = [
             },
             {
                 path: ":estateId/edit",
-                // breadcrumb: EstateDetailBreadcrumb,
+                breadcrumb: "Редактирование объявления",
                 element: (
                     <ProtectedRoute>
                         <EstateEditPage />

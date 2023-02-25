@@ -18,6 +18,7 @@
 
     // .estate-detail__row
     &__row {
+        position: relative;
         flex: 1 1 635px;
         height: 100%;
         min-width: 0;
@@ -141,6 +142,7 @@
         font-size: 15px;
         line-height: 150%;
         color: $darkColor;
+        white-space: pre-wrap;
     }
 
     // .estate-detail__subtitle

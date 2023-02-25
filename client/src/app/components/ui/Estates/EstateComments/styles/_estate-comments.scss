@@ -135,8 +135,12 @@
 
     & textarea {
         width: 100% !important;
+        min-height: 200px;
         border: 1px solid #bdbdbb;
         padding: 10px 15px;
         border-radius: 4px;
+        font-size: 14px;
+        line-height: 17px;
+        color: #1e2123;
     }
 }

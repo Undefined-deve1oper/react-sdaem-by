@@ -11,8 +11,6 @@ const Filter: React.FC = () => {
         setTabIndex(inedx);
     };
 
-    const handleSubmit = () => {};
-
     return (
         <>
             <section className="page__main-search main-search">
@@ -41,7 +39,7 @@ const Filter: React.FC = () => {
                             </TabList>
                             {panels.map((panel) => (
                                 <TabPanel key={panel.id}>
-                                    <SearchEstateForm onSubmit={handleSubmit} />
+                                    {/* <SearchEstateForm /> */}
                                 </TabPanel>
                             ))}
                         </Tabs>

@@ -16,6 +16,10 @@ const schema = new Schema(
             type: Schema.Types.ObjectId,
             ref: "Type"
         },
+        cityId: {
+            type: Schema.Types.ObjectId,
+            ref: "City"
+        },
         info: {
             type: Object,
             _id: { type: String, unique: true },

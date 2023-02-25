@@ -1,30 +1,31 @@
 import React, { useState } from "react";
 import { useForm } from "../../../../hooks";
+import { EstateItem } from "../../../../store/slices/estates";
+import { BookingDateType } from "../../../../types/types";
 import { ButtonGroup, PriceRangeGroup, SelectGroup } from "../../Groups";
 import OpenForm from "../../OpenForm";
 import { validatorConfig } from "./validatorConfig";
 
+interface initialState {
+    price?: number[];
+    brand: string;
+    priceMin?: string;
+    priceMax?: string;
+    cityId?: string;
+    typeId?: string;
+}
+
 type EstateFormTypes = {
-    onSubmit: () => void;
+    data: initialState;
+    onChange: (e: any) => void;
+    handleReset: (e: any) => void;
 };
 
-const initialState = {
-    city: "",
-    room: "",
-    area: "",
-    metro: "",
-    type: "",
-    priceMin: "",
-    priceMax: "",
-    capacity: ""
-};
-
-const EstateForm: React.FC<EstateFormTypes> = ({ onSubmit }) => {
-    const { data, errors, handleChange } = useForm(
-        initialState,
-        false,
-        validatorConfig
-    );
+const EstateForm: React.FC<EstateFormTypes> = ({
+    data,
+    onChange,
+    handleReset
+}) => {
     const [openOptions, setOptions] = useState(false);
 
     const handleToggleOptions = () => {
@@ -39,17 +40,15 @@ const EstateForm: React.FC<EstateFormTypes> = ({ onSubmit }) => {
                         "search-estate__search search-panel " +
                         (openOptions ? "_open" : "")
                     }
-                    onSubmit={onSubmit}
                 >
-                    <SelectGroup data={data} onChange={handleChange} />
-                    <PriceRangeGroup
-                        data={data}
-                        onChange={handleChange}
-                        errors={errors}
+                    <SelectGroup data={data} onChange={onChange} />
+                    <PriceRangeGroup data={data} onChange={onChange} />
+                    <ButtonGroup
+                        handleReset={handleReset}
+                        onToggleOptions={handleToggleOptions}
                     />
-                    <ButtonGroup onToggleOptions={handleToggleOptions} />
                     {openOptions && (
-                        <OpenForm data={data} onChange={handleChange} />
+                        <OpenForm data={data} onChange={onChange} />
                     )}
                 </form>
             </div>

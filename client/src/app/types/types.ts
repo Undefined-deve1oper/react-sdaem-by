@@ -70,3 +70,18 @@ export type FavouriteType = {
     createdAt?: Date;
     updatedAt?: Date;
 };
+
+export type BrandType = {
+    _id: string;
+    name: string;
+};
+
+export type TypeType = {
+    _id: string;
+    name: string;
+};
+
+export type CityType = {
+    _id: string;
+    name: string;
+};

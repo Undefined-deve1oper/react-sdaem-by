@@ -6,6 +6,7 @@ import RadioGroupField from "./RadioGroupField";
 import DatePickerField from "./DatePickerField";
 import FileField from "./FileField";
 import TextAreaField from "./TextAreaField";
+import CustomSelectField from "./CustomSelectField";
 
 export {
     SelectField,
@@ -15,5 +16,6 @@ export {
     RadioGroupField,
     DatePickerField,
     FileField,
-    TextAreaField
+    TextAreaField,
+    CustomSelectField
 };

@@ -11,7 +11,7 @@ function useForm<T>(
     const [enterError, setEnterError] = useState<string | null>(null);
 
     const validate = useCallback(
-        (data: any) => {
+        (data: T) => {
             const errors = validator(data, validatorConfig);
             setErrors(errors);
             return Object.keys(errors).length === 0;
@@ -21,34 +21,54 @@ function useForm<T>(
 
     const handleChange = useCallback(
         ({ target }: { target: { name: string; value: string } }) => {
-            setData((prevState) => ({
-                ...prevState,
-                [target.name]: target.value
-            }));
+            const nameParts = target.name.split(".");
+            const firstLevelName: keyof T = nameParts[0] as keyof T;
+            const secondLevelName: keyof T[keyof T] | undefined =
+                nameParts[1] as keyof T[keyof T] | undefined;
+
+            if (nameParts.length === 1) {
+                setData((prevData) => ({
+                    ...prevData,
+                    [firstLevelName]: target.value
+                }));
+            } else if (nameParts.length === 2 && secondLevelName) {
+                setData((prevData) => ({
+                    ...prevData,
+                    [firstLevelName]: {
+                        ...prevData[firstLevelName],
+                        [secondLevelName]: target.value
+                    }
+                }));
+            }
+
             setEnterError(null);
             setErrors({});
-            if (validateOnChange) validate({ [target.name]: target.value });
+            if (validateOnChange)
+                validate({ [target.name]: target.value } as T);
         },
-        [validateOnChange, validate]
+        [validateOnChange, validate, setData, setEnterError, setErrors]
     );
 
-    const handleKeyDown = useCallback((event: any) => {
-        if (event.keyCode === 13) {
-            event.preventDefault();
-            const form = event.target.form;
-            const formElements = [...form.elements].filter(
-                (el) =>
-                    el.tagName.toLowerCase() === "button" ||
-                    el.tagName.toLowerCase() === "input"
-            );
+    const handleKeyDown = useCallback(
+        (event: React.KeyboardEvent<HTMLFormElement>) => {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                const form = event.currentTarget.form;
+                const formElements = [...form.elements].filter(
+                    (el) =>
+                        el.tagName.toLowerCase() === "button" ||
+                        el.tagName.toLowerCase() === "input"
+                );
 
-            const fieldIndex = Array.prototype.indexOf.call(
-                formElements,
-                event.target
-            );
-            formElements[fieldIndex + 1].focus();
-        }
-    }, []);
+                const fieldIndex = Array.prototype.indexOf.call(
+                    formElements,
+                    event.currentTarget
+                );
+                formElements[fieldIndex + 1].focus();
+            }
+        },
+        []
+    );
 
     const handleResetForm = (event: React.FormEvent) => {
         event.preventDefault();

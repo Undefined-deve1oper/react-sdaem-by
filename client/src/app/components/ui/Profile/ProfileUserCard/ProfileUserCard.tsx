@@ -1,11 +1,15 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { getCurrentUserData, useStateSelector } from "../../../../store";
+import {
+    getCurrentUserData,
+    getUserById,
+    useStateSelector
+} from "../../../../store";
 import { getFormatDate } from "../../../../utils/dateHelpers";
 import IconSvg from "../../../common/IconSvg";
 
-const ProfileUserCard: React.FC = () => {
-    const currentUser = useStateSelector(getCurrentUserData());
+const ProfileUserCard = ({ userId }: { userId: string }) => {
+    const currentUser = useStateSelector(getUserById(userId));
 
     if (currentUser) {
         const correctBirthDay = getFormatDate(currentUser.birthYear);

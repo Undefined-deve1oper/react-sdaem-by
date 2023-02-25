@@ -10,11 +10,7 @@ type ProceRangeGroupType = {
     };
 };
 
-const PriceRangeGroup: React.FC<ProceRangeGroupType> = ({
-    data,
-    onChange,
-    errors
-}) => {
+const PriceRangeGroup: React.FC<ProceRangeGroupType> = ({ data, onChange }) => {
     return (
         <div className="search-panel__item">
             <span>Цена за сутки (RUB)</span>
@@ -24,16 +20,14 @@ const PriceRangeGroup: React.FC<ProceRangeGroupType> = ({
                     label="От"
                     type="number"
                     onChange={onChange}
-                    value={data.priceMin}
-                    error={errors?.priceMin}
+                    // value={data.priceMin}
                 />
                 <TextField
                     name="priceMax"
                     label="До"
                     type="number"
                     onChange={onChange}
-                    value={data.priceMax}
-                    error={errors?.priceMax}
+                    // value={data.priceMax}
                 />
             </div>
         </div>

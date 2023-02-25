@@ -1,7 +1,8 @@
 import { CommentType, FavouriteType } from "./../../types/types";
-import { createSlice, Dispatch } from "@reduxjs/toolkit";
+import { createAction, createSlice, Dispatch } from "@reduxjs/toolkit";
 import estatesService from "../../services/estates.service";
-import { RootStore } from "../types";
+import { AppThunk, RootStore } from "../types";
+import { toast } from "react-toastify";
 
 export interface EstateInfoItem {
     _id: string;
@@ -10,16 +11,16 @@ export interface EstateInfoItem {
 }
 
 export interface EstateItem {
-    _id: string;
+    _id?: string;
     price: string;
-    rating: string;
+    rating?: string;
     images: string[];
     city: string;
-    label: string;
+    label?: string;
     title: string;
     brandId: string;
     typeId: string;
-    createdAt: string;
+    createdAt?: string;
     info: EstateInfoItem;
     updatedAt?: string;
 }
@@ -56,23 +57,63 @@ const estatesSlice = createSlice({
         filteredEstatesReceived: (state, action) => {
             state.filteredEntities = action.payload;
             state.isLoading = false;
+        },
+        estateUpdated: (state, action) => {
+            const estateIndex = state.entities.findIndex(
+                (estate) => estate._id === action.payload._id
+            );
+            state.entities[estateIndex] = action.payload;
         }
     }
 });
 
 const { reducer: estatesReducer, actions } = estatesSlice;
-const { estatesRequested, estatesReceived, estatesRequestFailed } = actions;
+const {
+    estatesRequested,
+    estatesReceived,
+    estatesRequestFailed,
+    estateUpdated,
+    filteredEstatesReceived
+} = actions;
 
-export const loadEstatesList =
-    (queryParams?: any) => async (dispatch: Dispatch) => {
+const estateUpdateRequested = createAction("estates/estateUpdateRequested");
+const estateUpdateRequestedFailed = createAction(
+    "estates/estateUpdateRequestedFailed"
+);
+
+export const loadEstatesList = () => async (dispatch: Dispatch) => {
+    dispatch(estatesRequested());
+    try {
+        const { content } = await estatesService.fetchAll();
+        dispatch(estatesReceived(content));
+    } catch (error) {
+        dispatch(estatesRequestFailed(error.message));
+    }
+};
+
+export const loadFilteredEstatesList =
+    (queryParams?: any): AppThunk =>
+    async (dispatch: Dispatch) => {
         dispatch(estatesRequested());
         try {
-            const { content } = await estatesService.getEstatesByQueryParams(
-                queryParams
-            );
-            dispatch(estatesReceived(content));
+            const { content } = await estatesService.fetchAll(queryParams);
+            dispatch(filteredEstatesReceived(content || []));
         } catch (error) {
             dispatch(estatesRequestFailed(error.message));
+        }
+    };
+
+export const updateEstatesData =
+    (payload: EstateItem, goBack: any) => async (dispatch: Dispatch) => {
+        dispatch(estateUpdateRequested());
+        try {
+            const { content } = await estatesService.update(payload);
+            dispatch(estateUpdated(content));
+            toast.success("Объявление успешно обновлено");
+            goBack();
+        } catch (error) {
+            console.log(error);
+            dispatch(estateUpdateRequestedFailed());
         }
     };
 
@@ -116,6 +157,8 @@ export const getEstateRating = (estateId: string) => (state: RootStore) => {
 
 export const getEstatesList = () => (state: RootStore) =>
     state.estates.entities;
+export const getFilteredEstates = () => (state: RootStore) =>
+    state.estates.filteredEntities;
 export const getEstatesLoadingStatus = () => (state: RootStore) =>
     state.estates.isLoading;
 

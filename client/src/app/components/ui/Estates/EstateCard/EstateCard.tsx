@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useFavourite } from "../../../../hooks";
 import { getCurrentUserId, useStateSelector } from "../../../../store";
 import { EstateItem } from "../../../../store/slices/estates";
+import { textCropper } from "../../../../utils/helpers";
 import Button from "../../../common/Button";
 import ButtonFavorite from "../../../common/ButtonFavorite";
 import IconSvg from "../../../common/IconSvg";
@@ -14,15 +15,16 @@ type Props = {
 };
 
 const EstateCard: React.FC<Props> = ({ estate }) => {
-    const { isFavourite, handleSelectFavorite } = useFavourite(estate._id);
+    const { isFavourite, handleSelectFavorite } = useFavourite(estate._id!);
     const currentUserId = useStateSelector(getCurrentUserId());
+    const slicedText = textCropper(estate.info.description, 219);
 
     return (
         <div className="estates-products__card estate-card">
             <div className="estate-card__functions">
                 {currentUserId === estate.info.ownerId && (
                     <NavLink
-                        to={`estates/${estate._id}/edit`}
+                        to={`/estates/${estate._id}/edit`}
                         className="estate-card__edit"
                     >
                         <IconSvg name="edit" />
@@ -47,9 +49,7 @@ const EstateCard: React.FC<Props> = ({ estate }) => {
                     <IconSvg name="mark" />
                     {estate.city}
                 </div>
-                <div className="estate-card__description">
-                    {estate.info.description}
-                </div>
+                <div className="estate-card__description">{slicedText}</div>
                 <div className="estate-card__contacts">
                     <ButtonFavorite
                         status={isFavourite || false}
