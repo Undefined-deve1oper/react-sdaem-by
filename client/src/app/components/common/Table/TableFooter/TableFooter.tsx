@@ -28,13 +28,13 @@ const TableFooter: React.FC<TableFooterProps> = ({
                         className={"table-footer__select"}
                     >
                         {pageSizesList.map(
-                            (item: { value: number; label: string }) => (
+                            (item: { value: number; name: string }) => (
                                 <option
                                     key={item.value}
                                     value={item.value}
                                     defaultValue="3"
                                 >
-                                    {item.label}
+                                    {item.name}
                                 </option>
                             )
                         )}

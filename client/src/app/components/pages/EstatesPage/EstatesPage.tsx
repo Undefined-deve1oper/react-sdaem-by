@@ -11,7 +11,6 @@ import {
     getFilteredEstates,
     loadFilteredEstatesList
 } from "../../../store/slices/estates";
-import IconSvg from "../../common/IconSvg";
 import Pagination from "../../common/Pagination";
 import Searchbar from "../../common/Searchbar";
 import { SkeletonEstatesList } from "../../common/Skeletons/Estates";
@@ -93,8 +92,12 @@ const EstatesPage: React.FC = () => {
                                 "estates-products__select product-header__items"
                             }
                         >
-                            <IconSvg name="down-sort" />
-                            <EstateSort sortBy={sortBy} onSort={handleSort} />
+                            <EstateSort
+                                sortBy={sortBy}
+                                onSort={handleSort}
+                                limit={limit}
+                                handleLimitChange={handleLimitChange}
+                            />
                         </div>
                         <div className="estates-products__search product-header__items">
                             <Searchbar

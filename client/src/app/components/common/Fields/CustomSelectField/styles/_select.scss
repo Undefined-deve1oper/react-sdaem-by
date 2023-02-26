@@ -3,6 +3,27 @@
     align-items: flex-start;
     justify-content: flex-start;
     flex-direction: column;
+    gap: 10px;
+
+    .form-label {
+        color: $darkColor;
+    }
+    // .custom-select__content
+    &__content {
+        position: relative;
+
+        & svg {
+            width: 14px;
+            height: 14px;
+            color: $dullGray;
+
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+    }
 
     & select {
         width: 100%;

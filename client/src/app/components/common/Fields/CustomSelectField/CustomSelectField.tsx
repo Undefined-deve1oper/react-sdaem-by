@@ -1,13 +1,15 @@
 import React, { FC, ChangeEvent } from "react";
+import IconSvg from "../../IconSvg";
 
 type SelectFieldType = {
     label?: string;
-    value?: string;
-    onChange?: (event: React.ChangeEvent) => void;
+    value?: string | number;
+    onChange?: (event: any) => void;
     defaultValue?: string;
     error?: string;
     name: string;
     className?: string;
+    icon?: string;
     options: OptionsItemType[];
 };
 
@@ -33,6 +35,7 @@ const CustomSelectField: FC<SelectFieldType> = ({
     name,
     error,
     className = "",
+    icon,
     ...rest
 }) => {
     const optionsArray = options.map((option) => ({
@@ -52,24 +55,27 @@ const CustomSelectField: FC<SelectFieldType> = ({
             <label htmlFor={name} className="form-label">
                 {label}
             </label>
-            <select
-                className={getInputClasses(!!error)}
-                id={name}
-                name={name}
-                value={value}
-                onChange={onChange}
-                {...rest}
-            >
-                <option disabled value="">
-                    {defaultValue}
-                </option>
-                {optionsArray.length > 0 &&
-                    optionsArray.map((option) => (
-                        <option key={option.value} value={option.value}>
-                            {option.name}
-                        </option>
-                    ))}
-            </select>
+            <div className="custom-select__content">
+                <select
+                    className={getInputClasses(!!error)}
+                    id={name}
+                    name={name}
+                    value={value}
+                    onChange={onChange}
+                    {...rest}
+                >
+                    <option disabled value="">
+                        {defaultValue}
+                    </option>
+                    {optionsArray.length > 0 &&
+                        optionsArray.map((option) => (
+                            <option key={option.value} value={option.value}>
+                                {option.name}
+                            </option>
+                        ))}
+                </select>
+                {icon && <IconSvg name={icon} />}
+            </div>
             {error && <div className="invalid-feedback">{error}</div>}
         </div>
     );

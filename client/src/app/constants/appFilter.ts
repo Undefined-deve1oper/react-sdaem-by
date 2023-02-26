@@ -1,8 +1,8 @@
 export const pageSizesList = [
-    { value: 3, label: "3" },
-    { value: 6, label: "6" },
-    { value: 12, label: "12" },
-    { value: 18, label: "18" }
+    { value: 3, name: "3" },
+    { value: 6, name: "6" },
+    { value: 12, name: "12" },
+    { value: 18, name: "18" }
 ];
 
 export const sortByList = [
