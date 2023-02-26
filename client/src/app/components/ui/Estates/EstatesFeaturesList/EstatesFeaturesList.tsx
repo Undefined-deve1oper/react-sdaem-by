@@ -1,7 +1,14 @@
 import React from "react";
+import { useTranslation } from "../../../../../i18n";
 
-const EstatesFeaturesList = ({ data }: { data: any[] }) => {
-    const renderValue = (value: any) => {
+type EstatesFeaturesListProps = {
+    data: any[];
+};
+
+const EstatesFeaturesList: React.FC<EstatesFeaturesListProps> = ({ data }) => {
+    const { t } = useTranslation();
+
+    const renderValue = (value: string | object) => {
         if (typeof value === "object") {
             if (Array.isArray(value)) {
                 return (
@@ -13,11 +20,11 @@ const EstatesFeaturesList = ({ data }: { data: any[] }) => {
                 );
             } else {
                 return (
-                    <table>
+                    <table className="estates-features__list">
                         <tbody>
                             {Object.entries(value).map(([key, val]) => (
                                 <tr key={key}>
-                                    <td>{key}</td>
+                                    <td>{t(key)}</td>
                                     <td>{renderValue(val)}</td>
                                 </tr>
                             ))}
@@ -26,7 +33,7 @@ const EstatesFeaturesList = ({ data }: { data: any[] }) => {
                 );
             }
         } else {
-            return value;
+            return t(value);
         }
     };
 
@@ -36,7 +43,7 @@ const EstatesFeaturesList = ({ data }: { data: any[] }) => {
                 <tbody>
                     {Object.entries(data).map(([key, value]) => (
                         <tr key={key}>
-                            <td>{key}</td>
+                            <td>{t(key)}</td>
                             <td>{renderValue(value)}</td>
                         </tr>
                     ))}
