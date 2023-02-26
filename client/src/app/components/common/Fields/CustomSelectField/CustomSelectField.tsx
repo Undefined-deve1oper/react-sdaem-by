@@ -1,57 +1,72 @@
 import React, { FC, ChangeEvent } from "react";
 
-interface Option {
-    label: string;
-    value: string;
-}
-
-interface Props {
-    label: string;
-    value: string;
-    onChange: (event: { name: string[]; value: string }) => void;
-    defaultOption: string;
-    options: Option[];
-    name: string;
+type SelectFieldType = {
+    label?: string;
+    value?: string;
+    onChange?: (event: React.ChangeEvent) => void;
+    defaultValue?: string;
     error?: string;
-}
+    name: string;
+    className?: string;
+    options: OptionsItemType[];
+};
 
-const CustomSelectField: FC<Props> = ({
+export type OptionsItemType = {
+    name: string;
+    value: string | number | OptionSortType | { path: string; order: string };
+};
+
+export type OptionSortType = {
+    name: string;
+    value: {
+        path: string;
+        order: string;
+    };
+};
+
+const CustomSelectField: FC<SelectFieldType> = ({
     label,
     value,
     onChange,
-    defaultOption,
+    defaultValue,
     options,
     name,
     error,
+    className = "",
     ...rest
 }) => {
-    const handleChange = (event: ChangeEvent<HTMLSelectElement>) => {
-        onChange({ name: [event.target.name], value: event.target.value });
-    };
-    const getInputClasses = () => {
-        return "form-select" + (error ? " is-invalid" : "");
+    const optionsArray = options.map((option) => ({
+        name: option.name,
+        value:
+            typeof option.value === "object"
+                ? JSON.stringify(option.value)
+                : option.value
+    }));
+
+    const getInputClasses = (hasError: boolean) => {
+        return "form-select" + (hasError ? " is-invalid" : "");
     };
 
     return (
-        <div className="mb-4">
+        <div className={className + "custom-select"}>
             <label htmlFor={name} className="form-label">
                 {label}
             </label>
             <select
-                className={getInputClasses()}
+                className={getInputClasses(!!error)}
                 id={name}
                 name={name}
                 value={value}
-                onChange={handleChange}
+                onChange={onChange}
                 {...rest}
             >
                 <option disabled value="">
-                    {defaultOption}
+                    {defaultValue}
                 </option>
-                {options.length > 0 &&
-                    options.map((option) => (
+                {optionsArray.length > 0 &&
+                    optionsArray.map((option) => (
                         <option key={option.value} value={option.value}>
-                            {option.label}
+                            {option.name}
                         </option>
                     ))}
             </select>

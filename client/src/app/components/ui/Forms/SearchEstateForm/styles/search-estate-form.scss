@@ -145,10 +145,8 @@
         }
 
         & input {
-            max-width: 80px;
-            @media (max-width: $md2+px) {
-                max-width: 100%;
-            }
+            width: 100%;
+            min-width: 80px;
         }
     }
 

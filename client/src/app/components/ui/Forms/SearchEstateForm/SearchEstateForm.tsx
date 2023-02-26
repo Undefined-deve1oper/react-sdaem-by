@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import { useForm } from "../../../../hooks";
-import { EstateItem } from "../../../../store/slices/estates";
-import { BookingDateType } from "../../../../types/types";
 import { ButtonGroup, PriceRangeGroup, SelectGroup } from "../../Groups";
 import OpenForm from "../../OpenForm";
-import { validatorConfig } from "./validatorConfig";
 
-interface initialState {
+export interface initialFilterState {
     price?: number[];
-    brand: string;
+    brandId?: string;
     priceMin?: string;
     priceMax?: string;
     cityId?: string;
@@ -16,7 +12,7 @@ interface initialState {
 }
 
 type EstateFormTypes = {
-    data: initialState;
+    data: initialFilterState;
     onChange: (e: any) => void;
     handleReset: (e: any) => void;
 };

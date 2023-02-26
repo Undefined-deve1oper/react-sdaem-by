@@ -28,20 +28,26 @@ const SelectField: React.FC<SelectFieldType> = ({
 }) => {
     const optionsArray = options.map((option) => ({
         label: option.name || option.label,
-        value:
-            typeof option === "object" ? JSON.stringify(option._id) : option._id
+        value: option._id
     }));
 
-    const handleChange = useCallback((option: SingleValue<any>) => {
-        onSelectChange?.({ target: { name, value: option!.value } });
-    }, []);
+    const handleChange = useCallback(
+        (option: SingleValue<any>) => {
+            onSelectChange &&
+                onSelectChange({
+                    name,
+                    value: option ? option.value : undefined
+                });
+        },
+        [name, onSelectChange]
+    );
     const isLoading = options.length === 0;
 
     return (
         <div className={className + ` ${error ? " error" : ""}`}>
             {title && <h3 className="text-field__title form-title">{title}</h3>}
             <Select
-                value={value}
+                value={{ label: "some value", value: "" }}
                 className={className + " custom-select-container"}
                 classNamePrefix="custom-select"
                 closeMenuOnSelect={closeMenuOnSelect}

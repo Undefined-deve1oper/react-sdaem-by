@@ -41,7 +41,7 @@ const EstatesPage: React.FC = () => {
         useSearch(filteredItems || [], {
             searchBy: "title"
         });
-    const { sortedItems, setSortBy } = useSort(filteredData || [], {
+    const { sortedItems, sortBy, setSortBy } = useSort(filteredData || [], {
         path: "title",
         order: "desc"
     });
@@ -55,7 +55,7 @@ const EstatesPage: React.FC = () => {
 
     const handleSort = useCallback(
         ({ target }: React.ChangeEvent<HTMLInputElement>) => {
-            setSortBy(JSON.parse(target.value));
+            setSortBy(JSON.parse(target.value || "{}"));
             handlePageChange(1);
         },
         [handlePageChange, setSortBy]
@@ -90,7 +90,7 @@ const EstatesPage: React.FC = () => {
                     <div className="estates-products__header">
                         <div className={"estates-products__select"}>
                             <IconSvg name="down-sort" />
-                            <EstateSort onSort={handleSort} />
+                            <EstateSort sortBy={sortBy} onSort={handleSort} />
                         </div>
                         <div className="estates-products__search">
                             <Searchbar

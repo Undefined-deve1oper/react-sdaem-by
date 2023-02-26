@@ -1,18 +1,24 @@
-import React, { useCallback } from "react";
+import React, { ChangeEvent, useCallback } from "react";
 import { useStateSelector } from "../../../../store";
-import { getCitiesList } from "../../../../store/slices/cities";
-import { getTypesList } from "../../../../store/slices/types";
-import { SearchEstateFormDataType } from "../../../../types/types";
+import { getCitiesList, getCityById } from "../../../../store/slices/cities";
+import { getTypeById, getTypesList } from "../../../../store/slices/types";
 import { SelectField } from "../../../common/Fields";
+import { initialFilterState } from "../../Forms/SearchEstateForm/SearchEstateForm";
 
 type SelectGroupTypes = {
-    data: SearchEstateFormDataType;
+    data: initialFilterState;
     onChange: (target: any) => void;
 };
 
 const SelectGroup: React.FC<SelectGroupTypes> = ({ data, onChange }) => {
     const cities = useStateSelector(getCitiesList());
     const types = useStateSelector(getTypesList());
+    const cityValue = useStateSelector(getCityById(data.cityId));
+    const typeValue = useStateSelector(getTypeById(data.typeId));
+
+    const handleChange = (event: { name: string; value: string }) => {
+        onChange({ target: { name: event.name, value: event.value } });
+    };
 
     return (
         <>
@@ -20,7 +26,8 @@ const SelectGroup: React.FC<SelectGroupTypes> = ({ data, onChange }) => {
                 <span>Город</span>
                 <SelectField
                     options={cities}
-                    onSelectChange={onChange}
+                    onSelectChange={handleChange}
+                    value={cityValue?.name}
                     name="cityId"
                 />
             </div>
@@ -28,7 +35,8 @@ const SelectGroup: React.FC<SelectGroupTypes> = ({ data, onChange }) => {
                 <span>Тип</span>
                 <SelectField
                     name="typeId"
-                    onSelectChange={onChange}
+                    value={typeValue?.name}
+                    onSelectChange={handleChange}
                     options={types}
                 />
             </div>

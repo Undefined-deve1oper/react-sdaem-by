@@ -6,9 +6,10 @@ import {
 } from "../../../../constants/options";
 import { SearchEstateFormDataType } from "../../../../types/types";
 import { SelectField } from "../../../common/Fields";
+import { initialFilterState } from "../../Forms/SearchEstateForm/SearchEstateForm";
 
 type DetailSelectGroupTypes = {
-    data: SearchEstateFormDataType;
+    data: initialFilterState;
     onChange: (target: any) => void;
 };
 
@@ -22,7 +23,8 @@ const DetailSelectGroup: React.FC<DetailSelectGroupTypes> = ({
 
     return (
         <>
-            <div className="modal-options__item">
+            gfd
+            {/* <div className="modal-options__item">
                 <span>Спальные места</span>
                 <SelectField
                     name="rooms"
@@ -48,7 +50,7 @@ const DetailSelectGroup: React.FC<DetailSelectGroupTypes> = ({
                     onSelectChange={handleChange}
                     options={metroOptions}
                 />
-            </div>
+            </div> */}
         </>
     );
 };

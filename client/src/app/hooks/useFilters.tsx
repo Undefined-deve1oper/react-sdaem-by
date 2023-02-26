@@ -64,15 +64,13 @@ export default function useFilters<T>(
 
         if (data.cityId) {
             filteredEstates = filteredEstates.filter(
-                (item: any) =>
-                    item.cityId === data.cityId?.replaceAll(/['"«»]/g, "")
+                (item: any) => item.cityId === data.cityId
             );
         }
 
         if (data.typeId) {
             filteredEstates = filteredEstates.filter(
-                (item: any) =>
-                    item.typeId === data.typeId?.replaceAll(/['"«»]/g, "")
+                (item: any) => item.typeId === data.typeId
             );
         }
 

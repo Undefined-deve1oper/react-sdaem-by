@@ -1,9 +1,9 @@
 import React from "react";
-import { SearchEstateFormDataType } from "../../../types/types";
+import { initialFilterState } from "../Forms/SearchEstateForm/SearchEstateForm";
 import { CheckboxGroup, DetailSelectGroup } from "../Groups";
 
 type OpenFormTypes = {
-    data: SearchEstateFormDataType;
+    data: initialFilterState;
     onChange: (target: any) => void;
 };
 

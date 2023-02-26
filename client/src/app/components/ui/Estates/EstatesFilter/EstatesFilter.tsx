@@ -16,9 +16,9 @@ import { SearchEstateForm } from "../../Forms";
 const initialState = {
     entry: getPresenceBookingDate(1),
     departure: getPresenceBookingDate(2),
-    cityId: "",
-    brand: "",
-    typeId: "",
+    city: "",
+    brandId: "",
+    type: "",
     priceMax: "",
     priceMin: ""
 };
@@ -57,7 +57,7 @@ const EstatesFilter: React.FC<EstatesFilterProps> = ({ onReset, onFilter }) => {
         <div className="estates-filters">
             <div className="estates-filters__container _container">
                 <SearchEstateForm
-                    data={initialState}
+                    data={data}
                     onChange={handleDateChange}
                     handleReset={handleResetFilters}
                 />
