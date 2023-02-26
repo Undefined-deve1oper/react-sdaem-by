@@ -31,9 +31,7 @@ const PostDetails = () => {
                     {getFormatDate(post.createdAt)}
                 </div>
                 <ShareButtons
-                    url={
-                        "https://github.com/Undefined-deve1oper/react-sdaem-by/tree/develop"
-                    }
+                    url={`http://45.8.249.147/posts/${post._id}`}
                     title={post.title}
                     image={post.image}
                 />

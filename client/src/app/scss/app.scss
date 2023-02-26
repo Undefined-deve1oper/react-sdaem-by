@@ -114,6 +114,11 @@ body {
     margin: 0px 0px 15px 0px;
 }
 
+.invalid-feedback {
+    @include adaptiv-value("font-size", 24, 16, 1);
+    color: $dangerColor;
+}
+
 .star {
     input[type="radio"] {
         display: none;
