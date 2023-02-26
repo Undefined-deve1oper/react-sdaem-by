@@ -36,7 +36,7 @@ module.exports = async () => {
     }
 
     const estates = await Estate.find();
-    if (true || estates.length !== estatesMockData.length) {
+    if (estates.length !== estatesMockData.length) {
         await createInitialEntity(Estate, estatesMockData);
         console.log("added estate in mongoDB");
     }
