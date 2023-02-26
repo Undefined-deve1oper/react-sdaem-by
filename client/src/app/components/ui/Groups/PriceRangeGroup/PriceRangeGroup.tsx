@@ -1,9 +1,9 @@
 import React from "react";
+import { FilterData } from "../../../../hooks/useFilters";
 import { TextField } from "../../../common/Fields";
-import { initialFilterState } from "../../Forms/SearchEstateForm/SearchEstateForm";
 
 type ProceRangeGroupType = {
-    data: initialFilterState;
+    data: FilterData;
     onChange: (target: any) => void;
     errors?: {
         [key: string]: any;

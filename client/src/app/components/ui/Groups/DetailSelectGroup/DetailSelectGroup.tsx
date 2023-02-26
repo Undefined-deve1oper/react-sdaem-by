@@ -4,12 +4,12 @@ import {
     metroOptions,
     roomsOptions
 } from "../../../../constants/options";
+import { FilterData } from "../../../../hooks/useFilters";
 import { SearchEstateFormDataType } from "../../../../types/types";
 import { SelectField } from "../../../common/Fields";
-import { initialFilterState } from "../../Forms/SearchEstateForm/SearchEstateForm";
 
 type DetailSelectGroupTypes = {
-    data: initialFilterState;
+    data: FilterData;
     onChange: (target: any) => void;
 };
 

@@ -28,11 +28,13 @@ const SelectField: React.FC<SelectFieldType> = ({
 }) => {
     const optionsArray = options.map((option) => ({
         label: option.name || option.label,
-        value: option._id
+        value: option
     }));
 
     const handleChange = useCallback(
         (option: SingleValue<any>) => {
+            console.log(option);
+
             onSelectChange &&
                 onSelectChange({
                     name,
@@ -47,7 +49,7 @@ const SelectField: React.FC<SelectFieldType> = ({
         <div className={className + ` ${error ? " error" : ""}`}>
             {title && <h3 className="text-field__title form-title">{title}</h3>}
             <Select
-                value={{ label: "some value", value: "" }}
+                value={value ? { label: value.name, value: value._id } : null}
                 className={className + " custom-select-container"}
                 classNamePrefix="custom-select"
                 closeMenuOnSelect={closeMenuOnSelect}

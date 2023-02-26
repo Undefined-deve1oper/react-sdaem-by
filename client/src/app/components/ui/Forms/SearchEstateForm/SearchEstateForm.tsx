@@ -1,18 +1,10 @@
 import React, { useState } from "react";
+import { FilterData } from "../../../../hooks/useFilters";
 import { ButtonGroup, PriceRangeGroup, SelectGroup } from "../../Groups";
 import OpenForm from "../../OpenForm";
 
-export interface initialFilterState {
-    price?: number[];
-    brandId?: string;
-    priceMin?: string;
-    priceMax?: string;
-    cityId?: string;
-    typeId?: string;
-}
-
 type EstateFormTypes = {
-    data: initialFilterState;
+    data: FilterData;
     onChange: (e: any) => void;
     handleReset: (e: any) => void;
 };

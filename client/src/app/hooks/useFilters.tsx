@@ -2,13 +2,19 @@ import { useState } from "react";
 import sessionStorageService from "../services/sessionStorage.service";
 import { BookingDateType } from "../types/types";
 
-type FilterData = {
+export type FilterData = {
     entry?: Date;
     departure?: Date;
     priceMin?: number;
     priceMax?: number;
-    cityId?: string;
-    typeId?: string;
+    city?: {
+        name: string;
+        _id: string;
+    };
+    type?: {
+        name: string;
+        _id: string;
+    };
 };
 
 type FilteredItems<T> = T[];
@@ -62,15 +68,15 @@ export default function useFilters<T>(
             });
         }
 
-        if (data.cityId) {
+        if (data.city) {
             filteredEstates = filteredEstates.filter(
-                (item: any) => item.cityId === data.cityId
+                (item: any) => item.cityId === data.city?._id
             );
         }
 
-        if (data.typeId) {
+        if (data.type) {
             filteredEstates = filteredEstates.filter(
-                (item: any) => item.typeId === data.typeId
+                (item: any) => item.typeId === data.type?._id
             );
         }
 
