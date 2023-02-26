@@ -1,0 +1,77 @@
+.text-field {
+    flex: 1 1 100%;
+
+    // .text-field__content
+    &__content {
+        position: relative;
+    }
+
+    &.error {
+        & input {
+            border: 2px solid $dangerColor;
+        }
+        & .text-field__icon {
+            fill: $dangerColor;
+        }
+        @media (any-hover: hover) {
+            &:hover .text-field__icon {
+                fill: $dangerColor !important;
+            }
+        }
+    }
+
+    width: 100%;
+    position: relative;
+
+    & input {
+        width: 100%;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: $darkColor;
+        border-radius: 30px;
+        padding: 16px 20px 16px 55px;
+        background: $lightGrayColor;
+        border: 2px solid $lightGrayColor;
+        min-height: 36px;
+
+        @media (any-hover: hover) {
+            &:hover {
+                border-color: $violetColor;
+                background: #fff;
+            }
+        }
+    }
+
+    &::placeholder {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: $darkColor;
+    }
+
+    @media (any-hover: hover) {
+        &:hover .svg-icon {
+            fill: $violetColor;
+        }
+    }
+
+    & .text-field__icon {
+        padding: 0;
+
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        transform: translate(0px, -50%);
+        & .svg-icon {
+            max-width: 18px;
+            max-height: 18px;
+            fill: $dullGray;
+        }
+    }
+
+    // .text-field__error
+    &__error {
+        margin: 10px 0px 0px 0px;
+    }
+}

@@ -1,0 +1,15 @@
+.booking {
+    // .booking-page
+    &-page {
+        min-height: calc(88vh - 200px);
+    }
+
+    // .booking__error-message
+    &__error-message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+        @include adaptiv-value("font-size", 18, 14, 1);
+    }
+}

@@ -1,0 +1,33 @@
+.comments-stats {
+    width: 100%;
+
+    // .comments-stats__item
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        &:not(:last-child) {
+            margin: 0px 0px 20px 0px;
+        }
+    }
+
+    // .comments-stats__rate
+    &__rate {
+        width: 33px;
+        height: 33px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: $darkColor;
+        color: $lightColor;
+        border-radius: 50%;
+    }
+
+    // .comments-stats__bar
+    &__bar {
+        flex: 1 1 auto;
+    }
+}

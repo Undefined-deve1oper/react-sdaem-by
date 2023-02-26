@@ -1,0 +1,16 @@
+[
+    { "id": 0, "item": "Главная", "path": "/" },
+    { "id": 1, "item": "Новости", "path": "/posts" },
+    {
+        "id": 2,
+        "item": "Размещение и тарифы",
+        "path": "/accommodation-and-rates"
+    },
+    {
+        "id": 3,
+        "item": "Объявления на карте",
+        "path": "/ads-on-the-map",
+        "icon": "mark"
+    },
+    { "id": 4, "item": "Контакты", "path": "/contacts" }
+]

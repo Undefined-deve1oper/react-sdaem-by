@@ -1,0 +1,20 @@
+.read-more {
+    width: 100%;
+    padding: 60px 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(148, 175, 255, 0.1) 0%,
+        rgba(78, 100, 249, 0.1) 94.5%
+    );
+
+    // .read-more__title
+    &__title {
+        font-weight: 700;
+        font-size: 25px;
+        line-height: 30px;
+        color: $darkColor;
+
+        margin: 0px 0px 45px 0px;
+    }
+}

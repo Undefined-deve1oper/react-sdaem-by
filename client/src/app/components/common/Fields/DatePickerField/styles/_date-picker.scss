@@ -1,0 +1,46 @@
+.date-picker {
+    width: 100%;
+    margin: 0px 0px 20px 0px;
+
+    // .date-picker__content
+    &__content {
+        width: 100%;
+        position: relative;
+        border-radius: 30px;
+
+        & .login-form__item {
+            margin: 0;
+        }
+
+        & input {
+            width: 100%;
+            border-radius: 30px;
+            border: 2px solid #f8f8f8;
+            padding: 0px 30px 0px 15px;
+        }
+
+        & svg {
+            max-width: 18px;
+            max-height: 18px;
+            fill: $dullGray;
+
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translate(0px, -50%);
+            z-index: 5;
+            cursor: pointer;
+            pointer-events: none;
+        }
+
+        @media (any-hover: hover) {
+            &:hover svg {
+                fill: $violetColor;
+            }
+        }
+    }
+}
+
+.react-datepicker-popper {
+    z-index: 150;
+}

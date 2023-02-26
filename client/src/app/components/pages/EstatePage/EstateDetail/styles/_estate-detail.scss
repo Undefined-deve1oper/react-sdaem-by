@@ -1,0 +1,217 @@
+.estate-page {
+    padding: 45px 0px;
+
+    & .breadcrumbs {
+        margin: 0px 0px 40px 0px;
+    }
+}
+
+.estate-detail {
+    // .estate-detail__welcome
+    &__welcome {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    // .estate-detail__row
+    &__row {
+        position: relative;
+        flex: 1 1 635px;
+        height: 100%;
+        min-width: 0;
+    }
+
+    // .estate-detail__slider
+    &__slider {
+        width: 100%;
+        height: 100%;
+        margin: 0px 0px 30px 0px;
+    }
+
+    // .estate-detail__slide
+    &__slide {
+        width: 100%;
+        height: auto;
+
+        & img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    // .estate-detail__info
+    &__info {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        background: $lightColor;
+        box-shadow: 0px 20px 40px rgba(135, 124, 202, 0.15);
+        border-radius: 15px;
+        padding: 25px;
+        margin: 0px 0px 20px 0px;
+    }
+
+    // .estate-detail__owner
+    &__owner {
+        position: sticky;
+        top: 0px;
+        flex: 1 1 300px;
+        background: $lightColor;
+        filter: drop-shadow(0px 20px 40px rgba(135, 124, 202, 0.15));
+    }
+
+    // .estate-detail__header
+    &__header {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin: 0px 0px 20px 0px;
+        gap: 15px;
+        flex-wrap: wrap;
+    }
+
+    // .estate-detail__title
+    &__title {
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 100%;
+        color: $darkColor;
+    }
+
+    // .estate-detail__main
+    &__main {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0px 0px 15px 0px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    // .estate-detail__location
+    &__location {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 19px;
+        color: #000;
+
+        fill: $violetColor;
+
+        & svg {
+            width: 16px;
+            height: 20px;
+            fill: inherit;
+        }
+    }
+
+    // .estate-detail__footer
+    &__footer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    // .estate-detail__dates
+    &__dates {
+        font-family: "Roboto";
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 150%;
+        color: $dullGray;
+        margin: 0px 0px 40px 0px;
+    }
+
+    // .estate-detail__description
+    &__description {
+        margin: 0px 0px 40px 0px;
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 150%;
+        color: $darkColor;
+        & p {
+            white-space: pre-wrap;
+        }
+    }
+
+    // .estate-detail__subtitle
+    &__subtitle {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 110%;
+        color: #000;
+        margin: 0px 0px 20px 0px;
+    }
+
+    // .estate-detail__comfort
+    &__comfort {
+        margin: 0px 0px 40px 0px;
+    }
+}
+
+.comfort-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 36px;
+    flex-wrap: wrap;
+
+    // .comfort-list__item
+    &__item {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 150%;
+        color: $darkColor;
+        padding: 0px 0px 0px 15px;
+        position: relative;
+
+        &::before {
+            content: "•";
+
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(0px, -50%);
+            z-index: 1;
+        }
+    }
+}
+
+.estates-booking {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding: 30px 0;
+
+    // .estates-booking__title
+    &__title {
+        font-size: 24px;
+        color: $darkColor;
+        margin: 0px 0px 20px 0px;
+    }
+
+    // .estates-booking__block
+    &__block {
+        width: 100%;
+        background: $lightColor;
+        border-radius: 30px;
+        padding: 30px;
+        color: $darkColor;
+        box-shadow: 0px 15px 40px rgba(102, 78, 249, 0.25);
+    }
+}

@@ -1,0 +1,18 @@
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // min-width: 134px;
+    max-width: 134px;
+    @media (max-width: $md4 + px) {
+        min-width: 120px;
+        height: auto;
+        object-fit: cover;
+    }
+
+    & img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}

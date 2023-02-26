@@ -1,0 +1,120 @@
+.profile-form {
+    // .profile-form__avatar
+    &__avatar {
+        width: 137px;
+        height: 137px;
+        border: 6px solid $lightColor;
+    }
+
+    // .profile-form__header
+    &__header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 40px;
+        margin: 0px 0px 30px 0px;
+
+        @media (max-width: $md3+px) {
+            justify-content: center;
+        }
+    }
+
+    // .profile-form__delete-icon
+    &__delete-icon {
+        width: 33px;
+        height: 33px;
+
+        & .svg-icon {
+            width: 10.75px;
+            height: 13.82px;
+        }
+    }
+
+    // .profile-form__description
+    &__description {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 17px;
+        color: $dullGray;
+    }
+
+    // .profile-form__button
+    &__button {
+        opacity: 1;
+        font-weight: 600;
+        padding: 8px 18px;
+        color: $violetColor;
+        background: rgba(102, 78, 249, 0.1);
+        margin: 0px 0px 15px 0px;
+
+        & .svg-icon {
+            width: 16.51px;
+            fill: $violetColor;
+            opacity: 1;
+        }
+    }
+
+    // .profile-form__main
+    &__main {
+    }
+
+    // .profile-form__title
+    &__titile {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 22px;
+        color: $darkColor;
+        padding: 0px 0px 15px 0px;
+        border-bottom: 2px solid rgba(102, 78, 249, 0.1);
+        margin: 0px 0px 30px 0px;
+    }
+
+    // .profile-form__row
+    &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    // .profile-form__item
+    &__item {
+        flex: 1 1 calc(50% - 15px);
+        @media (max-width: $md3+px) {
+            flex: 1 1 auto;
+        }
+        & input {
+            padding: 11.5px 20px 11.5px 55px;
+            background: $lightColor;
+        }
+    }
+
+    // .profile-form__buttons
+    &__buttons {
+        flex: 1 1 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+
+        & button {
+            padding: 9px 18px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 20px;
+            &:first-child {
+                background: rgba(102, 78, 249, 0.1);
+                border-radius: 25px;
+                color: $violetColor;
+            }
+            &:last-child {
+                background: $violetColor;
+                border-radius: 25px;
+                color: $lightColor;
+            }
+        }
+    }
+}
