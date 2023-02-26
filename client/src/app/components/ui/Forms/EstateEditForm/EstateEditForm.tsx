@@ -7,6 +7,7 @@ import {
     useStateSelector
 } from "../../../../store";
 import { getBrandsList } from "../../../../store/slices/brands";
+import { getCitiesList } from "../../../../store/slices/cities";
 import {
     EstateItem,
     getEstateById,
@@ -29,6 +30,7 @@ const EstateEditForm = ({ estateId }: { estateId: string }) => {
     const estate = useStateSelector<EstateItem>(getEstateById(estateId));
     const currentUserId = useStateSelector(getCurrentUserId());
     const brands = useStateSelector(getBrandsList());
+    const cities = useStateSelector(getCitiesList());
     const types = useStateSelector(getTypesList());
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
@@ -39,21 +41,20 @@ const EstateEditForm = ({ estateId }: { estateId: string }) => {
         rating: estate.rating,
         price: estate.price,
         images: estate.images,
-        city: estate.city,
         title: estate.title,
         brandId: "",
         typeId: "",
+        cityId: "",
         info: estate.info
     };
     const { data, errors, handleChange, handleKeyDown, validate } =
         useForm<EstateItem>(initialData, false, validatorConfig);
 
-    function tarnsformData(data: BrandType[]) {
-        return data.map((item) => ({ value: item._id, label: item.name }));
-    }
-
     const goBack = () => {
         navigate(-1);
+    };
+    const onChange = (event: { name: string; value: string }) => {
+        handleChange({ target: { name: event.name, value: event.value } });
     };
     const handleSubmit = (event: React.FormEvent) => {
         event.preventDefault();
@@ -123,33 +124,34 @@ const EstateEditForm = ({ estateId }: { estateId: string }) => {
                         onChange={handleChange}
                         className="estate-edit__item"
                     />
-                    <TextField
-                        autoFocus
-                        title="Город"
-                        name="city"
-                        label="Город..."
-                        icon="location"
-                        value={data.city}
-                        error={errors.city}
-                        onChange={handleChange}
-                        className="estate-edit__item"
+                    <SelectField
+                        name="cityId"
+                        value={data.cityId}
+                        title="Выберите город"
+                        options={cities}
+                        className={"estate-edit__item"}
+                        error={errors.cityId}
+                        onSelectChange={onChange}
+                        placeholder={"Город..."}
                     />
                     <SelectField
                         name="brandId"
                         title="Выберите бренд"
-                        options={tarnsformData(brands)}
-                        className={"estate-edit__item second"}
+                        value={data.brandId}
+                        options={brands}
+                        className={"estate-edit__item"}
                         error={errors.brandId}
-                        onSelectChange={handleChange}
+                        onSelectChange={onChange}
                         placeholder={"Бренд..."}
                     />
                     <SelectField
                         name="typeId"
+                        value={data.typeId}
                         title="Выберите тип объявления"
-                        options={tarnsformData(types)}
-                        className={"estate-edit__item second"}
+                        options={types}
+                        className={"estate-edit__item"}
                         error={errors.typeId}
-                        onSelectChange={handleChange}
+                        onSelectChange={onChange}
                         placeholder={"Тип..."}
                     />
                     <TextAreaField

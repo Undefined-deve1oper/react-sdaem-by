@@ -46,7 +46,7 @@ const SelectField: React.FC<SelectFieldType> = ({
     const isLoading = options.length === 0;
 
     return (
-        <div className={` ${error ? " error" : ""}`}>
+        <div className={className + ` ${error ? " error" : ""}`}>
             {title && <h3 className="text-field__title form-title">{title}</h3>}
             <Select
                 value={value ? { label: value.name, value: value._id } : null}

@@ -66,7 +66,7 @@ const Rating: React.FC<IRating> = ({
             }}
         >
             <div className="rating">
-                <StarRatingLabel />
+                {labelText && <StarRatingLabel />}
                 <StarsList />
                 {error && <p className="text-field__error error">{error}</p>}
             </div>
@@ -79,7 +79,6 @@ Rating.defaultProps = {
     emptyColor: "#bdbdbd",
     fillColor: "#664ef9",
     height: 30,
-    labelText: `Средний рейтинг:`,
     maxValue: 5,
     readOnly: false,
     width: 30

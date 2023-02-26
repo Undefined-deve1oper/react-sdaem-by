@@ -36,11 +36,6 @@ const EstatesFeaturesList: React.FC<EstatesFeaturesListProps> = ({ data }) => {
             return value;
         }
     };
-    console.log(
-        Object.entries(data).forEach(([key, value]) => {
-            console.log(key);
-        })
-    );
 
     return (
         <div className="estates-features">

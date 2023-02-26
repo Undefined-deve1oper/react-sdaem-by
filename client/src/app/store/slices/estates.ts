@@ -15,11 +15,11 @@ export interface EstateItem {
     price: string;
     rating?: string;
     images: string[];
-    city: string;
     label?: string;
     title: string;
     brandId: string;
     typeId: string;
+    cityId: string;
     createdAt?: string;
     info: EstateInfoItem;
     description?: string;

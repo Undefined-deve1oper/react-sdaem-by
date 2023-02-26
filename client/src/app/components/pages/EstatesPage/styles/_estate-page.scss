@@ -207,6 +207,15 @@
         padding: 20px;
     }
 
+    // .estate-card__header
+    &__header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
     // .estate-card__price
     &__price {
         display: flex;
