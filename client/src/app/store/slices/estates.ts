@@ -22,6 +22,7 @@ export interface EstateItem {
     typeId: string;
     createdAt?: string;
     info: EstateInfoItem;
+    description?: string;
     updatedAt?: string;
 }
 

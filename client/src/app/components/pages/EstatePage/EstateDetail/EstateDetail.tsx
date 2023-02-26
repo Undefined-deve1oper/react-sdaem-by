@@ -2,16 +2,20 @@ import React, { useEffect } from "react";
 import { NavLink, useLocation, useParams } from "react-router-dom";
 import { useFavourite } from "../../../../hooks";
 import { getCurrentUserId, useStateSelector } from "../../../../store";
+import { getBrandById } from "../../../../store/slices/brands";
+import { getCityById } from "../../../../store/slices/cities";
 import {
     getEstateById,
     getEstateRating
 } from "../../../../store/slices/estates";
+import { getTypeById } from "../../../../store/slices/types";
 import { getFormatDate } from "../../../../utils/dateHelpers";
 import { getAverageEstateRate } from "../../../../utils/getAverageEstateRate";
 import ButtonFavorite from "../../../common/ButtonFavorite";
 import IconSvg from "../../../common/IconSvg";
 import Rating from "../../../common/Rating";
 import ImageSlider from "../../../common/SliderImages/SliderImages";
+import { EstatesFeaturesList } from "../../../ui/Estates";
 import OwnerCard from "../../../ui/OwnerCard";
 import ShareButtons from "../../../ui/ShareButtons";
 
@@ -102,18 +106,30 @@ const EstateDetail: React.FC = () => {
                             <div className="estate-detail__subtitle">
                                 О Товаре
                             </div>
-                            <p>{estate.info.description}</p>
+                            <p>{estate.description}</p>
                         </div>
-                        <div className="estate-detail__comfort">
+                        <EstatesFeaturesList data={estate.info} />
+                        {/* <div className="estate-detail__comfort">
                             <div className="estate-detail__subtitle">
-                                Комфорт
+                                Детальная информация
                             </div>
                             <ul className="comfort-list">
                                 <li className="comfort-list__item">
-                                    Подогрев сидений
+                                    Тип:{" "}
+                                    <span>{estateType && estateType.name}</span>
+                                </li>
+                                <li className="comfort-list__item">
+                                    Бренд:{" "}
+                                    <span>
+                                        {estateBrand && estateBrand.name}
+                                    </span>
+                                </li>
+                                <li className="comfort-list__item">
+                                    Город:{" "}
+                                    <span>{estateCity && estateCity.name}</span>
                                 </li>
                             </ul>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="estate-detail__owner">
                         <OwnerCard ownerId={estate.info.ownerId} />

@@ -1,0 +1,23 @@
+.estates-features {
+    width: 100%;
+    overflow-x: auto;
+
+    &__list {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: none;
+
+        & th,
+        & td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        & th {
+            background-color: #f2f2f2;
+            font-weight: normal;
+        }
+    }
+}

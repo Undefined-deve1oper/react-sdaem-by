@@ -20,14 +20,9 @@ const schema = new Schema(
             type: Schema.Types.ObjectId,
             ref: "City"
         },
+        description: String,
         info: {
-            type: Object,
-            _id: { type: String, unique: true },
-            description: { type: String },
-            ownerId: {
-                type: Schema.Types.ObjectId,
-                ref: "User"
-            }
+            type: Object
         }
     },
     {

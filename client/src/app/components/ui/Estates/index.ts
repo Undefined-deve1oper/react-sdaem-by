@@ -6,6 +6,7 @@ import EstatesFilter from "./EstatesFilter";
 import EstateComment from "./EstateComment";
 import EstateSort from "./EstateSort";
 import EstateDirection from "./EstateDirection";
+import EstatesFeaturesList from "./EstatesFeaturesList";
 
 export {
     EstatesRecommended,
@@ -15,5 +16,6 @@ export {
     EstateComment,
     EstateBooking,
     EstateSort,
-    EstateDirection
+    EstateDirection,
+    EstatesFeaturesList
 };

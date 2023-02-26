@@ -154,10 +154,10 @@ const EstateEditForm = ({ estateId }: { estateId: string }) => {
                     />
                     <TextAreaField
                         title="Описание"
-                        name="info.description"
+                        name="description"
                         label="Описание..."
                         icon="description"
-                        value={data.info.description}
+                        value={data.description}
                         error={errors.description}
                         onChange={handleChange}
                         className="estate-edit__item textarea"

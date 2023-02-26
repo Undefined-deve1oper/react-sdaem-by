@@ -17,7 +17,7 @@ type Props = {
 const EstateCard: React.FC<Props> = ({ estate }) => {
     const { isFavourite, handleSelectFavorite } = useFavourite(estate._id!);
     const currentUserId = useStateSelector(getCurrentUserId());
-    const slicedText = textCropper(estate.info.description, 219);
+    const slicedText = textCropper(estate.description || "", 219);
 
     return (
         <div className="estates-products__card estate-card">
