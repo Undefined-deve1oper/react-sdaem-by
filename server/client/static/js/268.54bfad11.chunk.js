@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunksdaem_by=self.webpackChunksdaem_by||[]).push([[268],{5268:function(e,s,n){n.r(s);n(2791);var u=n(7689),a=n(2910),c=n(184);s.default=function(){return(0,c.jsx)(a.Z,{children:(0,c.jsx)(u.j3,{})})}}}]);
+//# sourceMappingURL=268.54bfad11.chunk.js.map
