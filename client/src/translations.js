@@ -3,16 +3,14 @@ export const translations = {
         info: {
             ownerId: "ID владельца",
             year: "Год",
-            engine: {
-                type: "Тип надува:",
-                size: "Объем",
-                power: "Мощность",
-                torque: "Крутящий момент (NM)"
-            },
-            transmission: {
-                type: "Тип коробки:",
-                gears: "8"
-            },
+            engine: "Двигатель",
+            inflating: "Тип надува:",
+            type: "Тип:",
+            size: "Объем (L)",
+            power: "Мощность (HP)",
+            transmission: "Трансмиссия",
+            torque: "Крутящий момент (NM)",
+            gears: "Передачи",
             drivetrain: "Привод",
             color: "Цвет",
             interior: "Интерьер",
@@ -31,7 +29,7 @@ export const translations = {
             },
             transmission: {
                 type: "Gearbox type:",
-                gears: "8"
+                gears: "transfers"
             },
             drivetrain: "Drivetrain",
             color: "Color",

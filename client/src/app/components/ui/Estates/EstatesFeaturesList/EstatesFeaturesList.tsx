@@ -1,5 +1,5 @@
 import React from "react";
-import { useTranslation } from "../../../../../i18n";
+import { useTranslation } from "react-i18next";
 
 type EstatesFeaturesListProps = {
     data: any[];
@@ -24,7 +24,7 @@ const EstatesFeaturesList: React.FC<EstatesFeaturesListProps> = ({ data }) => {
                         <tbody>
                             {Object.entries(value).map(([key, val]) => (
                                 <tr key={key}>
-                                    <td>{t(key)}</td>
+                                    <td>{t("info." + key)}</td>
                                     <td>{renderValue(val)}</td>
                                 </tr>
                             ))}
@@ -33,9 +33,14 @@ const EstatesFeaturesList: React.FC<EstatesFeaturesListProps> = ({ data }) => {
                 );
             }
         } else {
-            return t(value);
+            return value;
         }
     };
+    console.log(
+        Object.entries(data).forEach(([key, value]) => {
+            console.log(key);
+        })
+    );
 
     return (
         <div className="estates-features">
@@ -43,7 +48,7 @@ const EstatesFeaturesList: React.FC<EstatesFeaturesListProps> = ({ data }) => {
                 <tbody>
                     {Object.entries(data).map(([key, value]) => (
                         <tr key={key}>
-                            <td>{t(key)}</td>
+                            <td>{t("info." + key)}</td>
                             <td>{renderValue(value)}</td>
                         </tr>
                     ))}

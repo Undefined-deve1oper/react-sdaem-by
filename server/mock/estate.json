@@ -23,7 +23,7 @@
             "ownerId": "63f74d819e9eabae97dc65c0",
             "year": 2022,
             "engine": {
-                "type": "Twin-turbocharged V8",
+                "inflating": "Twin-turbocharged V8",
                 "size": 4.4,
                 "power": 617,
                 "torque": 800
