@@ -21,4 +21,10 @@
             font-weight: normal;
         }
     }
+
+    & ul li {
+        &:not(:last-child) {
+            margin: 0px 0px 10px 0px;
+        }
+    }
 }

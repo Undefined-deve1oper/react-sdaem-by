@@ -18,7 +18,7 @@
         "title": "BMW M5 F90 (LCI)",
         "cityId": "63fa1ed66ac7a5d3db84a2df",
         "location": "Театральный пр-д, 2, Москва, Россия, 109012",
-        "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
+        "description": "BMW M5 F90 - это спортивный седан класса люкс с высоким уровнем производительности, обладающий прекрасным сочетанием стиля, мощности и комфорта. Этот автомобиль способен ускоряться до 100 км/ч всего за 3,4 секунды и достигать максимальной скорости 305 км/ч, что делает его одним из самых быстрых в своем классе. Внутри вы найдете просторный и удобный интерьер с кожаными сиденьями, обогревом и охлаждением, множеством опций и новейших технологий, включая высококачественную аудиосистему и навигационную систему. \nBMW M5 F90 - идеальный выбор для тех, кто ищет элегантный и мощный автомобиль, способный обеспечить высокую скорость и комфорт во время длительных поездок. С арендой этого автомобиля вы можете насладиться высокой производительностью и вниманием к деталям, которые делают BMW M5 F90 идеальным выбором для любого путешествия.",
         "info": {
             "ownerId": "63f74d819e9eabae97dc65c0",
             "year": 2022,
@@ -43,133 +43,299 @@
         }
     },
     {
-        "price": "4500",
+        "price": "45500",
         "rating": "",
-        "brandId": "63fa1ed36ac7a5d3db84a292",
+        "images": [
+            "https://www.mercedes-benz.ru/passengercars/mercedes-benz-cars/models/c-class/coupe-c205/amg/equipment/_jcr_content/swipeableteaserbox/par/swipeableteaser/asset.MQ6.12.20200129171643.jpeg",
+            "https://cdn.matador.tech/source/gallery/200573/2833837/original.jpg",
+            "https://i.ytimg.com/vi/bOqS9zpZNrs/maxresdefault.jpg",
+            "https://f7432d8eadcf865aa9d9-9c672a3a4ecaaacdf2fee3b3e6fd2716.ssl.cf3.rackcdn.com/C2299/U1324/IMG_84996-large.jpg",
+            "https://cdn.carbuzz.com/gallery-images/2023-mercedes-amg-c63-coupe-dashboard-carbuzz-509549-1600.jpg",
+            "https://img.remediosdigitales.com/557f80/17c901_065/450_1000.jpg",
+            "https://cdn.carbuzz.com/gallery-images/2023-mercedes-amg-c63-coupe-steering-wheel-controls-carbuzz-509551-1600.jpg"
+        ],
+        "brandId": "63fa1ed36ac7a5d3db84a2a3",
         "typeId": "63fa1ed26ac7a5d3db84a270",
-        "title": "Элитная квартира",
+        "title": "Mercedes-Benz C63s AMG",
+        "cityId": "63fa1ed66ac7a5d3db84a2df",
+        "location": "Театральный пр-д, 2, Москва, Россия, 109012",
+        "description": "Приветствуем вас в нашей компании, где вы можете арендовать Mercedes C63s AMG, одну из самых известных моделей автомобилей в мире. Этот автомобиль обладает великолепным дизайном и высокой производительностью, которая удовлетворит потребности самых требовательных водителей. Mercedes C63s AMG оснащен мощным двигателем V8 объемом 4,0 литра, который развивает 503 лошадиные силы и 516 фунт-фут крутящего момента. Этот автомобиль способен разгоняться до 100 км/ч всего за 3,9 секунды, что делает его одним из самых быстрых автомобилей в своем классе. Внутри Mercedes C63s AMG вы найдете комфортабельный салон, выполненный в стиле спортивного дизайна, с кожаной отделкой, спортивными креслами и рулевым колесом, а также современной информационно-развлекательной системой, которая позволяет наслаждаться музыкой, навигацией и другими функциями. Дополнительно, Mercedes C63s AMG оснащен широким спектром дополнительных функций, таких как спортивный выхлоп, панорамная крыша, 19-дюймовые диски, система Burmester surround sound и многое другое. Если вы хотите арендовать Mercedes C63s AMG, мы готовы предоставить вам этот автомобиль на любой срок. Свяжитесь с нами, чтобы узнать более подробную информацию о стоимости аренды и условиях. Мы уверены, что вы останетесь довольны своим выбором и насладитесь великолепным опытом вождения этого прекрасного автомобиля..",
+        "info": {
+            "ownerId": "63f74d819e9eabae97dc65c0",
+            "year": 2021,
+            "engine": {
+                "type": "Bi-Turbo V8",
+                "size": "4.0",
+                "power": 503,
+                "torque": 516
+            },
+            "transmission": {
+                "type": "Automatic",
+                "gears": 9
+            },
+            "options": [
+                "Sport exhaust",
+                "AMG performance seats",
+                "Panoramic sunroof",
+                "19-inch wheels",
+                "Carbon fiber trim",
+                "Burmester surround sound system"
+            ]
+        }
+    },
+    {
+        "price": "80000",
+        "rating": "",
+        "images": [
+            "https://i.ytimg.com/vi/1oxlbFVV53s/maxresdefault.jpg",
+            "https://hips.hearstapps.com/hmg-prod/images/2020-mercedes-maybach-s650-mmp-1-1578591259.jpg?crop=0.998xw:0.889xh;0.00160xw,0.00855xh&resize=1200:*",
+            "https://www.topgear.com/sites/default/files/images/cars-road-test/2020/03/ae8c21d923df19729c86c159c6fadd85/topgear_-_first_drive_-_maybach-003.jpg",
+            "https://autokontact.ru/wp-content/uploads/2018/04/Mercedes-Maybach-S-szadi.jpg",
+            "https://static.auctionauto.com.ua/images/image.autowini.com/AUTOWINI4/UploadImage/Thumb/kcar/2022/04/21/CI202204210001432491/60590145-1650496635815_1024.jpg",
+            "https://mfair.ua/user/cars/52904/52904-w222-bronirovanniy-mercedes-benz-s-class-maybach-s650-guard-klassen-kiev-2018-13.jpeg",
+            "https://www.tuningblog.eu/wp-content/uploads/2020/06/Mercedes-Maybach-S650-V12-Night-Edition-Tuning-3.jpg?ezimgfmt=rs:368x245/rscb2/ngcb2/notWebP"
+        ],
+        "brandId": "63fa1ed36ac7a5d3db84a2a3",
+        "typeId": "63fa1ed26ac7a5d3db84a270",
+        "title": "Mercedes-Benz Maybach S650",
         "cityId": "63fa1ed66ac7a5d3db84a2e0",
-        "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
-        "images": [
-            "https://wallpaperaccess.com/full/1600667.jpg",
-            "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
-            "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
-        ],
-        "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
+        "location": "Ириновский просп., 24, корп. 1, Санкт-Петербург этаж 2",
+        "description": "Арендуйте Mercedes-Benz Maybach S650 - это вершина роскоши и технологического совершенства. Седан оснащен самыми передовыми технологиями и материалами, включая роскошные кожаные сиденья и технологию управления жестами. Это превосходное сочетание комфорта и производительности, которое обеспечит вам непревзойденное удовольствие от вождения.",
         "info": {
-            "ownerId": "63f265a701224e3ff39ec92d"
-        }
-    },
-
-    {
-        "price": "4500",
-        "rating": "",
-        "title": "Элитная квартира",
-        "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
-        "cityId": "63fa1ed66ac7a5d3db84a2df",
-        "images": [
-            "https://wallpaperaccess.com/full/1600667.jpg",
-            "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
-            "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
-        ],
-        "brandId": "63fa1ed36ac7a5d3db84a292",
-        "typeId": "63fa1ed26ac7a5d3db84a270",
-        "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
-        "info": {
-            "ownerId": "63f265a701224e3ff39ec92d"
+            "ownerId": "63f265a701224e3ff39ec92d",
+            "year": 2021,
+            "engine": {
+                "type": "V12",
+                "power": "621",
+                "torque": "738"
+            },
+            "transmission": {
+                "type": "Automatic",
+                "gears": 9
+            },
+            "drivetrain": "4-matic",
+            "options": [
+                "Heated seats",
+                "Massage seats",
+                "Refrigerator",
+                "Panoramic sunroof",
+                "Infotainment system",
+                "Wireless charging"
+            ]
         }
     },
     {
-        "price": "4500",
+        "price": "20000",
         "rating": "",
-        "title": "Элитная квартира",
-        "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "images": [
-            "https://wallpaperaccess.com/full/1600667.jpg",
-            "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
-            "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
+            "https://www.forbes.com/wheels/wp-content/uploads/2022/10/2023JeepWranglerRubiconFarOut_SEO.png",
+            "https://www.outdoorlife.com/uploads/2021/12/13/JEEP-STATIC.jpg?auto=webp",
+            "https://www.jeep.com.br/content/dam/jeep/wrangler/showroom/galeria/img01.jpg",
+            "https://auto.ironhorse.ru/wp-content/uploads/2017/12/Wrangler-JL-rear.jpg",
+            "https://www.motortrend.com/uploads/sites/5/2020/03/2020-Jeep-Wrangler-EcoDiesel-dashboard-2.jpg",
+            "https://cdn.carbuzz.com/gallery-images/2023-jeep-wrangler-steering-wheel-carbuzz-400601-1600.jpg",
+            "https://cdn.carbuzz.com/gallery-images/2023-jeep-wrangler-dashboard-carbuzz-400615-1600.jpg"
         ],
+        "brandId": "63fa1ed36ac7a5d3db84a29c",
         "typeId": "63fa1ed26ac7a5d3db84a270",
-        "cityId": "63fa1ed66ac7a5d3db84a2df",
-        "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
-        "info": {
-            "brandId": "63fa1ed36ac7a5d3db84a292",
-            "ownerId": "63f265a701224e3ff39ec92d"
-        }
-    },
-
-    {
-        "price": "4800",
-        "rating": "",
-        "title": "Элитная квартира",
-        "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
-        "brandId": "63fa1ed36ac7a5d3db84a292",
-        "typeId": "63fa1ed26ac7a5d3db84a270",
-        "images": [
-            "https://wallpaperaccess.com/full/1600667.jpg",
-            "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
-            "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
-        ],
+        "title": "Jeep Wrangler Rubicon",
         "cityId": "63fa1ed66ac7a5d3db84a2e2",
-        "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
+        "location": "Красноярск, Красноярский край, Россия, 660077",
+        "description": "Jeep Wrangler Rubicon - это мощный внедорожник с впечатляющей проходимостью и способностью преодолевать самые труднодоступные участки местности. Этот автомобиль оснащен высокой подвеской, большими колесами и системой полного привода, что делает его идеальным выбором для любителей экстремального вождения и любителей активного отдыха на природе. \n Jeep Wrangler Rubicon также известен своей надежностью и долговечностью благодаря использованию прочных материалов и высокотехнологичных систем. Внутри вы найдете просторный интерьер с качественной отделкой и множеством опций, которые обеспечат комфортное вождение в любых условиях. Система развлечений и связи, а также мощная аудиосистема помогут сделать поездку еще более приятной. \nJeep Wrangler Rubicon - это идеальный выбор для тех, кто ищет мощный и надежный внедорожник, способный преодолеть любые препятствия и доставить незабываемые впечатления от вождения. Если вы хотите покорить дикую природу и почувствовать адреналин, то аренда Jeep Wrangler Rubicon станет отличным выбором для вас.",
         "info": {
-            "ownerId": "63f265a701224e3ff39ec92d"
+            "ownerId": "63f265a701224e3ff39ec92d",
+            "year": 2022,
+            "engine": {
+                "type": "Naturally aspirated V8",
+                "size": 6.2,
+                "horsepower": 455,
+                "torque": 600
+            },
+            "transmission": {
+                "type": "Manual",
+                "gears": 6
+            },
+            "drivetrain": {
+                "type": "4WD",
+                "transferCase": "Rock-Trac"
+            },
+            "options": [
+                "Dana 44 heavy-duty axles",
+                "Electronic locking differentials",
+                "Rock-Trac 4x4 system",
+                "Tru-Lok electronic front and rear differentials",
+                "8-speaker audio system",
+                "Uconnect 4 with 7-inch touchscreen display",
+                "Apple CarPlay and Android Auto",
+                "Rearview camera",
+                "Hill-start assist",
+                "Electronic stability control"
+            ]
         }
     },
 
     {
-        "price": "4500",
-        "rating": "",
-        "title": "Элитная квартира",
-        "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
-        "images": [
-            "https://wallpaperaccess.com/full/1600667.jpg",
-            "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
-            "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
-        ],
-        "cityId": "63fa1ed66ac7a5d3db84a2df",
-        "brandId": "63fa1ed36ac7a5d3db84a292",
-        "typeId": "63fa1ed26ac7a5d3db84a270",
-        "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
-        "info": {
-            "ownerId": "63f265a701224e3ff39ec92d"
-        }
-    },
-
-    {
-        "price": "4500",
+        "price": "10000",
         "rating": "",
         "images": [
-            "https://wallpaperaccess.com/full/1600667.jpg",
-            "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
-            "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
+            "https://media.ed.edmunds-media.com/ford/mustang/2021/ns/2021_ford_mustang_f34_ns_506211_1600.jpg",
+            "https://www.motortrend.com/uploads/sites/5/2021/06/2021_Ford_Mustang_Mach_1-30.png",
+            "https://images.drive.ru/i/0/5ee9c97fec05c47266000084",
+            "https://www.ford.com/cmslibs/content/dam/vdm_ford/live/en_us/ford/nameplate/mustang/2023/collections/equipment/3_2/22_FRD_MST_wdmp_200510_01649a_32.jpg",
+            "https://www.zastavki.com/pictures/originals/2020Auto___Ford_2021_Ford_Mustang_Mach_1_white_car_rear_view_146238_.jpg",
+            "https://www.zastavki.com/pictures/originals/2020Auto___Ford___Mustang_2021_Ford_Mustang_Mach_1_yellow_sports_car_rear_view_149469_.jpg",
+            "https://i.ytimg.com/vi/01kEQhcpSok/maxresdefault.jpg",
+            "https://cdn.carbuzz.com/gallery-images/2022-ford-mustang-mach-1-front-seats-carbuzz-720694-1600.jpg",
+            "https://www.ford.co.uk/content/dam/guxeu/rhd/central/cars/2020-mustang-mach-1/launch/gallery/interior/Ford-Mach1-eu-FordMustangMach1_FighterJetGray_024-16x9-2160x1215-Gallery_D_T_M-2.jpg.renditions.original.png"
         ],
-        "title": "BMW M5 E60",
-        "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
-        "brandId": "63fa1ed36ac7a5d3db84a292",
-        "typeId": "63fa1ed26ac7a5d3db84a270",
-        "cityId": "63fa1ed66ac7a5d3db84a2e4",
-        "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
-        "info": {
-            "ownerId": "63f265a701224e3ff39ec92d"
-        }
-    },
-    {
-        "price": "4000",
-        "rating": "",
-        "title": "Ford Mustang GT",
-        "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
-        "cityId": "63fa1ed66ac7a5d3db84a2e3",
         "brandId": "63fa1ed36ac7a5d3db84a298",
         "typeId": "63fa1ed26ac7a5d3db84a270",
-        "images": [
-            "https://wallpaperaccess.com/full/1600667.jpg",
-            "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
-            "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
-        ],
-        "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
+        "title": "Ford Mustang Mach 1",
+        "cityId": "63fa1ed66ac7a5d3db84a2e4",
+        "location": "Красноярск, Красноярский край, Россия, 660077",
+        "description": "Арендуйте Ford Mustang Mach 1, легендарный спортивный автомобиль с мощным двигателем V8, способным развивать 480 лошадиных сил. Это идеальный выбор для любителей скорости и автомобильных гонок. \n С 6-ти ступенчатой механической коробкой передач и задним приводом, Ford Mustang Mach 1 обладает отличным управлением и позволяет водителю полностью контролировать мощность автомобиля. \nИнтерьер выполнен из качественных материалов, таких как кожа и замша, а также оснащен современной технологией, включая функции Apple CarPlay, Android Auto и Wi-Fi-горячую точку. \n Снаружи, Ford Mustang Mach 1 привлекает внимание своим стильным дизайном, включающим в себя LED-фары, большие 19-дюймовые колеса и аэродинамический обвес, включающий в себя задний спойлер. \n Не упустите возможность почувствовать адреналин и арендовать Ford Mustang Mach 1 уже сегодня!",
         "info": {
-            "ownerId": "63f265a701224e3ff39ec92d"
+            "ownerId": "63f265a701224e3ff39ec92d",
+            "year": 2021,
+            "engine": {
+                "type": "Naturally aspirated V8",
+                "power": "480",
+                "torque": "420"
+            },
+            "transmission": {
+                "type": "6-speed manual",
+                "gears": 6
+            },
+            "drivetrain": "Задний привод (RWD)",
+            "options": [
+                "LED headlights",
+                "19-inch wheels",
+                "Power-operated doors",
+                "Adaptive suspension",
+                "Rear spoiler"
+            ]
+        }
+    },
+
+    {
+        "price": "110000",
+        "rating": "",
+        "images": [
+            "https://img5.goodfon.com/wallpaper/nbig/6/74/1st-avenue-apartment-by-mojo-stumer-associates-elitnaia-kvar.jpg",
+            "https://www.itl.cat/pngfile/big/118-1186417_penthouse-loft.jpg",
+            "https://www.itl.cat/pngfile/big/118-1186031_photo-wallpaper-design-the-city-style-interior-50.jpg"
+        ],
+        "brandId": "63fa1ed36ac7a5d3db84a279",
+        "typeId": "63fa1ed26ac7a5d3db84a26d",
+        "title": "Элитная квартира",
+        "cityId": "63fa1ed66ac7a5d3db84a2e3",
+        "location": "ул. 8 Марта, 43А, Екатеринбург",
+        "description": "Представляем вашему вниманию элитную квартиру для аренды в центре города. Эта прекрасная квартира находится на одной из самых престижных улиц Москвы - Тверской. \nКвартира имеет 3 комнаты и общую площадь 150 квадратных метров. Она украшена в стиле 'дизайнерский ремонт' и оборудована всем необходимым для комфортного проживания. \nВы сможете наслаждаться панорамным видом из окон и пользоваться системой 'умный дом', которая позволит вам контролировать все устройства в квартире с помощью смартфона. В квартире есть сауна и бассейн, чтобы вы могли расслабиться после напряженного рабочего дня. \nКвартира также оснащена кондиционером, системой подогрева полов, системой видеонаблюдения и охраной 24/7, чтобы обеспечить вашу безопасность. \nВам не нужно беспокоиться о парковке, так как у нас есть собственное парковочное место для вашего автомобиля. \nСтоимость аренды этой элитной квартиры составляет 100 000 рублей в сутки.",
+        "info": {
+            "ownerId": "63f5d704df6cccb8079cb99c",
+            "class": "Элитный",
+            "rooms": 10,
+            "area": 150,
+            "comforts": [
+                "Дизайнерский ремонт",
+                "Панорамные окна",
+                "Система 'умный дом'",
+                "Сауна",
+                "Бассейн",
+                "Кондиционер",
+                "Подогрев полов",
+                "Система видеонаблюдения",
+                "Охрана 24/7",
+                "Парковочное место"
+            ]
+        }
+    },
+
+    {
+        "price": "5000",
+        "rating": "",
+        "images": [
+            "https://houses.ru/upload/medialibrary/d99/feringer01.jpg",
+            "https://sauny.ua/image/cache/data/sauny/djorat/1/1-17-1000x800.jpg",
+            "https://avatars.mds.yandex.net/get-altay/5459048/2a0000017ce09db2dcf996ff9b9b15e4e98c/XXL_height"
+        ],
+        "brandId": "63fa1ed36ac7a5d3db84a287",
+        "typeId": "63fa1ed26ac7a5d3db84a26f",
+        "title": "Большая сауна",
+        "cityId": "63fa1ed66ac7a5d3db84a2e4",
+        "location": "ул. 8 Марта, 43А, Воронеж",
+        "description": "Добро пожаловать в нашу роскошную сауну! Наша сауна идеально подходит для тех, кто хочет расслабиться и отдохнуть в уютной атмосфере. Насладитесь паром и теплом, которые создаются нашей высококачественной печью. В сауне есть все удобства для вашего комфорта, включая душ, полотенца, халаты и тапочки. Мы также предоставляем бесплатные напитки и закуски. Сауна подходит для компаний до 6 человек. Вы можете забронировать сауну на час или более длительный период. Проведите время с друзьями или семьей в нашей уютной сауне и насладитесь незабываемым отдыхом!",
+        "info": {
+            "ownerId": "63f5d704df6cccb8079cb99c",
+            "class": "Средний",
+            "rooms": 3,
+            "area": 80,
+            "comforts": [
+                "Сауна",
+                "Бассейн",
+                "Кондиционер",
+                "Подогрев полов",
+                "Парковочное место"
+            ]
+        }
+    },
+
+    {
+        "price": "180000",
+        "rating": "",
+        "images": [
+            "https://s0.rbk.ru/v6_top_pics/media/img/6/84/756407156899846.jpg",
+            "http://weekend-house.su/ruen.images/15243170081.jpg",
+            "https://zavidovo.ru/upload/iblock/103/2022_ZAV_Zima_Kott_Sokol-_1_.jpg"
+        ],
+        "brandId": "63fa1ed36ac7a5d3db84a286",
+        "typeId": "63fa1ed26ac7a5d3db84a26e",
+        "title": "Элитный коттедж",
+        "cityId": "63fa1ed66ac7a5d3db84a2e1",
+        "location": "ул. 8 Декабря, 89А, Омск",
+        "description": "Элитный коттедж - это просторное и роскошное жилье, которое идеально подходит для тех, кто ищет уединение и комфорт вдали от городской суеты. Коттедж представляет собой современное здание с большими окнами и открытыми планировками, обеспечивающее идеальный баланс между простором и уютом. Внутри коттеджа просторные комнаты, оформленные современным дизайном и оснащенные всем необходимым для комфортного проживания. В коттедже есть большая гостиная с камином, просторная кухня, уютные спальни, ванные комнаты с джакузи и сауной, а также кинотеатр и игровая комната для детей. Коттедж окружен большим участком земли, на котором расположены террасы, бассейн, зона барбекю и зеленые насаждения, обеспечивающие чувство уединения и спокойствия. В целом, элитный коттедж - идеальное место для отдыха и релаксации в прекрасной обстановке роскоши и комфорта.",
+        "info": {
+            "ownerId": "63f74d819e9eabae97dc65c0",
+            "class": "Элитный",
+            "rooms": 14,
+            "area": 380,
+            "comforts": [
+                "Дизайнерский ремонт",
+                "Панорамные окна",
+                "Система 'умный дом'",
+                "Сауна",
+                "Бассейн",
+                "Кондиционер",
+                "Подогрев полов",
+                "Система видеонаблюдения",
+                "Охрана 24/7",
+                "Парковочное место",
+                "Комната для детей",
+                "Бильярдный стол"
+            ]
+        }
+    },
+
+    {
+        "price": "50000",
+        "rating": "",
+        "images": [
+            "https://s0.rbk.ru/v6_top_pics/media/img/5/00/756281448063005.jpg",
+            "https://uyutcity.ru/uploads/redactor/78487feb-d27a-4ecd-9007-c35263a15f29/2-urovnevaya-kvartira.jpg",
+            "https://opis-cdn.tinkoffjournal.ru/ip/pyEtQ79M5z4WPfaOF6VRuqAbFFXlbTrVl_B4rmVEyFs/w:1200/aHR0cHM6Ly9pbWct/Y2RuLnRpbmtvZmZq/b3VybmFsLnJ1Ly0v/bWFpbl9fX2t2YXJ0/aXJhX3Zhc2hpX3By/YXZhLjVveHBtZHh0/azhmYS5qcGc"
+        ],
+        "brandId": "63fa1ed36ac7a5d3db84a285",
+        "typeId": "63fa1ed26ac7a5d3db84a26d",
+        "title": "Бюджетная квартира",
+        "cityId": "63fa1ed66ac7a5d3db84a2e4",
+        "location": "ул. 8 Марка))), 13B, Воронеж",
+        "description": "Сдаётся в аренду уютная бюджетная квартира в тихом и спокойном районе города. Квартира расположена на 2 этаже многоквартирного дома и имеет площадь 45 квадратных метров. В квартире есть все необходимое для комфортного проживания: двуспальная кровать, шкаф для одежды, кухонный гарнитур, холодильник, плита и посуда. Также имеется телевизор и интернет. Ванная комната совмещена с туалетом. Рядом с домом есть парковка для автомобилей, магазины, кафе и остановки общественного транспорта. Квартира идеально подойдет для тех, кто ищет доступное жилье в центре города.",
+        "info": {
+            "ownerId": "63f265a701224e3ff39ec92d",
+            "class": "Бюджетный",
+            "rooms": 4,
+            "area": 45,
+            "comforts": ["Свежий ремонт", "Кондиционер", "Подогрев полов"]
         }
     }
 ]

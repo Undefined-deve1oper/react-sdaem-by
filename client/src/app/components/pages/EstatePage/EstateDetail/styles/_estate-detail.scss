@@ -142,7 +142,9 @@
         font-size: 15px;
         line-height: 150%;
         color: $darkColor;
-        white-space: pre-wrap;
+        & p {
+            white-space: pre-wrap;
+        }
     }
 
     // .estate-detail__subtitle

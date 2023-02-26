@@ -53,7 +53,7 @@ const DatePickerField: React.FC<DatePickerFieldType> = ({
                     }
                     placeholderText={label}
                 />
-                <IconSvg name="date" />
+                <IconSvg name="date" width="14" height="14" />
             </div>
             {error && <p className="text-field__error error">{error}</p>}
         </div>

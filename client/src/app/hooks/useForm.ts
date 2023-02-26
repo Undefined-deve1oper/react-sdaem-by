@@ -21,6 +21,8 @@ function useForm<T>(
 
     const handleChange = useCallback(
         ({ target }: { target: { name: string; value: string } }) => {
+            console.log(target);
+
             const nameParts = target.name.split(".");
             const firstLevelName: keyof T = nameParts[0] as keyof T;
             const secondLevelName: keyof T[keyof T] | undefined =

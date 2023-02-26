@@ -1,5 +1,5 @@
 import React from "react";
-import Feedback from "../../pages/HomePage/Feedback";
+import Feedback from "../../ui/Feedback";
 import Footer from "../Footer";
 import Header from "../Header";
 

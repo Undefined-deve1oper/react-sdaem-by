@@ -24,7 +24,9 @@ const EstatesStatus: React.FC<EstatesStatusProps> = ({ estates, ...rest }) => {
                 onFilterQuery={handleFilter}
                 estates={estates}
             />
-            <EstatesList estates={filteredItems || []} {...rest} />
+            <div className={"estates-products__row list"}>
+                <EstatesList estates={filteredItems || []} {...rest} />
+            </div>
         </div>
     );
 };

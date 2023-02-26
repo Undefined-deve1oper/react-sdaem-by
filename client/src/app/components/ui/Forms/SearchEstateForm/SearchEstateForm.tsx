@@ -5,12 +5,14 @@ import OpenForm from "../../OpenForm";
 
 type EstateFormTypes = {
     data: FilterData;
+    count?: number;
     onChange: (e: any) => void;
     handleReset: (e: any) => void;
 };
 
 const EstateForm: React.FC<EstateFormTypes> = ({
     data,
+    count,
     onChange,
     handleReset
 }) => {
@@ -32,6 +34,7 @@ const EstateForm: React.FC<EstateFormTypes> = ({
                     <SelectGroup data={data} onChange={onChange} />
                     <PriceRangeGroup data={data} onChange={onChange} />
                     <ButtonGroup
+                        count={count}
                         handleReset={handleReset}
                         onToggleOptions={handleToggleOptions}
                     />

@@ -5,6 +5,7 @@ export const translations = {
             year: "Год",
             engine: "Двигатель",
             inflating: "Тип надува:",
+            transferCase: "Раздаточная коробка",
             type: "Тип:",
             size: "Объем (L)",
             power: "Мощность (HP)",
@@ -14,7 +15,11 @@ export const translations = {
             drivetrain: "Привод",
             color: "Цвет",
             interior: "Интерьер",
-            options: "Опции"
+            options: "Опции",
+            class: "Класс",
+            rooms: "Комнаты",
+            area: "Площадь (кв/м)",
+            comforts: "Удобства"
         }
     },
     en: {

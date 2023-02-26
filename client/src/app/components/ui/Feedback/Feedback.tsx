@@ -1,5 +1,5 @@
 import React from "react";
-import { CreateTicketForm } from "../../../ui/Forms";
+import { CreateTicketForm } from "../Forms";
 
 const Feedback: React.FC = () => {
     return (

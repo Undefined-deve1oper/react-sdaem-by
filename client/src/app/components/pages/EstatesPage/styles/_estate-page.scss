@@ -26,6 +26,10 @@
     color: $darkColor;
 }
 
+.admin__dates {
+    margin: 0px 0px 30px 0px;
+}
+
 // .estates-products
 .estates-products {
     // .estates-products__header
@@ -91,6 +95,12 @@
             align-items: center;
             flex-direction: column;
             gap: 30px;
+
+            & .estate-card__functions {
+                top: 15px;
+                left: 0px;
+                right: calc(100% - 50px);
+            }
 
             & .estate-card {
                 width: 100%;

@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { api } from "../../../../types/enums";
 import Button from "../../../common/Button";
@@ -7,11 +8,13 @@ import IconSvg from "../../../common/IconSvg";
 type ButtonGroupTypes = {
     handleReset: (e: any) => void;
     onToggleOptions: () => void;
+    count?: number;
 };
 
 const ButtonGroup: React.FC<ButtonGroupTypes> = ({
     onToggleOptions,
-    handleReset
+    handleReset,
+    count
 }) => {
     const location = useLocation();
     const isHome = location.pathname === api.home;
@@ -25,21 +28,14 @@ const ButtonGroup: React.FC<ButtonGroupTypes> = ({
                 Больше опций
                 <IconSvg name={"options"} width="18" height="18" />
             </Button>
-            {isHome ? (
-                <>
-                    <Button className="search-panel__button">
-                        На карте
-                        <IconSvg width="13" height="16" name={"mark"} />
-                    </Button>
-                    <Button className="search-panel__submit">
-                        Показать
-                        <IconSvg name="arrow" width="13" height="15" />
-                    </Button>
-                </>
-            ) : (
-                <Button className="search-panel__submit" onClick={handleReset}>
-                    Очистить
-                </Button>
+            <Button className="search-panel__clear" onClick={handleReset}>
+                Очистить
+            </Button>
+            {isHome && (
+                <NavLink to={"/estates/"} className="search-panel__submit">
+                    Показать {count && <span>{count}</span>}
+                    <IconSvg name="arrow" width="13" height="15" />
+                </NavLink>
             )}
         </div>
     );
