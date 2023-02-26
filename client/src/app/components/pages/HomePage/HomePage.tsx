@@ -19,7 +19,6 @@ const HomePage: React.FC = () => {
         USER_FILTER_KEY
     );
     const dispatch = useAppDispatch();
-    console.log(filteredItems.length);
 
     useEffect(() => {
         dispatch(loadFilteredEstatesList());

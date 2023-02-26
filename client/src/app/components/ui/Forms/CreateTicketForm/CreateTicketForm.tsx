@@ -3,7 +3,11 @@ import Button from "../../../common/Button";
 import { validatorConfig } from "./validatorConfig";
 import { toast } from "react-toastify";
 import { useForm } from "../../../../hooks";
-import { SelectField, TextField } from "../../../common/Fields";
+import {
+    CustomSelectField,
+    SelectField,
+    TextField
+} from "../../../common/Fields";
 import ticketService from "../../../../services/ticket.service";
 
 const initialData = {
@@ -59,14 +63,14 @@ const CreateTicketForm: React.FC = () => {
             />
             <div className="feedbacl-form__item">
                 <h3 className="feedback-form__label">Причина обращения</h3>
-                <SelectField
+                <CustomSelectField
                     name="cause"
-                    onSelectChange={handleChange}
-                    // value={data.cause}
+                    onChange={handleChange}
+                    value={data.cause}
                     options={[
-                        { label: "Баги", value: "errors" },
-                        { label: "Вопрос", value: "offer" },
-                        { label: "Другое", value: "other" }
+                        { name: "Баги", value: "errors" },
+                        { name: "Вопрос", value: "offer" },
+                        { name: "Другое", value: "other" }
                     ]}
                     error={errors.cause}
                 />
