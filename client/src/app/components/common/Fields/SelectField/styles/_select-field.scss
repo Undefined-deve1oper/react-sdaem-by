@@ -2,6 +2,9 @@
     &-container {
         width: 100% !important;
         font-size: 16px !important;
+        &.second .custom-select__control {
+            min-height: 52px !important;
+        }
     }
     &__control {
         width: 100% !important;

@@ -5,8 +5,12 @@ import {
     roomsOptions
 } from "../../../../constants/options";
 import { FilterData } from "../../../../hooks/useFilters";
+import { useStateSelector } from "../../../../store";
+import { getBrandsList } from "../../../../store/slices/brands";
+import { getCitiesList } from "../../../../store/slices/cities";
+import { getTypesList } from "../../../../store/slices/types";
 import { SearchEstateFormDataType } from "../../../../types/types";
-import { SelectField } from "../../../common/Fields";
+import { DatePickerField, SelectField } from "../../../common/Fields";
 
 type DetailSelectGroupTypes = {
     data: FilterData;
@@ -17,40 +21,46 @@ const DetailSelectGroup: React.FC<DetailSelectGroupTypes> = ({
     data,
     onChange
 }) => {
-    const handleChange = useCallback((data: any) => {
-        onChange({ target: { name: data.name, value: data.value } });
-    }, []);
+    const brands = useStateSelector(getBrandsList());
+    const cities = useStateSelector(getCitiesList());
+    const types = useStateSelector(getTypesList());
+
+    const handleChange = useCallback(
+        (data: { name: string; value: string }) => {
+            onChange({ target: { name: data.name, value: data.value } });
+        },
+        []
+    );
 
     return (
         <>
-            gfd
-            {/* <div className="modal-options__item">
-                <span>Спальные места</span>
+            <div className="modal-options__item">
+                <span>Город</span>
                 <SelectField
-                    name="rooms"
-                    value={data.rooms}
+                    options={cities}
                     onSelectChange={handleChange}
-                    options={roomsOptions}
+                    value={data.city}
+                    name="city"
                 />
             </div>
             <div className="modal-options__item">
-                <span>Район</span>
+                <span>Тип</span>
                 <SelectField
-                    name="rooms"
-                    value={data.area}
+                    name="type"
+                    value={data.type}
                     onSelectChange={handleChange}
-                    options={areaOptions}
+                    options={types}
                 />
             </div>
             <div className="modal-options__item">
-                <span>Метро</span>
+                <span>Бренд</span>
                 <SelectField
-                    name="rooms"
-                    value={data.metro}
+                    name="brand"
+                    value={data.brand}
                     onSelectChange={handleChange}
-                    options={metroOptions}
+                    options={brands}
                 />
-            </div> */}
+            </div>
         </>
     );
 };

@@ -12,7 +12,9 @@ const ProfileUserAds: React.FC = () => {
             <h3 className="user-products__title">Мои объявления</h3>
             <div className="user-products__rows">
                 {estates.length !== 0 ? (
-                    <EstatesList estates={estates} />
+                    <div className={"estates-products__row list"}>
+                        <EstatesList estates={estates} />
+                    </div>
                 ) : (
                     <p className="user-products__subtitle">
                         У вас пока нет объявлений

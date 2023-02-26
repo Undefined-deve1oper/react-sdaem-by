@@ -5,13 +5,17 @@ import { BookingDateType } from "../types/types";
 export type FilterData = {
     entry?: Date;
     departure?: Date;
-    priceMin?: number;
-    priceMax?: number;
+    priceMin?: string;
+    priceMax?: string;
     city?: {
         name: string;
         _id: string;
     };
     type?: {
+        name: string;
+        _id: string;
+    };
+    brand?: {
         name: string;
         _id: string;
     };
@@ -73,10 +77,14 @@ export default function useFilters<T>(
                 (item: any) => item.cityId === data.city?._id
             );
         }
-
         if (data.type) {
             filteredEstates = filteredEstates.filter(
                 (item: any) => item.typeId === data.type?._id
+            );
+        }
+        if (data.brand) {
+            filteredEstates = filteredEstates.filter(
+                (item: any) => item.brandId === data.brand?._id
             );
         }
 

@@ -7,7 +7,7 @@
             "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
             "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
         ],
-        "brandId": "63ed187a1cc9b5878bd3244a",
+        "brandId": "63fa1ed36ac7a5d3db84a292",
         "typeId": "63fa1ed26ac7a5d3db84a270",
         "title": "Элитная квартира",
         "cityId": "63fa1ed66ac7a5d3db84a2df",
@@ -23,7 +23,7 @@
     {
         "price": "4500",
         "rating": "",
-        "brandId": "63ed187a1cc9b5878bd3244a",
+        "brandId": "63fa1ed36ac7a5d3db84a292",
         "typeId": "63fa1ed26ac7a5d3db84a270",
         "title": "Элитная квартира",
         "cityId": "63fa1ed66ac7a5d3db84a2e0",
@@ -53,7 +53,7 @@
             "https://seite1.ru/wp-content/uploads/2017/02/i-5.jpg",
             "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
         ],
-        "brandId": "63ed187a1cc9b5878bd32446",
+        "brandId": "63fa1ed36ac7a5d3db84a292",
         "typeId": "63fa1ed26ac7a5d3db84a270",
         "info": {
             "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
@@ -80,7 +80,7 @@
             "capacity": "4 (2+2)",
             "room": "1",
             "square": "139",
-            "brandId": "63ed187a1cc9b5878bd32446",
+            "brandId": "63fa1ed36ac7a5d3db84a292",
             "ownerId": "63f265a701224e3ff39ec92d"
         }
     },
@@ -90,7 +90,7 @@
         "rating": "",
         "title": "Элитная квартира",
         "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
-        "brandId": "63ed187a1cc9b5878bd32444",
+        "brandId": "63fa1ed36ac7a5d3db84a292",
         "typeId": "63fa1ed26ac7a5d3db84a270",
         "images": [
             "https://wallpaperaccess.com/full/1600667.jpg",
@@ -118,7 +118,7 @@
             "https://dam.nmhmedia.sk/image/84b44c56-b354-4dad-a5e2-5e40c76cdf05_phpkidnap.jpg/960/540"
         ],
         "cityId": "63fa1ed66ac7a5d3db84a2df",
-        "brandId": "63ed187a1cc9b5878bd3243a",
+        "brandId": "63fa1ed36ac7a5d3db84a292",
         "typeId": "63fa1ed26ac7a5d3db84a270",
         "info": {
             "description": "Какое-то описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание квартиры, описание ...",
@@ -139,7 +139,7 @@
         ],
         "title": "BMW M5 E60",
         "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
-        "brandId": "63ecd3d809b8f04ccc7e280b",
+        "brandId": "63fa1ed36ac7a5d3db84a292",
         "typeId": "63fa1ed26ac7a5d3db84a270",
         "cityId": "63fa1ed66ac7a5d3db84a2e4",
         "info": {
@@ -156,7 +156,7 @@
         "title": "Ford Mustang GT",
         "location": "аг. Ратомка, Луговая улица, д. 27, к. а",
         "cityId": "63fa1ed66ac7a5d3db84a2e3",
-        "brandId": "63ecd3d809b8f04ccc7e2811",
+        "brandId": "63fa1ed36ac7a5d3db84a298",
         "typeId": "63fa1ed26ac7a5d3db84a270",
         "images": [
             "https://wallpaperaccess.com/full/1600667.jpg",

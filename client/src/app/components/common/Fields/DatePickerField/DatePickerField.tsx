@@ -4,9 +4,9 @@ import IconSvg from "../../IconSvg";
 
 type DatePickerFieldType = {
     name: string;
-    value: Date;
+    value: Date | undefined;
     minDate: Date;
-    error: string | null;
+    error?: string | null;
     className?: string;
     title?: string;
     label?: string;
@@ -41,7 +41,7 @@ const DatePickerField: React.FC<DatePickerFieldType> = ({
             )}
             <div className="date-picker__content">
                 <DatePicker
-                    selected={new Date(value)}
+                    selected={value ? new Date(value) : new Date()}
                     onChange={handleChange}
                     showYearDropdown
                     minDate={minDate || Date.now()}

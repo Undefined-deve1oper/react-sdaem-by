@@ -11,6 +11,7 @@ type SelectFieldType = {
     options: any[];
     className?: string;
     title?: string;
+    multipli?: boolean;
     onSelectChange?: (option: any) => void;
 };
 
@@ -24,6 +25,7 @@ const SelectField: React.FC<SelectFieldType> = ({
     closeMenuOnSelect = true,
     placeholder = "Выберите",
     className,
+    multipli,
     ...rest
 }) => {
     const optionsArray = options.map((option) => ({
@@ -33,8 +35,6 @@ const SelectField: React.FC<SelectFieldType> = ({
 
     const handleChange = useCallback(
         (option: SingleValue<any>) => {
-            console.log(option);
-
             onSelectChange &&
                 onSelectChange({
                     name,
@@ -46,7 +46,7 @@ const SelectField: React.FC<SelectFieldType> = ({
     const isLoading = options.length === 0;
 
     return (
-        <div className={className + ` ${error ? " error" : ""}`}>
+        <div className={` ${error ? " error" : ""}`}>
             {title && <h3 className="text-field__title form-title">{title}</h3>}
             <Select
                 value={value ? { label: value.name, value: value._id } : null}

@@ -7,7 +7,7 @@ export type TextFieldTypes = {
     label?: string;
     name: string;
     placeholder?: string;
-    value?: string;
+    value?: string | undefined;
     error?: string | null;
     autoFocus?: boolean;
     onChange?: (target: any) => void;
@@ -34,6 +34,10 @@ const TextField: React.FC<TextFieldTypes> = ({
         setShowPassword((prevState) => !prevState);
     };
 
+    const handleChange = (e: any) => {
+        onChange?.({ target: { name, value: e.target.value } });
+    };
+
     return (
         <div className={className + ` text-field ${error ? " error" : ""}`}>
             {title && <h3 className="text-field__title form-title">{title}</h3>}
@@ -44,7 +48,7 @@ const TextField: React.FC<TextFieldTypes> = ({
                             name={name}
                             id={name}
                             type={showPassword ? "text" : "password"}
-                            onChange={onChange}
+                            onChange={handleChange}
                             value={value}
                             placeholder={label}
                             className={`text-field__input`}
@@ -65,7 +69,7 @@ const TextField: React.FC<TextFieldTypes> = ({
                             name={name}
                             id={name}
                             type={type}
-                            onChange={onChange}
+                            onChange={handleChange}
                             value={value}
                             placeholder={label}
                             className={`text-field__input`}

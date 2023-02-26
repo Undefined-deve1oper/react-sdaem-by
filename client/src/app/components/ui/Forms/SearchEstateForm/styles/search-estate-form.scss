@@ -78,6 +78,17 @@
         flex-direction: column;
         gap: 11px;
 
+        @media (max-width: $md3+px) {
+            flex: 1 1 auto;
+        }
+
+        & .date-picker {
+            margin: 0;
+            & input {
+                padding: 9px 9.5px 9px 50px;
+            }
+        }
+
         & input {
             padding: 9px 9.5px;
         }

@@ -17,7 +17,7 @@ const initialState = {
     entry: getPresenceBookingDate(1),
     departure: getPresenceBookingDate(2),
     city: "",
-    brandId: "",
+    brand: "",
     type: "",
     priceMax: "",
     priceMin: ""
@@ -51,14 +51,13 @@ const EstatesFilter: React.FC<EstatesFilterProps> = ({ onReset, onFilter }) => {
         onReset();
         setData(initialState);
     };
-    const handleDateChange = debounce(handleChange, 180);
 
     return (
         <div className="estates-filters">
             <div className="estates-filters__container _container">
                 <SearchEstateForm
                     data={data}
-                    onChange={handleDateChange}
+                    onChange={handleChange}
                     handleReset={handleResetFilters}
                 />
             </div>

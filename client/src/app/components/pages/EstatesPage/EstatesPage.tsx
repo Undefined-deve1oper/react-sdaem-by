@@ -11,8 +11,8 @@ import {
     getFilteredEstates,
     loadFilteredEstatesList
 } from "../../../store/slices/estates";
-import Button from "../../common/Button";
 import IconSvg from "../../common/IconSvg";
+import Pagination from "../../common/Pagination";
 import Searchbar from "../../common/Searchbar";
 import { SkeletonEstatesList } from "../../common/Skeletons/Estates";
 import {
@@ -88,18 +88,22 @@ const EstatesPage: React.FC = () => {
             <div className="estates__container _container">
                 <div className="estates-products">
                     <div className="estates-products__header">
-                        <div className={"estates-products__select"}>
+                        <div
+                            className={
+                                "estates-products__select product-header__items"
+                            }
+                        >
                             <IconSvg name="down-sort" />
                             <EstateSort sortBy={sortBy} onSort={handleSort} />
                         </div>
-                        <div className="estates-products__search">
+                        <div className="estates-products__search product-header__items">
                             <Searchbar
                                 label="Поиск по названию..."
                                 value={searchTerm}
                                 onChange={handleChangeSearch}
                             />
                         </div>
-                        <div className="estates-products__view estates-view">
+                        <div className="estates-products__view estates-view product-header__items">
                             <EstateDirection
                                 setDirectionList={setDirectionList}
                                 setDirectionTiels={setDirectionTiels}
@@ -108,13 +112,31 @@ const EstatesPage: React.FC = () => {
                     </div>
                 </div>
 
-                <div className={"estates-products__row " + direction}>
-                    {!estatesLoading ? (
+                {!estatesLoading ? (
+                    <div className={"estates-products__row " + direction}>
                         <EstatesList estates={estatesListCrop} />
-                    ) : (
-                        <SkeletonEstatesList />
-                    )}
-                </div>
+                    </div>
+                ) : (
+                    <SkeletonEstatesList />
+                )}
+
+                {sortedItems.length > limit && (
+                    <div className="estates-products__pagination">
+                        <Pagination
+                            itemsCount={sortedItems.length}
+                            pageSize={limit}
+                            currentPage={page}
+                            onPageChange={handlePageChange}
+                        />
+                        <p className="estates-products__pagination-info">
+                            {`${(page - 1) * limit || 1} -  ${
+                                limit * page > estates.length
+                                    ? estates.length
+                                    : limit * page
+                            } из ${estates.length} вариантов аренды`}
+                        </p>
+                    </div>
+                )}
             </div>
         </>
     );

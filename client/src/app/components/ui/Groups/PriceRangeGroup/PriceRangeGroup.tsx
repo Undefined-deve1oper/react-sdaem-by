@@ -20,14 +20,14 @@ const PriceRangeGroup: React.FC<ProceRangeGroupType> = ({ data, onChange }) => {
                     label="От"
                     type="number"
                     onChange={onChange}
-                    // value={data.priceMin}
+                    value={data.priceMin}
                 />
                 <TextField
                     name="priceMax"
                     label="До"
                     type="number"
                     onChange={onChange}
-                    // value={data.priceMax}
+                    value={data.priceMax}
                 />
             </div>
         </div>

@@ -18,11 +18,10 @@
     &__selects {
         background: $lightColor;
         display: flex;
-        align-items: center;
+        align-items: flex-start;
         flex-wrap: wrap;
         column-gap: 62px;
         row-gap: 30px;
-        margin: 0px 0px 30px 0px;
     }
 
     // .modal-options__item

@@ -14,9 +14,6 @@ const OpenForm: React.FC<OpenFormTypes> = ({ data, onChange }) => {
                 <div className="modal-options__selects">
                     <DetailSelectGroup data={data} onChange={onChange} />
                 </div>
-                <div className="modal-options__checkboxs">
-                    <CheckboxGroup />
-                </div>
             </div>
         </div>
     );
